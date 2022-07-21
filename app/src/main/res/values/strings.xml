@@ -1,3 +1,7 @@
-<resources>
-    <string name="app_name">USEA APP</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="MissingTranslation">USEA APP</string>
+    <string name="NA">NA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="school_name_kh">សាកលវិទ្យាល័យ សៅស៍អុីសថ៍អេយសៀ</string>
+    <string name="school_name_en">University Of South-East Asia</string>
 </resources>
