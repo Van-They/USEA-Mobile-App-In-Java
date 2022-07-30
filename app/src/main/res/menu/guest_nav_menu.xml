@@ -2,10 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home_guest_dashboard"
-        android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:icon="@drawable/home_icon"
+        android:title="@string/Home" />
     <item
         android:id="@+id/more_guest_dashboard"
         android:icon="@drawable/ic_more_24"
-        android:title="more" />
+        android:title="@string/More" />
 </menu>

@@ -13,10 +13,28 @@
         tools:ignore="DataExtractionRules"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".StudentScore"
+            android:exported="false" />
+        <activity
+            android:name=".student.student_feedback.StudentFeedback"
+            android:exported="false" />
+        <activity
+            android:name=".student.student_studyplan.StudentStudyPlan"
+            android:exported="false" />
+        <activity
+            android:name=".student.student_attendance.StudentAttendance"
+            android:exported="false" />
+        <activity
+            android:name=".guest.guest_events.GuestEvent"
+            android:exported="false" />
+        <activity
+            android:name=".student.MainStudentActivity"
             android:exported="false" />
         <activity
             android:name=".guest.MainGuestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

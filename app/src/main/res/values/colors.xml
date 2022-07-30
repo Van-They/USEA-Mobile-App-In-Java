@@ -17,4 +17,7 @@
     <color name="pink_40">#66FF8989</color>
     <color name="yellow_40">#66FFB528</color>
     <color name="blue_sky_40">#665FADF5</color>
+    <color name="gray">#7F8487</color>
+    <color name="gray_25">#0D7F8487</color>
+
 </resources>
