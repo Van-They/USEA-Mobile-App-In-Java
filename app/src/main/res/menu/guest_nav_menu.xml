@@ -6,6 +6,6 @@
         android:title="@string/Home" />
     <item
         android:id="@+id/more_guest_dashboard"
-        android:icon="@drawable/ic_more_24"
+        android:icon="@drawable/ic_more"
         android:title="@string/More" />
 </menu>

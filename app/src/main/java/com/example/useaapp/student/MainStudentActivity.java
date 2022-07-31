@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.useaapp.R;
 import com.example.useaapp.student.student_home.FragmentStudentHome;
@@ -22,14 +23,11 @@ public class MainStudentActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.customActionbarMainStudent);
         setSupportActionBar(toolbar);
         setTitle(R.string.StudentAccount);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavigationBarStudent);
         getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
         navigationBarView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.home_dashboard_student:
-                    setTitle(R.string.StudentAccount);
                     getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
                     break;
                 case R.id.news_dashboard_student:
