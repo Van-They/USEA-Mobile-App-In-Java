@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.example.useaapp.guest.MainGuestActivity;
 import com.example.useaapp.student.MainStudentActivity;
+import com.example.useaapp.student.student_login.StudentLogin;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, MainGuestActivity.class));
         });
         student.setOnClickListener(v ->{
-            startActivity(new Intent(MainActivity.this, MainStudentActivity.class));
+            startActivity(new Intent(MainActivity.this, StudentLogin.class));
         });
     }
 }

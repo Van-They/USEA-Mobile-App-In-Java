@@ -63,4 +63,6 @@
     <string name="Policy">គោលការណ៍</string>
     <string name="About">អំពី</string>
     <string name="Log_out">ចាកចេញ</string>
+    <string name="password">លេខសម្ងាត់និស្សិត</string>
+    <string name="Log_In">ចូល</string>
 </resources>
