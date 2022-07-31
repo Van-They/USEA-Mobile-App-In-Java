@@ -21,16 +21,15 @@ public class MainStudentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_student);
         Toolbar toolbar = findViewById(R.id.customActionbarMainStudent);
         setSupportActionBar(toolbar);
-        setTitle(R.string.student);
+        setTitle(R.string.StudentAccount);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavigationBarStudent);
-        setTitle(R.string.Student);
         getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
         navigationBarView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.home_dashboard_student:
-                    setTitle(R.string.Student);
+                    setTitle(R.string.StudentAccount);
                     getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
                     break;
                 case R.id.news_dashboard_student:

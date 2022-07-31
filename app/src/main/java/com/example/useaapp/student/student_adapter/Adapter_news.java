@@ -13,6 +13,7 @@ import com.example.useaapp.student.student_news.Assignment;
 import com.example.useaapp.student.student_news.Homework;
 import com.example.useaapp.student.student_news.Midterm;
 import com.example.useaapp.student.student_news.Model;
+import com.example.useaapp.student.student_news.RecyclerViewOnclick;
 
 import java.util.List;
 
@@ -65,7 +66,7 @@ public class Adapter_news extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         return models.size();
     }
 
-    static class AssignmentHolder extends RecyclerView.ViewHolder {
+    static class AssignmentHolder extends RecyclerView.ViewHolder{
         private final TextView subject_assignment, due_date_assignment, create_by_assignment;
 
         public AssignmentHolder(@NonNull View itemView) {

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:theme="@style/setBackButton"
-    android:elevation="4dp"
+    android:elevation="1dp"
     android:background="@color/white"
     app:titleTextAppearance="@style/setTextSizeActionbar">
 

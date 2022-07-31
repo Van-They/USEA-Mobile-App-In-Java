@@ -1,50 +1,66 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" translatable="false">USEA APP</string>
-    <string name="NA" translatable="false">N/A</string>
-    <string name="school_name_kh" translatable="false">សាកលវិទ្យាល័យ សៅស៍អុីសថ៍អេយសៀ</string>
-    <string name="school_name_en" translatable="false">University Of South-East Asia</string>
-    <string name="hello_blank_fragment" translatable="false">Blank Fragment</string>
-    <string name="hello" translatable="false">សួស្តី</string>
-    <string name="Sample_txt" translatable="false">XXX</string>
-    <string name="Assignment" translatable="false">កិច្ចការក្រុម</string>
-    <string name="Subject" translatable="false">មុខវិជ្ជា</string>
-    <string name="Due_Date" translatable="false">ផុតកំណត់:</string>
-    <string name="Create_By" translatable="false">បង្កើតដោយ:</string>
-    <string name="Homework" translatable="false">ការងារផ្ទះ</string>
-    <string name="Midterm" translatable="false">ប្រឡងពាក់កណ្តាលឆមាស</string>
-    <string name="Exam_date" translatable="false">កាលបរិច្ឆេទប្រឡង</string>
-    <string name="Time" translatable="false">ចាប់ផ្តើម</string>
-    <string name="Room" translatable="false">បន្ទប់</string>
-    <string name="sign_in_as" translatable="false">ចូលតាម:</string>
-    <string name="Student" translatable="false">សិស្ស</string>
-    <string name="Events" translatable="false">ព្រឹត្តិការណ៍</string>
-    <string name="Scholarship" translatable="false">អាហារូបកណ៍</string>
-    <string name="Career" translatable="false">ព័ត៌មានការងារ</string>
-    <string name="News" translatable="false">ព័ត៌មានថ្មីៗ</string>
-    <string name="More" translatable="false">បន្ថែម</string>
-    <string name="Home" translatable="false">ទំព័រដើម</string>
-    <string name="FAQ" translatable="false">សំណួរគេសួរញឹកញាប់</string>
-    <string name="About_Us" translatable="false">អំពីយើង</string>
-    <string name="Follow_Us" translatable="false">តាមយើង</string>
-    <string name="Location" translatable="false">ទីតាំង</string>
-    <string name="Account" translatable="false">គណនី</string>
-    <string name="guest" translatable="false">ភ្ញៀវ</string>
-    <string name="student" translatable="false">គណនីនិស្សិត</string>
-    <string name="Hour" translatable="false">ម៉ោង</string>
-    <string name="Permission" translatable="false">ការអនុញ្ញាត</string>
-    <string name="Absent" translatable="false">អវត្តមាន</string>
-    <string name="Come" translatable="false">វត្តមាន</string>
-    <string name="Attendance" translatable="false">វត្តមាន</string>
-    <string name="How_would_you_rate_your_experience_using_this_app">How would you rate your experience using this app?</string>
-    <string name="Help_us_by_describing_your_problem">Help us by describing your problem</string>
+    <string name="app_name">USEA APP</string>
+    <string name="NA">N/A</string>
+    <string name="school_name_kh">សាកលវិទ្យាល័យ សៅស៍អុីសថ៍អេយសៀ</string>
+    <string name="school_name_en">University Of South-East Asia</string>
+    <string name="hello_blank_fragment">Blank Fragment</string>
+    <string name="hello">សួស្តី</string>
+    <string name="Sample_txt">XXX</string>
+    <string name="Assignment">កិច្ចការក្រុម</string>
+    <string name="Subject">មុខវិជ្ជា</string>
+    <string name="Due_Date">ផុតកំណត់:</string>
+    <string name="Create_By">បង្កើតដោយ:</string>
+    <string name="Homework">ការងារផ្ទះ</string>
+    <string name="Midterm">ប្រឡងពាក់កណ្តាលឆមាស</string>
+    <string name="Exam_date">កាលបរិច្ឆេទប្រឡង</string>
+    <string name="Time">ចាប់ផ្តើម</string>
+    <string name="Room">បន្ទប់</string>
+    <string name="sign_in_as">ចូលតាម:</string>
+    <string name="Student">និស្សិត</string>
+    <string name="Events">ព្រឹត្តិការណ៍</string>
+    <string name="Scholarship">អាហារូបកណ៍</string>
+    <string name="Career">ព័ត៌មានការងារ</string>
+    <string name="News">ព័ត៌មានថ្មីៗ</string>
+    <string name="More">បន្ថែម</string>
+    <string name="Home">ទំព័រដើម</string>
+    <string name="FAQ">សំណួរគេសួរញឹកញាប់</string>
+    <string name="About_Us">អំពីយើង</string>
+    <string name="Follow_Us">តាមយើង</string>
+    <string name="Location">ទីតាំង</string>
+    <string name="Account">គណនី</string>
+    <string name="guest">ភ្ញៀវ</string>
+    <string name="Hour">ម៉ោង</string>
+    <string name="Permission">ការអនុញ្ញាត</string>
+    <string name="Absent">អវត្តមាន</string>
+    <string name="Come">វត្តមាន</string>
+    <string name="Attendance">វត្តមាន</string>
+    <string name="How_would_you_rate_your_experience_using_this_app">តើអ្នកនឹងវាយតម្លៃបទពិសោធន៍របស់អ្នកយ៉ាងដូចម្តេច?</string>
+    <string name="Help_us_by_describing_your_problem">សូមជួយពិពណ៌នាអំពីបញ្ហារបស់អ្នក!</string>
     <string name="Write_your_problem_here">Write your problem here.</string>
     <string name="Optional">(Optional)</string>
-    <string name="Do_you_have_any_screenshot">Do you have any screenshot?</string>
+    <string name="Do_you_have_any_screenshot">តើអ្នកមានរូបដែលទាក់ទងនឹងបញ្ហាដែរឬទេ?</string>
     <string name="Add_Photo">Add Photo</string>
-    <string name="Submit_Feedback">Submit Feedback</string>
+    <string name="Submit_Feedback">បញ្ចូន</string>
     <string name="Feedback">មតិកែលម្អ</string>
-    <string name="studyplan">ផែនការសិក្សា</string>
+    <string name="Studyplan">ផែនការសិក្សា</string>
     <string name="Semester1">ឆមាសទី ១</string>
     <string name="Credit">ក្រេឌីត</string>
     <string name="Semester2">ឆមាសទី ២</string>
+    <string name="Major">ជំនាញ</string>
+    <string name="Promotion">ជំនាន់</string>
+    <string name="Academic">ឆ្នាំមូលដ្ឋាន</string>
+    <string name="About_Me">អំពីខ្ញុំ</string>
+    <string name="Shift">វេនសិក្សា</string>
+    <string name="Date_of_birth">ថ្ងៃកំណើត</string>
+    <string name="Phone_Number">លេខទូរស័ព្ទ</string>
+    <string name="Setting">ការកំណត់</string>
+    <string name="StudentInformation">ព័ត៌មានលម្អិតរបស់សិស្ស</string>
+    <string name="StudentName">ឈ្មោះនិស្សិត</string>
+    <string name="StudentID">ID និស្សិត</string>
+    <string name="StudentAccount">គណនីនិស្សិត</string>
+    <string name="student">និស្សិត</string>
+    <string name="Legal">ច្បាប់</string>
+    <string name="Policy">គោលការណ៍</string>
+    <string name="About">អំពី</string>
+    <string name="Log_out">ចាកចេញ</string>
 </resources>

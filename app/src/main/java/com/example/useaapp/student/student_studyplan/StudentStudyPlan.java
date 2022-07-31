@@ -1,6 +1,5 @@
 package com.example.useaapp.student.student_studyplan;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
@@ -22,7 +21,7 @@ public class StudentStudyPlan extends AppCompatActivity {
         setContentView(R.layout.activity_student_study_plan);
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentStudyPlan);
         setSupportActionBar(toolbar);
-        setTitle(R.string.studyplan);
+        setTitle(R.string.Studyplan);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         tabLayout = findViewById(R.id.tab_menu_studyPlan);
         viewPager2 = findViewById(R.id.view_pager_menu_studyPlan);

@@ -18,6 +18,7 @@ import com.example.useaapp.student.student_adapter.Adapter_category;
 import com.example.useaapp.student.student_adapter.Adapter_rank_credit;
 import com.example.useaapp.student.student_attendance.StudentAttendance;
 import com.example.useaapp.student.student_feedback.StudentFeedback;
+import com.example.useaapp.student.student_profile.StudentProfile;
 import com.example.useaapp.student.student_studyplan.StudentStudyPlan;
 
 import java.util.Objects;
@@ -28,7 +29,9 @@ public class FragmentStudentHome extends Fragment {
 
     //category
    private final String[] title_category = {"កាលវិភាគ", "ផែនការសិក្សា", "វត្តមាន", "មតិកែលម្អ", "ពិន្ទុ","គណនីភ្ញៀវ"};
-   private final int[] image_category = {R.drawable.calendar_icon, R.drawable.studyplan_icon, R.drawable.attendance_icon, R.drawable.feedback_icon, R.drawable.score_icon,R.drawable.sample_user};
+   private final int[] image_category = {R.drawable.calendar_icon,
+           R.drawable.studyplan_icon, R.drawable.attendance_icon,
+           R.drawable.feedback_icon, R.drawable.score_icon,R.drawable.guest_icon};
     //for card view rank and credit on dashboard
    private String[] rank_credit = {"#1st Rank", "300"};
    private final String[] label_rank_credit = {"Student Rank", "Total Credit"};
@@ -46,6 +49,9 @@ public class FragmentStudentHome extends Fragment {
 
         //profile image
         CircleImageView profile_dashboard = view.findViewById(R.id.profile_dashboard);
+        profile_dashboard.setOnClickListener(v ->{
+            startActivity(new Intent(getContext(), StudentProfile.class));
+        });
         gridView_card_rank_credit = view.findViewById(R.id.gridview_rank_credit);
         gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(this.getContext(), rank_credit, label_rank_credit, image_rank_credit));
 

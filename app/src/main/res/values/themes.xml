@@ -12,7 +12,7 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >@color/dark_blue</item>
+        <item name="android:statusBarColor" >@color/black</item>
         <!-- Customize your theme here. -->
     </style>
     <style name="setDisplayHomeAsUpEnable_profile" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -31,22 +31,22 @@
 
     //set text size on toolbar
     <style name="setTextSizeActionbar" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/dark_blue</item>
-        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:fontFamily">@font/khmer_os_battambang_bold</item>
     </style>
 
     //set font family on navigation bar
-    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
-        <item name="iconTint">@color/dark_blue</item>
+    <style name="BottomNavigationViewStyle">
+        <item name="itemIconTint">@color/dark_blue</item>
         <item name="itemTextColor">@color/dark_blue</item>
-        <item name="android:fontFamily">@font/khmer_os_battambang</item>
+        <item name="android:fontFamily">@font/khmer_os_battambang_regular</item>
     </style>
 
     //set text Size on Tab bar
     <style name="TabTextSize" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">14sp</item>
-        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="fontFamily">@font/khmer_os_battambang_regular</item>
     </style>
 
     //customize actionbar
