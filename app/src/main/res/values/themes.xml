@@ -19,7 +19,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBarOverlay">true</item>
-        <item name="homeAsUpIndicator">@drawable/ic_close_24</item>
+        <item name="homeAsUpIndicator">@drawable/ic_close</item>
     </style>
 
     //set icon back on action bar

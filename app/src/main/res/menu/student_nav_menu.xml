@@ -6,7 +6,7 @@
         android:title="@string/Home" />
     <item
         android:id="@+id/news_dashboard_student"
-        android:icon="@drawable/ic_notifications"
+        android:icon="@drawable/ic_more"
         android:title="@string/News" />
 
 </menu>
