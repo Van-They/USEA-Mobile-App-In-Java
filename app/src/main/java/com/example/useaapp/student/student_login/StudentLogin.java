@@ -73,6 +73,7 @@ public class StudentLogin extends AppCompatActivity {
                             if (result.equals("Login Success")) {
                                 Toast.makeText(StudentLogin.this, result, Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(StudentLogin.this, MainStudentActivity.class);
+                                intent.putExtra("student_id", data[0]);
                                 startActivity(intent);
                                 finish();
                             } else {
