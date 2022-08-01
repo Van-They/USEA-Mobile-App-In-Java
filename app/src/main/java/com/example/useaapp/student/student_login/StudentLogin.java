@@ -104,17 +104,9 @@ public class StudentLogin extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(StudentLogin.this);
         builder.setMessage("Please Connect to the internet to proceed!!")
                 .setCancelable(false)
-                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-                    }
-                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        finish();
-                    }
+                .setPositiveButton("Connect", (dialogInterface, i) -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS))).setNegativeButton("Cancel", (dialogInterface, i) -> {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
                 });
         builder.show();
     }
