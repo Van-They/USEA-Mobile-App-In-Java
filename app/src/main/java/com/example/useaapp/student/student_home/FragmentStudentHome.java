@@ -45,12 +45,16 @@ public class FragmentStudentHome extends Fragment {
         //name student on dashboard
         TextView student_name_dashboard = view.findViewById(R.id.student_name_dashboard);
         //set text
-        student_name_dashboard.setText("Student Name");
+        String set_student_name_dashboard = getActivity().getIntent().getStringExtra("student_id");
+        student_name_dashboard.setText(set_student_name_dashboard);
 
         //profile image
         CircleImageView profile_dashboard = view.findViewById(R.id.profile_dashboard);
         profile_dashboard.setOnClickListener(v ->{
-            startActivity(new Intent(getContext(), StudentProfile.class));
+            Intent intent = new Intent(getContext(), StudentProfile.class);
+            intent.putExtra("student_id", set_student_name_dashboard);
+            startActivity(intent);
+//            startActivity(new Intent(getContext(), StudentProfile.class));
         });
         gridView_card_rank_credit = view.findViewById(R.id.gridview_rank_credit);
         gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(this.getContext(), rank_credit, label_rank_credit, image_rank_credit));

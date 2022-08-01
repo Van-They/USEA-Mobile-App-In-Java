@@ -23,6 +23,7 @@ import java.util.Objects;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StudentProfile extends AppCompatActivity {
+    TextView student_name_profile, student_ID;
     ImageView change_image_in_profile;
     CircleImageView profile_image;
     @Override
@@ -62,6 +63,12 @@ public class StudentProfile extends AppCompatActivity {
                 .maxResultSize(1080, 1080)
                 .crop().cropOval().compress(1024)
                 .start(20));
+
+        //Set Student_ID
+        student_ID = findViewById(R.id.student_ID);
+        String st_id = getIntent().getStringExtra("student_id");
+        student_ID.setText(st_id);
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
