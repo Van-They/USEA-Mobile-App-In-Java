@@ -23,15 +23,18 @@ public class MainStudentActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.customActionbarMainStudent);
         setSupportActionBar(toolbar);
         setTitle(R.string.StudentAccount);
+        toolbar.setVisibility(View.GONE);
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavigationBarStudent);
         getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
         navigationBarView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.home_dashboard_student:
+                    toolbar.setVisibility(View.GONE);
                     getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
                     break;
                 case R.id.news_dashboard_student:
                     setTitle(R.string.News);
+                    toolbar.setVisibility(View.VISIBLE);
                     getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentNews()).commit();
                     break;
             }
