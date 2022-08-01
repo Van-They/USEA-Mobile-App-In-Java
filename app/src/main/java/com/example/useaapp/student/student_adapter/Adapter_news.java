@@ -13,7 +13,6 @@ import com.example.useaapp.student.student_news.Assignment;
 import com.example.useaapp.student.student_news.Homework;
 import com.example.useaapp.student.student_news.Midterm;
 import com.example.useaapp.student.student_news.Model;
-import com.example.useaapp.student.student_news.RecyclerViewOnclick;
 
 import java.util.List;
 
