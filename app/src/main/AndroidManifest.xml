@@ -18,7 +18,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".student.MainStudentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -63,7 +63,7 @@
             android:name=".guest.guest_events.GuestEvent"
             android:exported="false" />
         <activity
-            android:name=".student.MainStudentActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".guest.MainGuestActivity"
