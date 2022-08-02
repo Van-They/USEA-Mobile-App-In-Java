@@ -4,16 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_25"
     tools:context=".student.student_studyplan.year1.FragmentStudyPlan_Y1S1S2">
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -218,5 +213,4 @@
                         android:textColor="@color/dark_blue" />
                 </LinearLayout>
             </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
 </FrameLayout>

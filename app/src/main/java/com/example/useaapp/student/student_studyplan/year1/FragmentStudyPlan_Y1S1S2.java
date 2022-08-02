@@ -4,12 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.useaapp.R;
+import com.example.useaapp.student.student_adapter.ListviewHelper;
 
 import java.util.ArrayList;
 
@@ -17,7 +19,7 @@ public class FragmentStudyPlan_Y1S1S2 extends Fragment {
 
     ListView listView_s1,listView_s2;
     ArrayList<Semester> semester1,semester2;
-
+    Semester semester;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -29,9 +31,13 @@ public class FragmentStudyPlan_Y1S1S2 extends Fragment {
         //semester 1,2 listview with array list
         addDataToListS1();
         addDataToListS2();
+
+        //calculate total hour
         //setAdapter
         listView_s1.setAdapter(new Adapter_semester1(getContext(),semester1));
+        ListviewHelper.getLisViewSize(listView_s1);
         listView_s2.setAdapter(new Adapter_semester2(getContext(),semester2));
+        ListviewHelper.getLisViewSize(listView_s2);
         return view;
     }
 

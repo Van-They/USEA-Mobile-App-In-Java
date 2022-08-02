@@ -33,14 +33,14 @@
     <style name="setTextSizeActionbar" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:gravity">left</item>
         <item name="android:fontFamily">@font/khmer_os_battambang_bold</item>
     </style>
 
     //set font family on navigation bar
     <style name="BottomNavigationViewStyle">
-        <item name="itemIconTint">@color/dark_blue</item>
-        <item name="itemTextColor">@color/dark_blue</item>
         <item name="android:fontFamily">@font/khmer_os_battambang_regular</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     //set text Size on Tab bar
@@ -48,9 +48,4 @@
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/khmer_os_battambang_regular</item>
     </style>
-
-    //customize actionbar
-<!--    <style name="Actionbar" parent="Theme.MaterialComponents.DayNight.NoActionBar">-->
-<!--        <item name="actionBarStyle">@color/black</item>-->
-<!--    </style>-->
 </resources>

@@ -1,7 +1,7 @@
 package com.example.useaapp.student.student_studyplan.year1;
 
 public class Semester {
-    private String No,Subject,Hour,Credit;
+    private final String No,Subject,Hour,Credit;
 
     public Semester(String no, String subject, String hour, String credit) {
         this.No = no;

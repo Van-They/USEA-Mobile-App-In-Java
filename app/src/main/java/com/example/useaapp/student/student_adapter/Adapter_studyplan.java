@@ -10,7 +10,7 @@ import com.example.useaapp.student.student_home.FragmentStudentHome;
 import com.example.useaapp.student.student_studyplan.year1.FragmentStudyPlan_Y1S1S2;
 
 public class Adapter_studyplan extends FragmentStateAdapter {
-    String[] Tab_title = {"ឆ្នាំទី១", "ឆ្នាំទី២", "ឆ្នាំទី៣", "ឆ្នាំទី៤"};
+    String[] Tab_title = {"", "", "", ""};
     public Adapter_studyplan(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
