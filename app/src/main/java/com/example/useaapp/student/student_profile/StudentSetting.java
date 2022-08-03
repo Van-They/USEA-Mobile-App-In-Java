@@ -56,7 +56,7 @@ public class StudentSetting extends AppCompatActivity {
                 public void onClick(View v) {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.clear();
-                    editor.commit();
+                    editor.apply();
                     Intent intent = new Intent(StudentSetting.this, MainActivity.class);
                     startActivity(intent);
                 }

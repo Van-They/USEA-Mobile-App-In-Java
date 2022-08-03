@@ -65,7 +65,7 @@
                 <ListView
                     android:id="@+id/student_study_plan_list_s1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:divider="@null"
                     android:scrollbars="none" />
 
@@ -87,7 +87,7 @@
                     <Space
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="3" />
+                        android:layout_weight="2" />
 
                     <TextView
                         android:id="@+id/student_study_plan_total_hour_s1"
@@ -190,7 +190,7 @@
                     <Space
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="3" />
+                        android:layout_weight="2" />
 
                     <TextView
                         android:id="@+id/student_study_plan_total_hour_s2"
