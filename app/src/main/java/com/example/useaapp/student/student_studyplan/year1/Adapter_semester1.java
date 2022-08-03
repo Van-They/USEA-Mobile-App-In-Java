@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.useaapp.R;
+import com.example.useaapp.student.student_studyplan.Semester;
 
 import java.util.ArrayList;
 
@@ -23,8 +24,6 @@ public class Adapter_semester1 extends ArrayAdapter<Semester> {
     public boolean isEnabled(int position) {
         return false;
     }
-
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -41,6 +40,7 @@ public class Adapter_semester1 extends ArrayAdapter<Semester> {
         Subject.setText(semester1.getSubject());
         Hour.setText(semester1.getHour());
         Credit.setText(semester1.getCredit());
+
         return convertView;
     }
 }

@@ -10,10 +10,10 @@
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_student_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/custom_actionbar.xml" value="0.25416666666666665" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/fragment_student_home.xml" value="0.1675925925925926" />
-        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/fragment_study_plan__y1s1s2.xml" value="0.25416666666666665" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/menu/student_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/back_icon.xml" value="0.225" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/bottomnavigationselector.xml" value="0.286" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/custom_border.xml" value="0.2115" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/error_icon.xml" value="0.286" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/go_icon.xml" value="0.2" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/home_icon.xml" value="0.16" />
@@ -64,10 +64,13 @@
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_guest_home.xml" value="0.25" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_guest_more.xml" value="0.33" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_sample.xml" value="0.371875" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_student_home.xml" value="0.3578125" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_student_home.xml" value="0.22" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_student_news.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_study_plan__y1_s1.xml" value="0.25" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_study_plan__y1s1s2.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_study_plan__y2_s1_s2.xml" value="0.2203125" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_study_plan__y3_s1_s2.xml" value="0.2203125" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_study_plan__y4_s1_s2.xml" value="0.2203125" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/menu/guest_nav_menu.xml" value="0.33" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/menu/profile_menu.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/menu/student_nav_menu.xml" value="0.36666666666666664" />

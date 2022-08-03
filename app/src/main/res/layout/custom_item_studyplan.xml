@@ -16,8 +16,7 @@
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:gravity="center|right"
             android:text="@string/No"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/student_study_plan_subject"
@@ -27,8 +26,7 @@
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:gravity="left|center"
             android:text="@string/Subject"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/student_study_plan_hour"
@@ -38,8 +36,7 @@
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:gravity="center"
             android:text="@string/Hour"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/student_study_plan_credit"
@@ -49,8 +46,7 @@
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:gravity="center"
             android:text="@string/Credit"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textColor="@color/black" />
     </LinearLayout>
 
 

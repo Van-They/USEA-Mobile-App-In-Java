@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.useaapp.R;
+import com.example.useaapp.student.student_studyplan.Semester;
 
 import java.util.ArrayList;
 
