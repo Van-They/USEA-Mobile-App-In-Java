@@ -10,12 +10,16 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.example.useaapp.student.MainStudentActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
     private static String SHARED_PREF_NAME = "mypref";
-
+    private static String KEY_STUDENT_ID = "student_id";
+    private static String KEY_PWD = "pwd";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +44,26 @@ public class SplashScreen extends AppCompatActivity {
                     editor.putBoolean("firstTime", false);
                     editor.commit();
 
-                }else{
-                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                }else {
+                    CheckLogin();
                 }
             }
         }, 2000);
+    }
+    private void CheckLogin() {
+        if ((sharedPreferences==null))
+            sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
 
+            String UserID = sharedPreferences.getString(KEY_STUDENT_ID,"");
+            String UserPass = sharedPreferences.getString(KEY_PWD,"");
+
+            if (UserID !=null && !UserID.equals("") && UserPass !=null && !UserPass.equals("")){
+                Toast.makeText(this, "Already Log In", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this,MainStudentActivity.class));
+                finish();
+            }else {
+                startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                finish();
+            }
     }
 }
