@@ -30,13 +30,13 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/CancelLogout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:gravity="center"
             android:text="@string/Cancel"
-            android:id="@+id/CancelLogout"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
@@ -47,13 +47,13 @@
             android:background="@color/gray" />
 
         <TextView
+            android:id="@+id/Logout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:gravity="center"
             android:text="@string/Log_out"
-            android:id="@+id/Logout"
             android:textColor="@color/red"
             android:textSize="14sp" />
     </LinearLayout>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -21,11 +22,17 @@ import android.widget.Toast;
 import com.example.useaapp.MainActivity;
 import com.example.useaapp.R;
 import com.example.useaapp.student.MainStudentActivity;
+import com.example.useaapp.student.student_profile.StudentProfile;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class StudentLogin extends AppCompatActivity {
+
+    SharedPreferences sharedPreferences;
+    private static String SHARED_PREF_NAME = "mypref";
+    private static String KEY_STUDENT_ID = "student_id";
+    private static String KEY_PWD = "pwd";
 
     TextInputEditText textInputLayoutUsername, textInputLayoutPassword;
     MaterialButton buttonLogin;
@@ -38,8 +45,18 @@ public class StudentLogin extends AppCompatActivity {
 
         textInputLayoutUsername = findViewById(R.id.usernameLogIn);
         textInputLayoutPassword = findViewById(R.id.passwordLogIn);
+
         buttonLogin = findViewById(R.id.buttonLogin);
         progressLogIn = findViewById(R.id.progressLogIn);
+
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
+        String st_id = sharedPreferences.getString(KEY_STUDENT_ID, null);
+
+        if(st_id != null){
+            Intent intent = new Intent(StudentLogin.this, MainStudentActivity.class);
+            startActivity(intent);
+        }
 
     }
     public void letTheUserLoggedIn(View view) {
@@ -65,15 +82,22 @@ public class StudentLogin extends AppCompatActivity {
                     String[] data = new String[2];
                     data[0] = student_id;
                     data[1] = pwd;
-                    PutData putData = new PutData("http://192.168.2.84//LoginRegister/login.php", "POST", field, data);
+                    PutData putData = new PutData("http://192.168.1.6//LoginRegister/login.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             progressLogIn.setVisibility(View.GONE);
                             String result = putData.getResult();
+
                             if (result.equals("Login Success")) {
+
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString(KEY_STUDENT_ID, student_id);
+                                editor.putString(KEY_PWD, pwd);
+                                editor.apply();
+
                                 Toast.makeText(StudentLogin.this, result, Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(StudentLogin.this, MainStudentActivity.class);
-                                intent.putExtra("student_id", data[0]);
+//                                intent.putExtra("student_id", data[0]);
                                 startActivity(intent);
                                 finish();
                             } else {

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +24,11 @@ import java.util.Objects;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StudentProfile extends AppCompatActivity {
+    SharedPreferences sharedPreferences;
+    private static String SHARED_PREF_NAME = "mypref";
+    private static String KEY_STUDENT_ID = "student_id";
+    private static String KEY_PWD = "pwd";
+
     TextView student_name_profile, student_ID;
     ImageView change_image_in_profile;
     CircleImageView profile_image;
@@ -66,8 +72,11 @@ public class StudentProfile extends AppCompatActivity {
 
         //Set Student_ID
         student_ID = findViewById(R.id.student_ID);
-        String st_id = getIntent().getStringExtra("student_id");
-        student_ID.setText(st_id);
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+        String st_id = sharedPreferences.getString(KEY_STUDENT_ID, null);
+        if(st_id != null){
+            student_ID.setText(st_id);
+        }
 
     }
     @Override

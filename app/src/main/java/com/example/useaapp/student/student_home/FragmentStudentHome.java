@@ -1,6 +1,7 @@
 package com.example.useaapp.student.student_home;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -27,6 +28,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FragmentStudentHome extends Fragment {
 
+    SharedPreferences sharedPreferences;
+    private static String SHARED_PREF_NAME = "mypref";
+    private static String KEY_STUDENT_ID = "student_id";
+    private static String KEY_PWD = "pwd";
+
     //category
    private final String[] title_category = {"កាលវិភាគ", "ផែនការសិក្សា", "វត្តមាន", "មតិកែលម្អ", "ពិន្ទុ","គណនីភ្ញៀវ"};
    private final int[] image_category = {R.drawable.calendar_icon,
@@ -44,15 +50,26 @@ public class FragmentStudentHome extends Fragment {
         GridView gridView_category, gridView_card_rank_credit;
         //name student on dashboard
         TextView student_name_dashboard = view.findViewById(R.id.student_name_dashboard);
+
+        sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, getActivity().MODE_PRIVATE);
+
+        String st_id = sharedPreferences.getString(KEY_STUDENT_ID, null);
         //set text
-        String set_student_name_dashboard = getActivity().getIntent().getStringExtra("student_id");
-        student_name_dashboard.setText(set_student_name_dashboard);
+//        String set_student_name_dashboard = getActivity().getIntent().getStringExtra("student_id");
+//        student_name_dashboard.setText(set_student_name_dashboard);
+
+        if(st_id != null){
+            student_name_dashboard.setText(st_id);
+        }
 
         //profile image
         CircleImageView profile_dashboard = view.findViewById(R.id.profile_dashboard);
         profile_dashboard.setOnClickListener(v ->{
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(KEY_STUDENT_ID, st_id);
+            editor.apply();
+
             Intent intent = new Intent(getContext(), StudentProfile.class);
-            intent.putExtra("student_id", set_student_name_dashboard);
             startActivity(intent);
 //            startActivity(new Intent(getContext(), StudentProfile.class));
         });

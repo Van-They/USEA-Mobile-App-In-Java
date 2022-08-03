@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,10 @@ import com.example.useaapp.student.student_profile.ProfileSetting.About;
 import com.example.useaapp.student.student_profile.ProfileSetting.Legal;
 
 public class StudentSetting extends AppCompatActivity {
+    SharedPreferences sharedPreferences;
+    private static String SHARED_PREF_NAME = "mypref";
+    private static String KEY_STUDENT_ID = "student_id";
+
     LinearLayout AboutProfile, LegalProfile;
 
     @Override
@@ -34,6 +39,8 @@ public class StudentSetting extends AppCompatActivity {
         AboutProfile = findViewById(R.id.AboutProfile);
         LegalProfile = findViewById(R.id.LegalProfile);
 
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
         studentLogOut.setOnClickListener(v -> {
             LayoutInflater inflater = getLayoutInflater();
             View Layout = inflater.inflate(R.layout.custom_log_out, null);
@@ -43,7 +50,19 @@ public class StudentSetting extends AppCompatActivity {
             builder.setCancelable(false);
             builder.setView(Layout);
             AlertDialog alertDialog = builder.create();
-            Logout.setOnClickListener(v1 -> startActivity(new Intent(this,MainActivity.class)));
+
+            Logout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.clear();
+                    editor.commit();
+                    Intent intent = new Intent(StudentSetting.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+
             Cancelogout.setOnClickListener(v1 -> alertDialog.dismiss());
             alertDialog.show();
         });
