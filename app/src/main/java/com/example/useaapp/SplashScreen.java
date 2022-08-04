@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.useaapp.student.MainStudentActivity;
+import com.example.useaapp.student.student_login.StudentLogin;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class SplashScreen extends AppCompatActivity {
     private static String SHARED_PREF_NAME = "mypref";
     private static String KEY_STUDENT_ID = "student_id";
     private static String KEY_PWD = "pwd";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,30 +41,26 @@ public class SplashScreen extends AppCompatActivity {
                 sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
                 boolean isFirstTime = sharedPreferences.getBoolean("firstTime", true);
 
-                if(isFirstTime){
+                if (isFirstTime) {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putBoolean("firstTime", false);
                     editor.commit();
 
-                }else{
+                } else {
                     CheckLogin();
                 }
             }
         }, 1000);
     }
-    private void CheckLogin() {
-        if ((sharedPreferences==null))
-            sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
-            String UserID = sharedPreferences.getString(KEY_STUDENT_ID,"");
-            String UserPass = sharedPreferences.getString(KEY_PWD,"");
 
-            if (UserID !=null && !UserID.equals("") && UserPass !=null && !UserPass.equals("")){
-                Toast.makeText(this, "Already Log In", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(SplashScreen.this, MainActivity.class));
-                finish();
-            }else {
-                startActivity(new Intent(this,MainStudentActivity.class));
-                finish();
-            }
+    private void CheckLogin() {
+        String UserID = sharedPreferences.getString(KEY_STUDENT_ID, "");
+        String UserPass = sharedPreferences.getString(KEY_PWD, "");
+        if (UserID != null && !UserID.equals("")) {
+            startActivity(new Intent(this,MainStudentActivity.class));
+        }else {
+            startActivity(new Intent(this, StudentLogin.class));
+        }
+        finish();
     }
 }

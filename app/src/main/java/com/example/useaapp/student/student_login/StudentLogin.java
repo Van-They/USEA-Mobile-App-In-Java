@@ -51,12 +51,7 @@ public class StudentLogin extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
 
-        String st_id = sharedPreferences.getString(KEY_STUDENT_ID, null);
-
-        if(st_id != null){
-            Intent intent = new Intent(StudentLogin.this, MainStudentActivity.class);
-            startActivity(intent);
-        }
+        String st_id = sharedPreferences.getString(KEY_STUDENT_ID, "");
 
     }
     public void letTheUserLoggedIn(View view) {
