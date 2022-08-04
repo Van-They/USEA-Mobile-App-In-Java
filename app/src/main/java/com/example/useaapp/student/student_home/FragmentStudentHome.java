@@ -46,7 +46,7 @@ public class FragmentStudentHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_student_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_home, container, false);
         GridView gridView_category, gridView_card_rank_credit;
         //name student on dashboard
         TextView student_name_dashboard = view.findViewById(R.id.student_name_dashboard);
