@@ -44,25 +44,24 @@ public class SplashScreen extends AppCompatActivity {
                     editor.putBoolean("firstTime", false);
                     editor.commit();
 
-                }else {
+                }else{
                     CheckLogin();
                 }
             }
-        }, 2000);
+        }, 1000);
     }
     private void CheckLogin() {
         if ((sharedPreferences==null))
             sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
-
             String UserID = sharedPreferences.getString(KEY_STUDENT_ID,"");
             String UserPass = sharedPreferences.getString(KEY_PWD,"");
 
             if (UserID !=null && !UserID.equals("") && UserPass !=null && !UserPass.equals("")){
                 Toast.makeText(this, "Already Log In", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,MainStudentActivity.class));
+                startActivity(new Intent(SplashScreen.this, MainActivity.class));
                 finish();
             }else {
-                startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                startActivity(new Intent(this,MainStudentActivity.class));
                 finish();
             }
     }
