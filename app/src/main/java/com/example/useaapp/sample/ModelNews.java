@@ -1,8 +1,9 @@
-package com.example.useaapp.student.student_news;
+package com.example.useaapp.sample;
 
-public class News {
+public class ModelNews {
     private final String subject, date,duedate, time, room,creator,label;
-    public News(String subject, String date, String duedate, String time, String room, String creator, String label) {
+
+    public ModelNews(String subject, String date, String duedate, String time, String room, String creator, String label) {
         this.subject = subject;
         this.date = date;
         this.duedate = duedate;
@@ -11,13 +12,6 @@ public class News {
         this.creator = creator;
         this.label = label;
     }
-    public String getDuedate() {
-        return duedate;
-    }
-
-    public String getLabel() {
-        return label;
-    }
 
     public String getSubject() {
         return subject;
@@ -25,6 +19,10 @@ public class News {
 
     public String getDate() {
         return date;
+    }
+
+    public String getDuedate() {
+        return duedate;
     }
 
     public String getTime() {
@@ -37,5 +35,9 @@ public class News {
 
     public String getCreator() {
         return creator;
+    }
+
+    public String getLabel() {
+        return label;
     }
 }

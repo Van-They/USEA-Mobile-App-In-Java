@@ -27,7 +27,6 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
-//        getSupportActionBar().hide();
 
         ImageView img = findViewById(R.id.logo);
         Animation top = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.top_logo);
@@ -47,20 +46,10 @@ public class SplashScreen extends AppCompatActivity {
                     editor.apply();
 
                 } else {
-                    CheckLogin();
+                    Intent intent = new Intent(SplashScreen.this,MainActivity.class);
+                    startActivity(intent);
                 }
             }
         }, 1000);
-    }
-
-    private void CheckLogin() {
-        String UserID = sharedPreferences.getString(KEY_STUDENT_ID, "");
-        String UserPass = sharedPreferences.getString(KEY_PWD, "");
-        if (UserID != null && !UserID.equals("")) {
-            startActivity(new Intent(this,MainStudentActivity.class));
-        }else {
-            startActivity(new Intent(this, StudentLogin.class));
-        }
-        finish();
     }
 }

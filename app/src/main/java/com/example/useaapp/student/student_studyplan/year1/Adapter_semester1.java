@@ -32,7 +32,6 @@ public class Adapter_semester1 extends ArrayAdapter<Semester> {
         }
         Semester semester1 = getItem(position);
         TextView No = convertView.findViewById(R.id.student_study_plan_no);
-        assert semester1 != null;
         No.setText(semester1.getNo());
         TextView Subject = convertView.findViewById(R.id.student_study_plan_subject);
         TextView Hour = convertView.findViewById(R.id.student_study_plan_hour);

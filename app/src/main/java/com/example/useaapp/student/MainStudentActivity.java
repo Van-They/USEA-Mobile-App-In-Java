@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.useaapp.R;
+import com.example.useaapp.SampleActivity;
 import com.example.useaapp.student.student_home.FragmentStudentHome;
 import com.example.useaapp.student.student_news.FragmentStudentNews;
 import com.google.android.material.navigation.NavigationBarView;
@@ -33,9 +35,11 @@ public class MainStudentActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
                     break;
                 case R.id.news_dashboard_student:
-                    setTitle(R.string.News);
-                    toolbar.setVisibility(View.VISIBLE);
-                    getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentNews()).commit();
+//                    setTitle(R.string.News);
+//                    toolbar.setVisibility(View.VISIBLE);
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentNews()).commit();
+//                    break;
+                    startActivity(new Intent(this, SampleActivity.class));
                     break;
             }
             return true;

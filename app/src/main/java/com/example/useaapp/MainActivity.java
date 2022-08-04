@@ -13,8 +13,10 @@ import com.example.useaapp.student.MainStudentActivity;
 import com.example.useaapp.student.student_login.StudentLogin;
 
 public class MainActivity extends AppCompatActivity {
-
-
+    SharedPreferences sharedPreferences;
+    private static String SHARED_PREF_NAME = "mypref";
+    private static String KEY_STUDENT_ID = "student_id";
+    private static String KEY_PWD = "pwd";
     @Override
     public void overridePendingTransition(int enterAnim, int exitAnim) {
         super.overridePendingTransition(enterAnim, exitAnim);
@@ -28,11 +30,19 @@ public class MainActivity extends AppCompatActivity {
         guest= findViewById(R.id.guestaccount);
         student= findViewById(R.id.studentaccount);
 
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
         guest.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, MainGuestActivity.class));
+            startActivity(new Intent(this, MainGuestActivity.class));
         });
-        student.setOnClickListener(v ->{
-            startActivity(new Intent(MainActivity.this, StudentLogin.class));
+        student.setOnClickListener(v -> {
+            sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+            String st_id = sharedPreferences.getString(KEY_STUDENT_ID, "");
+            if (st_id != null){
+                startActivity(new Intent(this,MainStudentActivity.class));
+            } else {
+                startActivity(new Intent(this,StudentLogin.class));
+            }
         });
     }
 }

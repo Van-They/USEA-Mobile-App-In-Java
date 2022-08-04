@@ -13,9 +13,9 @@
     <string name="Create_By">បង្កើតដោយ:</string>
     <string name="Homework">ការងារផ្ទះ</string>
     <string name="Midterm">ប្រឡងពាក់កណ្តាលឆមាស</string>
-    <string name="Exam_date">កាលបរិច្ឆេទប្រឡង</string>
+    <string name="Exam_date">កាលបរិច្ឆេទប្រឡង:</string>
     <string name="Time">ចាប់ផ្តើម</string>
-    <string name="Room">បន្ទប់</string>
+    <string name="Room">បន្ទប់:</string>
     <string name="sign_in_as">ចូលតាម:</string>
     <string name="Student">និស្សិត</string>
     <string name="Events">ព្រឹត្តិការណ៍</string>
@@ -110,4 +110,5 @@
     <string name="Cancel">បោះបង់</string>
     <string name="No">លេខរៀង</string>
     <string name="Total">សរុប</string>
+    <string name="hournews">ម៉ោង:</string>
 </resources>
