@@ -1,12 +1,12 @@
-package com.example.useaapp.sample;
+package com.example.useaapp.student.student_news;
 
 public class ModelNews {
-    private final String subject, date,duedate, time, room,creator,label;
+    private final String subject, date, due_date, time, room,creator,label;
 
-    public ModelNews(String subject, String date, String duedate, String time, String room, String creator, String label) {
+    public ModelNews(String subject, String date, String due_date, String time, String room, String creator, String label) {
         this.subject = subject;
         this.date = date;
-        this.duedate = duedate;
+        this.due_date = due_date;
         this.time = time;
         this.room = room;
         this.creator = creator;
@@ -21,8 +21,8 @@ public class ModelNews {
         return date;
     }
 
-    public String getDuedate() {
-        return duedate;
+    public String getDue_date() {
+        return due_date;
     }
 
     public String getTime() {

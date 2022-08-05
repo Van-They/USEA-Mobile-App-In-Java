@@ -28,7 +28,7 @@
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="5dp">
                     <TextView
-                        android:id="@+id/labelnews"
+                        android:id="@+id/Label_news"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:visibility="gone"
@@ -38,10 +38,9 @@
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                     <TextView
-                        android:id="@+id/labelassignment"
+                        android:id="@+id/Label_assignment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="gone"
                         android:background="@color/yellow_40"
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:gravity="center"
@@ -50,34 +49,32 @@
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                     <TextView
-                        android:id="@+id/labelhomework"
+                        android:id="@+id/Label_homework"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/blue_sky_40"
-                        android:visibility="gone"
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="@string/Assignment"
+                        android:text="@string/Homework"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                     <TextView
-                        android:id="@+id/labelmidterm"
+                        android:id="@+id/Label_midterm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/pink_40"
-                        android:visibility="gone"
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="@string/Assignment"
+                        android:text="@string/Midterm"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
                 </androidx.cardview.widget.CardView>
 
 
                 <TextView
-                    android:id="@+id/subject_news"
+                    android:id="@+id/Subject_news"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/khmer_os_battambang_bold"
@@ -88,18 +85,18 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/LayoutDueDate"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/labelduedate"
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:text="@string/Due_Date"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/duedatenews"
+                        android:id="@+id/Due_date_news"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/khmer_os_battambang_regular"
@@ -111,18 +108,18 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/LayoutDate"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/khmer_os_battambang_regular"
-                        android:id="@+id/lablexamdate"
                         android:text="@string/Exam_date"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/examdatenews"
+                        android:id="@+id/Exam_date_news"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/khmer_os_battambang_regular"
@@ -132,18 +129,18 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/LayoutRoom"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/labelroom"
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:text="@string/Room"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/roomnews"
+                        android:id="@+id/Room_news"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/khmer_os_battambang_regular"
@@ -153,18 +150,18 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/LayoutTime"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/labeltime"
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:text="@string/hournews"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/timenews"
+                        android:id="@+id/Time_news"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/khmer_os_battambang_regular"
@@ -174,18 +171,18 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/LayoutCreator"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/labelcreator"
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:text="@string/Create_By"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/creatornews"
+                        android:id="@+id/Creator_news"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/khmer_os_battambang_regular"

@@ -35,11 +35,9 @@ public class MainStudentActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
                     break;
                 case R.id.news_dashboard_student:
-//                    setTitle(R.string.News);
-//                    toolbar.setVisibility(View.VISIBLE);
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentNews()).commit();
-//                    break;
-                    startActivity(new Intent(this, SampleActivity.class));
+                    setTitle(R.string.News);
+                    toolbar.setVisibility(View.VISIBLE);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentNews()).commit();
                     break;
             }
             return true;
