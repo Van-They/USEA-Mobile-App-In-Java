@@ -64,6 +64,7 @@
             android:parentActivityName=".student.MainStudentActivity" />
         <activity
             android:name=".guest.guest_events.GuestEvent"
+            android:parentActivityName=".guest.MainGuestActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -75,6 +76,11 @@
         <activity
             android:name=".SampleActivity"
             android:exported="false" />
+        <activity
+            android:name=".guest.guest_registration.GuestRegistration"
+            android:parentActivityName=".guest.MainGuestActivity"
+            android:exported="false"
+            />
     </application>
 
 </manifest>
