@@ -1,22 +1,15 @@
 package com.example.useaapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.useaapp.guest.MainGuestActivity;
-import com.example.useaapp.student.MainStudentActivity;
 import com.example.useaapp.student.student_login.StudentLogin;
 
 public class MainActivity extends AppCompatActivity {
-    @Override
-    public void overridePendingTransition(int enterAnim, int exitAnim) {
-        super.overridePendingTransition(enterAnim, exitAnim);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +24,11 @@ public class MainActivity extends AppCompatActivity {
         student.setOnClickListener(v -> {
             startActivity(new Intent(this,StudentLogin.class));
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 }

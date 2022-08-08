@@ -17,10 +17,6 @@ import com.example.useaapp.student.student_login.StudentLogin;
 
 public class SplashScreen extends AppCompatActivity {
 
-    SharedPreferences sharedPreferences;
-    private static String SHARED_PREF_NAME = "mypref";
-    private static String KEY_STUDENT_ID = "student_id";
-    private static String KEY_PWD = "pwd";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,25 +27,6 @@ public class SplashScreen extends AppCompatActivity {
         ImageView img = findViewById(R.id.logo);
         Animation top = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.top_logo);
         img.setAnimation(top);
-
-        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
-                boolean isFirstTime = sharedPreferences.getBoolean("firstTime", true);
-
-                if (isFirstTime) {
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean("firstTime", false);
-                    editor.apply();
-
-                } else {
-                    Intent intent = new Intent(SplashScreen.this,MainActivity.class);
-                    startActivity(intent);
-                }
-            }
-        }, 1000);
+        new Handler().postDelayed(() -> startActivity(new Intent(SplashScreen.this,MainActivity.class)),1500);
     }
 }
