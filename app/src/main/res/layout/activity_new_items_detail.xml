@@ -7,12 +7,45 @@
     android:orientation="vertical"
     tools:context=".student.student_news.NewItemsDetail">
 
+    <include layout="@layout/custom_actionbar"
+        android:id="@+id/CustomActionbarStudentNewsDetail"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtsubject"
+        android:id="@+id/label"
         android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/subject"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/room"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/time"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/date"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/due_date"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/creator"
+        android:textSize="30sp"/>
+
 
 
 </LinearLayout>
