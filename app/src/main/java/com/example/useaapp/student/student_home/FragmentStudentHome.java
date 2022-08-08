@@ -20,6 +20,7 @@ import com.example.useaapp.student.student_adapter.Adapter_rank_credit;
 import com.example.useaapp.student.student_attendance.StudentAttendance;
 import com.example.useaapp.student.student_feedback.StudentFeedback;
 import com.example.useaapp.student.student_profile.StudentProfile;
+import com.example.useaapp.student.student_score.StudentScore;
 import com.example.useaapp.student.student_studyplan.StudentStudyPlan;
 
 import java.util.Objects;
@@ -92,6 +93,7 @@ public class FragmentStudentHome extends Fragment {
                 startActivity(new Intent(getContext(), StudentFeedback.class));
             }else if (Objects.equals(title_category[position],"ពិន្ទុ")){
                 Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getContext(), StudentScore.class));
             }else if (Objects.equals(title_category[position],"គណនីភ្ញៀវ")){
                 Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getContext(), MainGuestActivity.class));

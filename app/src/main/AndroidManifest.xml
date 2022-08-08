@@ -18,17 +18,23 @@
         tools:ignore="DataExtractionRules"
         tools:targetApi="31">
         <activity
+            android:name=".student.student_score.ScoreDetail"
+            android:exported="false" />
+        <activity
+            android:name=".student.student_news.NewItemsDetail"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".student.MainStudentActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".student.student_profile.ProfileSetting.Legal"
             android:exported="false" />
@@ -64,12 +70,11 @@
             android:parentActivityName=".student.MainStudentActivity" />
         <activity
             android:name=".guest.guest_events.GuestEvent"
-            android:parentActivityName=".guest.MainGuestActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".guest.MainGuestActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".guest.MainGuestActivity"
             android:exported="false" />
@@ -78,9 +83,8 @@
             android:exported="false" />
         <activity
             android:name=".guest.guest_registration.GuestRegistration"
-            android:parentActivityName=".guest.MainGuestActivity"
             android:exported="false"
-            />
+            android:parentActivityName=".guest.MainGuestActivity" />
     </application>
 
 </manifest>

@@ -31,7 +31,6 @@ public class ListAdapterNews extends ArrayAdapter<ModelNews> {
         ModelNews modelNews = getItem(position);
         LinearLayout LayoutTime,LayoutDate,LayoutDueDate,LayoutCreator,LayoutRoom;
         TextView Time,Room,Creator,Subject,Due_date,Date_exam,Label_news;
-//        TextView Label_time,Label_room,Label_date_exam,Label_due_date,Label_creator;
         TextView Homework,Assignment,Midterm;
 
         //Textview
@@ -42,13 +41,6 @@ public class ListAdapterNews extends ArrayAdapter<ModelNews> {
         Due_date = convertView.findViewById(R.id.Due_date_news);
         Date_exam = convertView.findViewById(R.id.Exam_date_news);
         Label_news = convertView.findViewById(R.id.Label_news);
-
-        //LabelText
-//        Label_time = convertView.findViewById(R.id.labeltime);
-//        Label_room = convertView.findViewById(R.id.labelroom);
-//        Label_date_exam = convertView.findViewById(R.id.lablexamdate);
-//        Label_creator = convertView.findViewById(R.id.labelcreator);
-//        Label_due_date = convertView.findViewById(R.id.labelduedate);
 
         LayoutDueDate = convertView.findViewById(R.id.LayoutDueDate);
         LayoutDate = convertView.findViewById(R.id.LayoutDate);

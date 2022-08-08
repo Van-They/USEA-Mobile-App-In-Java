@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.example.useaapp.R;
 import com.example.useaapp.student.student_adapter.ListviewHelper;
-import com.example.useaapp.student.student_studyplan.Semester;
 
 import java.util.ArrayList;
 
@@ -20,8 +19,8 @@ public class FragmentStudyPlan_Y1S1S2 extends Fragment {
 
     TextView Total_hour_s1, Total_credit_s1, Total_hour_s2, Total_credit_s2;
     ListView listView_s1,listView_s2;
-    ArrayList<Semester> semester1,semester2;
-    Semester semester;
+    ArrayList<SemesterStudyPlan> semester1,semester2;
+    SemesterStudyPlan semester;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,9 +36,9 @@ public class FragmentStudyPlan_Y1S1S2 extends Fragment {
 
         //calculate total hour
         //setAdapter
-        listView_s1.setAdapter(new Adapter_semester1(getContext(),semester1));
+        listView_s1.setAdapter(new Adapter_Studyplan_Semester(getContext(),semester1));
         ListviewHelper.getLisViewSize(listView_s1);
-        listView_s2.setAdapter(new Adapter_semester2(getContext(),semester2));
+        listView_s2.setAdapter(new Adapter_Studyplan_Semester(getContext(),semester2));
         ListviewHelper.getLisViewSize(listView_s2);
 
         Total_hour_s1 = view.findViewById(R.id.student_study_plan_total_hour_s1);
@@ -55,23 +54,23 @@ public class FragmentStudyPlan_Y1S1S2 extends Fragment {
 
     private void addDataToListS1() {
         semester1 = new ArrayList<>();
-        semester1.add(new Semester("1.","សេដ្ឋកិច្ចវិទ្យា","45","3"));
-        semester1.add(new Semester("2.","ប្រវត្តិ និងវប្បធម៍អាស៊ីអាគ្នេយ៍","45","3"));
-        semester1.add(new Semester("3.","រដ្ឋបាយសាធារណៈ","45","3"));
-        semester1.add(new Semester("4.","កុំព្យូទ័រសម្រាប់រដ្ខបាល","45","3"));
-        semester1.add(new Semester("5.","ភាសាអង់គ្លេស","45","3"));
-        semester1.add(new Semester("6.","ភាសាចិន","45","0"));
+        semester1.add(new SemesterStudyPlan("1.","Java Programing I","45","3"));
+        semester1.add(new SemesterStudyPlan("2.","ប្រវត្តិ និងវប្បធម៍អាស៊ីអាគ្នេយ៍","45","3"));
+        semester1.add(new SemesterStudyPlan("3.","រដ្ឋបាយសាធារណៈ","45","3"));
+        semester1.add(new SemesterStudyPlan("4.","កុំព្យូទ័រសម្រាប់រដ្ខបាល","45","3"));
+        semester1.add(new SemesterStudyPlan("5.","ភាសាអង់គ្លេស","45","3"));
+        semester1.add(new SemesterStudyPlan("6.","ភាសាចិន","45","0"));
     }
 
     private void addDataToListS2() {
 
         semester2 = new ArrayList<>();
-       semester2.add(new Semester("1.","សេដ្ឋកិច្ចវិទ្យា","45","3"));
-       semester2.add(new Semester("2.","ប្រវត្តិ និងវប្បធម៍អាស៊ីអាគ្នេយ៍","45","3"));
-       semester2.add(new Semester("3.","រដ្ឋបាយសាធារណៈ","45","3"));
-       semester2.add(new Semester("4.","កុំព្យូទ័រសម្រាប់រដ្ខបាល","45","3"));
-       semester2.add(new Semester("5.","ភាសាអង់គ្លេស","45","3"));
-       semester2.add(new Semester("6.","ភាសាចិន","45","0"));
+       semester2.add(new SemesterStudyPlan("1.","Java Programing II","45","3"));
+       semester2.add(new SemesterStudyPlan("2.","ប្រវត្តិ និងវប្បធម៍អាស៊ីអាគ្នេយ៍","45","3"));
+       semester2.add(new SemesterStudyPlan("3.","រដ្ឋបាយសាធារណៈ","45","3"));
+       semester2.add(new SemesterStudyPlan("4.","កុំព្យូទ័រសម្រាប់រដ្ខបាល","45","3"));
+       semester2.add(new SemesterStudyPlan("5.","ភាសាអង់គ្លេស","45","3"));
+       semester2.add(new SemesterStudyPlan("6.","ភាសាចិន","45","0"));
 
     }
 

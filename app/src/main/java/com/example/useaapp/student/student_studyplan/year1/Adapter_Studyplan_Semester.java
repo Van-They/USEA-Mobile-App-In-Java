@@ -11,36 +11,34 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.useaapp.R;
-import com.example.useaapp.student.student_studyplan.Semester;
 
 import java.util.ArrayList;
 
-public class Adapter_semester2 extends ArrayAdapter<Semester> {
-    public Adapter_semester2(@NonNull Context context, ArrayList<Semester> Semester2) {
-        super(context,R.layout.custom_item_studyplan, Semester2);
+public class Adapter_Studyplan_Semester extends ArrayAdapter<SemesterStudyPlan> {
+    public Adapter_Studyplan_Semester(@NonNull Context context, ArrayList<SemesterStudyPlan> Semester1) {
+        super(context, R.layout.custom_items_studyplan, Semester1);
     }
 
     @Override
     public boolean isEnabled(int position) {
         return false;
     }
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        if (convertView == null){
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_item_studyplan,parent,false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_items_studyplan, parent, false);
         }
-        Semester semester2 = getItem(position);
+        SemesterStudyPlan semester1 = getItem(position);
         TextView No = convertView.findViewById(R.id.student_study_plan_no);
-        assert semester2 !=null;
-        No.setText(semester2.getNo());
+        No.setText(semester1.getNo());
         TextView Subject = convertView.findViewById(R.id.student_study_plan_subject);
-        Subject.setText(semester2.getSubject());
         TextView Hour = convertView.findViewById(R.id.student_study_plan_hour);
-        Hour.setText(semester2.getHour());
         TextView Credit = convertView.findViewById(R.id.student_study_plan_credit);
-        Credit.setText(semester2.getCredit());
+        Subject.setText(semester1.getSubject());
+        Hour.setText(semester1.getHour());
+        Credit.setText(semester1.getCredit());
+
         return convertView;
     }
 }

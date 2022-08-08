@@ -113,4 +113,9 @@
     <string name="hournews">ម៉ោង:</string>
     <string name="GuestEvent">ព្រឹត្តិការណ៍</string>
     <string name="GuestRegistration">ការចុះឈ្មោះ</string>
+    <string name="Score">ពិន្ទុ</string>
+    <string name="Semester">ឆមាស</string>
+    <string name="Rank">ចំណាត់ថ្នាក់</string>
+    <string name="Grade">លំដាប់ពិន្ទុ</string>
+    <string name="ShowDetail">មើលលម្អិត</string>
 </resources>
