@@ -44,6 +44,13 @@ public class StudentLogin extends AppCompatActivity {
 
         buttonLogin = findViewById(R.id.buttonLogin);
         progressLogIn = findViewById(R.id.progressLogIn);
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+        String st_id = sharedPreferences.getString(KEY_STUDENT_ID, "");
+        if (st_id != null&&!st_id.equals("")){
+            startActivity(new Intent(this,MainStudentActivity.class));
+            finish();
+        }
+
 
     }
     public void letTheUserLoggedIn(View view) {

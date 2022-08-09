@@ -16,6 +16,7 @@
         android:theme="@style/Theme.USEAAPP"
         android:usesCleartextTraffic="true"
         tools:ignore="DataExtractionRules"
+        android:screenOrientation="portrait"
         tools:targetApi="31">
         <activity
             android:name=".student.student_score.ScoreDetail"

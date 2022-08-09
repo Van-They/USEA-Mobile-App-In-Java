@@ -20,9 +20,13 @@ import java.util.ArrayList;
 public class FragmentStudentNews extends Fragment {
     ListView listView;
     ArrayList<ModelNews> listNews;
-    ListAdapterNews adapterNews;
-    ModelNews modelNews;
-
+    private final static String Subject ="Subject";
+    private final static String Date ="Date";
+    private final static String Due_Date ="Due_Date";
+    private final static String Time ="Time";
+    private final static String Room ="Room";
+    private final static String Creator ="Creator";
+    private final static String Label ="Label";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,6 +42,15 @@ public class FragmentStudentNews extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getContext(), "បានចុច -> " + listNews.get(position).getLabel(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(),NewItemsDetail.class);
+                intent.putExtra(Subject,listNews.get(position).getSubject());
+                intent.putExtra(Date,listNews.get(position).getDate());
+                intent.putExtra(Due_Date,listNews.get(position).getDue_date());
+                intent.putExtra(Time,listNews.get(position).getTime());
+                intent.putExtra(Room,listNews.get(position).getRoom());
+                intent.putExtra(Creator,listNews.get(position).getCreator());
+                intent.putExtra(Label,listNews.get(position).getLabel());
+                startActivity(intent);
             }
         });
 
