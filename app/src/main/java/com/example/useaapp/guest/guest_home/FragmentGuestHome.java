@@ -1,6 +1,9 @@
 package com.example.useaapp.guest.guest_home;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -25,7 +28,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class FragmentGuestHome extends Fragment {
-
+    SharedPreferences sharedPreferences;
+    private static String SHARED_PREF_NAME = "mypref";
+    private static String KEY_STUDENT_ID = "student_id";
+    private static String KEY_PWD = "pwd";
     private final String[] tittleCategory = {"ព្រឹត្តិការណ៍", "ការចុះឈ្មោះ", "កម្មវិធីសិក្សា", "អាហាររូបករណ៍", "ព័ត៌មានការងារ", "គណនីសិស្ស"};
     private final int[] imageCategory = {R.drawable.news_icon, R.drawable.registration_icon, R.drawable.program_icon, R.drawable.scholarship_icon, R.drawable.career_icon, R.drawable.student_icon};
 
@@ -47,27 +53,32 @@ public class FragmentGuestHome extends Fragment {
         categoryDashboard.setAdapter(new GuestCategoryAdapter(this.getContext(), tittleCategory, imageCategory));
 
         categoryDashboard.setOnItemClickListener((parent, view1, position, id) -> {
-            if (Objects.equals(tittleCategory[position], "ព្រឹត្តិការណ៍")) {
-                Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getActivity(), GuestEvent.class));
-            } else if (Objects.equals(tittleCategory[position], "ការចុះឈ្មោះ")) {
-                Intent intent = new Intent(getActivity(), GuestRegistration.class);
-                startActivity(intent);
-                Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
-            } else if (Objects.equals(tittleCategory[position], "កម្មវិធីសិក្សា")) {
-                Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getActivity(), GuestEvent.class));
-            } else if (Objects.equals(tittleCategory[position], "អាហាររូបករណ៍")) {
-                Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getActivity(), GuestEvent.class));
-            } else if (Objects.equals(tittleCategory[position], "ព័ត៌មានការងារ")) {
-                Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getActivity(), GuestEvent.class));
-            } else if (Objects.equals(tittleCategory[position], "គណនីសិស្ស")) {
-                Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getActivity(), MainStudentActivity.class));
+            switch (tittleCategory[position]){
+                case "ព្រឹត្តិការណ៍":
+                    startActivity(new Intent(getContext(), GuestEvent.class));
+                    break;
+                case "ការចុះឈ្មោះ":
+                    startActivity(new Intent(getContext(),GuestRegistration.class));
+                    break;
+                case "កម្មវិធីសិក្សា":
+                    Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
+                    break;
+                case "អាហាររូបករណ៍":
+                    Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
+                    break;
+                case "ព័ត៌មានការងារ":
+                    Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
+                    break;
+                case "គណនីសិស្ស":
+                    sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+                    String st_id = sharedPreferences.getString(KEY_STUDENT_ID, "");
+                    if (st_id != null&&!st_id.equals("")){
+                        startActivity(new Intent(getContext(),MainStudentActivity.class));
+                        getActivity().finish();
+                    }
+                    break;
             }
-        });
+       });
 
         return view;
     }
