@@ -20,6 +20,7 @@ import com.example.useaapp.student.student_adapter.Adapter_rank_credit;
 import com.example.useaapp.student.student_attendance.StudentAttendance;
 import com.example.useaapp.student.student_feedback.StudentFeedback;
 import com.example.useaapp.student.student_profile.StudentProfile;
+import com.example.useaapp.student.student_schedule.StudentSchedule;
 import com.example.useaapp.student.student_score.StudentScore;
 import com.example.useaapp.student.student_studyplan.StudentStudyPlan;
 
@@ -82,6 +83,7 @@ public class FragmentStudentHome extends Fragment {
         gridView_category.setOnItemClickListener((parent, view1, position, id) -> {
             if (Objects.equals(title_category[position],"កាលវិភាគ")){
                 Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getContext(), StudentSchedule.class));
             }else if (Objects.equals(title_category[position],"ផែនការសិក្សា")){
                 Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getContext(), StudentStudyPlan.class));

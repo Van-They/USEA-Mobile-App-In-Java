@@ -12,12 +12,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.USEAAPP"
         android:usesCleartextTraffic="true"
         tools:ignore="DataExtractionRules"
-        android:screenOrientation="portrait"
         tools:targetApi="31">
+        <activity
+            android:name=".student.student_schedule.StudentSchedule"
+            android:exported="false" />
         <activity
             android:name=".student.student_score.ScoreDetail"
             android:exported="false" />

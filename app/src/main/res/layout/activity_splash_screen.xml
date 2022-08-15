@@ -5,53 +5,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".SplashScreen">
 
     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/logo_splashscreen"
         android:layout_gravity="center"
-        android:src="@drawable/logo_usea"
-        android:layout_marginTop="30dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/school_name_kh"
-        android:fontFamily="@font/khmer_os_moul"
-        android:layout_gravity="center"
-        android:textSize="18sp"
-        android:textColor="#001BB1"
-        android:layout_marginTop="15dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/school_name_en"
-        android:fontFamily="serif"
-        android:layout_gravity="center"
-        android:textSize="20sp"
-        android:textColor="#001BB1"
-        />
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/usea_logo" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/welcome"
-        android:fontFamily="serif"
-        android:layout_gravity="center"
-        android:textSize="25sp"
-        android:textColor="#FFC107"
-        android:layout_marginTop="35dp"
-        />
+        android:fontFamily="@font/khmer_os_moul"
+        android:gravity="center"
+        android:text="@string/school_name_kh"
+        android:textColor="@color/dark_blue"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/khmer_os_battambang_bold"
+        android:gravity="center"
+        android:text="@string/school_name_en"
+        android:textColor="@color/dark_blue"
+        android:textSize="16sp" />
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/welcome"-->
+<!--        android:fontFamily="@font/roboto_medium"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="@color/dark_blue"-->
+<!--        />-->
 
     <ProgressBar
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:indeterminateTint="#FFC107"
+        android:indeterminateTint="@color/dark_blue"
         />
 
 </LinearLayout>
