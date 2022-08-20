@@ -30,7 +30,7 @@ public class ListAdapterNews extends ArrayAdapter<ModelNews> {
         }
         ModelNews modelNews = getItem(position);
         LinearLayout LayoutTime,LayoutDate,LayoutDueDate,LayoutCreator,LayoutRoom;
-        TextView Time,Room,Creator,Subject,Due_date,Date_exam,Label_news;
+        TextView Time,Room,Creator,Subject,Due_date,Date_exam,Label_news,instruction;
         TextView Homework,Assignment,Midterm;
 
         //Textview
@@ -41,6 +41,7 @@ public class ListAdapterNews extends ArrayAdapter<ModelNews> {
         Due_date = convertView.findViewById(R.id.Due_date_news);
         Date_exam = convertView.findViewById(R.id.Exam_date_news);
         Label_news = convertView.findViewById(R.id.Label_news);
+        instruction = convertView.findViewById(R.id.instruction);
 
         LayoutDueDate = convertView.findViewById(R.id.LayoutDueDate);
         LayoutDate = convertView.findViewById(R.id.LayoutDate);
@@ -54,7 +55,7 @@ public class ListAdapterNews extends ArrayAdapter<ModelNews> {
         Midterm = convertView.findViewById(R.id.Label_midterm);
 
         switch (modelNews.getLabel()){
-            case "Midterm":
+            case "ប្រឡងពាក់កណ្តាលឆមាស":
                 Midterm.setVisibility(View.VISIBLE);
                 Homework.setVisibility(View.GONE);
                 Assignment.setVisibility(View.GONE);
@@ -64,7 +65,7 @@ public class ListAdapterNews extends ArrayAdapter<ModelNews> {
                 LayoutDate.setVisibility(View.VISIBLE);
                 LayoutRoom.setVisibility(View.VISIBLE);
                 break;
-            case "Homework":
+            case "កិច្ចការផ្ទះ":
                 Homework.setVisibility(View.VISIBLE);
                 Assignment.setVisibility(View.GONE);
                 Midterm.setVisibility(View.GONE);
@@ -76,7 +77,7 @@ public class ListAdapterNews extends ArrayAdapter<ModelNews> {
                 LayoutDueDate.setVisibility(View.VISIBLE);
                 LayoutCreator.setVisibility(View.VISIBLE);
                 break;
-            case "Assignment":
+            case "ការងារក្រុម":
                 Assignment.setVisibility(View.VISIBLE);
                 Homework.setVisibility(View.GONE);
                 Midterm.setVisibility(View.GONE);
@@ -104,7 +105,7 @@ public class ListAdapterNews extends ArrayAdapter<ModelNews> {
         Due_date.setText(modelNews.getDue_date());
         Date_exam.setText(modelNews.getDate());
         Label_news.setText(modelNews.getLabel());
-
+        instruction.setText(modelNews.getInstruction());
         return convertView;
     }
 }

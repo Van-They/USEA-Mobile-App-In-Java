@@ -1,18 +1,16 @@
 package com.example.useaapp.student;
 
-import androidx.appcompat.app.ActionBar;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.Application;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
 import com.example.useaapp.R;
-import com.example.useaapp.SampleActivity;
 import com.example.useaapp.student.student_home.FragmentStudentHome;
 import com.example.useaapp.student.student_news.FragmentStudentNews;
 import com.google.android.material.navigation.NavigationBarView;
@@ -31,7 +29,7 @@ public class MainStudentActivity extends AppCompatActivity {
         NavigationBarView navigationBarView = findViewById(R.id.bottomNavigationBarStudent);
         getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
         navigationBarView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.home_dashboard_student:
                     toolbar.setVisibility(View.GONE);
                     getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
@@ -48,7 +46,16 @@ public class MainStudentActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        finishAffinity();
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_dialog_back, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setView(layout);
+        TextView Cancel = layout.findViewById(R.id.CancelBack);
+        TextView Leave = layout.findViewById(R.id.LeaveApp);
+        AlertDialog alertDialog = builder.create();
+        Cancel.setOnClickListener(v->alertDialog.dismiss());
+        Leave.setOnClickListener(v->finishAffinity());
+        alertDialog.show();
     }
 }

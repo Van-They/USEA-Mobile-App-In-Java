@@ -106,35 +106,40 @@
                     <ImageButton
                         android:id="@+id/btn_fb"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/facebook_icon" />
 
                     <ImageButton
                         android:id="@+id/btn_ig"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/instagram_icon" />
 
                     <ImageButton
                         android:id="@+id/btn_yt"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/youtube_icon" />
 
                     <ImageButton
                         android:id="@+id/btn_tele"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/telegram_icon" />
 
                     <ImageButton
                         android:id="@+id/btn_web"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/browser_icon" />
                 </LinearLayout>
@@ -179,6 +184,7 @@
                      <ImageButton
                          android:id="@+id/img_location"
                          android:layout_width="0dp"
+                         android:background="@null"
                          android:layout_height="match_parent"
                          android:layout_weight="1"
                          android:src="@drawable/location_img"/>

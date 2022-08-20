@@ -184,6 +184,11 @@
                         android:text="@string/Sample_txt"
                         android:textSize="14sp" />
                 </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/instruction"/>
             </LinearLayout>
 
             <LinearLayout

@@ -59,11 +59,11 @@ public class FragmentStudentNews extends Fragment {
 
     private void addItem() {
         listNews = new ArrayList<>();
-        listNews.add(new ModelNews("Java programing I", "20-08-2022", "01-09-2022", "6:00", "Preahkan", "Sa Sokngim", "Homework"));
-        listNews.add(new ModelNews("Java programing II", "20-08-2022", "01-09-2022", "6:00", "Preahkan", "Sa Sokngim", "Assignment"));
-        listNews.add(new ModelNews("Web Development", "20-08-2022", "01-09-2022", "6:00", "Preahkan", "Sa Sokngim", "Midterm"));
-        listNews.add(new ModelNews("C Programing", "20-08-2022", "01-09-2022", "6:00", "Preahkan", "Sa Sokngim", "Homework"));
-        listNews.add(new ModelNews("C++ Programing", "20-08-2022", "01-09-2022", "6:00", "Preahkan", "Sa Sokngim", "Assignment"));
+        listNews.add(new ModelNews("Java programing I", "", "២០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "កិច្ចការផ្ទះ", "instruction"));
+        listNews.add(new ModelNews("Java programing II", "", "១០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "ការងារក្រុម", "instruction"));
+        listNews.add(new ModelNews("Web Development", "២០-សីហា-២០២២", "", "៦:០០", "ប្រាសាទព្រះខ័ន", "Sa Sokngim", "ប្រឡងពាក់កណ្តាលឆមាស", "instruction"));
+        listNews.add(new ModelNews("C Programing", "", "១០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "កិច្ចការផ្ទះ", "instruction"));
+        listNews.add(new ModelNews("C++ Programing", "", "១០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "ការងារក្រុម", "instruction"));
 
     }
 }

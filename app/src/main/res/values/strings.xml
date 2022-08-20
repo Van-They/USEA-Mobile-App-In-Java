@@ -14,7 +14,8 @@
     <string name="Homework">ការងារផ្ទះ</string>
     <string name="Midterm">ប្រឡងពាក់កណ្តាលឆមាស</string>
     <string name="Exam_date">កាលបរិច្ឆេទប្រឡង:</string>
-    <string name="Time">ចាប់ផ្តើម</string>
+    <string name="Time">ម៉ោងៈ</string>
+    <string name="Start_time">ម៉ោងចាប់ផ្តើមៈ</string>
     <string name="Room">បន្ទប់:</string>
     <string name="sign_in_as">ចូលតាម:</string>
     <string name="Student">និស្សិត</string>
@@ -120,4 +121,11 @@
     <string name="ShowDetail">មើលលម្អិត</string>
     <string name="Schedule">កាលវិភាគ</string>
     <string name="Location_usea">ទល់មុខវិទ្យាល័យអង្គរ, ក្រុងសៀមរាប, ព្រះរាជាណាចក្រកម្ពុជា</string>
+    <string name="leave_message">តើអ្នកពិតជាចង់ចាក់ចេញពីកម្មនេះឬ?</string>
+    <string name="Professor">ឈ្មោះសាស្រ្តាចារ្យ</string>
+    <string name="Lecture">សាស្រ្តាចារ្យ</string>
+    <string name="Note">ចំណាំ</string>
+    <string name="Instruction">ការណែនាំ</string>
+    <string name="Click_Download">ចុចដើម្បីទាយក</string>
+    <string name="Nothing">គ្មាន</string>
 </resources>
