@@ -27,6 +27,7 @@ public class FragmentStudentNews extends Fragment {
     private final static String Room ="Room";
     private final static String Creator ="Creator";
     private final static String Label ="Label";
+    private final static String Instruction = "Instruction";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class FragmentStudentNews extends Fragment {
                 intent.putExtra(Room,listNews.get(position).getRoom());
                 intent.putExtra(Creator,listNews.get(position).getCreator());
                 intent.putExtra(Label,listNews.get(position).getLabel());
+                intent.putExtra(Instruction,listNews.get(position).getInstruction());
                 startActivity(intent);
             }
         });
