@@ -128,4 +128,9 @@
     <string name="Instruction">ការណែនាំ</string>
     <string name="Click_Download">ចុចដើម្បីទាយក</string>
     <string name="Nothing">គ្មាន</string>
+    <string name="Comma">,</string>
+    <string name="Day">ថ្ងៃ</string>
+    <string name="Month">ខែ</string>
+    <string name="Date">ទី</string>
+    <string name="Year">ឆ្នាំ</string>
 </resources>
