@@ -1,5 +1,6 @@
 package com.example.useaapp.guest.guest_events;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
@@ -12,6 +13,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_adapter.Adapter_guest_event;
+import com.example.useaapp.guest.guest_home.FragmentImageSlider;
 import com.example.useaapp.student.student_adapter.Adapter_studyplan;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -31,12 +33,7 @@ public class GuestEvent extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         TabLayout tablayout = findViewById(R.id.tab_menu_guest_event);
         ViewPager2 pager2 = findViewById(R.id.view_pager_menu_guest_event);
-        ImageSlider slide_image = findViewById(R.id.SlideImageGuestEvent);
-        List<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.sale, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.store, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.students, ScaleTypes.FIT));
-        slide_image.setImageList(slideModels, ScaleTypes.FIT);
+        getSupportFragmentManager().beginTransaction().replace(R.id.ImageSliderGuestEvent,new FragmentImageSlider()).commit();
         String[] event_tab = {"សេចក្ដីប្រកាស", "ព្រឹត្តិការណ៍នាពេលខាងមុខ", "ព្រិត្តិការណ៍បច្ចុប្បន្ន", "ព្រិត្តិការណ៍ខាងមុនៗ"};
         pager2.setAdapter(new Adapter_guest_event(this));
         new TabLayoutMediator(tablayout,pager2,(tab, position) -> tab.setText(event_tab[position])).attach();

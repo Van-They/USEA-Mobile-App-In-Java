@@ -43,7 +43,7 @@ public class FragmentStudentNews extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getContext(), "បានចុច -> " + listNews.get(position).getLabel(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(),NewItemsDetail.class);
+                Intent intent = new Intent(getContext(), NewsItemsDetail.class);
                 intent.putExtra(Subject,listNews.get(position).getSubject());
                 intent.putExtra(Date,listNews.get(position).getDate());
                 intent.putExtra(Due_Date,listNews.get(position).getDue_date());

@@ -12,7 +12,7 @@ import com.example.useaapp.R;
 
 import java.util.Objects;
 
-public class NewItemsDetail extends AppCompatActivity {
+public class NewsItemsDetail extends AppCompatActivity {
     TextView subject, label, room, date, due_date, creator, time, download_file_label_news, label_date_item_news,label_time_news,text_instruction;
     String subject_, label_, room_, date_, due_date_, creator_, time_,instruction_;
     LinearLayout download_layout,label_layout_room_news;

@@ -20,6 +20,7 @@ import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_adapter.GuestCategoryAdapter;
 import com.example.useaapp.guest.guest_events.GuestEvent;
 import com.example.useaapp.guest.guest_registration.GuestRegistration;
+import com.example.useaapp.guest.guest_scholarship.GuestScholarship;
 import com.example.useaapp.student.MainStudentActivity;
 
 import java.util.ArrayList;
@@ -38,15 +39,7 @@ public class FragmentGuestHome extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_guest_home, container, false);
-        ImageSlider slide_image = view.findViewById(R.id.SlideImageDashboard);
-
-        List<SlideModel> slideModels = new ArrayList<>();
-
-        slideModels.add(new SlideModel(R.drawable.sale, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.store, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.students, ScaleTypes.FIT));
-        slide_image.setImageList(slideModels, ScaleTypes.FIT);
-
+        getChildFragmentManager().beginTransaction().replace(R.id.ImageSliderGuestHome,new FragmentImageSlider()).commit();
         GridView categoryDashboard = view.findViewById(R.id.categoryDashboard);
         categoryDashboard.setAdapter(new GuestCategoryAdapter(this.getContext(), tittleCategory, imageCategory));
 
@@ -63,6 +56,7 @@ public class FragmentGuestHome extends Fragment {
                     break;
                 case "អាហាររូបករណ៍":
                     Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getContext(), GuestScholarship.class));
                     break;
                 case "ព័ត៌មានការងារ":
                     Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();

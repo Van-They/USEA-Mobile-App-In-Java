@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".guest.guest_home.FragmentImageSlider">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/SlideImage"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/sale"
+            app:iss_corner_radius="20"/>
+    </LinearLayout>
+</FrameLayout>
