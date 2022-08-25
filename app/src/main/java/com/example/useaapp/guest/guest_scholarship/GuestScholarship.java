@@ -29,18 +29,18 @@ public class GuestScholarship extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//       Start Action Bar
         setContentView(R.layout.activity_guest_scholarship);
         toolbar = findViewById(R.id.CustomActionbarGuestScholarship);
         setSupportActionBar(toolbar);
         setTitle(R.string.Scholarship);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        End Action Bar
+
         getSupportFragmentManager().beginTransaction().replace(R.id.ImageSliderGuestScholarship,new FragmentImageSlider()).commit();
         Listview_scholarship = findViewById(R.id.Listview_guest_scholarship);
         addData();
         Listview_scholarship.setAdapter(new Adapter_guest_scholarship(getApplicationContext(),Data));
-
-
-
     }
     private void addData(){
         Data = new ArrayList<>();
