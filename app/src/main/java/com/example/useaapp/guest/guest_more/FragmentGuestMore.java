@@ -37,13 +37,14 @@ public class FragmentGuestMore extends Fragment {
         Btn_web = view.findViewById(R.id.btn_web);
         img_location = view.findViewById(R.id.img_location);
         SignOutGuest = view.findViewById(R.id.SignOutGuest);
+        txt_location_txt = view.findViewById(R.id.txt_location_txt);
 
         SignOutGuest.setOnClickListener(v->{
             FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(getContext(), MainActivity.class));
+            startActivity(new Intent(getContext(),MainActivity.class));
         });
 
-        txt_location_txt = view.findViewById(R.id.txt_location_txt);
+
         //Social Media
         //Click FB Image
         Btn_fb.setOnClickListener(new View.OnClickListener() {

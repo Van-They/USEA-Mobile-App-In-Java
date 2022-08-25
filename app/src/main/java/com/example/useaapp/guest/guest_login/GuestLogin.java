@@ -1,6 +1,5 @@
 package com.example.useaapp.guest.guest_login;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -54,7 +53,6 @@ public class GuestLogin extends AppCompatActivity {
         SendCodeOTP.setOnClickListener(v -> {
             if (TextUtils.isEmpty(PhoneNumber.getText().toString())) {
                 Toast.makeText(GuestLogin.this, "សូមបញ្ចូលលេខទូរស័ព្ទ", Toast.LENGTH_SHORT).show();
-                PhoneNumber.setError("Fuck");
             } else {
                 SignInWithPhone.setVisibility(View.GONE);
                 verifyCodeWithPhone.setVisibility(View.VISIBLE);
@@ -103,7 +101,7 @@ public class GuestLogin extends AppCompatActivity {
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+    private final PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
             SignInWithPhoneAuthCredential(phoneAuthCredential);

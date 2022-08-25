@@ -94,6 +94,9 @@
             android:name=".SampleActivity"
             android:exported="false" />
         <activity
+            android:name=".guest.guest_login.GuestLogin"
+            android:exported="false" />
+        <activity
             android:name=".guest.guest_registration.GuestRegistration"
             android:exported="false"
             android:parentActivityName=".guest.MainGuestActivity" />

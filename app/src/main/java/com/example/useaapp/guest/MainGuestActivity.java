@@ -13,6 +13,7 @@ import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_home.FragmentGuestHome;
 import com.example.useaapp.guest.guest_more.FragmentGuestMore;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainGuestActivity extends AppCompatActivity {
 
