@@ -3,16 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
     android:orientation="vertical">
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="5dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -21,8 +22,9 @@
                 app:cardCornerRadius="10dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/eventImg"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
                     android:contentDescription="@null"
                     android:src="@drawable/guest_event_pic" />
             </androidx.cardview.widget.CardView>
@@ -40,7 +42,7 @@
                     android:fontFamily="@font/khmer_os_battambang_regular"
                     android:text="@string/Sample_txt"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/Detail_guest_event_item"
@@ -48,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/khmer_os_battambang_regular"
                     android:text="@string/Sample_txt"
-                    android:textSize="14sp" />
+                    android:textSize="10sp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -62,9 +64,8 @@
                     android:baselineAligned="false">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -79,7 +80,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/khmer_os_battambang_regular"
                             android:text="@string/Day"
-                            android:textSize="14sp" />
+                            android:textSize="12sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -94,7 +95,7 @@
                             android:layout_marginEnd="5dp"
                             android:fontFamily="@font/khmer_os_battambang_regular"
                             android:text="@string/Month"
-                            android:textSize="14sp" />
+                            android:textSize="12sp" />
 
                         <TextView
                             android:id="@+id/Date_guest_event_item"
@@ -102,7 +103,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/khmer_os_battambang_regular"
                             android:text="@string/Date"
-                            android:textSize="14sp" />
+                            android:textSize="12sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -116,13 +117,13 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/khmer_os_battambang_regular"
                             android:text="@string/Year"
-                            android:textSize="14sp" />
+                            android:textSize="12sp" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
@@ -139,7 +140,7 @@
                             android:layout_marginEnd="5dp"
                             android:fontFamily="@font/khmer_os_battambang_regular"
                             android:text="@string/Time"
-                            android:textSize="14sp" />
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
 

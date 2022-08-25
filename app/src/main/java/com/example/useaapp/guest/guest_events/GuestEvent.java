@@ -1,25 +1,16 @@
 package com.example.useaapp.guest.guest_events;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-import android.widget.TableLayout;
 
-import com.denzcoskun.imageslider.ImageSlider;
-import com.denzcoskun.imageslider.constants.ScaleTypes;
-import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.R;
-import com.example.useaapp.guest.guest_adapter.Adapter_guest_event;
+import com.example.useaapp.guest.guest_adapter.Adapter_guest_event_tabbar;
 import com.example.useaapp.guest.guest_home.FragmentImageSlider;
-import com.example.useaapp.student.student_adapter.Adapter_studyplan;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class GuestEvent extends AppCompatActivity {
 
@@ -35,7 +26,7 @@ public class GuestEvent extends AppCompatActivity {
         ViewPager2 pager2 = findViewById(R.id.view_pager_menu_guest_event);
         getSupportFragmentManager().beginTransaction().replace(R.id.ImageSliderGuestEvent,new FragmentImageSlider()).commit();
         String[] event_tab = {"សេចក្ដីប្រកាស", "ព្រឹត្តិការណ៍នាពេលខាងមុខ", "ព្រិត្តិការណ៍បច្ចុប្បន្ន", "ព្រិត្តិការណ៍ខាងមុនៗ"};
-        pager2.setAdapter(new Adapter_guest_event(this));
+        pager2.setAdapter(new Adapter_guest_event_tabbar(this));
         new TabLayoutMediator(tablayout,pager2,(tab, position) -> tab.setText(event_tab[position])).attach();
     }
 }

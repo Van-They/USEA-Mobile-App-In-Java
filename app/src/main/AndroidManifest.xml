@@ -36,7 +36,7 @@
             android:exported="false"
             android:parentActivityName=".student.MainStudentActivity" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".guest.MainGuestActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".student.MainStudentActivity"
+            android:name=".SplashScreen"
             android:exported="false" />
         <activity
             android:name=".student.student_profile.ProfileSetting.Legal"
@@ -88,7 +88,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".guest.MainGuestActivity"
+            android:name=".student.MainStudentActivity"
             android:exported="false" />
         <activity
             android:name=".SampleActivity"

@@ -1,4 +1,4 @@
-package com.example.useaapp.guest.guest_events;
+package com.example.useaapp.guest.guest_events.upcoming;
 
 import android.os.Bundle;
 
@@ -9,24 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.useaapp.R;
-
-public class FragmentAnnouncement extends Fragment {
+public class FragmentUpcomingEvent extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_announcement, container, false);
-
-
-
-
-
-
-
-
-
+        View view = inflater.inflate(R.layout.fragment_upcoming, container, false);
         return view;
     }
 }
