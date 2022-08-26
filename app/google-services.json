@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "476627803469",
+    "project_id": "usea-a6c1f",
+    "storage_bucket": "usea-a6c1f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476627803469:android:0a14845ab555e6c7a8ab04",
+        "android_client_info": {
+          "package_name": "com.example.useaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "476627803469-h1snraa7if0d4arkdjcuk5552nf9cvd5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKP6YSBz9T-LVHNuMnop58g9VQ46401tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "476627803469-h1snraa7if0d4arkdjcuk5552nf9cvd5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

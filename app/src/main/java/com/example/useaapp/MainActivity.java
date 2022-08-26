@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.useaapp.guest.MainGuestActivity;
+import com.example.useaapp.guest.guest_login.GuestLogin;
 import com.example.useaapp.student.student_login.StudentLogin;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         guest= findViewById(R.id.guestaccount);
         student= findViewById(R.id.studentaccount);
         guest.setOnClickListener(v -> {
-            startActivity(new Intent(this, MainGuestActivity.class));
+            startActivity(new Intent(MainActivity.this, GuestLogin.class));
         });
         student.setOnClickListener(v -> {
             startActivity(new Intent(this,StudentLogin.class));

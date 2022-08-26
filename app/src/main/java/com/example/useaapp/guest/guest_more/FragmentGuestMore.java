@@ -10,11 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.useaapp.MainActivity;
 import com.example.useaapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class FragmentGuestMore extends Fragment {
     ImageButton btn_fb, btn_ig, btn_yt, btn_tele, btn_web;
     private ImageButton Btn_fb, Btn_ig, Btn_yt, Btn_tele, Btn_web, img_location;
-    private TextView  txt_location_txt;
+    private TextView  txt_location_txt, SignOutGuest;
     //Link to URL
     private void gotUrl(String s) {
         Uri uri = Uri.parse(s);
@@ -33,8 +36,15 @@ public class FragmentGuestMore extends Fragment {
         Btn_tele = view.findViewById(R.id.btn_tele);
         Btn_web = view.findViewById(R.id.btn_web);
         img_location = view.findViewById(R.id.img_location);
-
+        SignOutGuest = view.findViewById(R.id.SignOutGuest);
         txt_location_txt = view.findViewById(R.id.txt_location_txt);
+
+        SignOutGuest.setOnClickListener(v->{
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getContext(),MainActivity.class));
+        });
+
+
         //Social Media
         //Click FB Image
         Btn_fb.setOnClickListener(new View.OnClickListener() {

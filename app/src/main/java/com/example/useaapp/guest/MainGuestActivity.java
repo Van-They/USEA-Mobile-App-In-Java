@@ -1,23 +1,23 @@
 package com.example.useaapp.guest;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_home.FragmentGuestHome;
 import com.example.useaapp.guest.guest_more.FragmentGuestMore;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainGuestActivity extends AppCompatActivity {
 
     TextView cancel,leave;
-
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
