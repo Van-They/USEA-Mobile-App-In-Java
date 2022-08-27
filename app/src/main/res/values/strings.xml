@@ -138,4 +138,8 @@
     <string name="LogInWith">ចូលតាមរយៈ</string>
     <string name="RequestCode">ទាញយកលេខកូដ</string>
     <string name="Verify">បញ្ជាក់</string>
+    <string name="CodeSentFailed">មិនបានទទួលលេខកូដ?</string>
+    <string name="ReSentCode">ផ្ញើរលេខកូដម្តងទៀត</string>
+    <string name="Input_phone_number">សូមបញ្ចូលលេខទូរស័ព្ទ</string>
+    <string name="Verify_code">សូមបញ្ចូលលេខកូដបញ្ជាក់</string>
 </resources>
