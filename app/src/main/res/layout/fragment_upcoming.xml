@@ -5,10 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".guest.guest_events.upcoming.FragmentUpcomingEvent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/upcomingEvent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hellow USEA" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:divider="@null"
+        android:scrollbars="none"/>
 
 </FrameLayout>
