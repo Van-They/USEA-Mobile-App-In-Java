@@ -22,9 +22,6 @@
             android:name=".guest.guest_login.GoogleAuthenticationClass"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_login.PhoneAuthenticationClass"
-            android:exported="false" />
-        <activity
             android:name=".guest.guest_scholarship.ScholarshipItemsDetail"
             android:exported="false" />
         <activity

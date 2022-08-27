@@ -27,14 +27,13 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class GuestLogin extends AppCompatActivity {
-    Button GoogleSignInMethod, PhoneAuth, SendCodeOTP, verifyCode;
+    Button GoogleSignInMethod, PhoneAuth, btnSendCode, btnVerify;
     LinearLayout SignInMethod, SignInWithPhone, verifyCodeWithPhone;
-    EditText PhoneNumber, InputOtpCode;
+    EditText InputPhoneNumber, InputOtpCode;
     String getPhoneNumber, getOTP, VerifyID;
     TextView SignInText;
     ProgressBar progressBar;
-    FirebaseUser mUser;
-    FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,24 +49,24 @@ public class GuestLogin extends AppCompatActivity {
                 SignInWithPhone.setVisibility(View.VISIBLE);
             }, 500);
         });
-        SendCodeOTP.setOnClickListener(v -> {
-            if (TextUtils.isEmpty(PhoneNumber.getText().toString())) {
-                PhoneNumber.setError("សូមបញ្ចូលលេខទូរស័ព្ទ");
+        btnSendCode.setOnClickListener(v -> {
+            if (TextUtils.isEmpty(InputPhoneNumber.getText().toString())) {
+                InputPhoneNumber.setError("សូមបញ្ចូលលេខទូរស័ព្ទ");
             } else {
                 SignInText.setText(R.string.Verify_code);
                 SignInWithPhone.setVisibility(View.GONE);
                 verifyCodeWithPhone.setVisibility(View.VISIBLE);
-                getPhoneNumber = PhoneNumber.getText().toString();
-                sendCodeTo(getPhoneNumber);
+                getPhoneNumber = InputPhoneNumber.getText().toString();
+                sendVerificationCode(getPhoneNumber);
             }
         });
 
-        verifyCode.setOnClickListener(v -> {
+        btnVerify.setOnClickListener(v -> {
             if (TextUtils.isEmpty(InputOtpCode.getText().toString())) {
                 Toast.makeText(this, "សូមបញ្ចូលលេខ OTP", Toast.LENGTH_SHORT).show();
             } else {
                 getOTP = InputOtpCode.getText().toString();
-                VerifyUser(getOTP);
+                verifyCode(getOTP);
             }
         });
         GoogleSignInMethod.setOnClickListener(v -> startActivity(new Intent(this,GoogleAuthenticationClass.class)));
@@ -77,8 +76,8 @@ public class GuestLogin extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBarLogin);
         GoogleSignInMethod = findViewById(R.id.GoogleSignIn);//Btn SignInWithGoogle
         PhoneAuth = findViewById(R.id.PhoneAuth);//Btn SignInWithPhone Number
-        verifyCode = findViewById(R.id.verifyCode);//Btn Verify Code OTP
-        SendCodeOTP = findViewById(R.id.SendCodeOTP);//Btn send SMS code
+        btnVerify = findViewById(R.id.verifyCode);//Btn Verify Code OTP
+        btnSendCode = findViewById(R.id.SendCodeOTP);//Btn send SMS code
         SignInText = findViewById(R.id.SignInText);
 
         SignInMethod = findViewById(R.id.SignInMethod);//Layout SignInMethod
@@ -88,17 +87,17 @@ public class GuestLogin extends AppCompatActivity {
         SignInWithPhone.setVisibility(View.GONE);
         verifyCodeWithPhone.setVisibility(View.GONE);
 
-        PhoneNumber = findViewById(R.id.PhoneNumber);//Input Phone Number
+        InputPhoneNumber = findViewById(R.id.PhoneNumber);//Input Phone Number
         InputOtpCode = findViewById(R.id.InputOtpCode);//Input OTP from SMS
 
     }
     //Phone Authentication
-    private void sendCodeTo(String getPhoneNumber) {
+    private void sendVerificationCode(String PhoneNumber) {
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder()
-                        .setPhoneNumber("+855" + getPhoneNumber)       // Phone number to verify
+                        .setPhoneNumber("+855" + PhoneNumber)       // Phone number to verify
                         .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity(this)                 // Activity (for callback binding)
+                        .setActivity(GuestLogin.this)                 // Activity (for callback binding)
                         .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
@@ -112,6 +111,7 @@ public class GuestLogin extends AppCompatActivity {
 
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
+            Toast.makeText(GuestLogin.this, "Error Code Send", Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -120,9 +120,13 @@ public class GuestLogin extends AppCompatActivity {
             VerifyID = s;
         }
     };
+    private void verifyCode(String getOTP) {
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(VerifyID, getOTP);
+        SignInWithPhoneAuthCredential(credential);
+    }
 
     private void SignInWithPhoneAuthCredential(PhoneAuthCredential phoneAuthCredential) {
-        FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         mAuth.signInWithCredential(phoneAuthCredential).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 startActivity(new Intent(GuestLogin.this, MainGuestActivity.class));
@@ -130,16 +134,11 @@ public class GuestLogin extends AppCompatActivity {
         });
     }
 
-    private void VerifyUser(String getOTP) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(VerifyID, getOTP);
-        SignInWithPhoneAuthCredential(credential);
-    }
-
     //google
     @Override
     protected void onStart() {
         super.onStart();
-        mUser = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
         if (mUser != null) {
             startActivity(new Intent(GuestLogin.this, MainGuestActivity.class));
         }

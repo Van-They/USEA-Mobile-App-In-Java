@@ -1,5 +1,6 @@
 package com.example.useaapp.guest.guest_login;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -22,12 +23,16 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class GoogleAuthenticationClass extends GuestLogin {
     GoogleSignInClient googleSignInClient;
     private static final int REQ_CODE = 2100;
-    FirebaseAuth mAuth;
-    FirebaseUser mUser;
+    ProgressDialog progressDialog;
+    private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Configure google sign In
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Google Sign In");
+        progressDialog.show();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -48,22 +53,26 @@ public class GoogleAuthenticationClass extends GuestLogin {
             try {
                 //Sign In with Google success
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuthWithGoogle(account);
+                firebaseAuthWithGoogle(account.getIdToken());
 
             } catch (ApiException e) {
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+                finish();
             }
         }
     }
 
-    private void firebaseAuthWithGoogle(GoogleSignInAccount acc) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(acc.getIdToken(), null);
+    private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken,null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        FirebaseUser mUser = mAuth.getCurrentUser();
-                        updateUI(mUser);
+                        progressDialog.dismiss();
+                        FirebaseUser User = mAuth.getCurrentUser();
+                        updateUI(User);
                     } else {
+                        progressDialog.dismiss();
                         Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
                         finish();
                     }
@@ -71,16 +80,8 @@ public class GoogleAuthenticationClass extends GuestLogin {
     }
 
     private void updateUI(FirebaseUser mUser) {
-    Intent intent = new Intent(this, MainGuestActivity.class);
-//    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+    Intent intent = new Intent(GoogleAuthenticationClass.this, MainGuestActivity.class);
+    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (mUser!=null){
-            updateUI(mUser);
-        }
     }
 }
