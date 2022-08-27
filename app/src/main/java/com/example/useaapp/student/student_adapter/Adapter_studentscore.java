@@ -9,10 +9,6 @@ import com.example.useaapp.student.student_score.year1.FragmentStudentScore_Y1S1
 import com.example.useaapp.student.student_score.year2.FragmentStudentScore_Y2S1S2;
 import com.example.useaapp.student.student_score.year3.FragmentStudentScore_Y3S1S2;
 import com.example.useaapp.student.student_score.year4.FragmentStudentScore_Y4S1S2;
-import com.example.useaapp.student.student_studyplan.year1.FragmentStudyPlan_Y1S1S2;
-import com.example.useaapp.student.student_studyplan.year2.FragmentStudyPlan_Y2S1S2;
-import com.example.useaapp.student.student_studyplan.year3.FragmentStudyPlan_Y3S1S2;
-import com.example.useaapp.student.student_studyplan.year4.FragmentStudyPlan_Y4S1S2;
 
 public class Adapter_studentscore extends FragmentStateAdapter {
     String[] Tab_title = {"ឆ្នាំទី១", "ឆ្នាំទី២", "ឆ្នាំទី៣", "ឆ្នាំទី៤"};

@@ -42,7 +42,7 @@
             android:exported="false"
             android:parentActivityName=".student.MainStudentActivity" />
         <activity
-            android:name=".guest.MainGuestActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -79,7 +79,7 @@
             android:exported="false"
             android:parentActivityName=".student.MainStudentActivity" />
         <activity
-            android:name=".student.student_studyplan.StudentStudyPlan"
+            android:name=".student.student_studyPlan.StudentStudyPlan"
             android:exported="false"
             android:parentActivityName=".student.MainStudentActivity" />
         <activity
@@ -91,7 +91,7 @@
             android:exported="false"
             android:parentActivityName=".guest.MainGuestActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".guest.MainGuestActivity"
             android:exported="false" />
         <activity
             android:name=".guest.guest_login.GuestLogin"

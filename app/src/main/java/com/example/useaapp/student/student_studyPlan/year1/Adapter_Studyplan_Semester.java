@@ -1,4 +1,4 @@
-package com.example.useaapp.student.student_studyplan.year1;
+package com.example.useaapp.student.student_studyPlan.year1;
 
 import android.content.Context;
 import android.view.LayoutInflater;

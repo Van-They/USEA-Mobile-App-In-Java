@@ -1,4 +1,4 @@
-package com.example.useaapp.student.student_studyplan.year4;
+package com.example.useaapp.student.student_studyPlan.year3;
 
 import android.os.Bundle;
 
@@ -12,12 +12,12 @@ import android.widget.TextView;
 
 import com.example.useaapp.R;
 import com.example.useaapp.student.student_adapter.ListviewHelper;
-import com.example.useaapp.student.student_studyplan.year1.SemesterStudyPlan;
-import com.example.useaapp.student.student_studyplan.year1.Adapter_Studyplan_Semester;
+import com.example.useaapp.student.student_studyPlan.year1.SemesterStudyPlan;
+import com.example.useaapp.student.student_studyPlan.year1.Adapter_Studyplan_Semester;
 
 import java.util.ArrayList;
 
-public class FragmentStudyPlan_Y4S1S2 extends Fragment {
+public class FragmentStudyPlan_Y3S1S2 extends Fragment {
     TextView Total_hour_s1, Total_credit_s1, Total_hour_s2, Total_credit_s2;
     ListView listView_s1,listView_s2;
     ArrayList<SemesterStudyPlan> semester1,semester2;
@@ -26,33 +26,34 @@ public class FragmentStudyPlan_Y4S1S2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_study_plan__y4_s1_s2, container, false);
-        listView_s1 = view.findViewById(R.id.student_study_plan_list_y4s1);
-        listView_s2 = view.findViewById(R.id.student_study_plan_list_y4s2);
+        View view = inflater.inflate(R.layout.fragment_study_plan__y3_s1_s2, container, false);
+        listView_s1 = view.findViewById(R.id.student_study_plan_list_y3s1);
+        listView_s2 = view.findViewById(R.id.student_study_plan_list_y3s2);
         //semester 1,2 listview with array list
         addDataToListS1();
         addDataToListS2();
 
         //calculate total hour
         //setAdapter
-        listView_s1.setAdapter(new Adapter_Studyplan_Semester(getContext(),semester1));
+        listView_s1.setAdapter(new Adapter_Studyplan_Semester(view.getContext(),semester1));
         ListviewHelper.getLisViewSize(listView_s1);
-        listView_s2.setAdapter(new Adapter_Studyplan_Semester(getContext(),semester2));
+        listView_s2.setAdapter(new Adapter_Studyplan_Semester(view.getContext(),semester2));
         ListviewHelper.getLisViewSize(listView_s2);
 
-        Total_hour_s1 = view.findViewById(R.id.student_study_plan_total_hour_y4s1);
-        Total_credit_s1 = view.findViewById(R.id.student_study_plan_total_credit_y4s1);
-        Total_hour_s2 = view.findViewById(R.id.student_study_plan_total_hour_y4s2);
-        Total_credit_s2 = view.findViewById(R.id.student_study_plan_total_credit_y4s2);
+        Total_hour_s1 = view.findViewById(R.id.student_study_plan_total_hour_y3s1);
+        Total_credit_s1 = view.findViewById(R.id.student_study_plan_total_credit_y3s1);
+        Total_hour_s2 = view.findViewById(R.id.student_study_plan_total_hour_y3s2);
+        Total_credit_s2 = view.findViewById(R.id.student_study_plan_total_credit_y3s2);
 
         totalHour_Credit_S1();
         totalHour_Credit_S2();
+
         return view;
     }
 
     private void addDataToListS1() {
         semester1 = new ArrayList<>();
-        semester1.add(new SemesterStudyPlan("1.","Java Programing II","45","3"));
+        semester1.add(new SemesterStudyPlan("1.","Java Programing","45","3"));
         semester1.add(new SemesterStudyPlan("2.","ប្រវត្តិ និងវប្បធម៍អាស៊ីអាគ្នេយ៍","45","3"));
         semester1.add(new SemesterStudyPlan("3.","រដ្ឋបាយសាធារណៈ","45","3"));
         semester1.add(new SemesterStudyPlan("4.","កុំព្យូទ័រសម្រាប់រដ្ខបាល","45","3"));

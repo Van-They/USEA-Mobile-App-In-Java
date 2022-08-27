@@ -1,4 +1,4 @@
-package com.example.useaapp.student.student_studyplan.year1;
+package com.example.useaapp.student.student_studyPlan.year1;
 
 public class SemesterStudyPlan {
     private final String No,Subject,Hour,Credit;

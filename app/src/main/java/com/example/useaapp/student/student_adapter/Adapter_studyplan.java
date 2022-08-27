@@ -5,12 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.useaapp.SampleFragment;
-import com.example.useaapp.student.student_home.FragmentStudentHome;
-import com.example.useaapp.student.student_studyplan.year1.FragmentStudyPlan_Y1S1S2;
-import com.example.useaapp.student.student_studyplan.year2.FragmentStudyPlan_Y2S1S2;
-import com.example.useaapp.student.student_studyplan.year3.FragmentStudyPlan_Y3S1S2;
-import com.example.useaapp.student.student_studyplan.year4.FragmentStudyPlan_Y4S1S2;
+import com.example.useaapp.student.student_studyPlan.year1.FragmentStudyPlan_Y1S1S2;
+import com.example.useaapp.student.student_studyPlan.year2.FragmentStudyPlan_Y2S1S2;
+import com.example.useaapp.student.student_studyPlan.year3.FragmentStudyPlan_Y3S1S2;
+import com.example.useaapp.student.student_studyPlan.year4.FragmentStudyPlan_Y4S1S2;
 
 public class Adapter_studyplan extends FragmentStateAdapter {
     String[] Tab_title = {"", "", "", ""};

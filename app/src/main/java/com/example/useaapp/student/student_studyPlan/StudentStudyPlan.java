@@ -1,4 +1,4 @@
-package com.example.useaapp.student.student_studyplan;
+package com.example.useaapp.student.student_studyPlan;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
