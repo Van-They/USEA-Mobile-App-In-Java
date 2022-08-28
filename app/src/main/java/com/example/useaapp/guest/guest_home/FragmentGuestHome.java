@@ -22,6 +22,7 @@ import com.example.useaapp.guest.guest_events.GuestEvent;
 import com.example.useaapp.guest.guest_registration.GuestRegistration;
 import com.example.useaapp.guest.guest_scholarship.GuestScholarship;
 import com.example.useaapp.student.MainStudentActivity;
+import com.example.useaapp.student.student_login.StudentLogin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,10 +65,12 @@ public class FragmentGuestHome extends Fragment {
                 case "គណនីសិស្ស":
                     sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
                     String st_id = sharedPreferences.getString(KEY_STUDENT_ID, "");
-                    if (st_id != null&&!st_id.equals("")){
+                    if (st_id != null && !st_id.equals("")){
                         startActivity(new Intent(getContext(),MainStudentActivity.class));
-                        getActivity().finish();
+                    }else{
+                        startActivity(new Intent(getContext(), StudentLogin.class));
                     }
+                    getActivity().finish();
                     break;
             }
        });

@@ -42,7 +42,7 @@ public class GuestCategoryAdapter extends BaseAdapter {
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         if (convertView == null){
-            convertView = inflater.inflate(R.layout.custom_gridview_category,null);
+            convertView = inflater.inflate(R.layout.custom_gridview_category,parent,false);
         }
         ImageView imageCategory = convertView.findViewById(R.id.item_images);
         TextView titleCategory = convertView.findViewById(R.id.item_titles);

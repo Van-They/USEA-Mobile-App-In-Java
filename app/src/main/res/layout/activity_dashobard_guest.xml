@@ -22,16 +22,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="2">
+                android:gravity="center">
                 <ImageView
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:contentDescription="@null"
                     android:src="@drawable/usea_logo" />
             </LinearLayout>
             <LinearLayout
@@ -47,7 +48,7 @@
                     android:fontFamily="@font/khmer_os_moul"
                     android:text="@string/school_name_kh"
                     android:textColor="@color/dark_blue"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -56,17 +57,17 @@
                     android:fontFamily="@font/roboto_medium"
                     android:text="@string/school_name_en"
                     android:textColor="@color/dark_blue"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:gravity="center">
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:contentDescription="@null"
                     android:src="@drawable/ic_notifications" />
             </LinearLayout>
 
@@ -77,10 +78,7 @@
         android:id="@+id/guestLayoutDashboard"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationBarGuest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
