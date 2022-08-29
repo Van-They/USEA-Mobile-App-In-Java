@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -31,6 +32,8 @@ public class NewsItemsDetail extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentNewsDetail);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(v-> finish());
 
         subject = findViewById(R.id.subject);
         label = findViewById(R.id.label);
@@ -94,4 +97,6 @@ public class NewsItemsDetail extends AppCompatActivity {
         time.setText(time_);
         text_instruction.setText(instruction_);
     }
+
+
 }

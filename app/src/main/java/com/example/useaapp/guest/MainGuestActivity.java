@@ -1,9 +1,12 @@
 package com.example.useaapp.guest;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -17,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainGuestActivity extends AppCompatActivity {
 
-    TextView cancel,leave;
+    Button cancel,leave;
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class MainGuestActivity extends AppCompatActivity {
         builder.setCancelable(false);
         builder.setView(layout);//set view from custom dialog to alertdialog
         AlertDialog dialog = builder.create();//create view
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         leave.setOnClickListener(v1-> finishAffinity());
         cancel.setOnClickListener(v1-> dialog.dismiss());
         dialog.show();

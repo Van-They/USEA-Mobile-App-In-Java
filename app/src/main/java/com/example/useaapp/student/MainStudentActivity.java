@@ -1,10 +1,12 @@
 package com.example.useaapp.student;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,9 +53,10 @@ public class MainStudentActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setView(layout);
-        TextView Cancel = layout.findViewById(R.id.CancelBack);
-        TextView Leave = layout.findViewById(R.id.LeaveApp);
+        Button Cancel = layout.findViewById(R.id.CancelBack);
+        Button Leave = layout.findViewById(R.id.LeaveApp);
         AlertDialog alertDialog = builder.create();
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Cancel.setOnClickListener(v->alertDialog.dismiss());
         Leave.setOnClickListener(v->finishAffinity());
         alertDialog.show();
