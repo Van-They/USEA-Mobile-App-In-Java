@@ -4,9 +4,18 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".guest.guest_registration.GuestRegistration">
+    tools:context=".guest.guest_registration.GuestRegistration"
+    >
     <include
         android:id="@+id/CustomActionbarGuestRegistration"
         layout="@layout/custom_actionbar" />
-
+    <ExpandableListView
+        android:id="@+id/expandableListView"
+        android:divider="@null"
+        android:indicatorRight="?android:attr/expandableListPreferredChildIndicatorLeft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        />
 </LinearLayout>

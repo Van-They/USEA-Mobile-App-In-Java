@@ -142,4 +142,8 @@
     <string name="ReSentCode">ផ្ញើរលេខកូដម្តងទៀត</string>
     <string name="Input_phone_number">សូមបញ្ចូលលេខទូរស័ព្ទ</string>
     <string name="Verify_code">សូមបញ្ចូលលេខកូដបញ្ជាក់</string>
+    <string name="Register_Ass">ការចុះឈ្មោះចូលរៀនសម្រាប់ថ្នាក់បរិញ្ញាបត្ររង</string>
+    <string name="Register_Bac">ការចុះឈ្មោះចូលរៀនសម្រាប់ថ្នាក់បរិញ្ញាបត្រ</string>
+    <string name="Register_Mba">ការចុះឈ្មោះចូលរៀនសម្រាប់ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់</string>
+
 </resources>
