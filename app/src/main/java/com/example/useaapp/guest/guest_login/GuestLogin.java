@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -14,7 +15,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import com.example.useaapp.MainActivity;
 import com.example.useaapp.R;
 import com.example.useaapp.guest.MainGuestActivity;
 import com.google.firebase.FirebaseException;
@@ -27,12 +30,14 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class GuestLogin extends AppCompatActivity {
-    Button GoogleSignInMethod, PhoneAuth, btnSendCode, btnVerify;
+    Button btnSendCode, btnVerify;
+    CardView GoogleSignInMethod,PhoneAuth;
     LinearLayout SignInMethod, SignInWithPhone, verifyCodeWithPhone;
     EditText InputPhoneNumber, InputOtpCode;
     String getPhoneNumber, getOTP, VerifyID;
     TextView SignInText;
     ProgressBar progressBar;
+    ImageView back_arrow_login;
     private FirebaseAuth mAuth;
 
     @Override
@@ -70,6 +75,10 @@ public class GuestLogin extends AppCompatActivity {
             }
         });
         GoogleSignInMethod.setOnClickListener(v -> startActivity(new Intent(this,GoogleAuthenticationClass.class)));
+        back_arrow_login.setOnClickListener(v->{
+            finish();
+            startActivity(new Intent(GuestLogin.this,MainActivity.class));
+        });
     }
 
     private void Initialize_var() {
@@ -89,6 +98,8 @@ public class GuestLogin extends AppCompatActivity {
 
         InputPhoneNumber = findViewById(R.id.PhoneNumber);//Input Phone Number
         InputOtpCode = findViewById(R.id.InputOtpCode);//Input OTP from SMS
+
+        back_arrow_login = findViewById(R.id.back_arrow_login);
 
     }
     //Phone Authentication

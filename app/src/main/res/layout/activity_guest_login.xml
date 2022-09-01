@@ -1,141 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".guest.guest_login.GuestLogin">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:contentDescription="@null"
-        android:src="@drawable/usea_logo" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/khmer_os_moul"
-        android:gravity="center"
-        android:text="@string/school_name_kh"
-        android:textColor="@color/dark_blue"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/khmer_os_battambang_bold"
-        android:gravity="center"
-        android:text="@string/school_name_en"
-        android:textColor="@color/dark_blue"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/SignInText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:fontFamily="@font/khmer_os_battambang_regular"
-        android:gravity="center"
-        android:text="@string/LogInWith"
-        android:textColor="@color/dark_blue"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <ProgressBar
-        android:id="@+id/progressBarLogin"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:indeterminateTint="@color/dark_blue"
-        android:visibility="gone" />
-
     <LinearLayout
         android:id="@+id/SignInMethod"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <Button
-            android:id="@+id/GoogleSignIn"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/gso_go_icon"
-            android:text="Google"
-            android:textColor="@color/green"/>
-        <Button
-            android:id="@+id/PhoneAuth"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Phone Number" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/SignInWithPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        android:visibility="gone">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/PhoneNumber"
-            android:layout_width="200dp"
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="@null"
+            android:src="@drawable/usea_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Phone Number"
-            android:inputType="number"
-            android:maxLength="10" />
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/khmer_os_moul"
+            android:text="@string/school_name_kh"
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/SendCodeOTP"
-            android:layout_width="200dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/RequestCode" />
-    </LinearLayout>
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/khmer_os_battambang_bold"
+            android:text="@string/school_name_en"
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp" />
 
-    <LinearLayout
-        android:id="@+id/verifyCodeWithPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <EditText
-            android:id="@+id/InputOtpCode"
-            android:layout_width="200dp"
+        <TextView
+            android:id="@+id/SignInText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/LogInWith"
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBarLogin"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:hint="OTP" />
+            android:indeterminateTint="@color/dark_blue"
+            android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/PhoneAuth"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/phone_auth_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:text="@string/Register_with_phone_number"
+                    android:textColor="@color/green" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/phone_auth_go_icon" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/GoogleSignIn"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/gso_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:text="@string/Register_with_google_account"
+                    android:textColor="@color/light_red" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/gso_go_icon" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
+            android:id="@+id/SignInWithPhone"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-            <TextView
+            <EditText
+                android:id="@+id/PhoneNumber"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:inputType="number"
+                android:maxLength="10"
+                tools:ignore="TextFields"/>
+
+            <Button
+                android:id="@+id/SendCodeOTP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/khmer_os_battambang_regular"
-                android:text="@string/CodeSentFailed"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:fontFamily="@font/khmer_os_battambang_regular"
-                android:text="@string/ReSentCode"
-                android:textColor="@color/red" />
+                android:text="@string/RequestCode"
+                app:cornerRadius="20dp" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/verifyCode"
-            android:layout_width="200dp"
+        <LinearLayout
+            android:id="@+id/verifyCodeWithPhone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/Verify" />
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/InputOtpCode"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/khmer_os_battambang_regular" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:text="@string/CodeSentFailed"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:text="@string/ReSentCode"
+                    android:textColor="@color/red" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/verifyCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/Verify"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/ellipse_dot_big" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/ellipse_dot_small" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@null"
+            android:id="@+id/back_arrow_login"
+            android:src="@drawable/back_arrow_login" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/app_license" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

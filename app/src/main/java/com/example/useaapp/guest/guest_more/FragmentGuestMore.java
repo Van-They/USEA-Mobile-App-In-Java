@@ -1,17 +1,23 @@
 package com.example.useaapp.guest.guest_more;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.useaapp.MainActivity;
 import com.example.useaapp.R;
+import com.example.useaapp.student.student_profile.StudentSetting;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class FragmentGuestMore extends Fragment {
@@ -43,8 +49,6 @@ public class FragmentGuestMore extends Fragment {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(getContext(),MainActivity.class));
         });
-
-
         //Social Media
         //Click FB Image
         Btn_fb.setOnClickListener(new View.OnClickListener() {

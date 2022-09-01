@@ -25,7 +25,6 @@ public class GuestScholarship extends AppCompatActivity {
     Toolbar toolbar;
     ListView Listview_scholarship;
     ArrayList<ScholarshipModel> Data;
-    Button ReadDetail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +51,7 @@ public class GuestScholarship extends AppCompatActivity {
                 " at Swansea: Molecular " +
                 "Quantum Materials ","PhD","Full cost of UK tuition fees and an" +
                 "annual stipend","3<sup>rd</sup>","March","2022"));
-        Data.add(new ScholarshipModel("Mathemathic: Fully Funded Royal Society PhD" +
+        Data.add(new ScholarshipModel("Mathematics: Fully Funded Royal Society PhD" +
                 " at Swansea: Molecular " +
                 "Quantum Materials ","PhD","Full cost of UK tuition fees and an" +
                 "annual stipend","3<sup>rd</sup>","March","2022"));

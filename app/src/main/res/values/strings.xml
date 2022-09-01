@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">USEA APP</string>
     <string name="NA">N/A</string>
     <string name="school_name_kh">សាកលវិទ្យាល័យ សៅស៍អុីសថ៍អេយសៀ</string>
@@ -142,4 +142,25 @@
     <string name="ReSentCode">ផ្ញើរលេខកូដម្តងទៀត</string>
     <string name="Input_phone_number">សូមបញ្ចូលលេខទូរស័ព្ទ</string>
     <string name="Verify_code">សូមបញ្ចូលលេខកូដបញ្ជាក់</string>
+    <string name="Register_with_phone_number">ចូលប្រើដោយលេខទូរស័ព្ទ</string>
+    <string name="Register_with_google_account">ចូលប្រើជាមួយ Google</string>
+    <string name="app_license">©USEA 2022V.1.0</string>
+    <string name="Application_open">Application open</string>
+    <string name="Application_close">Last day for applications</string>
+    <string name="Application_type">Application type</string>
+    <string name="Application_required">Application required</string>
+    <string name="Benefit_type">Benefit type</string>
+    <string name="Full_benefit_detail">Full benefit detail</string>
+    <string name="Citizenship_requirement">Citizenship requirement</string>
+    <string name="Total_value">Total value</string>
+    <string name="Application_study_areas">Application study areas</string>
+    <string name="Learn_more">Learn more</string>
+    <string name="How_to_apply">How to apply</string>
+    <string name="University">មហាវិទ្យាល័យ</string>
+    <string name="Institute">វិទ្យាស្ថាន</string>
+    <string name="Social_law">វិទ្យាសាស្រ្ត សង្គម និងនិតិសាស្រ្ត</string>
+    <string name="Economy_tourism">សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍</string>
+    <string name="Science_technology">វិទ្យាសាស្រ្ត និងបច្ចេកវិទ្យា</string>
+    <string name="Psychology_education">សិល្បៈ មនុស្សសាស្ដ្រ និងការអប់រំ</string>
+    <string name="Foreign_language">វិទ្យាស្ថានភាសាបរទេស</string>
 </resources>

@@ -1,70 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:contentDescription="@null"
-        android:src="@drawable/usea_logo" />
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/khmer_os_moul"
         android:gravity="center"
-        android:text="@string/school_name_kh"
-        android:textColor="@color/dark_blue"
-        android:textSize="16sp" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="@null"
+            android:src="@drawable/usea_logo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/khmer_os_moul"
+            android:gravity="center"
+            android:text="@string/school_name_kh"
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/khmer_os_battambang_bold"
+            android:gravity="center"
+            android:text="@string/school_name_en"
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:gravity="center"
+            android:text="@string/Account"
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/guest_account"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/dark_blue"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/guest"
+            app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/studentaccount"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/dark_blue"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/Student"
+            app:cornerRadius="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/khmer_os_battambang_bold"
         android:gravity="center"
-        android:text="@string/school_name_en"
-        android:textColor="@color/dark_blue"
-        android:textSize="16sp" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:fontFamily="@font/khmer_os_battambang_regular"
-        android:gravity="center"
-        android:text="@string/Account"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/dark_blue" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
-    <Button
-        android:id="@+id/guestaccount"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/dark_blue"
-        android:fontFamily="@font/khmer_os_battambang_regular"
-        android:text="@string/guest"
-        app:cornerRadius="50dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/ellipse_dot_small" />
 
-    <Button
-        android:id="@+id/studentaccount"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/dark_blue"
-        android:fontFamily="@font/khmer_os_battambang_regular"
-        android:text="@string/Student"
-        app:cornerRadius="50dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/ellipse_dot_big" />
+        </LinearLayout>
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/app_license" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

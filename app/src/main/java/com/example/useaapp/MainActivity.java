@@ -6,7 +6,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.useaapp.guest.MainGuestActivity;
 import com.example.useaapp.guest.guest_login.GuestLogin;
 import com.example.useaapp.student.student_login.StudentLogin;
 
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button guest,student;
-        guest= findViewById(R.id.guestaccount);
+        guest= findViewById(R.id.guest_account);
         student= findViewById(R.id.studentaccount);
         guest.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, GuestLogin.class));

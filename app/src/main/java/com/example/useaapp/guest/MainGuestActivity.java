@@ -4,8 +4,12 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -53,6 +57,7 @@ public class MainGuestActivity extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         leave.setOnClickListener(v1-> finishAffinity());
         cancel.setOnClickListener(v1-> dialog.dismiss());
+//        dialog.getWindow().getAttributes().gravity = Gravity.CENTER;
         dialog.show();
     }
 }

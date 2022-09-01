@@ -19,6 +19,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_adapter.GuestCategoryAdapter;
 import com.example.useaapp.guest.guest_events.GuestEvent;
+import com.example.useaapp.guest.guest_program.GuestProgram;
 import com.example.useaapp.guest.guest_registration.GuestRegistration;
 import com.example.useaapp.guest.guest_scholarship.GuestScholarship;
 import com.example.useaapp.student.MainStudentActivity;
@@ -54,6 +55,7 @@ public class FragmentGuestHome extends Fragment {
                     break;
                 case "កម្មវិធីសិក្សា":
                     Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getContext(), GuestProgram.class));
                     break;
                 case "អាហាររូបករណ៍":
                     Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();

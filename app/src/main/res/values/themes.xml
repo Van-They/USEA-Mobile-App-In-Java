@@ -1,9 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.USEAAPP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.USEAAPP" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
 <!--        <item name="windowNoTitle">true</item>-->
 <!--        <item name="windowActionBar">false</item>-->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -15,7 +16,7 @@
         <item name="android:statusBarColor" >@color/black</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="setDisplayHomeAsUpEnable_profile" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="setDisplayHomeAsUpEnable_profile" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBarOverlay">true</item>
@@ -45,7 +46,7 @@
 
     //set text Size on Tab bar
     <style name="TabTextSize" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="fontFamily">@font/khmer_os_battambang_regular</item>
     </style>
 </resources>
