@@ -163,4 +163,8 @@
     <string name="Science_technology">វិទ្យាសាស្រ្ត និងបច្ចេកវិទ្យា</string>
     <string name="Psychology_education">សិល្បៈ មនុស្សសាស្ដ្រ និងការអប់រំ</string>
     <string name="Foreign_language">វិទ្យាស្ថានភាសាបរទេស</string>
+    <string name="Register_Ass">ការចុះឈ្មោះចូលរៀនសម្រាប់ថ្នាក់បរិញ្ញាបត្ររង</string>
+    <string name="Register_Bac">ការចុះឈ្មោះចូលរៀនសម្រាប់ថ្នាក់បរិញ្ញាបត្រ</string>
+    <string name="Register_Mba">ការចុះឈ្មោះចូលរៀនសម្រាប់ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់</string>
+
 </resources>
