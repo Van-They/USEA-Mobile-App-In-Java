@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/khmer_os_battambang_regular"
+        android:textColor="@color/black"
+        android:text=" ថ្ងៃទី "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/khmer_os_battambang_regular"
+        android:textColor="@color/black"
+        android:id="@+id/DayofMonth_student_schedule"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/khmer_os_battambang_regular"
+        android:textColor="@color/black"
+        android:text=" ខែ "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/khmer_os_battambang_regular"
+        android:textColor="@color/black"
+        android:id="@+id/Month_student_schedule"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/khmer_os_battambang_regular"
+        android:textColor="@color/black"
+        android:text=" ឆ្នាំ "/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/khmer_os_battambang_regular"
+        android:textColor="@color/black"
+        android:id="@+id/Year_student_schedule"/>
+</LinearLayout>
