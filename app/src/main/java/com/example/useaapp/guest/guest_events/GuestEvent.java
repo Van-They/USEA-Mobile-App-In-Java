@@ -22,6 +22,7 @@ public class GuestEvent extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle(R.string.GuestEvent);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(view -> finish());
         TabLayout tablayout = findViewById(R.id.tab_menu_guest_event);
         ViewPager2 pager2 = findViewById(R.id.view_pager_menu_guest_event);
         getSupportFragmentManager().beginTransaction().replace(R.id.ImageSliderGuestEvent,new FragmentImageSlider()).commit();

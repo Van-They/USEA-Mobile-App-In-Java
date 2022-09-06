@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.useaapp" >
+    package="com.example.useaapp">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -17,7 +17,10 @@
         android:theme="@style/Theme.USEAAPP"
         android:usesCleartextTraffic="true"
         tools:ignore="DataExtractionRules"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".CareerItemsDetail"
+            android:exported="false" />
         <activity
             android:name=".guest.guest_program.GuestProgram"
             android:exported="false" />
@@ -42,7 +45,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -97,6 +100,9 @@
             android:exported="false" />
         <activity
             android:name=".guest.guest_events.GuestEvent"
+            android:exported="false" />
+        <activity
+            android:name=".guest.guest_career.GuestCareer"
             android:exported="false" />
         <activity
             android:name=".guest.guest_registration.GuestRegistration"

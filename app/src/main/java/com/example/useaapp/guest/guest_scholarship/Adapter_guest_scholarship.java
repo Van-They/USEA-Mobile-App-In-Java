@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.useaapp.R;
+import com.example.useaapp.guest.guest_scholarship.ScholarshipItemsDetail;
+import com.example.useaapp.guest.guest_scholarship.ScholarshipModel;
 
 import java.util.ArrayList;
 
@@ -66,7 +68,7 @@ public class Adapter_guest_scholarship extends ArrayAdapter<ScholarshipModel> {
 
         ReadDetail.setOnClickListener(v -> {
             Toast.makeText(getContext(), Data.getTitle(), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getContext(),ScholarshipItemsDetail.class);
+            Intent intent = new Intent(getContext(), ScholarshipItemsDetail.class);
             intent.putExtra(Title, Data.getTitle());
             intent.putExtra(Degree, Data.getDegree());
             intent.putExtra(Fee, Data.getFee());

@@ -36,7 +36,7 @@ public class StudentSetting extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(R.string.Setting);
         TextView studentLogOut = findViewById(R.id.student_log_out);
-
+        toolbar.setNavigationOnClickListener(view -> finish());
         AboutProfile = findViewById(R.id.AboutProfile);
         LegalProfile = findViewById(R.id.LegalProfile);
 

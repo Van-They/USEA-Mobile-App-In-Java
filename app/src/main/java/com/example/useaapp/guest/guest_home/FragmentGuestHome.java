@@ -18,6 +18,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_adapter.GuestCategoryAdapter;
+import com.example.useaapp.guest.guest_career.GuestCareer;
 import com.example.useaapp.guest.guest_events.GuestEvent;
 import com.example.useaapp.guest.guest_program.GuestProgram;
 import com.example.useaapp.guest.guest_registration.GuestRegistration;
@@ -63,6 +64,7 @@ public class FragmentGuestHome extends Fragment {
                     break;
                 case "ព័ត៌មានការងារ":
                     Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getContext(), GuestCareer.class));
                     break;
                 case "គណនីសិស្ស":
                     sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);

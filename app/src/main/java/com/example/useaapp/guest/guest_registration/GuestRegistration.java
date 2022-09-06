@@ -29,6 +29,7 @@ public class GuestRegistration extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle(R.string.GuestRegistration);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(view -> finish());
 //        End Action Bar
         expandableListView = findViewById(R.id.expandableListView);
 

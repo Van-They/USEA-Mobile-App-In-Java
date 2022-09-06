@@ -18,5 +18,6 @@ public class GuestProgram extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarGuestProgram);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(view -> finish());
     }
 }
