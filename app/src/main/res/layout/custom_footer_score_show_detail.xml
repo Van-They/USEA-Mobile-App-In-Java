@@ -27,7 +27,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:contentDescription="@null"
-                android:src="@drawable/go_icon" />
+                android:src="@drawable/go_icon"
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

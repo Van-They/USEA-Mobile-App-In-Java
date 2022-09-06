@@ -40,6 +40,7 @@ public class StudentProfile extends AppCompatActivity {
         setSupportActionBar(actionbar);
         setTitle(R.string.StudentInformation);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        actionbar.setNavigationOnClickListener(view -> finish());
 
         //image picker n change profile
         change_image_in_profile = findViewById(R.id.change_image_in_profile);

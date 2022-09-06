@@ -2,25 +2,11 @@ package com.example.useaapp.guest.guest_scholarship;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
-import android.text.Html;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import com.denzcoskun.imageslider.ImageSlider;
-import com.denzcoskun.imageslider.constants.ScaleTypes;
-import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_home.FragmentImageSlider;
-
 import java.util.ArrayList;
-import java.util.List;
-
 public class GuestScholarship extends AppCompatActivity {
     Toolbar toolbar;
     ListView Listview_scholarship;
@@ -34,6 +20,7 @@ public class GuestScholarship extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle(R.string.Scholarship);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(view -> finish());
 //        End Action Bar
 
         getSupportFragmentManager().beginTransaction().replace(R.id.ImageSliderGuestScholarship,new FragmentImageSlider()).commit();

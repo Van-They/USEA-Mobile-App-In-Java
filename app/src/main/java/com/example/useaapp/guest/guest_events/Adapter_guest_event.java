@@ -18,9 +18,7 @@ import java.util.ArrayList;
 public class Adapter_guest_event extends ArrayAdapter<GuestEventModel> {
     public Adapter_guest_event(@NonNull Context context, ArrayList<GuestEventModel> guestEventModels) {
         super(context, R.layout.custom_items_guest_event, guestEventModels);
-
     }
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

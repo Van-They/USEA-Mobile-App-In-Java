@@ -38,6 +38,7 @@ public class ScholarshipItemsDetail extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle(R.string.Scholarship);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(view -> finish());
 
         initialize();//connect relationship class with activity
         getString();//get string from intent Guest Scholarship
