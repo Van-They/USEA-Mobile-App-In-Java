@@ -25,7 +25,6 @@ public class GuestRegistration extends AppCompatActivity {
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
     HashMap<String,List<String>> expandableListDetail;
-
     List<Response_model_guest_registration> responsemodels;
     RecyclerView recview;
 

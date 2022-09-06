@@ -23,7 +23,6 @@ public class ApiController_guest_registration
               clientobject=new ApiController_guest_registration();
           return clientobject;
      }
-
     Apiset_guest_registration getapi()
      {
          return retrofit.create(Apiset_guest_registration.class);

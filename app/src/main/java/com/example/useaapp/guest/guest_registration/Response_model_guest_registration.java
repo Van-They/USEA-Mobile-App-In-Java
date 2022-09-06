@@ -2,7 +2,7 @@ package com.example.useaapp.guest.guest_registration;
 
 public class Response_model_guest_registration
 {
-   String id, reg_question, reg_answer;
+    String id, reg_question, reg_answer;
 
     public Response_model_guest_registration(String id, String reg_question, String reg_answer) {
         this.id = id;
