@@ -9,7 +9,7 @@
     <include
         android:id="@+id/CustomActionbarGuestRegistration"
         layout="@layout/custom_actionbar" />
-    <ExpandableListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/expandableListView"
         android:divider="@null"
         android:indicatorRight="?android:attr/expandableListPreferredChildIndicatorLeft"

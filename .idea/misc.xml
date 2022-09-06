@@ -3,20 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/LEARNING/MySchoolApp/app/src/main/res/layout/activity_guest_registration.xml" value="0.33" />
-        <entry key="..\:/LEARNING/MySchoolApp/app/src/main/res/layout/activity_guest_registration_group.xml" value="0.1" />
-        <entry key="..\:/LEARNING/MySchoolApp/app/src/main/res/layout/activity_guest_scholarship.xml" value="0.3625" />
-        <entry key="..\:/LEARNING/MySchoolApp/app/src/main/res/layout/custom_gridview_category.xml" value="0.1828125" />
-        <entry key="..\:/LEARNING/MySchoolApp/app/src/main/res/layout/custom_guest_registration_group.xml" value="0.33" />
-        <entry key="..\:/LEARNING/MySchoolApp/app/src/main/res/layout/custom_guest_registration_item.xml" value="0.33" />
-        <entry key="..\:/LEARNING/MySchoolApp/app/src/main/res/layout/fragment_past_event.xml" value="0.35833333333333334" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/drawable-v24/ic_guest_registration_show_detail.xml" value="0.114" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_guest_registration.xml" value="0.25416666666666665" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_main.xml" value="0.1675925925925926" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_main_student.xml" value="0.25416666666666665" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_student_login.xml" value="0.1675925925925926" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_student_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/adapter_guest_registration.xml" value="0.25416666666666665" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/custom_actionbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/custom_guest_registration_group.xml" value="0.25416666666666665" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/custom_guest_registration_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/fragment_student_home.xml" value="0.1675925925925926" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/fragment_study_plan__y1s1s2.xml" value="0.1962962962962963" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/menu/student_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/back_icon.xml" value="0.225" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/bottomnavigationselector.xml" value="0.286" />
@@ -28,14 +27,12 @@
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/ic_calendar.xml" value="0.1485" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/ic_calendar_black_24.xml" value="0.286" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/ic_close_24.xml" value="0.196" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/ic_location.xml" value="0.126" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/ic_more.xml" value="0.1295" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/ic_more_24.xml" value="0.1295" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/ic_notifications.xml" value="0.2295" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/ic_phone_black_24.xml" value="0.286" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/ic_schedule_black_24.xml" value="0.286" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/language_icon.xml" value="0.2175" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/location_icon.xml" value="0.126" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/policy.xml" value="0.286" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/policy_icon.xml" value="0.286" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/drawable/sample_user.xml" value="0.291" />
@@ -44,27 +41,18 @@
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout-v26/activity_about.xml" value="0.36615384615384616" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_about.xml" value="0.209375" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_attendance.xml" value="0.371875" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_dashobard_guest.xml" value="0.25" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_dashobard_guest.xml" value="0.33" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_event.xml" value="0.37083333333333335" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_guest_event.xml" value="0.371875" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_guest_login.xml" value="0.25" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_guest_program.xml" value="0.33" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_guest_registration.xml" value="0.371875" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_guest_scholarship.xml" value="0.2203125" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_legal.xml" value="0.371875" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_main_student.xml" value="0.33" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_new_items_detail.xml" value="0.25" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_sample.xml" value="0.33" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_scholarshipitems_detail.xml" value="0.25" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_score_detail.xml" value="0.234375" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.3828125" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_sample.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_student_attendance.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_student_feedback.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_student_login.xml" value="0.25" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_student_profile.xml" value="0.371875" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_student_schedule.xml" value="0.2203125" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_student_score.xml" value="0.22" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_student_score.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_student_setting.xml" value="0.33" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/activity_student_study_plan.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_actionbar.xml" value="0.36666666666666664" />
@@ -73,37 +61,17 @@
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_cardview_homework.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_cardview_midterm.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_cardview_rank_credit.xml" value="0.371875" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_dialog_back.xml" value="0.25" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_dialog_log_out.xml" value="0.25" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_footer_label_study_plan_semester.xml" value="0.3828125" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_footer_score_show_detail.xml" value="0.33" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_footer_score_showdetail.xml" value="0.17527173913043478" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_grid_category_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_gridview_category.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_header_label_study_plan_semester1.xml" value="0.38177083333333334" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_header_label_study_plan_semester2.xml" value="0.38177083333333334" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_header_list_score_semester1.xml" value="0.3686594202898551" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_header_list_score_semester2.xml" value="0.3686594202898551" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_item_guest_program.xml" value="0.371875" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_item_schedule.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_item_studyplan.xml" value="0.3541666666666667" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_items_guest_event.xml" value="0.2" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_items_guest_scholarship.xml" value="0.25" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_items_news.xml" value="0.25" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_items_score.xml" value="0.3141025641025641" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_items_studyplan.xml" value="0.3828125" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_items_news.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_log_out.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/custom_toolbar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_guest_home.xml" value="0.25" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_guest_more.xml" value="0.25118483412322273" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_image_slider.xml" value="0.2203125" />
+        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_guest_more.xml" value="0.33" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_sample.xml" value="0.371875" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_student_home.xml" value="0.22" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_student_news.xml" value="0.371875" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_student_score__y1_s1_s2.xml" value="0.22" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_student_score__y2_s1_s2.xml" value="0.3828125" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_student_score__y3_s1_s2.xml" value="0.3828125" />
-        <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_student_score__y4_s1_s2.xml" value="0.25104166666666666" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_study_plan__y1_s1.xml" value="0.25" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_study_plan__y1s1s2.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/Vann/Documents/Code/MySchoolApp/app/src/main/res/layout/fragment_study_plan__y2_s1_s2.xml" value="0.2203125" />

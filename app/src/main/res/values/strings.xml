@@ -8,6 +8,8 @@
     <string name="hello">សួស្តី</string>
     <string name="Sample_txt">XXX</string>
     <string name="Assignment">កិច្ចការក្រុម</string>
+    <string name="Registration_question">question</string>
+    <string name="Registration_answer">answer</string>
     <string name="Subject">មុខវិជ្ជា</string>
     <string name="Due_Date">ផុតកំណត់:</string>
     <string name="Create_By">បង្កើតដោយ:</string>
