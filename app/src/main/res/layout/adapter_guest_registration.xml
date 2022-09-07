@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:orientation="vertical"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/guest_registration_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        app:cardCornerRadius="5dp"
+        app:contentPadding="5dp">
+
+        <LinearLayout
+            android:id="@+id/guest_registration_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/guest_registration_question"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Registration_question"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_guest_registration_show_detail"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/guest_registration_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Registration_answer"
+                android:textSize="14sp"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

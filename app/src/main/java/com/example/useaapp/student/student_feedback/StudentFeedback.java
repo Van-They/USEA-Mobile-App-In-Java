@@ -21,6 +21,7 @@ public class StudentFeedback extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle(R.string.Feedback);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(view -> finish());
         btnSubmit_feedback = findViewById(R.id.submit_btn_feedback);
         ratingBar = findViewById(R.id.rating_star);
 

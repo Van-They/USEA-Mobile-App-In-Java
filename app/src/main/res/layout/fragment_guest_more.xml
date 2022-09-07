@@ -84,11 +84,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/about_icon" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -99,10 +94,6 @@
                     android:textColor="@color/black" />
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/go_icon" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -120,7 +111,7 @@
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:textColor="@color/black"
                 android:gravity="center"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:text="@string/Follow_Us" />
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -193,7 +184,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="10dp">
              <com.google.android.material.card.MaterialCardView
                  android:layout_width="match_parent"
                  android:layout_height="80dp"

@@ -24,6 +24,7 @@ public class StudentAttendance extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle(R.string.Attendance);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(view -> finish());
         addData();
         setView();
     }

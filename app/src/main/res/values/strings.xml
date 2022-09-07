@@ -8,6 +8,8 @@
     <string name="hello">សួស្តី</string>
     <string name="Sample_txt">XXX</string>
     <string name="Assignment">កិច្ចការក្រុម</string>
+    <string name="Registration_question">question</string>
+    <string name="Registration_answer">answer</string>
     <string name="Subject">មុខវិជ្ជា</string>
     <string name="Due_Date">ផុតកំណត់:</string>
     <string name="Create_By">បង្កើតដោយ:</string>
@@ -166,9 +168,7 @@
     <string name="Register_Ass">ការចុះឈ្មោះចូលរៀនសម្រាប់ថ្នាក់បរិញ្ញាបត្ររង</string>
     <string name="Register_Bac">ការចុះឈ្មោះចូលរៀនសម្រាប់ថ្នាក់បរិញ្ញាបត្រ</string>
     <string name="Register_Mba">ការចុះឈ្មោះចូលរៀនសម្រាប់ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់</string>
-    <string name="Associative">បរិញ្ញាបត្ររង</string>
-    <string name="Bachelor">បរិញ្ញាបត្រ</string>
-    <string name="Master">បរិញ្ញាបត្រជាន់ខ្ពស់</string>
-    <string name="Guest_Program">កម្មវិធីសិក្សា</string>
+    <string name="Due_guest_Date">ថ្ងៃផុតកំណត់</string>
+    <string name="Career_Require">តម្រូវការ</string>
 
 </resources>
