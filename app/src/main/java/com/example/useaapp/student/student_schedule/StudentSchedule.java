@@ -41,7 +41,6 @@ public class StudentSchedule extends AppCompatActivity {
             adapter = new Adpter_student_schedule(getApplicationContext(),models);
             adapter.notifyDataSetChanged();
             Listview_student_schedule.setAdapter(adapter);
-            Toast.makeText(view.getContext(), "Year" +year + "Month"+month + "Day"+dayOfMonth, Toast.LENGTH_SHORT).show();
         });
     }
 

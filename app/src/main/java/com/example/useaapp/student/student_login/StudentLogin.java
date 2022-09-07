@@ -76,7 +76,7 @@ public class StudentLogin extends AppCompatActivity {
                     String[] data = new String[2];
                     data[0] = student_id;
                     data[1] = pwd;
-                    PutData putData = new PutData("http://10.10.10.97//LoginRegister/login.php", "POST", field, data);
+                    PutData putData = new PutData("http://192.168.3.0//LoginRegister/login.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             progressLogIn.setVisibility(View.GONE);
