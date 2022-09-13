@@ -89,7 +89,12 @@
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:text="@string/Due_Date"
                         android:textSize="14sp" />
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/khmer_os_battambang_regular"
+                        android:text="@string/Double_dot"
+                        android:textSize="14sp" />
                     <TextView
                         android:id="@+id/Due_date_news"
                         android:layout_width="wrap_content"
@@ -112,7 +117,12 @@
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:text="@string/Exam_date"
                         android:textSize="14sp" />
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/khmer_os_battambang_regular"
+                        android:text="@string/Double_dot"
+                        android:textSize="14sp" />
                     <TextView
                         android:id="@+id/Exam_date_news"
                         android:layout_width="wrap_content"
@@ -133,7 +143,12 @@
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:text="@string/Room"
                         android:textSize="14sp" />
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/khmer_os_battambang_regular"
+                        android:text="@string/Double_dot"
+                        android:textSize="14sp" />
                     <TextView
                         android:id="@+id/Room_news"
                         android:layout_width="wrap_content"
@@ -152,9 +167,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/khmer_os_battambang_regular"
-                        android:text="@string/hournews"
+                        android:text="@string/Time"
                         android:textSize="14sp" />
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/khmer_os_battambang_regular"
+                        android:text="@string/Double_dot"
+                        android:textSize="14sp" />
                     <TextView
                         android:id="@+id/Time_news"
                         android:layout_width="wrap_content"
@@ -175,7 +195,12 @@
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:text="@string/Create_By"
                         android:textSize="14sp" />
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/khmer_os_battambang_regular"
+                        android:text="@string/Double_dot"
+                        android:textSize="14sp" />
                     <TextView
                         android:id="@+id/Creator_news"
                         android:layout_width="wrap_content"

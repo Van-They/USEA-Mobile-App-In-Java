@@ -1,4 +1,4 @@
-package com.example.useaapp.student.student_score.year1;
+package com.example.useaapp.student.student_adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,15 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.useaapp.R;
-import com.example.useaapp.student.student_score.ModelScore;
+import com.example.useaapp.student.student_score.Score.ModelScore;
 
 import java.util.ArrayList;
 
 
-public class Adapter_Score_Semester extends ArrayAdapter<ModelScore> {
+public class Adapter_score_semester extends ArrayAdapter<ModelScore> {
 
 
-    public Adapter_Score_Semester(@NonNull Context context, ArrayList<ModelScore> arrayList) {
+    public Adapter_score_semester(@NonNull Context context, ArrayList<ModelScore> arrayList) {
         super(context, R.layout.custom_items_score,arrayList);
     }
 

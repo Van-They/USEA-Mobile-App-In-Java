@@ -10,10 +10,10 @@ import com.example.useaapp.student.student_studyPlan.year2.FragmentStudyPlan_Y2S
 import com.example.useaapp.student.student_studyPlan.year3.FragmentStudyPlan_Y3S1S2;
 import com.example.useaapp.student.student_studyPlan.year4.FragmentStudyPlan_Y4S1S2;
 
-public class Adapter_studyplan extends FragmentStateAdapter {
+public class Adapter_study_plan_tab_bar extends FragmentStateAdapter {
     String[] Tab_title = {"", "", "", ""};
 
-    public Adapter_studyplan(@NonNull FragmentActivity fragmentActivity) {
+    public Adapter_study_plan_tab_bar(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 

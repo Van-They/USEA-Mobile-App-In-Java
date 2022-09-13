@@ -21,7 +21,7 @@ import com.example.useaapp.student.student_attendance.StudentAttendance;
 import com.example.useaapp.student.student_feedback.StudentFeedback;
 import com.example.useaapp.student.student_profile.StudentProfile;
 import com.example.useaapp.student.student_schedule.StudentSchedule;
-import com.example.useaapp.student.student_score.StudentScore;
+import com.example.useaapp.student.student_score.Score.StudentScore;
 import com.example.useaapp.student.student_studyPlan.StudentStudyPlan;
 
 import java.util.Objects;

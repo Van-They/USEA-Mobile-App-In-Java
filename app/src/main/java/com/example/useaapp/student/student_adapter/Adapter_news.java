@@ -16,9 +16,9 @@ import com.example.useaapp.student.student_news.ModelNews;
 
 import java.util.ArrayList;
 
-public class ListAdapterNews extends ArrayAdapter<ModelNews> {
+public class Adapter_news extends ArrayAdapter<ModelNews> {
 
-    public ListAdapterNews(@NonNull Context context, ArrayList<ModelNews> arrayList) {
+    public Adapter_news(@NonNull Context context, ArrayList<ModelNews> arrayList) {
         super(context, R.layout.custom_items_news,arrayList);
     }
 

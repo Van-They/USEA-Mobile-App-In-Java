@@ -7,7 +7,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 
 import com.example.useaapp.R;
-import com.example.useaapp.student.student_adapter.Adapter_studyplan;
+import com.example.useaapp.student.student_adapter.Adapter_study_plan_tab_bar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -26,7 +26,7 @@ public class StudentStudyPlan extends AppCompatActivity {
         tabLayout = findViewById(R.id.tab_menu_studyPlan);
         viewPager2 = findViewById(R.id.view_pager_menu_studyPlan);
 
-        viewPager2.setAdapter(new Adapter_studyplan(this));
+        viewPager2.setAdapter(new Adapter_study_plan_tab_bar(this));
         new TabLayoutMediator(tabLayout,viewPager2,(tab, position) -> tab.setText(Tab_title[position])).attach();
     }
 }

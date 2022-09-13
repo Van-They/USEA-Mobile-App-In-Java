@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context=".student.student_score.ScoreDetail">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello Score Detail"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".student.student_score.Detail_score_s1s2.ScoreDetail">
+   <include layout="@layout/custom_actionbar"
+       android:id="@+id/CustomActionbarStudentScoreDetail"/>
+   <com.google.android.material.tabs.TabLayout
+       android:id="@+id/tab_menu_score_detail"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:layout_marginTop="10dp"
+       app:tabIndicator="@drawable/tab_indicator"
+       app:tabIndicatorAnimationMode="elastic"
+       app:tabIndicatorColor="@color/dark_blue"
+       app:tabIndicatorGravity="stretch"
+       app:tabMode="auto"
+       app:tabSelectedTextColor="@color/white"
+       app:tabTextAppearance="@style/TabTextSize"
+       app:tabTextColor="@color/black" />
+   <androidx.viewpager2.widget.ViewPager2
+       android:id="@+id/view_pager_menu_score_detail"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="10dp" />
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/Frame_student_score_detail"/>
 </LinearLayout>

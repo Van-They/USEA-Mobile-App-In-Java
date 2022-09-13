@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Subject_student_score_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_sky_40"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/khmer_os_battambang_regular" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Attendance"
+                android:textColor="@color/black" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Exercise"
+                android:textColor="@color/black" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Homework"
+                android:textColor="@color/black" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Assignment"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Midterm"
+                android:textColor="@color/black" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Semester"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/Attendance_student_score_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Sample_txt" />
+
+            <TextView
+                android:id="@+id/Exercise_student_score_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Sample_txt" />
+
+            <TextView
+                android:id="@+id/Homework_student_score_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Sample_txt" />
+
+            <TextView
+                android:id="@+id/Assignment_student_score_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Sample_txt" />
+
+            <TextView
+                android:id="@+id/Midterm_student_score_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Sample_txt" />
+
+            <TextView
+                android:id="@+id/Semester_exam_student_score_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Sample_txt" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Total"
+                android:textColor="@color/dark_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Average"
+                android:textColor="@color/dark_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Rank"
+                android:textColor="@color/dark_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Grade"
+                android:textColor="@color/dark_blue" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="0dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Double_dot"
+                android:textColor="@color/dark_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Double_dot"
+                android:textColor="@color/dark_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Double_dot"
+                android:textColor="@color/dark_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Double_dot"
+                android:textColor="@color/dark_blue" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/Total_student_score_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Sample_txt"
+                android:textColor="@color/dark_blue" />
+
+            <TextView
+                android:id="@+id/Average_student_score_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Sample_txt"
+                android:textColor="@color/dark_blue" />
+
+            <TextView
+                android:id="@+id/Rank_student_score_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Sample_txt"
+                android:textColor="@color/dark_blue" />
+
+            <TextView
+                android:id="@+id/Grade_student_score_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Sample_txt"
+                android:textColor="@color/dark_blue" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
