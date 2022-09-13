@@ -10,9 +10,9 @@ import com.example.useaapp.student.student_score.year2.FragmentStudentScore_Y2S1
 import com.example.useaapp.student.student_score.year3.FragmentStudentScore_Y3S1S2;
 import com.example.useaapp.student.student_score.year4.FragmentStudentScore_Y4S1S2;
 
-public class Adapter_studentscore extends FragmentStateAdapter {
+public class Adapter_score_tab_bar extends FragmentStateAdapter {
     String[] Tab_title = {"ឆ្នាំទី១", "ឆ្នាំទី២", "ឆ្នាំទី៣", "ឆ្នាំទី៤"};
-    public Adapter_studentscore(@NonNull FragmentActivity fragmentActivity) {
+    public Adapter_score_tab_bar(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
     @NonNull

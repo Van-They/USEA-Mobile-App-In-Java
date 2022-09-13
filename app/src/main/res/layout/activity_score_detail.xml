@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".student.student_score.ScoreDetail">
+    tools:context=".student.student_score.Detail_score_s1s2.ScoreDetail">
    <include layout="@layout/custom_actionbar"
        android:id="@+id/CustomActionbarStudentScoreDetail"/>
    <com.google.android.material.tabs.TabLayout
@@ -17,14 +17,14 @@
        app:tabIndicatorAnimationMode="elastic"
        app:tabIndicatorColor="@color/dark_blue"
        app:tabIndicatorGravity="stretch"
-       app:tabMode="fixed"
+       app:tabMode="auto"
        app:tabSelectedTextColor="@color/white"
        app:tabTextAppearance="@style/TabTextSize"
        app:tabTextColor="@color/black" />
    <androidx.viewpager2.widget.ViewPager2
        android:id="@+id/view_pager_menu_score_detail"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
+       android:layout_height="match_parent"
        android:layout_marginTop="10dp" />
    <FrameLayout
        android:layout_width="match_parent"

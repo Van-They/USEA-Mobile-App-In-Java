@@ -1,17 +1,17 @@
-package com.example.useaapp.student.student_score.year1;
+package com.example.useaapp.student.student_adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.useaapp.student.student_score.Fragment_score_s1;
-import com.example.useaapp.student.student_score.Fragment_score_s2;
+import com.example.useaapp.student.student_score.Detail_score_s1s2.Fragment_score_s1;
+import com.example.useaapp.student.student_score.Detail_score_s1s2.Fragment_score_s2;
 
-public class Adapter_student_score_detail_tabbar extends FragmentStateAdapter {
+public class Adapter_score_detail_tab_bar extends FragmentStateAdapter {
     String[] score_detail_tab = {"", ""};
 
-    public Adapter_student_score_detail_tabbar(@NonNull FragmentActivity fragmentActivity) {
+    public Adapter_score_detail_tab_bar(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 

@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.useaapp.R;
-import com.example.useaapp.student.student_adapter.ListAdapterNews;
+import com.example.useaapp.student.student_adapter.Adapter_news;
 
 import java.util.ArrayList;
 
@@ -38,7 +38,7 @@ public class FragmentStudentNews extends Fragment {
         addItem();
 
 
-        listView.setAdapter(new ListAdapterNews(view.getContext(), listNews));
+        listView.setAdapter(new Adapter_news(view.getContext(), listNews));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

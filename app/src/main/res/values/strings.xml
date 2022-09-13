@@ -11,14 +11,14 @@
     <string name="Registration_question">question</string>
     <string name="Registration_answer">answer</string>
     <string name="Subject">មុខវិជ្ជា</string>
-    <string name="Due_Date">ផុតកំណត់:</string>
-    <string name="Create_By">បង្កើតដោយ:</string>
-    <string name="Homework">ការងារផ្ទះ</string>
+    <string name="Due_Date">ផុតកំណត់</string>
+    <string name="Create_By">បង្កើតដោយ</string>
+    <string name="Homework">កិច្ចការផ្ទះ</string>
     <string name="Midterm">ប្រឡងពាក់កណ្តាលឆមាស</string>
-    <string name="Exam_date">កាលបរិច្ឆេទប្រឡង:</string>
-    <string name="Time">ម៉ោងៈ</string>
+    <string name="Exam_date">កាលបរិច្ឆេទប្រឡង</string>
+    <string name="Time">ម៉ោង</string>
     <string name="Start_time">ម៉ោងចាប់ផ្តើមៈ</string>
-    <string name="Room">បន្ទប់:</string>
+    <string name="Room">បន្ទប់</string>
     <string name="sign_in_as">ចូលតាម:</string>
     <string name="Student">និស្សិត</string>
     <string name="Events">ព្រឹត្តិការណ៍</string>
@@ -113,7 +113,6 @@
     <string name="Cancel">បោះបង់</string>
     <string name="No">លេខរៀង</string>
     <string name="Total">សរុប</string>
-    <string name="hournews">ម៉ោង:</string>
     <string name="GuestEvent">ព្រឹត្តិការណ៍</string>
     <string name="GuestRegistration">ការចុះឈ្មោះ</string>
     <string name="Score">ពិន្ទុ</string>
@@ -170,5 +169,8 @@
     <string name="Register_Mba">ការចុះឈ្មោះចូលរៀនសម្រាប់ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់</string>
     <string name="Due_guest_Date">ថ្ងៃផុតកំណត់</string>
     <string name="Career_Require">តម្រូវការ</string>
+    <string name="Exercise">លំហាត់</string>
+    <string name="Double_dot">:</string>
+    <string name="Average">មធ្យមភាគ</string>
 
 </resources>

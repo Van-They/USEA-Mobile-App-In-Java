@@ -6,15 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.useaapp.R;
+import com.example.useaapp.student.student_adapter.Adapter_score_semester;
 import com.example.useaapp.student.student_adapter.ListviewHelper;
-import com.example.useaapp.student.student_score.ModelScore;
-import com.example.useaapp.student.student_score.ScoreDetail;
+import com.example.useaapp.student.student_score.Score.ModelScore;
+import com.example.useaapp.student.student_score.Detail_score_s1s2.ScoreDetail;
 
 import java.util.ArrayList;
 
@@ -38,9 +37,9 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
 
         addDataList1();
         addDataList2();
-        List_Score_Y1S1.setAdapter(new Adapter_Score_Semester(view.getContext(), Semester1));
+        List_Score_Y1S1.setAdapter(new Adapter_score_semester(view.getContext(), Semester1));
         ListviewHelper.getLisViewSize(List_Score_Y1S1);
-        List_Score_Y1S2.setAdapter(new Adapter_Score_Semester(view.getContext(), Semester2));
+        List_Score_Y1S2.setAdapter(new Adapter_score_semester(view.getContext(), Semester2));
         ListviewHelper.getLisViewSize(List_Score_Y1S2);
         return view;
     }

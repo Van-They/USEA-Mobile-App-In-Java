@@ -1,4 +1,4 @@
-package com.example.useaapp.student.student_score;
+package com.example.useaapp.student.student_score.Score;
 
 public class ModelScore {
     private final String Subject_score,Rank_score,Grade_score,Total_score;
