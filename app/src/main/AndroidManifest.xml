@@ -18,9 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="DataExtractionRules"
         tools:targetApi="31">
-        <activity
-            android:name=".CareerItemsDetail"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".CareerItemsDetail"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".guest.guest_program.GuestProgram"
             android:exported="false" />
@@ -44,7 +44,7 @@
             android:name=".student.student_news.NewsItemsDetail"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".guest.MainGuestActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -93,7 +93,7 @@
             android:exported="false"
             android:parentActivityName=".guest.MainGuestActivity" />
         <activity
-            android:name=".guest.MainGuestActivity"
+            android:name=".guest.guest_registration.GuestRegistration"
             android:exported="false" />
         <activity
             android:name=".guest.guest_login.GuestLogin"
@@ -105,7 +105,7 @@
             android:name=".guest.guest_career.GuestCareer"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_registration.GuestRegistration"
+            android:name=".MainActivity"
             android:exported="false"
             android:parentActivityName=".guest.MainGuestActivity" />
     </application>

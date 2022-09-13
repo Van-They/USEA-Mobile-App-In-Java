@@ -23,7 +23,6 @@
                 android:background="@color/blue_sky_40"
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:gravity="center"
-                android:text="@string/Associative"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:visibility="gone" />
@@ -35,7 +34,6 @@
                 android:background="@color/pink_40"
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:gravity="center"
-                android:text="@string/Bachelor"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:visibility="gone" />
@@ -47,7 +45,6 @@
                 android:background="#4D5FADF5"
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:gravity="center"
-                android:text="@string/Master"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:visibility="gone" />
