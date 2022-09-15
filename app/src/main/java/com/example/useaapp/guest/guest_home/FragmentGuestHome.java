@@ -74,11 +74,9 @@ public class FragmentGuestHome extends Fragment {
                     }else{
                         startActivity(new Intent(getContext(), StudentLogin.class));
                     }
-                    getActivity().finish();
                     break;
             }
        });
-
         return view;
     }
 }

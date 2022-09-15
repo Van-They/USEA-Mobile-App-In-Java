@@ -19,6 +19,7 @@ public class Adapter_guest_event extends ArrayAdapter<GuestEventModel> {
     public Adapter_guest_event(@NonNull Context context, ArrayList<GuestEventModel> guestEventModels) {
         super(context, R.layout.custom_items_guest_event, guestEventModels);
     }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -46,7 +47,7 @@ public class Adapter_guest_event extends ArrayAdapter<GuestEventModel> {
         Date_guest_event_item.setText(guestEventModel.getDate());
         Year_guest_event_item.setText(guestEventModel.getYear());
         Time_guest_event_item.setText(guestEventModel.getTime());
-        eventImg.setImageResource(guestEventModel.eventIMG);
+        eventImg.setImageResource(guestEventModel.getImage());
 
         return convertView;
 

@@ -1,29 +1,23 @@
 package com.example.useaapp.guest.guest_more;
 
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.useaapp.MainActivity;
 import com.example.useaapp.R;
-import com.example.useaapp.student.student_profile.StudentSetting;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class FragmentGuestMore extends Fragment {
-    ImageButton btn_fb, btn_ig, btn_yt, btn_tele, btn_web;
-    private ImageButton Btn_fb, Btn_ig, Btn_yt, Btn_tele, Btn_web, img_location;
-    private TextView  txt_location_txt, SignOutGuest;
+    ImageButton Btn_fb, Btn_ig, Btn_yt, Btn_tele, Btn_web, img_location;
+    TextView  txt_location_txt, SignOutGuest;
     //Link to URL
     private void gotUrl(String s) {
         Uri uri = Uri.parse(s);
@@ -51,54 +45,19 @@ public class FragmentGuestMore extends Fragment {
         });
         //Social Media
         //Click FB Image
-        Btn_fb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotUrl("https://facebook.com/usea.edu.kh");
-            }
-        });
+        Btn_fb.setOnClickListener(view1 -> gotUrl("https://facebook.com/usea.edu.kh"));
         //Click IG Image
-        Btn_ig.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotUrl("https://www.instagram.com/university_of_south_east_asia/");
-            }
-        });
+        Btn_ig.setOnClickListener(view17 -> gotUrl("https://www.instagram.com/university_of_south_east_asia/"));
         //Click Telegram Image
-        Btn_tele.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotUrl("https://facebook.com/usea.edu.kh");
-            }
-        });
+        Btn_tele.setOnClickListener(view12 -> gotUrl("https://facebook.com/usea.edu.kh"));
         //Click Youtube Image
-        Btn_yt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotUrl("https://www.youtube.com/channel/UCj_1fYGP6NXxYWcRkqbvN6A");
-            }
-        });
+        Btn_yt.setOnClickListener(view13 -> gotUrl("https://www.youtube.com/channel/UCj_1fYGP6NXxYWcRkqbvN6A"));
         //Click Youtube Image
-        Btn_web.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotUrl("https://usea.edu.kh/en/index.php");
-            }
-        });
+        Btn_web.setOnClickListener(view14 -> gotUrl("https://usea.edu.kh/en/index.php"));
         //Click Location Text
-        txt_location_txt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotUrl("https://www.google.com/maps/dir/13.3551786,103.8564198/13.3503099,103.8641453/@13.3527153,103.8556504,16z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0");
-            }
-        });
+        txt_location_txt.setOnClickListener(view15 -> gotUrl("https://www.google.com/maps/dir/13.3551786,103.8564198/13.3503099,103.8641453/@13.3527153,103.8556504,16z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0"));
         //Click on Location Image
-        img_location.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotUrl("https://www.google.com/maps/dir/13.3551786,103.8564198/13.3503099,103.8641453/@13.3527153,103.8556504,16z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0");
-            }
-        });
+        img_location.setOnClickListener(view16 -> gotUrl("https://www.google.com/maps/dir/13.3551786,103.8564198/13.3503099,103.8641453/@13.3527153,103.8556504,16z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0"));
         return view;
     }
 }

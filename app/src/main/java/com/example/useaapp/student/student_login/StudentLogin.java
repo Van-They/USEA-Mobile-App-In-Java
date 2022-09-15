@@ -26,9 +26,9 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 public class StudentLogin extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
-    private static String SHARED_PREF_NAME = "mypref";
-    private static String KEY_STUDENT_ID = "student_id";
-    private static String KEY_PWD = "pwd";
+    private final static String SHARED_PREF_NAME = "mypref";
+    private final static String KEY_STUDENT_ID = "student_id";
+    private final static String KEY_PWD = "pwd";
 
     TextInputEditText textInputLayoutUsername, textInputLayoutPassword;
     MaterialButton buttonLogin;
@@ -46,13 +46,14 @@ public class StudentLogin extends AppCompatActivity {
         progressLogIn = findViewById(R.id.progressLogIn);
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         String st_id = sharedPreferences.getString(KEY_STUDENT_ID, "");
-        if (st_id != null&&!st_id.equals("")){
-            startActivity(new Intent(this,MainStudentActivity.class));
+        if (st_id != null && !st_id.equals("")) {
+            startActivity(new Intent(this, MainStudentActivity.class));
             finish();
         }
 
 
     }
+
     public void letTheUserLoggedIn(View view) {
 
         if (!isConnected(StudentLogin.this)) {
@@ -66,37 +67,34 @@ public class StudentLogin extends AppCompatActivity {
         if (!student_id.equals("") && !pwd.equals("")) {
             progressLogIn.setVisibility(View.VISIBLE);
             Handler handler = new Handler(Looper.getMainLooper());
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    String[] field = new String[2];
-                    field[0] = "student_id";
-                    field[1] = "pwd";
-                    //Creating array for data
-                    String[] data = new String[2];
-                    data[0] = student_id;
-                    data[1] = pwd;
-                    PutData putData = new PutData("http://192.168.3.0//LoginRegister/login.php", "POST", field, data);
-                    if (putData.startPut()) {
-                        if (putData.onComplete()) {
-                            progressLogIn.setVisibility(View.GONE);
-                            String result = putData.getResult();
+            handler.post(() -> {
+                String[] field = new String[2];
+                field[0] = "student_id";
+                field[1] = "pwd";
+                //Creating array for data
+                String[] data = new String[2];
+                data[0] = student_id;
+                data[1] = pwd;
+                PutData putData = new PutData("http://192.168.3.0//LoginRegister/login.php", "POST", field, data);
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        progressLogIn.setVisibility(View.GONE);
+                        String result = putData.getResult();
 
-                            if (result.equals("Login Success")) {
+                        if (result.equals("Login Success")) {
 
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putString(KEY_STUDENT_ID, student_id);
-                                editor.putString(KEY_PWD, pwd);
-                                editor.apply();
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString(KEY_STUDENT_ID, student_id);
+                            editor.putString(KEY_PWD, pwd);
+                            editor.apply();
 
-                                Toast.makeText(StudentLogin.this, result, Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(StudentLogin.this, MainStudentActivity.class);
+                            Toast.makeText(StudentLogin.this, result, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(StudentLogin.this, MainStudentActivity.class);
 //                                intent.putExtra("student_id", data[0]);
-                                startActivity(intent);
-                                finish();
-                            } else {
-                                Toast.makeText(StudentLogin.this, result, Toast.LENGTH_SHORT).show();
-                            }
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(StudentLogin.this, result, Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -107,18 +105,18 @@ public class StudentLogin extends AppCompatActivity {
     }
 
     //    Connect to the Internet
-    private boolean isConnected(StudentLogin log){
+    private boolean isConnected(StudentLogin log) {
         ConnectivityManager connectivityManager = (ConnectivityManager) log.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo conWifi = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo conMobile = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-        if((conWifi != null && conWifi.isConnected()) || (conMobile != null && conMobile.isConnected())){
+        if ((conWifi != null && conWifi.isConnected()) || (conMobile != null && conMobile.isConnected())) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    private void showCustomDialog(){
+    private void showCustomDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(StudentLogin.this);
         builder.setMessage("Please Connect to the internet to proceed!!")
                 .setCancelable(false)

@@ -32,6 +32,11 @@ public class ScoreDetail extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager_menu_score_detail);
         viewPager.setAdapter(new Adapter_score_detail_tab_bar(this));
         new TabLayoutMediator(tabLayout, viewPager, ((tab, position) -> tab.setText(score_detail_tab[position]))).attach();
+    }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

@@ -6,8 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".guest.guest_program.GuestDetailProgram">
-    <include layout="@layout/custom_actionbar"
-        android:id="@+id/CustomActionbarGuestProgramDetail"/>
+
+    <include
+        android:id="@+id/CustomActionbarGuestProgramDetail"
+        layout="@layout/custom_actionbar" />
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_menu_program_detail"
         android:layout_width="match_parent"
@@ -21,13 +24,16 @@
         app:tabSelectedTextColor="@color/white"
         app:tabTextAppearance="@style/TabTextSize"
         app:tabTextColor="@color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:alpha="0.5"
+        android:background="@color/gray" />
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager_menu_program_detail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp" />
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Frame_program_detail"/>
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -7,6 +7,8 @@ import android.widget.ListView;
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_home.FragmentImageSlider;
 import java.util.ArrayList;
+import java.util.Objects;
+
 public class GuestScholarship extends AppCompatActivity {
     Toolbar toolbar;
     ListView Listview_scholarship;
@@ -19,7 +21,7 @@ public class GuestScholarship extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarGuestScholarship);
         setSupportActionBar(toolbar);
         setTitle(R.string.Scholarship);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
 //        End Action Bar
 
@@ -44,4 +46,9 @@ public class GuestScholarship extends AppCompatActivity {
                 "annual stipend","3<sup>rd</sup>","March","2022"));
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

@@ -98,4 +98,10 @@ public class ScholarshipItemsDetail extends AppCompatActivity {
         How_to_apply_scholarship_detail.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
         Full_benefit_detail_scholarship_detail.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

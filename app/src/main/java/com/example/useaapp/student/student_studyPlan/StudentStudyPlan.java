@@ -11,10 +11,13 @@ import com.example.useaapp.student.student_adapter.Adapter_study_plan_tab_bar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.util.Objects;
+
 public class StudentStudyPlan extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
     String[] Tab_title = {"ឆ្នាំទី១", "ឆ្នាំទី២", "ឆ្នាំទី៣", "ឆ្នាំទី៤"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +25,18 @@ public class StudentStudyPlan extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentStudyPlan);
         setSupportActionBar(toolbar);
         setTitle(R.string.Studyplan);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(v -> finish());
         tabLayout = findViewById(R.id.tab_menu_studyPlan);
         viewPager2 = findViewById(R.id.view_pager_menu_studyPlan);
 
         viewPager2.setAdapter(new Adapter_study_plan_tab_bar(this));
-        new TabLayoutMediator(tabLayout,viewPager2,(tab, position) -> tab.setText(Tab_title[position])).attach();
+        new TabLayoutMediator(tabLayout, viewPager2, (tab, position) -> tab.setText(Tab_title[position])).attach();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

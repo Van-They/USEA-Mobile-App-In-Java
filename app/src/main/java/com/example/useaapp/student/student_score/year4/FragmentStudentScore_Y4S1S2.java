@@ -22,8 +22,8 @@ public class FragmentStudentScore_Y4S1S2 extends Fragment {
     View Show_Detail_Y4S1,Show_Detail_Y4S2;
     ArrayList<ModelScore> Semester1,Semester2;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_student_score__y4_s1_s2, container, false);
         List_Score_Y4S1 = view.findViewById(R.id.student_score_list_y4s1);
@@ -32,7 +32,7 @@ public class FragmentStudentScore_Y4S1S2 extends Fragment {
         Show_Detail_Y4S1 = view.findViewById(R.id.student_score_show_detail_y4s1);
         Show_Detail_Y4S2 = view.findViewById(R.id.student_score_show_detail_y4s2);
         Show_Detail_Y4S1.setOnClickListener(v-> startActivity(new Intent(getContext(), ScoreDetail.class)));
-
+        Show_Detail_Y4S2.setOnClickListener(v-> startActivity(new Intent(getContext(), ScoreDetail.class)));
         addDataList1();
         addDataList2();
         List_Score_Y4S1.setAdapter(new Adapter_score_semester(view.getContext(), Semester1));

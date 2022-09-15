@@ -34,6 +34,7 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
         Show_Detail_Y1S1 = view.findViewById(R.id.student_score_show_detail_y1s1);
         Show_Detail_Y1S2 = view.findViewById(R.id.student_score_show_detail_y1s2);
         Show_Detail_Y1S1.setOnClickListener(v-> startActivity(new Intent(getContext(),ScoreDetail.class)));
+        Show_Detail_Y1S2.setOnClickListener(v-> startActivity(new Intent(getContext(),ScoreDetail.class)));
 
         addDataList1();
         addDataList2();
@@ -46,11 +47,31 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
 
     private void addDataList1() {
         Semester1 = new ArrayList<>();
-        Semester1.add(new ModelScore("Java Programing I","#1","A","600"));
-        Semester1.add(new ModelScore("Java Programing","#2","B","500"));
-        Semester1.add(new ModelScore("Java Programing","#3","C","400"));
-        Semester1.add(new ModelScore("Java Programing","#4","D","300"));
-        Semester1.add(new ModelScore("Java Programing","#5","E","200"));
+        Semester1.add(new ModelScore(
+                "Java Programing I",
+                "#1",
+                "A",
+                "600"));
+        Semester1.add(new ModelScore(
+                "Java Programing",
+                "#2",
+                "B",
+                "500"));
+        Semester1.add(new ModelScore(
+                "Java Programing",
+                "#3",
+                "C",
+                "400"));
+        Semester1.add(new ModelScore(
+                "Java Programing",
+                "#4",
+                "D",
+                "300"));
+        Semester1.add(new ModelScore(
+                "Java Programing",
+                "#5",
+                "E",
+                "200"));
     }
     private void addDataList2() {
         Semester2 = new ArrayList<>();

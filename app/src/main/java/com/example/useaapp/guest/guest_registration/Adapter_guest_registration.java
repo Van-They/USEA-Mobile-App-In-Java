@@ -17,9 +17,9 @@ import com.example.useaapp.R;
 
 import java.util.List;
 
-public class Myadapter_guest_registration extends RecyclerView.Adapter<Myadapter_guest_registration.ViewHolder> {
+public class Adapter_guest_registration extends RecyclerView.Adapter<Adapter_guest_registration.ViewHolder> {
     List<Response_model_guest_registration> data;
-    public Myadapter_guest_registration(List<Response_model_guest_registration> data) {
+    public Adapter_guest_registration(List<Response_model_guest_registration> data) {
         this.data = data;
     }
 

@@ -10,9 +10,12 @@ import android.widget.Toast;
 
 import com.example.useaapp.R;
 
+import java.util.Objects;
+
 public class StudentFeedback extends AppCompatActivity {
     Button btnSubmit_feedback;
     RatingBar ratingBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,15 +23,19 @@ public class StudentFeedback extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentFeedback);
         setSupportActionBar(toolbar);
         setTitle(R.string.Feedback);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
         btnSubmit_feedback = findViewById(R.id.submit_btn_feedback);
         ratingBar = findViewById(R.id.rating_star);
-
-        btnSubmit_feedback.setOnClickListener(v->{
+        btnSubmit_feedback.setOnClickListener(v -> {
             String star = String.valueOf(ratingBar.getRating());
-            Toast.makeText(this, star+"Rating star", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, star + "Rating star", Toast.LENGTH_SHORT).show();
         });
+    }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

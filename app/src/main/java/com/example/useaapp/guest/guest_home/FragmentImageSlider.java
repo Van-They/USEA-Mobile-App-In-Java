@@ -27,7 +27,6 @@ public class FragmentImageSlider extends Fragment {
         slideModels.add(new SlideModel(R.drawable.store, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.students, ScaleTypes.FIT));
         slide_image.setImageList(slideModels, ScaleTypes.FIT);
-
         return view;
     }
 }

@@ -25,5 +25,6 @@ public class SplashScreen extends AppCompatActivity {
         img.setAnimation(top);
         new Handler().postDelayed(() ->
                 startActivity(new Intent(SplashScreen.this,MainActivity.class)),1500);
+        finish();
     }
 }

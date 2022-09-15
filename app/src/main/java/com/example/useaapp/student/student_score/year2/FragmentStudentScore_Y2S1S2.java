@@ -33,7 +33,7 @@ public class FragmentStudentScore_Y2S1S2 extends Fragment {
         Show_Detail_Y2S1 = view.findViewById(R.id.student_score_show_detail_y2s1);
         Show_Detail_Y2S2 = view.findViewById(R.id.student_score_show_detail_y2s2);
         Show_Detail_Y2S1.setOnClickListener(v-> startActivity(new Intent(getContext(), ScoreDetail.class)));
-
+        Show_Detail_Y2S2.setOnClickListener(v-> startActivity(new Intent(getContext(), ScoreDetail.class)));
         addDataList1();
         addDataList2();
         List_Score_Y2S1.setAdapter(new Adapter_score_semester(view.getContext(), Semester1));

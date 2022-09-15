@@ -8,5 +8,5 @@ import retrofit2.http.GET;
 public interface Apiset_guest_registration
 {
    @GET("fetch_guest_registration.php")
-    Call<List<Response_model_guest_registration>>getdata();
+    Call<List<Response_model_guest_registration>> getData();
 }

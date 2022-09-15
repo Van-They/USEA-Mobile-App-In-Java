@@ -20,10 +20,12 @@ import com.example.useaapp.R;
 import com.example.useaapp.student.student_profile.ProfileSetting.About;
 import com.example.useaapp.student.student_profile.ProfileSetting.Legal;
 
+import java.util.Objects;
+
 public class StudentSetting extends AppCompatActivity {
     SharedPreferences sharedPreferences;
-    private static String SHARED_PREF_NAME = "mypref";
-    private static String KEY_STUDENT_ID = "student_id";
+    private final static String SHARED_PREF_NAME = "mypref";
+    private final static String KEY_STUDENT_ID = "student_id";
 
     LinearLayout AboutProfile, LegalProfile;
 
@@ -33,8 +35,9 @@ public class StudentSetting extends AppCompatActivity {
         setContentView(R.layout.activity_student_setting);
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentSetting);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         setTitle(R.string.Setting);
+        toolbar.setNavigationOnClickListener(v->finish());
         TextView studentLogOut = findViewById(R.id.student_log_out);
         toolbar.setNavigationOnClickListener(view -> finish());
         AboutProfile = findViewById(R.id.AboutProfile);

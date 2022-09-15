@@ -2,17 +2,17 @@ package com.example.useaapp.guest.guest_events;
 
 public class GuestEventModel {
     private final String Detail, Title, Date, Day, Month, Year, Time;
-    Integer eventIMG;
+    private final Integer Image;
 
 
-    public GuestEventModel(Integer eventIMG, String title,String detail, String day, String date, String month, String year, String time ) {
+    public GuestEventModel(Integer image, String title,String detail, String day, String date, String month, String year, String time ) {
         Detail = detail;
         Title = title;
         Date = date;
         Month = month;
         Year = year;
         Time = time;
-        this.eventIMG = eventIMG;
+        Image = image;
         Day = day;
     }
 
@@ -44,7 +44,7 @@ public class GuestEventModel {
         return Time;
     }
 
-    public Integer getEventIMG() {
-        return eventIMG;
+    public Integer getImage() {
+        return Image;
     }
 }

@@ -20,9 +20,11 @@ public class GuestProgram extends AppCompatActivity {
         setContentView(R.layout.activity_guest_program);
         toolbar = findViewById(R.id.CustomActionbarGuestProgram);
         setSupportActionBar(toolbar);
+        setTitle(R.string.Study_program);
+        toolbar.setNavigationOnClickListener(v->finish());
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         Initialize();
-        Social_Law.setOnClickListener(v->startActivity(new Intent(this,GuestDetailProgram.class)));
+        Social_Law.setOnClickListener(v->startActivity(new Intent(GuestProgram.this,GuestDetailProgram.class)));
     }
     void Initialize(){
         Social_Law = findViewById(R.id.Social_Law);
@@ -30,5 +32,11 @@ public class GuestProgram extends AppCompatActivity {
         Science_technology = findViewById(R.id.Science_technology);
         Psychology_education = findViewById(R.id.Psychology_education);
         Foreign_language = findViewById(R.id.Foreign_language);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

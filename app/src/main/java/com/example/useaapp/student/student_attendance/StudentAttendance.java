@@ -11,6 +11,7 @@ import com.example.useaapp.R;
 import com.example.useaapp.student.student_adapter.Adapter_attendance;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class StudentAttendance extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -23,7 +24,7 @@ public class StudentAttendance extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentAttendance);
         setSupportActionBar(toolbar);
         setTitle(R.string.Attendance);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
         addData();
         setView();
@@ -58,5 +59,11 @@ public class StudentAttendance extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter_attendance = new Adapter_attendance(subject, hour, permission, absent,come);
         recyclerView.setAdapter(adapter_attendance);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

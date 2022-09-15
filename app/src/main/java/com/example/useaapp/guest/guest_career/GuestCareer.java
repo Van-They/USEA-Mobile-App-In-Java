@@ -11,6 +11,7 @@ import com.example.useaapp.guest.guest_scholarship.Adapter_guest_scholarship;
 import com.example.useaapp.guest.guest_scholarship.ScholarshipModel;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class GuestCareer extends AppCompatActivity {
     Toolbar toolbar;
@@ -24,7 +25,7 @@ public class GuestCareer extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarGuestCareer);
         setSupportActionBar(toolbar);
         setTitle(R.string.Career);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v->finish());
 //        End Action Bar
         listView_career = findViewById(R.id.Listview_guest_career);

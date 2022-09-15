@@ -3,19 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".student.student_score.Detail_score_s1s2.Fragment_score_s1">
+    tools:context=".guest.guest_program.master.Fragment_master">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="UselessParent">
+        android:baselineAligned="false">
+
         <ListView
-            android:id="@+id/Listview_student_score_detail_s1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:divider="@null"
-            />
+            android:layout_height="wrap_content"
+            android:id="@+id/Listview_guest_program_master"/>
+
     </LinearLayout>
+
 </FrameLayout>

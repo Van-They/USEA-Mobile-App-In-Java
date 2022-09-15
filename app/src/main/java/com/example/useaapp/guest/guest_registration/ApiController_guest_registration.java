@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiController_guest_registration
 {
    private static final String url="http://192.168.3.0/usea_app/";
-   private static ApiController_guest_registration clientobject;
+   private static ApiController_guest_registration client_object;
    private static Retrofit retrofit;
 
      ApiController_guest_registration()
@@ -19,11 +19,11 @@ public class ApiController_guest_registration
 
      public static synchronized ApiController_guest_registration getInstance()
      {
-          if(clientobject==null)
-              clientobject=new ApiController_guest_registration();
-          return clientobject;
+          if(client_object ==null)
+              client_object =new ApiController_guest_registration();
+          return client_object;
      }
-    Apiset_guest_registration getapi()
+    Apiset_guest_registration getApi()
      {
          return retrofit.create(Apiset_guest_registration.class);
      }

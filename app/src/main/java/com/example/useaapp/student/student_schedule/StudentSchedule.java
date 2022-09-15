@@ -15,6 +15,7 @@ import com.example.useaapp.R;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 
 public class StudentSchedule extends AppCompatActivity {
     Toolbar toolbar;
@@ -28,7 +29,8 @@ public class StudentSchedule extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarStudentSchedule);
         setSupportActionBar(toolbar);
         setTitle(R.string.Schedule);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(v->finish());
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         Listview_student_schedule = findViewById(R.id.Listview_student_schedule);
         models = new ArrayList<>();
@@ -44,4 +46,9 @@ public class StudentSchedule extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }
