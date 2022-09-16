@@ -1,6 +1,7 @@
 package com.example.useaapp.guest.guest_program;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.useaapp.R;
+import com.example.useaapp.student.student_studyPlan.StudentStudyPlan;
 
 import java.util.ArrayList;
 
@@ -44,6 +46,10 @@ public class Adapter_program_detail extends BaseAdapter {
         TextView Major = convertView.findViewById(R.id.Guest_program_major);
         Major.setText(title.get(position));
 
+        Major.setOnClickListener(v->{
+            Intent intent = new Intent(v.getContext(), StudentStudyPlan.class);
+            v.getContext().startActivity(intent);
+        });
         return convertView;
     }
 }
