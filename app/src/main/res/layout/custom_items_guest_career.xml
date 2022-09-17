@@ -170,6 +170,7 @@
                         android:gravity="center|right">
 
                         <TextView
+                            android:id="@+id/View_guest_career_detail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/khmer_os_battambang_regular"

@@ -15,6 +15,7 @@ public class GuestCareerModel {
         Month = month;
         Date= date;
         Year = year;
+
     }
 
     public String getTitle() {
