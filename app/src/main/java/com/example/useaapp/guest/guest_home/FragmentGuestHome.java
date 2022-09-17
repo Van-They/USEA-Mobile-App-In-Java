@@ -42,17 +42,25 @@ public class FragmentGuestHome extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_guest_home, container, false);
-        getChildFragmentManager().beginTransaction().replace(R.id.ImageSliderGuestHome,new FragmentImageSlider()).commit();
+
+        ImageSlider slide_image = view.findViewById(R.id.SlideImageHome);
+
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.sale, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.store, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.students, ScaleTypes.FIT));
+        slide_image.setImageList(slideModels, ScaleTypes.FIT);
+
         GridView categoryDashboard = view.findViewById(R.id.categoryDashboard);
         categoryDashboard.setAdapter(new GuestCategoryAdapter(this.getContext(), tittleCategory, imageCategory));
 
         categoryDashboard.setOnItemClickListener((parent, view1, position, id) -> {
-            switch (tittleCategory[position]){
+            switch (tittleCategory[position]) {
                 case "ព្រឹត្តិការណ៍":
                     startActivity(new Intent(getContext(), GuestEvent.class));
                     break;
                 case "ការចុះឈ្មោះ":
-                    startActivity(new Intent(getContext(),GuestRegistration.class));
+                    startActivity(new Intent(getContext(), GuestRegistration.class));
                     break;
                 case "កម្មវិធីសិក្សា":
                     Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
@@ -69,14 +77,14 @@ public class FragmentGuestHome extends Fragment {
                 case "គណនីសិស្ស":
                     sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
                     String st_id = sharedPreferences.getString(KEY_STUDENT_ID, "");
-                    if (st_id != null && !st_id.equals("")){
-                        startActivity(new Intent(getContext(),MainStudentActivity.class));
-                    }else{
+                    if (st_id != null && !st_id.equals("")) {
+                        startActivity(new Intent(getContext(), MainStudentActivity.class));
+                    } else {
                         startActivity(new Intent(getContext(), StudentLogin.class));
                     }
                     break;
             }
-       });
+        });
         return view;
     }
 }
