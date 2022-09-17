@@ -7,14 +7,18 @@ import android.os.Bundle;
 import com.example.useaapp.R;
 
 public class GuestCareerModel {
-    private final String Title, Detail, Province,Month, Date , Year;
-    public GuestCareerModel(String title, String detail, String province, String month, String date, String year) {
+    private final String Title, Detail, Province,Month, Date , Year, Require, Label;
+    public GuestCareerModel(String title, String detail, String province, String month, String date, String year, String require, String label) {
         Title = title;
         Detail = detail;
         Province = province;
         Month = month;
         Date= date;
         Year = year;
+        Require = require;
+        Label = label;
+
+
     }
 
     public String getTitle() {
@@ -40,5 +44,10 @@ public class GuestCareerModel {
     public String getYear() {
         return Year;
     }
+
+    public String getRequire(){ return Require; }
+
+    public String getLabel(){ return Label; }
+
 
 }

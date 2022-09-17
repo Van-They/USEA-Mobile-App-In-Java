@@ -1,5 +1,6 @@
 package com.example.useaapp.guest.guest_career;
 
+import android.icu.text.Transliterator;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -34,8 +35,8 @@ public class GuestCareer extends AppCompatActivity {
     }
     private void addData(){
         data = new ArrayList<>();
-        data.add(new GuestCareerModel("Admin Operation Officer","Administration", "រាជធានីភ្នំពេញ", "កុម្ភៈ", "១២", "២០២២"));
-        data.add(new GuestCareerModel("Human Resource","Human Resource Management", "បន្ទាយមានជ័យ", "សីហា", "២១", "២០២២"));
+        data.add(new GuestCareerModel("Admin Operation Officer","Administration", "រាជធានីភ្នំពេញ", "កុម្ភៈ", "១២", "២០២២", "-XXX","1"));
+        data.add(new GuestCareerModel("Human Resource","Human Resource Management", "បន្ទាយមានជ័យ", "សីហា", "២១", "២០២២", "-XXX","1"));
 
     }
 }
