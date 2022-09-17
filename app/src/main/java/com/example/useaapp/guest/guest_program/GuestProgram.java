@@ -25,6 +25,10 @@ public class GuestProgram extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         Initialize();
         Social_Law.setOnClickListener(v->startActivity(new Intent(GuestProgram.this,GuestDetailProgram.class)));
+        Economy_Tourism.setOnClickListener(v->startActivity(new Intent(GuestProgram.this,GuestDetailProgram.class)));
+        Science_technology.setOnClickListener(v->startActivity(new Intent(GuestProgram.this,GuestDetailProgram.class)));
+        Psychology_education.setOnClickListener(v->startActivity(new Intent(GuestProgram.this,GuestDetailProgram.class)));
+        Foreign_language.setOnClickListener(v->startActivity(new Intent(GuestProgram.this,GuestDetailProgram.class)));
     }
     void Initialize(){
         Social_Law = findViewById(R.id.Social_Law);
