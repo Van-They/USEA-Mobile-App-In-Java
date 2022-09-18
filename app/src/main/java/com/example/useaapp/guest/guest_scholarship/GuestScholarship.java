@@ -4,9 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.widget.ListView;
+
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_home.FragmentImageSlider;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class GuestScholarship extends AppCompatActivity {
@@ -25,7 +30,14 @@ public class GuestScholarship extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(view -> finish());
 //        End Action Bar
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.ImageSliderGuestScholarship,new FragmentImageSlider()).commit();
+        ImageSlider slide_image = findViewById(R.id.SlideImageScholarship);
+
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.sale, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.store, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.students, ScaleTypes.FIT));
+        slide_image.setImageList(slideModels, ScaleTypes.FIT);
+
         Listview_scholarship = findViewById(R.id.Listview_guest_scholarship);
         addData();
         Listview_scholarship.setAdapter(new Adapter_guest_scholarship(getApplicationContext(),Data));
