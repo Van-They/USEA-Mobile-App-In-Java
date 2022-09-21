@@ -36,7 +36,7 @@ public class Adapter_guest_career extends ArrayAdapter<GuestCareerModel> {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_items_guest_career, parent, false);
         }
         GuestCareerModel guestCareerModel = getItem(position);
-        TextView Title_guest_career_item,Detail_guest_career_item, Province_guest_career_item, Month_guest_career_item, Date_guest_career_item, Year_guest_career_item, View_guest_career_detail;
+        TextView Title_guest_career_item,Detail_guest_career_item, Province_guest_career_item, Month_guest_career_item, Date_guest_career_item, Year_guest_career_item, View_guest_career_detail, Label_guest_career_detail;
         Title_guest_career_item = convertView.findViewById(R.id.Title_guest_career_item);
         Detail_guest_career_item = convertView.findViewById(R.id.Detail_guest_career_item);
         Province_guest_career_item = convertView.findViewById(R.id.Province_guest_career_item);
@@ -44,6 +44,8 @@ public class Adapter_guest_career extends ArrayAdapter<GuestCareerModel> {
         Date_guest_career_item = convertView.findViewById(R.id.Date_guest_career_item);
         Year_guest_career_item = convertView.findViewById(R.id.Year_guest_career_item);
         View_guest_career_detail = convertView.findViewById(R.id.View_guest_career_detail);
+        Label_guest_career_detail = convertView.findViewById(R.id.Label_guest_career);
+
 
         //get data
         Title_guest_career_item.setText(guestCareerModel.getTitle());
@@ -52,6 +54,10 @@ public class Adapter_guest_career extends ArrayAdapter<GuestCareerModel> {
         Month_guest_career_item.setText(guestCareerModel.getMonth());
         Date_guest_career_item.setText(guestCareerModel.getDate());
         Year_guest_career_item.setText(guestCareerModel.getYear());
+        Label_guest_career_detail.setText(guestCareerModel.getLabel());
+
+
+
 
 
         View_guest_career_detail.setOnClickListener(V-> {
@@ -59,6 +65,11 @@ public class Adapter_guest_career extends ArrayAdapter<GuestCareerModel> {
             intent.putExtra("Title", guestCareerModel.getTitle());
             intent.putExtra("Detail", guestCareerModel.getDetail());
             intent.putExtra("Province", guestCareerModel.getProvince());
+            intent.putExtra("Month",guestCareerModel.getMonth());
+            intent.putExtra("Date", guestCareerModel.getDate());
+            intent.putExtra("Year", guestCareerModel.getYear());
+            intent.putExtra("Require", guestCareerModel.getRequire());
+            intent.putExtra("Label", guestCareerModel.getLabel());
             V.getContext().startActivity(intent);
         });
 

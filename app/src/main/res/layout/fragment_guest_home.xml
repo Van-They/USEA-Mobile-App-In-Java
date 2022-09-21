@@ -3,16 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".guest.guest_home.FragmentGuestHome">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <FrameLayout
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/SlideImageHome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ImageSliderGuestHome"/>
+            android:layout_height="175dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:iss_corner_radius="20"/>
         <GridView
             android:id="@+id/categoryDashboard"
             android:layout_width="match_parent"

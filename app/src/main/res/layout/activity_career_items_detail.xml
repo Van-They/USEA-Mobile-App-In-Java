@@ -14,22 +14,34 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/Career_Items_Label_Detail"
+            android:id="@+id/Label_guest_career_Detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="5dp">
-
-            <TextView
-                android:id="@+id/label"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/khmer_os_battambang_regular"
-                android:padding="5dp"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:background="@color/blue_sky_40"
+                android:orientation="horizontal"
+                android:padding="5dp">
+                <TextView
+                    android:id="@+id/Label_guest_career_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/Sample_txt"
+                    />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Position"/>
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
@@ -41,7 +53,7 @@
                 android:id="@+id/Title_guest_career_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="XXX"
+                android:text="@string/Sample_txt"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -49,7 +61,7 @@
                 android:id="@+id/Detail_guest_career_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="XXX"
+                android:text="@string/Sample_txt"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -60,12 +72,14 @@
             android:gravity="center">
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_location" />
+                    android:src="@drawable/ic_location"
+                    android:contentDescription="@null"/>
 
             </LinearLayout>
 
@@ -78,7 +92,7 @@
                     android:id="@+id/Province_guest_career_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="xxx"
+                    android:text="@string/Sample_txt"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -98,12 +112,15 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                >
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_calendar" />
+                    android:src="@drawable/ic_calendar"
+                    android:contentDescription="@null"/>
 
             </LinearLayout>
 
@@ -119,21 +136,23 @@
                     android:id="@+id/Month_guest_career_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="x"
+                    android:text="@string/Sample_txt"
+                    android:layout_marginEnd="5dp"
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/Date_guest_career_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="x"
+                    android:text="@string/Sample_txt"
+                    android:layout_marginEnd="5dp"
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/Year_guest_career_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="x"
+                    android:text="@string/Sample_txt"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -158,13 +177,13 @@
                 android:text="@string/Career_Require"
                 android:textSize="16sp"
                 android:textStyle="bold" />
-
             <TextView
-                android:id="@+id/Career_require_detail"
+                android:id="@+id/Require_guest_career_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Career_Require_Detail"
-                android:textSize="12sp"/>
+                android:text="@string/Lorem"
+                />
+
         </LinearLayout>
 
     </LinearLayout>

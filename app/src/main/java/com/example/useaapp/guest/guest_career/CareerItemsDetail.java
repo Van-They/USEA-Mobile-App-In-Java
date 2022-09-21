@@ -18,17 +18,19 @@ public class CareerItemsDetail extends AppCompatActivity {
             Month = "Month",
             Date = "Date",
             Year = "Year",
-            Require = "Require";
+            Require = "Require",
+            Label = "Label";
 
     Toolbar toolbar;
-    TextView label,
+    TextView
              Title_guest_career_detail,
              Detail_guest_career_detail,
              Province_guest_career_detail,
              Month_guest_career_detail,
              Date_guest_career_detail,
              Year_guest_career_detail,
-             Career_require_detail;
+             Require_guest_career_detail,
+             Label_guest_career_detail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,21 +58,31 @@ public class CareerItemsDetail extends AppCompatActivity {
 
         Year_guest_career_detail = findViewById(R.id.Year_guest_career_detail);
 
-        Career_require_detail = findViewById(R.id.Career_require_detail);
+        Require_guest_career_detail = findViewById(R.id.Require_guest_career_detail);
+
+        Label_guest_career_detail = findViewById(R.id.Label_guest_career_detail);
+
     }
     public void getString(){
         Title = getIntent().getStringExtra(Title);
         Detail = getIntent().getStringExtra(Detail);
         Province = getIntent().getStringExtra(Province);
-//        Month = getIntent().getStringExtra(Month);
-//        Date = getIntent().getStringExtra(Date);
-//        Year = getIntent().getStringExtra(Year);
-//        Require = getIntent().getStringExtra(Require);
+        Month = getIntent().getStringExtra(Month);
+        Date = getIntent().getStringExtra(Date);
+        Year = getIntent().getStringExtra(Year);
+        Require = getIntent().getStringExtra(Require);
+        Label = getIntent().getStringExtra(Label);
     }
     public void setString(){
         Title_guest_career_detail.setText(Title);
         Detail_guest_career_detail.setText(Detail);
         Province_guest_career_detail.setText(Province);
+        Month_guest_career_detail.setText(Month);
+        Date_guest_career_detail.setText(Date);
+        Year_guest_career_detail.setText(Year);
+        Require_guest_career_detail.setText(Require);
+        Label_guest_career_detail.setText(Label);
+
     }
     @Override
     public void onBackPressed() {
