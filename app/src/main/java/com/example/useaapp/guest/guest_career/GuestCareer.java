@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.useaapp.R;
-import com.example.useaapp.guest.guest_scholarship.Adapter_guest_scholarship;
-import com.example.useaapp.guest.guest_scholarship.ScholarshipModel;
 
 import java.util.ArrayList;
 import java.util.Objects;

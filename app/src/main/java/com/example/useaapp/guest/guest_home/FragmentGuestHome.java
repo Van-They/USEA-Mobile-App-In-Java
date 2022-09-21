@@ -13,9 +13,6 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.denzcoskun.imageslider.ImageSlider;
-import com.denzcoskun.imageslider.constants.ScaleTypes;
-import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_adapter.GuestCategoryAdapter;
 import com.example.useaapp.guest.guest_career.GuestCareer;
@@ -25,9 +22,6 @@ import com.example.useaapp.guest.guest_registration.GuestRegistration;
 import com.example.useaapp.guest.guest_scholarship.GuestScholarship;
 import com.example.useaapp.student.MainStudentActivity;
 import com.example.useaapp.student.student_login.StudentLogin;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class FragmentGuestHome extends Fragment {
     SharedPreferences sharedPreferences;

@@ -31,12 +31,6 @@
             android:name=".guest.guest_login.GoogleAuthenticationClass"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_scholarship.ScholarshipItemsDetail"
-            android:exported="false" />
-        <activity
-            android:name=".guest.guest_scholarship.GuestScholarship"
-            android:exported="false" />
-        <activity
             android:name=".student.student_schedule.StudentSchedule"
             android:exported="false" />
         <activity
@@ -102,6 +96,10 @@
         <activity
             android:name=".guest.guest_registration.GuestRegistration"
             android:exported="false" />
+        <activity android:name=".guest.guest_scholarship.GuestScholarship"
+            android:exported="false"/>
+        <activity android:name=".guest.guest_scholarship.Detail_guest_scholarship"
+            android:exported="false"/>
     </application>
 
 </manifest>

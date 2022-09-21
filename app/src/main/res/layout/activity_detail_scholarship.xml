@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".guest.guest_scholarship.Detail_guest_scholarship">
+    <include
+        android:id="@+id/CustomActionbarGuestScholarship"
+        layout="@layout/custom_actionbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <TextView
+            android:id="@+id/usea_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="school_name_kh"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/School_detail_scholarship_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Application_open"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/Date_scholarship_open_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Sample_txt"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Application_close"
+            android:textColor="@color/black" />
+
+
+        <TextView
+            android:id="@+id/Date_scholarship_close_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="Sample_txt"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:id="@+id/Learn_more_scholarship_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Learn_more"
+            android:textColor="@color/dark_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Application_type"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/Application_required_scholarship_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Application_required"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:id="@+id/How_to_apply_scholarship_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How_to_apply"
+            android:textColor="@color/dark_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Benefit_type"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/Benefit_type_scholarship_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Benefit_type"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:id="@+id/Full_benefit_detail_scholarship_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full_benefit_detail"
+            android:textColor="@color/dark_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Citizenship_requirement"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/Citizenship_requirement_scholarship_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Citizenship_requirement"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Total_value"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/Total_value_scholarship_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total_value"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Application_study_areas"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/Application_study_areas_scholarship_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Application_study_areas"
+            android:textColor="@color/green" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/Detail_title_scholarship_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+</LinearLayout>
