@@ -11,8 +11,12 @@
         <entry key="..\:/LEARNING/MySchoolApp/app/src/main/res/layout/custom_guest_registration_item.xml" value="0.33" />
         <entry key="..\:/LEARNING/MySchoolApp/app/src/main/res/layout/fragment_past_event.xml" value="0.35833333333333334" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/drawable/back_icon.xml" value="0.119" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_adapter_career.xml" value="0.23645833333333333" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_adapter_scholarship.xml" value="0.25416666666666665" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_career_items_detail.xml" value="0.23645833333333333" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_dashobard_guest.xml" value="0.23645833333333333" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_detail_scholarship.xml" value="0.25416666666666665" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_guest_career.xml" value="0.23645833333333333" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_guest_scholarship.xml" value="0.17777777777777778" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_main.xml" value="0.1675925925925926" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_main_student.xml" value="0.25416666666666665" />
@@ -21,6 +25,7 @@
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_student_login.xml" value="0.1675925925925926" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/activity_student_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/custom_actionbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/custom_items_guest_career.xml" value="0.23645833333333333" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/custom_items_guest_scholarship.xml" value="0.2" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/fragment_guest_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Thesis/USEA-APP-Code/Code/USEA_APP/app/src/main/res/layout/fragment_guest_more.xml" value="0.17777777777777778" />

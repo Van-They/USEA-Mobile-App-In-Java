@@ -22,9 +22,6 @@
             android:name=".guest.guest_program.GuestDetailProgram"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_career.CareerItemsDetail"
-            android:exported="false" />
-        <activity
             android:name=".guest.guest_program.GuestProgram"
             android:exported="false" />
         <activity
@@ -91,14 +88,15 @@
             android:name=".guest.guest_events.GuestEvent"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_career.GuestCareer"
-            android:exported="false" />
-        <activity
             android:name=".guest.guest_registration.GuestRegistration"
             android:exported="false" />
         <activity android:name=".guest.guest_scholarship.GuestScholarship"
             android:exported="false"/>
         <activity android:name=".guest.guest_scholarship.Detail_guest_scholarship"
+            android:exported="false"/>
+        <activity android:name=".guest.guest_career.GuestCareer"
+            android:exported="false"/>
+        <activity android:name=".guest.guest_career.Detail_guest_career"
             android:exported="false"/>
     </application>
 
