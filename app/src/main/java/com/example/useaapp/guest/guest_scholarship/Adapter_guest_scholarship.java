@@ -75,7 +75,6 @@ public class Adapter_guest_scholarship extends RecyclerView.Adapter<Adapter_gues
                 ReadMore_guest_scholarship;
 
         public ViewHolder(@NonNull View itemView){
-//            super(Context, R.layout.activity_detail_scholarship, data);
             super(itemView);
 
             Subject_guest_scholarship = itemView.findViewById(R.id.Subject_guest_scholarship);

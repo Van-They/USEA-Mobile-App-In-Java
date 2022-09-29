@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".guest.guest_scholarship.ScholarshipItemsDetail">
+    tools:context=".guest.guest_scholarship.Detail_guest_scholarship">
 
     <include
         android:id="@+id/CustomActionbarGuestScholarshipDetail"

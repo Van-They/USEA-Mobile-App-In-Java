@@ -2,33 +2,73 @@ package com.example.useaapp.guest.guest_events.current;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.useaapp.R;
-import com.example.useaapp.guest.guest_events.Adapter_guest_event;
 import com.example.useaapp.guest.guest_events.GuestEventModel;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FragmentCurrentEvent extends Fragment {
-    ListView lvCurrentEvent;
+    RecyclerView lvCurrentEvent;
+    List<Response_model_guest_event_current> responsemodels;
     ArrayList<GuestEventModel> Data_current_event;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_current, container, false);
-        lvCurrentEvent =view.findViewById(R.id.lvCurrentEvent);
-        Data_current_event = new ArrayList<>();
-        Data_current_event.add(new GuestEventModel(R.drawable.graduatee, "ពិធីប្រគល់សញ្ញាប័ត្រដល់និស្សិតជំនាន់ទី១៣-១៤", "របស់ ឯកឧត្តម ឧបនាយករដ្ឋមន្ត្រី កែ គឹមយ៉ាន នៅសកលវិទ្យាល័យ សៅស៍អ៊ីសថ៍អេយសៀ ឆ្នាំសិក្សា ២០២១-២០២២ សម្រាប់ កំរិត បរិញ្ញាបត្រ និងបរិញ្ញាបត្ររងចំនួន២០កន្លែង។", "អង្គារ", "២១", "តុលា", "២០២២", "៨:០០ ព្រឹក"));
-        Data_current_event.add(new GuestEventModel(R.drawable.sharing, "ពិធីប្រគល់សញ្ញាប័ត្រដល់និស្សិតជំនាន់ទី១៣-១៤", "របស់ ឯកឧត្តម ឧបនាយករដ្ឋមន្ត្រី កែ គឹមយ៉ាន នៅសកលវិទ្យាល័យ សៅស៍អ៊ីសថ៍អេយសៀ ឆ្នាំសិក្សា ២០២១-២០២២ សម្រាប់ កំរិត បរិញ្ញាបត្រ និងបរិញ្ញាបត្ររងចំនួន២០កន្លែង។", "អង្គារ", "២១", "តុលា", "២០២២", "៨:០០ ព្រឹក"));
-        Data_current_event.add(new GuestEventModel(R.drawable.banner, "ពិធីប្រគល់សញ្ញាប័ត្រដល់និស្សិតជំនាន់ទី១៣-១៤", "របស់ ឯកឧត្តម ឧបនាយករដ្ឋមន្ត្រី កែ គឹមយ៉ាន នៅសកលវិទ្យាល័យ សៅស៍អ៊ីសថ៍អេយសៀ ឆ្នាំសិក្សា ២០២១-២០២២ សម្រាប់ កំរិត បរិញ្ញាបត្រ និងបរិញ្ញាបត្ររងចំនួន២០កន្លែង។", "អង្គារ", "២១", "តុលា", "២០២២", "៨:០០ ព្រឹក"));
-        lvCurrentEvent.setAdapter(new Adapter_guest_event(view.getContext(), Data_current_event));
-        return view;
+       return view;
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        lvCurrentEvent = view.findViewById(R.id.lvCurrentEvent);
+        lvCurrentEvent.setHasFixedSize(true);
+        lvCurrentEvent.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        processdata();
+
+    }
+
+    public void processdata()
+    {
+        Call<List<Response_model_guest_event_current>> call = com.example.useaapp.guest.guest_events.current.ApiController_guest_event_current
+                .getInstance()
+                .getapi()
+                .getdata();
+
+        call.enqueue(new Callback<List<Response_model_guest_event_current>>() {
+            @Override
+            public void onResponse(Call<List<Response_model_guest_event_current>> call, Response<List<Response_model_guest_event_current>> response) {
+                responsemodels = response.body();
+                com.example.useaapp.guest.guest_events.current.Adapter_guest_event_current myadapter = new com.example.useaapp.guest.guest_events.current.Adapter_guest_event_current(responsemodels);
+                if (responsemodels !=null && !responsemodels.isEmpty()){
+                    lvCurrentEvent.setAdapter(myadapter);
+                }else {
+
+                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Response_model_guest_event_current>> call, Throwable t) {
+                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
