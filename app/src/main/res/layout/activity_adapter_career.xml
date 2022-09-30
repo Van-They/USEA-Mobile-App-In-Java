@@ -81,6 +81,7 @@
                                 android:layout_height="wrap_content"
                                 android:textStyle="bold"
                                 android:text="@string/Sample_txt"
+                                android:fontFamily="@font/khmer_os_battambang_regular"
                                 android:textSize="12sp"
 
                                 />
@@ -124,6 +125,7 @@
                                 android:paddingStart="1dp"
                                 android:textStyle="bold"
                                 android:text="@string/Sample_txt"
+                                android:fontFamily="@font/khmer_os_battambang_regular"
                                 android:textSize="12sp"
 
                                 />
@@ -135,6 +137,7 @@
                                     android:paddingEnd="1dp"
                                     android:paddingStart="1dp"
                                     android:textStyle="bold"
+                                    android:fontFamily="@font/khmer_os_battambang_regular"
                                     android:text="@string/Sample_txt"
                                     android:textSize="12sp"
 
@@ -147,6 +150,7 @@
                                 android:paddingStart="1dp"
                                 android:textStyle="bold"
                                 android:text="@string/Sample_txt"
+                                android:fontFamily="@font/khmer_os_battambang_regular"
                                 android:textSize="12sp"
                                 />
                             </LinearLayout>
@@ -162,6 +166,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/khmer_os_battambang_regular"
                         android:gravity="center|right">
 
                         <TextView
@@ -170,8 +175,8 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/khmer_os_battambang_regular"
                             android:text="@string/ShowDetail"
-                            android:textSize="12sp"
-                            android:textColor="@color/dark_blue" />
+                            android:textColor="@color/dark_blue"
+                            android:textSize="12sp" />
 
                         <ImageView
                             android:layout_width="wrap_content"

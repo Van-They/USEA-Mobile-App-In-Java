@@ -8,6 +8,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.R;
 
 import java.util.ArrayList;
@@ -31,7 +34,13 @@ public class GuestScholarship extends AppCompatActivity {
         setTitle(R.string.Scholarship);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
-        getSupportFragmentManager().beginTransaction().replace(R.id.ImageSliderGuestScholarship, new FragmentImageSlider()).commit();
+
+        ImageSlider slide_image = findViewById(R.id.SlideImageScholarship);
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.sale, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.students, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.store, ScaleTypes.FIT));
+        slide_image.setImageList(slideModels, ScaleTypes.FIT);
         responsemodels = new ArrayList<com.example.useaapp.guest.guest_scholarship.Response_model_guest_scholarship>();
 
         recview = findViewById(R.id.recview);
