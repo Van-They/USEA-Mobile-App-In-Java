@@ -17,6 +17,7 @@ public class Response_model_guest_event_current
         this.cur_year = cur_year;
         this.cur_time = cur_time;
     }
+
     public String getId() {
         return id;
     }
