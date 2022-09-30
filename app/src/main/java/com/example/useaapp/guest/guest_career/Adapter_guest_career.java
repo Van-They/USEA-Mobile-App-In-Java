@@ -33,29 +33,13 @@ public class Adapter_guest_career extends RecyclerView.Adapter<Adapter_guest_car
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
          holder.Title_guest_career_item.setText(data.get(position).getJob());
          holder.Detail_guest_career_item.setText(data.get(position).getDepartment());
          holder.Province_guest_career_item.setText(data.get(position).getProvince());
          holder.Month_guest_career_item.setText(data.get(position).getExp_month());
          holder.Date_guest_career_item.setText(data.get(position).getExp_date());
          holder.Year_guest_career_item.setText(data.get(position).getExp_year());
-
-         holder.View_guest_career_detail.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Intent intent = new Intent(context, Detail_guest_career.class);
-                 intent.putExtra("Title_guest_career", data.get(position).getJob());
-                 intent.putExtra("Detail_guest_career", data.get(position).getDepartment());
-                 intent.putExtra("Province_guest_career", data.get(position).getProvince());
-                 intent.putExtra("Month_guest_career", data.get(position).getExp_month());
-                 intent.putExtra("Date_guest_career", data.get(position).getExp_date());
-                 intent.putExtra("Year_guest_career", data.get(position).getExp_year());
-                 intent.putExtra("Label_guest_career", data.get(position).getPosition_avail());
-                 intent.putExtra("Requirement_detail_guest_career", data.get(position).getRequirement_detail());
-                 context.startActivity(intent);
-             }
-         });
 
     }
 
@@ -64,7 +48,7 @@ public class Adapter_guest_career extends RecyclerView.Adapter<Adapter_guest_car
         return data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView Title_guest_career_item, Detail_guest_career_item, Province_guest_career_item,
                 Month_guest_career_item, Date_guest_career_item, Year_guest_career_item,
@@ -80,7 +64,22 @@ public class Adapter_guest_career extends RecyclerView.Adapter<Adapter_guest_car
             Date_guest_career_item = itemView.findViewById(R.id.Date_guest_career_item);
             Year_guest_career_item = itemView.findViewById(R.id.Year_guest_career_item);
             View_guest_career_detail = itemView.findViewById(R.id.View_guest_career_detail);
+            View_guest_career_detail.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            Intent intent = new Intent(context, Detail_guest_career.class);
+            intent.putExtra("Title_guest_career", data.get(position).getJob());
+            intent.putExtra("Detail_guest_career", data.get(position).getDepartment());
+            intent.putExtra("Province_guest_career", data.get(position).getProvince());
+            intent.putExtra("Month_guest_career", data.get(position).getExp_month());
+            intent.putExtra("Date_guest_career", data.get(position).getExp_date());
+            intent.putExtra("Year_guest_career", data.get(position).getExp_year());
+            intent.putExtra("Label_guest_career", data.get(position).getPosition_avail());
+            intent.putExtra("Requirement_detail_guest_career", data.get(position).getRequirement_detail());
+            view.getContext().startActivity(intent);
+        }
     }
 }

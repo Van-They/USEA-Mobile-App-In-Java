@@ -3,14 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
-        app:cardElevation="4dp"
         android:layout_margin="5dp">
 
         <LinearLayout
@@ -30,25 +28,27 @@
                     android:layout_height="wrap_content"
                     android:contentDescription="@null"
                     android:text="Sample_txt"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="@null"
-                    android:text=":"
+                    android:text="@string/Double_dot"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="5dp"/>
+                    android:layout_marginStart="1dp"
+                    android:layout_marginEnd="1dp"
+                    android:textStyle="bold" />
                 <TextView
                     android:id="@+id/University_guest_scholarship"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="@null"
                     android:text="Sample_txt"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="10dp"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -68,6 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sample_txt"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
                     android:layout_marginEnd="5dp"
                     android:textColor="@color/black" />
             </LinearLayout>
@@ -89,6 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sample_txt"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
                     android:layout_marginEnd="5dp"
                     android:textColor="@color/black" />
             </LinearLayout>
@@ -110,6 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
                     android:text="Date"
                     android:textColor="@color/black" />
 
@@ -118,6 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Month"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
                     android:layout_marginEnd="5dp"
                     android:textColor="@color/black" />
 
@@ -126,6 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Year"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
                     android:textColor="@color/black" />
             </LinearLayout>
             <com.google.android.material.button.MaterialButton
@@ -134,7 +139,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 app:cornerRadius="10dp"
-                android:text="Read_More"/>
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Read_More"/>
 <!--            <TextView-->
 <!--                android:id="@+id/Detail_description_guest_scholarship"-->
 <!--                android:layout_width="wrap_content"-->
