@@ -1,17 +1,16 @@
 package com.example.useaapp.guest.guest_events;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
-
-import android.os.Bundle;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_adapter.Adapter_guest_event_tabbar;
-import com.example.useaapp.guest.guest_home.FragmentImageSlider;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
