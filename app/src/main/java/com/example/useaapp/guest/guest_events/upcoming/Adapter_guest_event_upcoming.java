@@ -36,7 +36,7 @@ public class Adapter_guest_event_upcoming extends RecyclerView.Adapter<Adapter_g
         holder.Date_guest_event_item.setText(data.get(position).getUpcoming_date());
         holder.Year_guest_event_item.setText(data.get(position).getUpcoming_year());
         holder.Time_guest_event_item.setText(data.get(position).getUpcoming_time());
-        Glide.with(holder.Title_guest_event_item.getContext()).load("http://192.168.1.8/usea_app/event_image/" + data.get(position).getUpcoming_image()).into(holder.eventImg);
+        Glide.with(holder.Title_guest_event_item.getContext()).load("http://172.17.19.186/usea_app/event_image/" + data.get(position).getUpcoming_image()).into(holder.eventImg);
     }
 
     @Override
