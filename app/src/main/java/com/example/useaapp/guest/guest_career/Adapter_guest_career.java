@@ -1,5 +1,6 @@
 package com.example.useaapp.guest.guest_career;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -32,7 +33,7 @@ public class Adapter_guest_career extends RecyclerView.Adapter<Adapter_guest_car
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
          holder.Title_guest_career_item.setText(data.get(position).getJob());
          holder.Detail_guest_career_item.setText(data.get(position).getDepartment());
          holder.Province_guest_career_item.setText(data.get(position).getProvince());
