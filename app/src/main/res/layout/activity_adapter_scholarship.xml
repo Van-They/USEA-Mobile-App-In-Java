@@ -141,72 +141,7 @@
                 app:cornerRadius="10dp"
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:text="@string/Read_More"/>
-<!--            <TextView-->
-<!--                android:id="@+id/Detail_description_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
-<!--            <TextView-->
-<!--                android:id="@+id/Date_open_detail_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
-<!--            <TextView-->
-<!--                android:id="@+id/Date_close_detail_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
-<!--            <TextView-->
-<!--                android:id="@+id/Learnmore_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
-<!--            <TextView-->
-<!--                android:id="@+id/Application_required_detail_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
-<!--            <TextView-->
-<!--                android:id="@+id/How_to_apply_detail_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
-<!--            <TextView-->
-<!--                android:id="@+id/Benefit_type_detail_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
-<!--            <TextView-->
-<!--                android:id="@+id/Full_benefit_detail_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
-<!--            <TextView-->
-<!--                android:id="@+id/Citizenship_requirement_detail_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
-<!--            <TextView-->
-<!--                android:id="@+id/Total_value_detail_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
-<!--            <TextView-->
-<!--                android:id="@+id/Application_study_areas_detail_guest_scholarship"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                />-->
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

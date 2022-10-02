@@ -19,6 +19,12 @@
         tools:ignore="DataExtractionRules"
         tools:targetApi="31">
         <activity
+            android:name=".guest.guest_more.Detail_guest_faq_more"
+            android:exported="false" />
+        <activity
+            android:name=".guest.guest_more.Detail_guest_about_us_more"
+            android:exported="false" />
+        <activity
             android:name=".guest.guest_program.GuestDetailProgram"
             android:exported="false" />
         <activity
@@ -90,14 +96,18 @@
         <activity
             android:name=".guest.guest_registration.GuestRegistration"
             android:exported="false" />
-        <activity android:name=".guest.guest_scholarship.GuestScholarship"
-            android:exported="false"/>
-        <activity android:name=".guest.guest_scholarship.Detail_guest_scholarship"
-            android:exported="false"/>
-        <activity android:name=".guest.guest_career.GuestCareer"
-            android:exported="false"/>
-        <activity android:name=".guest.guest_career.Detail_guest_career"
-            android:exported="false"/>
+        <activity
+            android:name=".guest.guest_scholarship.GuestScholarship"
+            android:exported="false" />
+        <activity
+            android:name=".guest.guest_scholarship.Detail_guest_scholarship"
+            android:exported="false" />
+        <activity
+            android:name=".guest.guest_career.GuestCareer"
+            android:exported="false" />
+        <activity
+            android:name=".guest.guest_career.Detail_guest_career"
+            android:exported="false" />
     </application>
 
 </manifest>

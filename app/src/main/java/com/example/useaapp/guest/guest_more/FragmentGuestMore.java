@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -18,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class FragmentGuestMore extends Fragment {
     ImageButton Btn_fb, Btn_ig, Btn_yt, Btn_tele, Btn_web, img_location;
     TextView  txt_location_txt, SignOutGuest;
+    LinearLayout About_Us_Detail,Frequent_ask_Question;
     //Link to URL
     private void gotUrl(String s) {
         Uri uri = Uri.parse(s);
@@ -39,6 +42,8 @@ public class FragmentGuestMore extends Fragment {
         SignOutGuest = view.findViewById(R.id.SignOutGuest);
         txt_location_txt = view.findViewById(R.id.txt_location_txt);
 
+        About_Us_Detail = view.findViewById(R.id.About_Us_Detail);
+        Frequent_ask_Question = view.findViewById(R.id.Frequent_ask_Question);
         SignOutGuest.setOnClickListener(v->{
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(getContext(),MainActivity.class));
@@ -58,6 +63,16 @@ public class FragmentGuestMore extends Fragment {
         txt_location_txt.setOnClickListener(view15 -> gotUrl("https://www.google.com/maps/dir/13.3551786,103.8564198/13.3503099,103.8641453/@13.3527153,103.8556504,16z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0"));
         //Click on Location Image
         img_location.setOnClickListener(view16 -> gotUrl("https://www.google.com/maps/dir/13.3551786,103.8564198/13.3503099,103.8641453/@13.3527153,103.8556504,16z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0"));
+
+        About_Us_Detail.setOnClickListener(this::AboutUsDetail);
+        Frequent_ask_Question.setOnClickListener(this::FAQ);
+
         return view;
+    }
+    private void AboutUsDetail(View view){
+        getContext().startActivity(new Intent(getContext(),Detail_guest_about_us_more.class));
+    }
+    private void FAQ (View view){
+        getContext().startActivity(new Intent(getContext(),Detail_guest_faq_more.class));
     }
 }
