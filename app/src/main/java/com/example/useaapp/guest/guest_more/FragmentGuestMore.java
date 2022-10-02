@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,6 +14,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.useaapp.MainActivity;
 import com.example.useaapp.R;
+import com.example.useaapp.guest.guest_more.about_us.Detail_guest_about_us_more;
+import com.example.useaapp.guest.guest_more.faq.Detail_guest_faq_more;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class FragmentGuestMore extends Fragment {
@@ -70,9 +71,9 @@ public class FragmentGuestMore extends Fragment {
         return view;
     }
     private void AboutUsDetail(View view){
-        getContext().startActivity(new Intent(getContext(),Detail_guest_about_us_more.class));
+        getContext().startActivity(new Intent(getContext(), Detail_guest_about_us_more.class));
     }
     private void FAQ (View view){
-        getContext().startActivity(new Intent(getContext(),Detail_guest_faq_more.class));
+        getContext().startActivity(new Intent(getContext(), Detail_guest_faq_more.class));
     }
 }

@@ -34,7 +34,7 @@ public class GuestRegistration extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v->finish());
         response_models = new ArrayList<>();
-        recycler_view = findViewById(R.id.expandableListView);
+        recycler_view = findViewById(R.id.registration_expandableListView);
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
 
         Process_data();

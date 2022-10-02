@@ -4,7 +4,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiController_guest_event_past
 {
-   private static final String url="http://10.10.10.185/usea_app/";
+   private static final String url="http://172.20.10.14/usea_app/";
    private static ApiController_guest_event_past clientobject;
    private static Retrofit retrofit;
 

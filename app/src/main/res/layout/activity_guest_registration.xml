@@ -10,7 +10,7 @@
         android:id="@+id/CustomActionbarGuestRegistration"
         layout="@layout/custom_actionbar" />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/expandableListView"
+        android:id="@+id/registration_expandableListView"
         android:divider="@null"
         android:indicatorRight="?android:attr/expandableListPreferredChildIndicatorLeft"
         android:layout_width="match_parent"
