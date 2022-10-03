@@ -5,11 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".guest.guest_more.Detail_guest_faq_more">
+    tools:context=".guest.guest_more.faq.Detail_guest_faq_more">
 
     <include
         android:id="@+id/CustomActionbarGuestMoreDetail"
         layout="@layout/custom_actionbar" />
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/faq_expandableListView"
+        android:divider="@null"
+        android:indicatorRight="?android:attr/expandableListPreferredChildIndicatorLeft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        />
 
 </LinearLayout>
