@@ -1,11 +1,14 @@
 package com.example.useaapp.guest.guest_registration;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiController_guest_registration
 {
-   private static final String url="http://10.10.10.185/usea_app/";
+   private static final String url="https://myuseaapp.000webhostapp.com/Guest/";
    private static ApiController_guest_registration client_object;
    private static Retrofit retrofit;
 
@@ -23,7 +26,7 @@ public class ApiController_guest_registration
               client_object =new ApiController_guest_registration();
           return client_object;
      }
-    Apiset_guest_registration getApi()
+    Apiset_guest_registration getapi()
      {
          return retrofit.create(Apiset_guest_registration.class);
      }

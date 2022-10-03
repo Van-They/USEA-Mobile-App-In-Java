@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiController_guest_scholarship
 {
-   private static final String url="http://10.10.10.185/usea_app/";
+   private static final String url="https://myuseaapp.000webhostapp.com/Guest/";
    private static ApiController_guest_scholarship clientobject;
    private static Retrofit retrofit;
 
@@ -23,9 +23,8 @@ public class ApiController_guest_scholarship
               clientobject=new ApiController_guest_scholarship();
           return clientobject;
      }
-
-     com.example.useaapp.guest.guest_scholarship.Apiset_guest_scholarship getapi()
+     Apiset_guest_scholarship getapi()
      {
-         return retrofit.create(com.example.useaapp.guest.guest_scholarship.Apiset_guest_scholarship.class);
+         return retrofit.create(Apiset_guest_scholarship.class);
      }
 }

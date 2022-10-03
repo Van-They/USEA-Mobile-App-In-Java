@@ -41,7 +41,7 @@ public class GuestScholarship extends AppCompatActivity {
         slideModels.add(new SlideModel(R.drawable.students, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.store, ScaleTypes.FIT));
         slide_image.setImageList(slideModels, ScaleTypes.FIT);
-        responsemodels = new ArrayList<com.example.useaapp.guest.guest_scholarship.Response_model_guest_scholarship>();
+        responsemodels = new ArrayList<>();
 
         recview = findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));

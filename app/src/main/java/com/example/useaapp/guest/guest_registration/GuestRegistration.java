@@ -44,8 +44,8 @@ public class GuestRegistration extends AppCompatActivity {
     {
         Call<List<Response_model_guest_registration>> call = ApiController_guest_registration
                 .getInstance()
-                .getApi()
-                .getData();
+                .getapi()
+                .getdata();
 
         call.enqueue(new Callback<List<Response_model_guest_registration>>() {
             @Override
