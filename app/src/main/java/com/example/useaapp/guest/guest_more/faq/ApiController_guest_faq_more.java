@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiController_guest_faq_more
 {
-   private static final String url="http://172.20.10.14/usea_app/";
+   private static final String url="https://myuseaapp.000webhostapp.com/Guest/";
    private static ApiController_guest_faq_more client_object;
    private static Retrofit retrofit;
 

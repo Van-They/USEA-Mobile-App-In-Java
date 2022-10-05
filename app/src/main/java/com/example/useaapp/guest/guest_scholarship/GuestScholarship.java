@@ -1,6 +1,7 @@
 package com.example.useaapp.guest.guest_scholarship;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.R;
+import com.facebook.shimmer.Shimmer;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,7 @@ public class GuestScholarship extends AppCompatActivity {
     Toolbar toolbar;
     List<com.example.useaapp.guest.guest_scholarship.Response_model_guest_scholarship> responsemodels;
     RecyclerView recview;
+    ShimmerFrameLayout Shimer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,9 @@ public class GuestScholarship extends AppCompatActivity {
         setTitle(R.string.Scholarship);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
+
+        Shimer = findViewById(R.id.custom_guest_shimmer_scholarship);
+        Shimer.startShimmer();
 
         ImageSlider slide_image = findViewById(R.id.SlideImageScholarship);
         List<SlideModel> slideModels = new ArrayList<>();
@@ -62,6 +69,9 @@ public class GuestScholarship extends AppCompatActivity {
                 responsemodels = response.body();
                 com.example.useaapp.guest.guest_scholarship.Adapter_guest_scholarship myadapter = new com.example.useaapp.guest.guest_scholarship.Adapter_guest_scholarship(responsemodels, getApplicationContext());
                 if (responsemodels !=null && !responsemodels.isEmpty()){
+                    Shimer.stopShimmer();
+                    Shimer.setVisibility(View.GONE);
+                    recview.setVisibility(View.VISIBLE);
                     recview.setAdapter(myadapter);
                 }else {
                     Toast.makeText(GuestScholarship.this, "No data found", Toast.LENGTH_SHORT).show();

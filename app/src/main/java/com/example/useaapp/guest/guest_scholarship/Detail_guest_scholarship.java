@@ -1,6 +1,9 @@
 package com.example.useaapp.guest.guest_scholarship;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +21,11 @@ public class Detail_guest_scholarship extends AppCompatActivity {
             Learn_more_scholarship_detail, Application_required_scholarship_detail, How_to_apply_scholarship_detail,
             Benefit_type_scholarship_detail, Full_benefit_detail_scholarship_detail, Citizenship_requirement_scholarship_detail,
             Total_value_scholarship_detail, Application_study_areas_scholarship_detail;
+    //Link to URL
+    private void gotUrl(String s) {
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,15 +69,19 @@ public class Detail_guest_scholarship extends AppCompatActivity {
         School_detail_scholarship_detail.setText(Detail_description_guest_scholarship);
         Date_scholarship_open_detail.setText(Date_open_detail_guest_scholarship);
         Date_scholarship_close_detail.setText(Date_close_detail_guest_scholarship);
-        Learn_more_scholarship_detail.setText(Learnmore_guest_scholarship);
+        //
+//        Learn_more_scholarship_detail.setText(Learnmore_guest_scholarship);
         Application_required_scholarship_detail.setText(Application_required_detail_guest_scholarship);
-        How_to_apply_scholarship_detail.setText(How_to_apply_detail_guest_scholarship);
+//        How_to_apply_scholarship_detail.setText(How_to_apply_detail_guest_scholarship);
         Benefit_type_scholarship_detail.setText(Benefit_type_detail_guest_scholarship);
-        Full_benefit_detail_scholarship_detail.setText(Full_benefit_detail_guest_scholarship);
+//        Full_benefit_detail_scholarship_detail.setText(Full_benefit_detail_guest_scholarship);
         Citizenship_requirement_scholarship_detail.setText(Citizenship_requirement_detail_guest_scholarship);
         Total_value_scholarship_detail.setText(Total_value_detail_guest_scholarship);
         Application_study_areas_scholarship_detail.setText(Application_study_areas_detail_guest_scholarship);
 
+        Learn_more_scholarship_detail.setOnClickListener(View -> gotUrl(Learnmore_guest_scholarship));
+        How_to_apply_scholarship_detail.setOnClickListener(View -> gotUrl(How_to_apply_detail_guest_scholarship));
+        Full_benefit_detail_scholarship_detail.setOnClickListener(View -> gotUrl(Full_benefit_detail_guest_scholarship));
 
     }
 

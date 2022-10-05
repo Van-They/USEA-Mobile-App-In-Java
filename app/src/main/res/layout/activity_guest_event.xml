@@ -4,22 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:baselineAligned="false"
+    android:orientation="vertical"
     tools:context=".guest.guest_events.GuestEvent">
 
-  <include
-      android:id="@+id/CustomActionbarGuestEvent"
-      layout="@layout/custom_actionbar" />
-  <com.denzcoskun.imageslider.ImageSlider
-      android:id="@+id/SlideImageEvent"
-      android:layout_width="match_parent"
-      android:layout_height="175dp"
-      android:layout_marginTop="10dp"
-      android:layout_marginStart="10dp"
-      android:layout_marginEnd="10dp"
-      app:iss_corner_radius="20"/>
-  <com.google.android.material.tabs.TabLayout
+    <include
+        android:id="@+id/CustomActionbarGuestEvent"
+        layout="@layout/custom_actionbar" />
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/SlideImageEvent"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:iss_corner_radius="20" />
+
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_menu_guest_event"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -34,9 +36,9 @@
         app:tabSelectedTextColor="@color/white"
         app:tabTextAppearance="@style/TabTextSize"
         app:tabTextColor="@color/black" />
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager_menu_guest_event"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       />
+        android:layout_height="match_parent" />
 </LinearLayout>

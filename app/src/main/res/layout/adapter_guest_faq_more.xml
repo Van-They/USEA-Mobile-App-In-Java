@@ -33,6 +33,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/Registration_question"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     android:fontFamily="@font/khmer_os_battambang_regular"
                     android:textColor="@color/black"
                     android:layout_weight="1"/>

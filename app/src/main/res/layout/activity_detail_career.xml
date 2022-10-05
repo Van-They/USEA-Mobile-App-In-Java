@@ -39,6 +39,7 @@
                     android:fontFamily="@font/khmer_os_battambang_regular"
                     android:layout_marginEnd="5dp"
                     android:text="@string/Sample_txt"
+                    android:textColor="@color/black"
                     android:textSize="12dp"
                     />
             <TextView
@@ -46,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:textSize="12dp"
+                android:textColor="@color/black"
                 android:text="@string/Position"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -62,6 +64,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Sample_txt"
+                android:layout_marginBottom="-10dp"
+                android:textColor="@color/black"
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -78,7 +82,9 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
             android:gravity="center">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,8 +93,8 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_location"
-                    android:contentDescription="@null"/>
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_location" />
 
             </LinearLayout>
 
@@ -101,16 +107,17 @@
                     android:id="@+id/Province_guest_career_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Sample_txt"
                     android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:text="@string/Sample_txt"
+                    android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Location"
                     android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:text="@string/Location"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
@@ -118,6 +125,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
             android:gravity="center">
 
             <LinearLayout
@@ -147,6 +155,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Sample_txt"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/khmer_os_battambang_regular"
                     android:layout_marginEnd="5dp"
                     android:textSize="16sp"
@@ -156,6 +165,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Sample_txt"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/khmer_os_battambang_regular"
                     android:layout_marginEnd="5dp"
                     android:textSize="16sp"
@@ -165,6 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Sample_txt"
+                    android:textColor="@color/black"
                     android:textSize="16sp"
                     android:fontFamily="@font/khmer_os_battambang_regular"
                     android:textStyle="bold" />
@@ -181,7 +192,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
@@ -189,12 +200,14 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:text="@string/Career_Require"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/Require_guest_career_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:text="@string/Lorem"
                 />

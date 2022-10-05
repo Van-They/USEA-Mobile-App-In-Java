@@ -9,12 +9,27 @@
     <include
         android:id="@+id/CustomActionbarGuestRegistration"
         layout="@layout/custom_actionbar" />
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/custom_guest_shimmer_registration"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/custom_guest_registration_shimmer" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/registration_expandableListView"
         android:divider="@null"
         android:indicatorRight="?android:attr/expandableListPreferredChildIndicatorLeft"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:layout_margin="10dp"
         android:elevation="@dimen/cardview_compat_inset_shadow"
         />

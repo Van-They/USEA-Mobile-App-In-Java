@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_events.GuestEventModel;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,11 +28,14 @@ public class FragmentCurrentEvent extends Fragment {
     RecyclerView lvCurrentEvent;
     List<Response_model_guest_event_current> responsemodels;
     ArrayList<GuestEventModel> Data_current_event;
+    ShimmerFrameLayout Shimmer;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_current, container, false);
+        Shimmer = view.findViewById(R.id.custom_guest_shimmer_current);
+        Shimmer.startShimmer();
        return view;
     }
     @Override
@@ -39,9 +43,7 @@ public class FragmentCurrentEvent extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         lvCurrentEvent = view.findViewById(R.id.lvCurrentEvent);
-        lvCurrentEvent.setHasFixedSize(true);
         lvCurrentEvent.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         processdata();
 
     }
@@ -59,6 +61,9 @@ public class FragmentCurrentEvent extends Fragment {
                 responsemodels = response.body();
                 com.example.useaapp.guest.guest_events.current.Adapter_guest_event_current myadapter = new com.example.useaapp.guest.guest_events.current.Adapter_guest_event_current(responsemodels);
                 if (responsemodels !=null && !responsemodels.isEmpty()){
+                    Shimmer.stopShimmer();
+                    Shimmer.setVisibility(View.GONE);
+                    lvCurrentEvent.setVisibility(View.VISIBLE);
                     lvCurrentEvent.setAdapter(myadapter);
                 }else {
 

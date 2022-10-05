@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_events.Adapter_guest_event;
 import com.example.useaapp.guest.guest_events.GuestEventModel;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +31,14 @@ public class FragmentPastEvent extends Fragment {
     RecyclerView pastEvent;
     List<Response_model_guest_event_past> responsemodels;
     ArrayList<GuestEventModel> Data_past_event;
+    ShimmerFrameLayout Shimmer;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_past_event, container, false);
+        Shimmer = view.findViewById(R.id.custom_guest_shimmer_past_event);
+        Shimmer.startShimmer();
         return view;
     }
     @Override
@@ -42,7 +46,6 @@ public class FragmentPastEvent extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         pastEvent = view.findViewById(R.id.pastEvent);
-        pastEvent.setHasFixedSize(true);
         pastEvent.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         processdata();
@@ -62,6 +65,9 @@ public class FragmentPastEvent extends Fragment {
                 responsemodels = response.body();
                 com.example.useaapp.guest.guest_events.past.Adapter_guest_event_past myadapter = new com.example.useaapp.guest.guest_events.past.Adapter_guest_event_past(responsemodels);
                 if (responsemodels !=null && !responsemodels.isEmpty()){
+                    Shimmer.stopShimmer();
+                    Shimmer.setVisibility(View.GONE);
+                    pastEvent.setVisibility(View.VISIBLE);
                     pastEvent.setAdapter(myadapter);
                 }else {
 

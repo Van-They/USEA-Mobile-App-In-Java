@@ -1,6 +1,7 @@
 package com.example.useaapp.guest.guest_career;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.R;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,7 @@ public class GuestCareer extends AppCompatActivity {
     Toolbar toolbar;
     List<com.example.useaapp.guest.guest_career.Response_model_guest_career> responsemodels;
     RecyclerView recview;
+    ShimmerFrameLayout Shimmer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +34,9 @@ public class GuestCareer extends AppCompatActivity {
         setTitle(R.string.Career);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
-        responsemodels = new ArrayList<com.example.useaapp.guest.guest_career.Response_model_guest_career>();
+        Shimmer = findViewById(R.id.custom_guest_shimmer_career);
+        Shimmer.startShimmer();
+        responsemodels = new ArrayList<>();
 
         recview = findViewById(R.id.recview_guest_career);
         recview.setLayoutManager(new LinearLayoutManager(this));
@@ -52,6 +57,9 @@ public class GuestCareer extends AppCompatActivity {
                 responsemodels = response.body();
                 com.example.useaapp.guest.guest_career.Adapter_guest_career myadapter = new com.example.useaapp.guest.guest_career.Adapter_guest_career(responsemodels, getApplicationContext());
                 if (responsemodels !=null && !responsemodels.isEmpty()){
+                    Shimmer.stopShimmer();
+                    recview.setVisibility(View.VISIBLE);
+                    Shimmer.setVisibility(View.GONE);
                     recview.setAdapter(myadapter);
                 }else {
                     Toast.makeText(GuestCareer.this, "No data found", Toast.LENGTH_SHORT).show();

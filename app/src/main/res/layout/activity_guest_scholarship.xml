@@ -6,27 +6,46 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".guest.guest_scholarship.GuestScholarship">
+
     <include
         android:id="@+id/CustomActionbarGuestScholarship"
         layout="@layout/custom_actionbar" />
+
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/SlideImageScholarship"
         android:layout_width="match_parent"
         android:layout_height="175dp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        app:iss_corner_radius="20"/>
+        app:iss_corner_radius="20" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/custom_guest_shimmer_scholarship"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/custom_guest_scholarship_shimmer" />
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recview"
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:visibility="gone" />
     </LinearLayout>
 
 </LinearLayout>

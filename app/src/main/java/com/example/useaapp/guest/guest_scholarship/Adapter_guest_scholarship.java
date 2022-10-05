@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -52,8 +53,8 @@ public class Adapter_guest_scholarship extends RecyclerView.Adapter<Adapter_gues
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView Subject_guest_scholarship, University_guest_scholarship, Degree_guest_scholarship,
-                Fee_guest_scholarship, Date_guest_scholarship, Month_guest_scholarship, Year_guest_scholarship,
-                ReadMore_guest_scholarship;
+                Fee_guest_scholarship, Date_guest_scholarship, Month_guest_scholarship, Year_guest_scholarship;
+        LinearLayout ReadMore_guest_scholarship;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);

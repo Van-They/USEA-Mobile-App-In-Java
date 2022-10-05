@@ -18,6 +18,7 @@ import com.example.useaapp.R;
 import com.example.useaapp.guest.guest_events.Adapter_guest_event;
 import com.example.useaapp.guest.guest_events.GuestEventModel;
 import com.example.useaapp.guest.guest_events.past.Response_model_guest_event_past;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +31,14 @@ public class FragmentUpcomingEvent extends Fragment {
     RecyclerView upcomingEvent;
     List<Response_model_guest_event_upcoming> responsemodels;
     ArrayList<GuestEventModel> upcomingValue;
+    ShimmerFrameLayout Shimmer;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_upcoming, container, false);
+        Shimmer = view.findViewById(R.id.custom_guest_shimmer_Upcoming_event);
+        Shimmer.startShimmer();
         return view;
     }
     @Override
@@ -42,7 +46,6 @@ public class FragmentUpcomingEvent extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         upcomingEvent = view.findViewById(R.id.upcomingEvent);
-        upcomingEvent.setHasFixedSize(true);
         upcomingEvent.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         processdata();
@@ -62,6 +65,9 @@ public class FragmentUpcomingEvent extends Fragment {
                 responsemodels = response.body();
                 com.example.useaapp.guest.guest_events.upcoming.Adapter_guest_event_upcoming myadapter = new com.example.useaapp.guest.guest_events.upcoming.Adapter_guest_event_upcoming(responsemodels);
                 if (responsemodels !=null && !responsemodels.isEmpty()){
+                    Shimmer.stopShimmer();
+                    Shimmer.setVisibility(View.GONE);
+                    upcomingEvent.setVisibility(View.VISIBLE);
                     upcomingEvent.setAdapter(myadapter);
                 }else {
 

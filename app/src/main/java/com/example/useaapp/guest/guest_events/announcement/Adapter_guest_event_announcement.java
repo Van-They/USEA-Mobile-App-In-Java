@@ -1,22 +1,16 @@
 package com.example.useaapp.guest.guest_events.announcement;
 
-import android.animation.LayoutTransition;
-import android.transition.AutoTransition;
-import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.useaapp.R;
-import com.example.useaapp.guest.guest_registration.Response_model_guest_registration;
 
 import java.util.List;
 
