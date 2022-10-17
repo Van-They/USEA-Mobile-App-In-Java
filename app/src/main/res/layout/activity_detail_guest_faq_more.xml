@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".guest.guest_more.faq.Detail_guest_faq_more">
+    tools:context=".GUEST.More.faq.Detail_guest_faq_more">
 
     <include
         android:id="@+id/CustomActionbarGuestMoreDetail"

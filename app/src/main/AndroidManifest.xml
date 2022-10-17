@@ -19,28 +19,31 @@
         tools:ignore="DataExtractionRules"
         tools:targetApi="31">
         <activity
-            android:name=".guest.guest_more.faq.Detail_guest_faq_more"
+            android:name=".Loading_Data_Progress_Bar"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_more.about_us.Detail_guest_about_us_more"
+            android:name=".GUEST.More.faq.Detail_guest_faq_more"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_program.GuestDetailProgram"
+            android:name=".GUEST.More.about_us.Detail_guest_about_us_more"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_program.GuestProgram"
+            android:name=".GUEST.Program.GuestDetailProgram"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_login.GoogleAuthenticationClass"
+            android:name=".GUEST.Program.GuestProgram"
             android:exported="false" />
         <activity
-            android:name=".student.student_schedule.StudentSchedule"
+            android:name=".GUEST.Login.GoogleAuthenticationClass"
             android:exported="false" />
         <activity
-            android:name=".student.student_score.Detail_score_s1s2.ScoreDetail"
+            android:name=".STUDENT.Schedule.StudentSchedule"
             android:exported="false" />
         <activity
-            android:name=".student.student_news.NewsItemsDetail"
+            android:name=".STUDENT.Score.Detail_score_s1s2.ScoreDetail"
+            android:exported="false" />
+        <activity
+            android:name=".STUDENT.News.NewsItemsDetail"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -52,61 +55,61 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".student.MainStudentActivity"
+            android:name=".STUDENT.MainStudentActivity"
             android:exported="false" />
         <activity
-            android:name=".student.student_profile.ProfileSetting.Legal"
+            android:name=".STUDENT.Profile.ProfileSetting.Legal"
             android:exported="false" />
         <activity
-            android:name=".student.student_profile.ProfileSetting.About"
+            android:name=".STUDENT.Profile.ProfileSetting.About"
             android:exported="false" />
         <activity
-            android:name=".student.student_login.StudentLogin"
+            android:name=".STUDENT.Login.StudentLogin"
             android:exported="false" />
         <activity
-            android:name=".student.student_profile.StudentSetting"
+            android:name=".STUDENT.Profile.StudentSetting"
             android:exported="false" />
         <activity
-            android:name=".student.student_profile.StudentProfile"
+            android:name=".STUDENT.Profile.StudentProfile"
             android:exported="false" />
         <activity
-            android:name=".student.student_score.Score.StudentScore"
+            android:name=".STUDENT.Score.Score.StudentScore"
             android:exported="false" />
         <activity
-            android:name=".student.student_feedback.StudentFeedback"
+            android:name=".STUDENT.Feedback.StudentFeedback"
             android:exported="false" />
         <activity
-            android:name=".student.student_studyPlan.StudentStudyPlan"
+            android:name=".STUDENT.StudyPlan.StudentStudyPlan"
             android:exported="false" />
         <activity
-            android:name=".student.student_attendance.StudentAttendance"
+            android:name=".STUDENT.Attendance.StudentAttendance"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".guest.MainGuestActivity"
+            android:name=".GUEST.MainGuestActivity"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_login.GuestLogin"
+            android:name=".GUEST.Login.GuestLogin"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_events.GuestEvent"
+            android:name=".GUEST.Events.GuestEvent"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_registration.GuestRegistration"
+            android:name=".GUEST.Registration.GuestRegistration"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_scholarship.GuestScholarship"
+            android:name=".GUEST.Scholarship.GuestScholarship"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_scholarship.Detail_guest_scholarship"
+            android:name=".GUEST.Scholarship.Detail_guest_scholarship"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_career.GuestCareer"
+            android:name=".GUEST.Career.GuestCareer"
             android:exported="false" />
         <activity
-            android:name=".guest.guest_career.Detail_guest_career"
+            android:name=".GUEST.Career.Detail_guest_career"
             android:exported="false" />
     </application>
 

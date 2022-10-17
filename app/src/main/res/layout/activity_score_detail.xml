@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".student.student_score.Detail_score_s1s2.ScoreDetail">
+    tools:context=".STUDENT.Score.Detail_score_s1s2.ScoreDetail">
    <include layout="@layout/custom_actionbar"
        android:id="@+id/CustomActionbarStudentScoreDetail"/>
    <com.google.android.material.tabs.TabLayout

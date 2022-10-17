@@ -3,22 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".student.student_home.FragmentStudentHome">
+    tools:context=".STUDENT.Home.FragmentStudentHome">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -49,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center|right">
+                android:gravity="center|end">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profile_dashboard"
@@ -62,7 +61,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp">
 
             <GridView
                 android:id="@+id/gridview_rank_credit"
@@ -76,19 +76,23 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:alpha="0.5"
+            android:layout_marginEnd="10dp"
             android:background="@color/gray" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp">
 
             <GridView
                 android:id="@+id/grid_view_dashboard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:listSelector="#00000000"
                 android:numColumns="2"
                 android:scrollbars="none" />
         </LinearLayout>

@@ -6,8 +6,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.useaapp.guest.guest_login.GuestLogin;
-import com.example.useaapp.student.student_login.StudentLogin;
+import com.example.useaapp.GUEST.Login.GuestLogin;
+import com.example.useaapp.STUDENT.Login.StudentLogin;
 
 public class MainActivity extends AppCompatActivity {
 

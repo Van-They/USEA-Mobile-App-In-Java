@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".guest.guest_home.FragmentGuestHome">
+    tools:context=".GUEST.Home.FragmentGuestHome">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/SlideImageHome"
             android:layout_width="match_parent"
@@ -20,6 +21,7 @@
             android:id="@+id/categoryDashboard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:listSelector="#00000000"
             android:layout_margin="5dp"
             android:scrollbars="none"
             android:numColumns="2" />

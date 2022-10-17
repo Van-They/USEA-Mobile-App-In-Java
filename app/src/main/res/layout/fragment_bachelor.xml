@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".guest.guest_program.bachelor.Fragment_bachelor">
+    tools:context=".GUEST.Program.bachelor.Fragment_bachelor">
 
     <LinearLayout
         android:layout_width="match_parent"

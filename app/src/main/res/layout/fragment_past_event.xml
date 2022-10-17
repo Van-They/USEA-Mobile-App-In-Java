@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".guest.guest_events.past.FragmentPastEvent">
+    tools:context=".GUEST.Events.past.FragmentPastEvent">
 
     <LinearLayout
         android:layout_width="match_parent"

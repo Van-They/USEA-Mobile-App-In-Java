@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/khmer_os_battambang_bold"
+            android:fontFamily="@font/roboto_bold"
             android:gravity="center"
             android:text="@string/school_name_en"
             android:textColor="@color/dark_blue"
@@ -57,19 +57,18 @@
             android:id="@+id/guest_account"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/dark_blue"
-            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:background="@drawable/button_ripple_effect"
             android:text="@string/guest"
-            app:cornerRadius="20dp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/studentaccount"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/dark_blue"
-            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_ripple_effect"
             android:text="@string/Student"
-            app:cornerRadius="20dp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -83,30 +82,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@null"
-                android:src="@drawable/ellipse_dot_small" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@null"
-                android:src="@drawable/ellipse_dot_big" />
-        </LinearLayout>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/khmer_os_battambang_regular"
-            android:text="@string/app_license" />
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/app_license"
+            android:textColor="@color/light_yellow" />
 
     </LinearLayout>
 

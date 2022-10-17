@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".guest.guest_program.GuestProgram">
+    tools:context=".GUEST.Program.GuestProgram">
 
     <include
         android:id="@+id/CustomActionbarGuestProgram"

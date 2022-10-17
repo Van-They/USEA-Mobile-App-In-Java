@@ -6,28 +6,18 @@
     android:layout_height="match_parent"
     android:baselineAligned="false"
     android:orientation="vertical"
-    tools:context=".guest.guest_events.GuestEvent">
+    tools:context=".GUEST.Events.GuestEvent">
 
     <include
         android:id="@+id/CustomActionbarGuestEvent"
         layout="@layout/custom_actionbar" />
-
-    <com.denzcoskun.imageslider.ImageSlider
-        android:id="@+id/SlideImageEvent"
-        android:layout_width="match_parent"
-        android:layout_height="175dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:iss_corner_radius="20" />
-
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_menu_guest_event"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="10dp"
         app:tabIndicator="@drawable/tab_indicator"
         app:tabIndicatorAnimationMode="elastic"
         app:tabIndicatorColor="@color/dark_blue"

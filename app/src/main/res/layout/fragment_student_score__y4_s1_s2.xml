@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".student.student_score.year4.FragmentStudentScore_Y4S1S2">
+    tools:context=".STUDENT.Score.year4.FragmentStudentScore_Y4S1S2">
 
     <ScrollView
         android:layout_width="match_parent"

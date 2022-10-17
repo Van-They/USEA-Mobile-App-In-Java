@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".guest.guest_career.Detail_guest_career">
+    tools:context=".GUEST.Career.Detail_guest_career">
 
     <include
         android:id="@+id/CustomActionbarGuestCareerDetail"

@@ -3,32 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".guest.guest_career.GuestCareer">
+    tools:context=".GUEST.Career.GuestCareer">
     <include
         android:id="@+id/CustomActionbarGuestCareer"
         layout="@layout/custom_actionbar" />
     <LinearLayout
+        android:id="@+id/Data_Guest_career"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/custom_guest_shimmer_career"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <include layout="@layout/custom_guest_career_shimmer" />
-            </LinearLayout>
-        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <include
+            android:id="@+id/custom_progress_bar_Guest_career"
+            layout="@layout/custom_progress_bar" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recview_guest_career"
-            android:layout_margin="10dp"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_margin="10dp" />
     </LinearLayout>
-
 </LinearLayout>
