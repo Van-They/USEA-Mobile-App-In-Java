@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
 
 import java.util.ArrayList;
@@ -23,7 +24,6 @@ public class GuestRegistration extends AppCompatActivity {
     Toolbar toolbar;
     List<Response_model_guest_registration> response_models;
     RecyclerView recycler_view;
-    View progressbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +34,6 @@ public class GuestRegistration extends AppCompatActivity {
         setTitle(R.string.GuestRegistration);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v->finish());
-        progressbar = findViewById(R.id.custom_progress_bar_Guest_Registration);
         response_models = new ArrayList<>();
         recycler_view = findViewById(R.id.registration_expandableListView);
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
@@ -45,6 +44,7 @@ public class GuestRegistration extends AppCompatActivity {
     }
     public void Process_data()
     {
+        Data_Progressing dialog = new Data_Progressing(this);
         Call<List<Response_model_guest_registration>> call = ApiController_guest_registration
                 .getInstance()
                 .getapi()
@@ -56,8 +56,7 @@ public class GuestRegistration extends AppCompatActivity {
                 response_models = response.body();
                 Adapter_guest_registration adapter = new Adapter_guest_registration(response_models);
                 if (response_models !=null && !response_models.isEmpty()){
-                    progressbar.setVisibility(View.GONE);
-                    recycler_view.setVisibility(View.VISIBLE);
+                    dialog.stopDialog();
                     recycler_view.setAdapter(adapter);
                 }else {
                     Toast.makeText(GuestRegistration.this, "No data found", Toast.LENGTH_SHORT).show();

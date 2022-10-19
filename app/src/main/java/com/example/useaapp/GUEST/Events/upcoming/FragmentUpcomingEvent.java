@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
 import com.example.useaapp.GUEST.Events.GuestEventModel;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -28,14 +29,11 @@ public class FragmentUpcomingEvent extends Fragment {
     RecyclerView upcomingEvent;
     List<Response_model_guest_event_upcoming> responsemodels;
     ArrayList<GuestEventModel> upcomingValue;
-    ShimmerFrameLayout Shimmer;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_upcoming, container, false);
-        Shimmer = view.findViewById(R.id.custom_guest_shimmer_Upcoming_event);
-        Shimmer.startShimmer();
         return view;
     }
     @Override
@@ -51,6 +49,7 @@ public class FragmentUpcomingEvent extends Fragment {
 
     public void processdata()
     {
+        Data_Progressing dialog = new Data_Progressing(getContext());
         Call<List<Response_model_guest_event_upcoming>> call = com.example.useaapp.GUEST.Events.upcoming.ApiController_guest_event_upcoming
                 .getInstance()
                 .getapi()
@@ -62,9 +61,7 @@ public class FragmentUpcomingEvent extends Fragment {
                 responsemodels = response.body();
                 com.example.useaapp.GUEST.Events.upcoming.Adapter_guest_event_upcoming myadapter = new com.example.useaapp.GUEST.Events.upcoming.Adapter_guest_event_upcoming(responsemodels);
                 if (responsemodels !=null && !responsemodels.isEmpty()){
-                    Shimmer.stopShimmer();
-                    Shimmer.setVisibility(View.GONE);
-                    upcomingEvent.setVisibility(View.VISIBLE);
+                    dialog.stopDialog();
                     upcomingEvent.setAdapter(myadapter);
                 }else {
 

@@ -17,7 +17,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainGuestActivity extends AppCompatActivity {
 
-    Button cancel, leave;
+    View cancel, leave;
 
     @SuppressLint("NonConstantResourceId")
     @Override

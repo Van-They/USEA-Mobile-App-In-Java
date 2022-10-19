@@ -20,5 +20,6 @@ public class About extends AppCompatActivity {
         setTitle(R.string.About);
         TextView AboutDetail = findViewById(R.id.AboutDetail);
         AboutDetail.setText(R.string.AboutDetail);
+        toolbar.setNavigationOnClickListener(v->finish());
     }
 }

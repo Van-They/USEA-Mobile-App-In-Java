@@ -9,16 +9,12 @@
     <include
         android:id="@+id/CustomActionbarGuestRegistration"
         layout="@layout/custom_actionbar" />
-    <include
-        android:id="@+id/custom_progress_bar_Guest_Registration"
-        layout="@layout/custom_progress_bar" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/registration_expandableListView"
         android:divider="@null"
         android:indicatorRight="?android:attr/expandableListPreferredChildIndicatorLeft"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
         android:layout_margin="10dp"
         android:elevation="@dimen/cardview_compat_inset_shadow"
         />

@@ -19,9 +19,6 @@
         tools:ignore="DataExtractionRules"
         tools:targetApi="31">
         <activity
-            android:name=".Loading_Data_Progress_Bar"
-            android:exported="false" />
-        <activity
             android:name=".GUEST.More.faq.Detail_guest_faq_more"
             android:exported="false" />
         <activity

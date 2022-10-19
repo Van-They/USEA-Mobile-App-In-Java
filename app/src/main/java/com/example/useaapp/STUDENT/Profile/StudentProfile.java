@@ -49,7 +49,7 @@ public class StudentProfile extends AppCompatActivity {
         String Student_ID = sharedPreferences.getString("Student_ID","");
         if (Student_name !=null && Student_ID !=null){
             student_name_profile.setText(Student_name);
-            student_ID.setText(Student_ID);
+            student_ID.setText(Student_ID.toUpperCase());
         }
 
         //image picker n change profile

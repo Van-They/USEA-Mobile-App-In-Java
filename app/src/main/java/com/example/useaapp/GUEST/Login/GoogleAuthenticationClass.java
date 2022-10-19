@@ -5,14 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 
-import com.example.useaapp.R;
 import com.example.useaapp.GUEST.MainGuestActivity;
+import com.example.useaapp.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -26,19 +22,10 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class GoogleAuthenticationClass extends GuestLogin {
     GoogleSignInClient googleSignInClient;
-    private static final int REQ_CODE = 2100;
+    private static final int REQ_CODE = 2;
     ProgressDialog progressDialog;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
-    ActivityResultLauncher<Intent> launcher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-
-                }
-            }
-    );
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +42,6 @@ public class GoogleAuthenticationClass extends GuestLogin {
         //build interface for use to sign in
         googleSignInClient = GoogleSignIn.getClient(this, gso);
         Intent signInIntent = googleSignInClient.getSignInIntent();
-//        launcher.launch(signInIntent,REQ_CODE);
-////        startActivity(signInIntent,REQ_CODE);
         startActivityForResult(signInIntent,REQ_CODE);
     }
 

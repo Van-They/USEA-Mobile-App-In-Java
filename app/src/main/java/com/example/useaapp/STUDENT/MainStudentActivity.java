@@ -53,8 +53,8 @@ public class MainStudentActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setView(layout);
-        Button Cancel = layout.findViewById(R.id.CancelBack);
-        Button Leave = layout.findViewById(R.id.LeaveApp);
+        View Cancel = layout.findViewById(R.id.CancelBack);
+        View Leave = layout.findViewById(R.id.LeaveApp);
         AlertDialog alertDialog = builder.create();
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Cancel.setOnClickListener(v->alertDialog.dismiss());

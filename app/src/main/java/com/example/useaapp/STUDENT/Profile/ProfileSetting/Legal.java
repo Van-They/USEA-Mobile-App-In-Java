@@ -20,5 +20,6 @@ public class Legal extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         TextView LegalDetail = findViewById(R.id.LegalDetail);
         LegalDetail.setText(R.string.LegalDetail);
+        toolbar.setNavigationOnClickListener(v->finish());
     }
 }
