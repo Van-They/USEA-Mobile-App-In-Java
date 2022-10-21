@@ -16,6 +16,7 @@ import com.example.useaapp.R;
 import java.util.ArrayList;
 
 public class Adapter_guest_event extends ArrayAdapter<GuestEventModel> {
+
     public Adapter_guest_event(@NonNull Context context, ArrayList<GuestEventModel> guestEventModels) {
         super(context, R.layout.custom_items_guest_event, guestEventModels);
     }
@@ -26,6 +27,7 @@ public class Adapter_guest_event extends ArrayAdapter<GuestEventModel> {
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_items_guest_event, parent, false);
         }
+
         GuestEventModel guestEventModel = getItem(position);
 
         TextView Title_guest_event_item, Detail_guest_event_item, Day_guest_event_item, Month_guest_event_item, Date_guest_event_item, Year_guest_event_item, Time_guest_event_item;

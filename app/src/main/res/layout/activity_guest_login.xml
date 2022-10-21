@@ -73,6 +73,7 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:focusable="true"
+                android:visibility="gone"
                 android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="20dp">
 

@@ -57,16 +57,16 @@ public class GuestScholarship extends AppCompatActivity {
 
     public void processdata()
     {
-        Call<List<com.example.useaapp.GUEST.Scholarship.Response_model_guest_scholarship>> call = ApiController_guest_scholarship
+        Call<List<Response_model_guest_scholarship>> call = ApiController_guest_scholarship
                 .getInstance()
                 .getapi()
                 .getdata();
 
-        call.enqueue(new Callback<List<com.example.useaapp.GUEST.Scholarship.Response_model_guest_scholarship>>() {
+        call.enqueue(new Callback<List<Response_model_guest_scholarship>>() {
             @Override
-            public void onResponse(Call<List<com.example.useaapp.GUEST.Scholarship.Response_model_guest_scholarship>> call, Response<List<com.example.useaapp.GUEST.Scholarship.Response_model_guest_scholarship>> response) {
+            public void onResponse(Call<List<Response_model_guest_scholarship>> call, Response<List<Response_model_guest_scholarship>> response) {
                 responsemodels = response.body();
-                com.example.useaapp.GUEST.Scholarship.Adapter_guest_scholarship myadapter = new com.example.useaapp.GUEST.Scholarship.Adapter_guest_scholarship(responsemodels, getApplicationContext());
+                Adapter_guest_scholarship myadapter = new Adapter_guest_scholarship(responsemodels, getApplicationContext());
                 if (responsemodels !=null && !responsemodels.isEmpty()){
                     progressbar.setVisibility(View.GONE);
                     Data_Guest_scholarship.setVisibility(View.VISIBLE);
@@ -76,7 +76,7 @@ public class GuestScholarship extends AppCompatActivity {
                 }
             }
             @Override
-            public void onFailure(Call<List<com.example.useaapp.GUEST.Scholarship.Response_model_guest_scholarship>> call, Throwable t) {
+            public void onFailure(Call<List<Response_model_guest_scholarship>> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), t.toString(), Toast.LENGTH_LONG).show();
             }
         });

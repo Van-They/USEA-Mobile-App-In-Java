@@ -1,15 +1,16 @@
 package com.example.useaapp.GUEST;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.useaapp.MainActivity;
 import com.example.useaapp.R;
 import com.example.useaapp.GUEST.Home.FragmentGuestHome;
 import com.example.useaapp.GUEST.More.FragmentGuestMore;
@@ -37,6 +38,7 @@ public class MainGuestActivity extends AppCompatActivity {
             }
             return true;
         });
+
     }
 
     @Override
@@ -52,5 +54,9 @@ public class MainGuestActivity extends AppCompatActivity {
         leave.setOnClickListener(v1 -> finishAffinity());
         cancel.setOnClickListener(v1 -> dialog.dismiss());
         dialog.show();
+    }
+
+    public void Notification(View view) {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter_guest_career extends RecyclerView.Adapter<Adapter_guest_career.ViewHolder> {

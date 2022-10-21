@@ -51,6 +51,7 @@ public class FragmentGuestHome extends Fragment {
         slide_image.setImageList(slideModels, ScaleTypes.FIT);
 
         GridView categoryDashboard = view.findViewById(R.id.categoryDashboard);
+
         categoryDashboard.setAdapter(new GuestCategoryAdapter(this.getContext(), tittleCategory, imageCategory));
         categoryDashboard.setOnItemClickListener((parent, view1, position, id) -> {
             switch (tittleCategory[position]){
@@ -73,13 +74,8 @@ public class FragmentGuestHome extends Fragment {
                     startActivity(new Intent(getContext(), GuestCareer.class));
                     break;
                 case "គណនីសិស្ស":
-                    sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
-                    String st_id = sharedPreferences.getString(KEY_STUDENT_ID, "");
-                    if (st_id != null && !st_id.equals("")){
                         startActivity(new Intent(getContext(),MainStudentActivity.class));
-                    }else{
-                        startActivity(new Intent(getContext(), StudentLogin.class));
-                    }
+
                     break;
             }
        });

@@ -69,6 +69,8 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:onClick="Notification"
+                    android:id="@+id/Guest_notification"
                     android:contentDescription="@null"
                     android:src="@drawable/ic_notifications" />
             </LinearLayout>

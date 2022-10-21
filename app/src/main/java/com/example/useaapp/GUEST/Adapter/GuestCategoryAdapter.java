@@ -21,6 +21,7 @@ public class GuestCategoryAdapter extends BaseAdapter {
         this.titles = titles;
         this.images = images;
     }
+
     @Override
     public int getCount() {
         return titles.length;
