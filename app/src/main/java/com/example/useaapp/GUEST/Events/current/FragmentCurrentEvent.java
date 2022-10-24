@@ -49,6 +49,7 @@ public class FragmentCurrentEvent extends Fragment {
 
     public void processdata() {
         Data_Progressing dialog = new Data_Progressing(getContext());
+        dialog.showDialog();
         Call<List<Response_model_guest_event_current>> call = ApiController_guest_event_current
                 .getInstance()
                 .getapi()

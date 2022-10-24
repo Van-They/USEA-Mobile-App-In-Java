@@ -45,6 +45,7 @@ public class GuestRegistration extends AppCompatActivity {
     public void Process_data()
     {
         Data_Progressing dialog = new Data_Progressing(this);
+        dialog.showDialog();
         Call<List<Response_model_guest_registration>> call = ApiController_guest_registration
                 .getInstance()
                 .getapi()

@@ -65,6 +65,7 @@ public class FragmentAnnouncement extends Fragment {
 
     public void processdata() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
+        ShowDialog.showDialog();
         Call<List<Response_model_guest_event_announcement>> call = ApiController_guest_event_announcement
                 .getInstance()
                 .getapi()

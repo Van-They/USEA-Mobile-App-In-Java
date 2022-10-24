@@ -3,80 +3,147 @@ package com.example.useaapp.STUDENT.Login;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.ProgressBar;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.MainStudentActivity;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class StudentLogin extends AppCompatActivity {
-    private static final String TAG = "Student Login";
 
     SharedPreferences sharedPreferences;
     private final static String SHARE_PREFNAME = "Student_Name";
 
-    TextInputEditText Student_Id, Student_pwd;
+    EditText Student_Id, Student_pwd;
     MaterialButton buttonLogin;
-    ProgressBar progressLogIn;
+
+    TextView St_id_txt_error, St_pwd_txt_error;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_login);
 
-        Student_Id = findViewById(R.id.usernameLogIn);
-        Student_pwd = findViewById(R.id.passwordLogIn);
+        Student_Id = findViewById(R.id.usernameLogIn);//Edit text student ID
+        Student_pwd = findViewById(R.id.passwordLogIn);//Edit text student password
+        buttonLogin = findViewById(R.id.buttonLogin);//button student login
 
-        buttonLogin = findViewById(R.id.buttonLogin);
-        progressLogIn = findViewById(R.id.progressLogIn);
 
-        sharedPreferences = getSharedPreferences(SHARE_PREFNAME,MODE_PRIVATE);
-        String Student_name = sharedPreferences.getString("name","");
+        St_id_txt_error = findViewById(R.id.St_id_txt_error);//Error message when not input any data
+        St_pwd_txt_error = findViewById(R.id.St_pwd_txt_error);//Error message when not input any data
 
-        if (Student_name !=null && !Student_name.equals("")){
-            startActivity(new Intent(getApplicationContext(), MainStudentActivity.class));
-        }
-        buttonLogin.setOnClickListener(view -> {
-            login();
+        Student_Id.setBackgroundResource(R.drawable.edit_text_border);
+        Student_pwd.setBackgroundResource(R.drawable.edit_text_border);
+
+        sharedPreferences = getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);//method shared preference
+        String Student_name = sharedPreferences.getString("name", "");//get name of student from sharedPreferences
+
+
+//        if (!Student_Id.getText().toString().isEmpty()) {
+//            Student_Id.setBackgroundResource(R.drawable.edit_text_border);
+//            St_id_txt_error.setVisibility(View.GONE);
+//        } else if (!Student_pwd.getText().toString().isEmpty()) {
+//            Student_pwd.setBackgroundResource(R.drawable.edit_text_border);
+//            Student_pwd.setVisibility(View.GONE);
+//        }
+
+        Student_Id.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                Student_Id.setBackgroundResource(R.drawable.edit_text_border);
+                St_id_txt_error.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        Student_pwd.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                Student_pwd.setBackgroundResource(R.drawable.edit_text_border);
+                St_pwd_txt_error.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
         });
 
 
+        //check if student already login
+        if (!Student_name.equals("")) {
+            startActivity(new Intent(getApplicationContext(), MainStudentActivity.class));
+        }
+
+        buttonLogin.setOnClickListener(this::login);
+
     }
 
-    private void login() {
+    private void login(View view) {
 
-        String St_id = Student_Id.getText().toString();
-        String St_pass = Student_pwd.getText().toString();
+        String St_id = Student_Id.getText().toString();//get text from edit text student id
+        String St_pass = Student_pwd.getText().toString();//get text from edit text student password
 
-        Call<ModelResonse> call = ApiClient
+        if (Student_Id.getText().toString().isEmpty()) {
+            Student_Id.setBackgroundResource(R.drawable.edite_txt_error_st_login);
+            St_id_txt_error.setVisibility(View.VISIBLE);
+        } else if (Student_pwd.getText().toString().isEmpty()) {
+            Student_pwd.setBackgroundResource(R.drawable.edite_txt_error_st_login);
+            St_pwd_txt_error.setVisibility(View.VISIBLE);
+        }
+        Call<ModelResponse> call = ApiClient
                 .getInstance()
                 .getApi()
-                .callUserLogin(St_id,St_pass);
+                .callUserLogin(St_id, St_pass);
 
-        call.enqueue(new Callback<ModelResonse>() {
+        Data_Progressing loading = new Data_Progressing(this);//load loading effect data
+        loading.showDialog();
+        call.enqueue(new Callback<ModelResponse>() {
             @Override
-            public void onResponse(Call<ModelResonse> call, Response<ModelResonse> response) {
-                if (response.body().getResponse().equals("OK")){
+            public void onResponse(Call<ModelResponse> call, Response<ModelResponse> response) {
+                String msg = response.body().getResponse();
+                if (msg.equals("OK")) {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("name", response.body().getName());
-                    editor.putString("Student_ID",St_id);
+                    editor.putString("Student_ID", St_id);
                     editor.apply();
+                    loading.stopDialog();
                     startActivity(new Intent(getApplicationContext(), MainStudentActivity.class));
-                }else{
-                    Toast.makeText(StudentLogin.this, "Invalid Credential", Toast.LENGTH_SHORT).show();
+                } else {
+                    loading.stopDialog();
+                    Toast.makeText(StudentLogin.this, "ការចូលមិនត្រឹមត្រូវ", Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
-            public void onFailure(Call<ModelResonse> call, Throwable t) {
-                Toast.makeText(StudentLogin.this, "Error", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<ModelResponse> call, Throwable t) {
+                Toast.makeText(StudentLogin.this, "ការចូលមានបញ្ហាចូលព្យាយាមម្តងនៅពេលក្រោយ", Toast.LENGTH_SHORT).show();
             }
         });
 

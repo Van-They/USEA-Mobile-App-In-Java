@@ -7,20 +7,9 @@
     <include
         android:id="@+id/CustomActionbarGuestCareer"
         layout="@layout/custom_actionbar" />
-    <LinearLayout
-        android:id="@+id/Data_Guest_career"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <include
-            android:id="@+id/custom_progress_bar_Guest_career"
-            layout="@layout/custom_progress_bar" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recview_guest_career"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp" />
-    </LinearLayout>
 </LinearLayout>

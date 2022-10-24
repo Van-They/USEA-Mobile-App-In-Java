@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".STUDENT.Login.StudentLogin">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,19 +25,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
             android:fontFamily="@font/khmer_os_moul"
             android:gravity="center"
             android:text="@string/school_name_kh"
-            android:textColor="@color/black" />
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp" />
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
             android:text="@string/school_name_en"
-            android:textColor="@color/black" />
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:text="@string/Please_input_student_account"
+            android:textColor="@color/dark_blue" />
     </LinearLayout>
 
     <LinearLayout
@@ -46,47 +58,63 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="@string/StudentID">
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/StudentID"
+            android:textColor="@color/dark_blue"
+            android:textSize="14sp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/usernameLogIn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <EditText
+            android:id="@+id/usernameLogIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="@string/password">
+            android:background="@drawable/edite_txt_error_st_login"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:hint="@string/StudentID"
+            android:textSize="14sp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordLogIn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <ProgressBar
-            android:id="@+id/progressLogIn"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/St_id_txt_error"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/Please_input_your_id"
             android:visibility="gone"
-            android:layout_gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pwd" />
+            android:textColor="@color/red" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/password"
+            android:textColor="@color/dark_blue"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"/>
+
+        <EditText
+            android:id="@+id/passwordLogIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edite_txt_error_st_login"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textSize="14sp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp" />
+
+        <TextView
+            android:id="@+id/St_pwd_txt_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/Please_input_your_pwd"
+            android:visibility="gone"
+            android:textColor="@color/red" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonLogin"
@@ -94,9 +122,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/button_ripple_effect"
-            android:textSize="16sp"
             android:fontFamily="@font/khmer_os_battambang_regular"
-            android:text="@string/Log_In" />
+            android:text="@string/Log_In"
+            android:textSize="16sp" />
 
     </LinearLayout>
 </LinearLayout>

@@ -55,6 +55,7 @@ public class FragmentPastEvent extends Fragment {
     public void processdata()
     {
         Data_Progressing dialog = new Data_Progressing(getContext());
+        dialog.showDialog();
         Call<List<Response_model_guest_event_past>> call = ApiController_guest_event_past
                 .getInstance()
                 .getapi()

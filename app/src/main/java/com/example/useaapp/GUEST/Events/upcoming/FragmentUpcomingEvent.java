@@ -50,16 +50,17 @@ public class FragmentUpcomingEvent extends Fragment {
     public void processdata()
     {
         Data_Progressing dialog = new Data_Progressing(getContext());
-        Call<List<Response_model_guest_event_upcoming>> call = com.example.useaapp.GUEST.Events.upcoming.ApiController_guest_event_upcoming
+        dialog.showDialog();
+        Call<List<Response_model_guest_event_upcoming>> call = ApiController_guest_event_upcoming
                 .getInstance()
                 .getapi()
                 .getdata();
 
         call.enqueue(new Callback<List<Response_model_guest_event_upcoming>>() {
             @Override
-            public void onResponse(Call<List<com.example.useaapp.GUEST.Events.upcoming.Response_model_guest_event_upcoming>> call, Response<List<Response_model_guest_event_upcoming>> response) {
+            public void onResponse(Call<List<Response_model_guest_event_upcoming>> call, Response<List<Response_model_guest_event_upcoming>> response) {
                 responsemodels = response.body();
-                com.example.useaapp.GUEST.Events.upcoming.Adapter_guest_event_upcoming myadapter = new com.example.useaapp.GUEST.Events.upcoming.Adapter_guest_event_upcoming(responsemodels);
+               Adapter_guest_event_upcoming myadapter = new Adapter_guest_event_upcoming(responsemodels);
                 if (responsemodels !=null && !responsemodels.isEmpty()){
                     dialog.stopDialog();
                     upcomingEvent.setAdapter(myadapter);

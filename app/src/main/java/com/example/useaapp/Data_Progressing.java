@@ -18,9 +18,10 @@ public class Data_Progressing extends AlertDialog {
         builder.setView(layout);
         alert = builder.create();
         alert.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        alert.show();
     }
+
     public void stopDialog(){
         alert.dismiss();
     }
+    public void showDialog(){alert.show();}
 }

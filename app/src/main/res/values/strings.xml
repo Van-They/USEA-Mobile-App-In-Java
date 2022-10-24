@@ -60,7 +60,7 @@
     <string name="Setting">ការកំណត់</string>
     <string name="StudentInformation">ព័ត៌មានលម្អិតរបស់សិស្ស</string>
     <string name="StudentName">ឈ្មោះនិស្សិត</string>
-    <string name="StudentID">ID និស្សិត</string>
+    <string name="StudentID">អត្ថលេខនិស្សិត</string>
     <string name="StudentAccount">គណនីនិស្សិត</string>
     <string name="student">និស្សិត</string>
     <string name="Law">ច្បាប់</string>
@@ -175,6 +175,9 @@
     <string name="Average">មធ្យមភាគ</string>
     <string name="Study_program">កម្មវិធីសិក្សា</string>
     <string name="Position">Position</string>
+    <string name="Please_input_your_id">សូមបញ្ចូលអត្តលេខរបស់អ្នក</string>
+    <string name="Please_input_your_pwd">សូមបញ្ចូលលេខសម្ងាត់របស់អ្នក</string>
+    <string name="Please_input_student_account">សូមបញ្ចូលគណីនិស្សិត</string>
 
 
 </resources>

@@ -9,7 +9,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("st_login.php")
-    Call<ModelResonse> callUserLogin(
+    Call<ModelResponse> callUserLogin(
             @Field("student_id") String student_id,
             @Field("pwd") String pwd
     );
