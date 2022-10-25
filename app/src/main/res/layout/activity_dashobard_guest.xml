@@ -22,24 +22,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingStart="0dp"
                 android:gravity="center">
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:contentDescription="@null"
                     android:src="@drawable/usea_logo" />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
@@ -48,8 +50,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/khmer_os_moul"
                     android:text="@string/school_name_kh"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="12sp" />
+                    android:textColor="@color/dark_blue" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -57,18 +58,18 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/roboto_medium"
                     android:text="@string/school_name_en"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="16sp" />
+                    android:textColor="@color/dark_blue" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="5dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="0dp"
                 android:gravity="center">
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:onClick="Notification"
                     android:id="@+id/Guest_notification"
                     android:contentDescription="@null"

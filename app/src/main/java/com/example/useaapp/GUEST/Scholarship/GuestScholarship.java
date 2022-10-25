@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
 
 import java.util.ArrayList;
@@ -27,8 +28,6 @@ public class GuestScholarship extends AppCompatActivity {
     Toolbar toolbar;
     List<com.example.useaapp.GUEST.Scholarship.Response_model_guest_scholarship> responsemodels;
     RecyclerView recview;
-    View progressbar;
-    LinearLayout Data_Guest_scholarship;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +37,6 @@ public class GuestScholarship extends AppCompatActivity {
         setTitle(R.string.Scholarship);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
-        Data_Guest_scholarship = findViewById(R.id.Data_Guest_scholarship);
-        progressbar = findViewById(R.id.custom_progress_bar_Guest_scholarship);
 
         ImageSlider slide_image = findViewById(R.id.SlideImageScholarship);
         List<SlideModel> slideModels = new ArrayList<>();
@@ -57,6 +54,8 @@ public class GuestScholarship extends AppCompatActivity {
 
     public void processdata()
     {
+        Data_Progressing loading = new Data_Progressing(this);
+        loading.showDialog();
         Call<List<Response_model_guest_scholarship>> call = ApiController_guest_scholarship
                 .getInstance()
                 .getapi()
@@ -68,8 +67,7 @@ public class GuestScholarship extends AppCompatActivity {
                 responsemodels = response.body();
                 Adapter_guest_scholarship myadapter = new Adapter_guest_scholarship(responsemodels, getApplicationContext());
                 if (responsemodels !=null && !responsemodels.isEmpty()){
-                    progressbar.setVisibility(View.GONE);
-                    Data_Guest_scholarship.setVisibility(View.VISIBLE);
+                    loading.stopDialog();
                     recview.setAdapter(myadapter);
                 }else {
                     Toast.makeText(GuestScholarship.this, "No data found", Toast.LENGTH_SHORT).show();

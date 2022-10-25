@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.example.useaapp.R;
 
+import java.util.Objects;
+
 public class About extends AppCompatActivity {
 
     @Override
@@ -16,7 +18,7 @@ public class About extends AppCompatActivity {
         setContentView(R.layout.activity_about);
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentAbout);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         setTitle(R.string.About);
         TextView AboutDetail = findViewById(R.id.AboutDetail);
         AboutDetail.setText(R.string.AboutDetail);

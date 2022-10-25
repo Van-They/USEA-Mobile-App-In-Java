@@ -3,6 +3,7 @@ package com.example.useaapp.STUDENT.Home;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +14,8 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.useaapp.R;
 import com.example.useaapp.GUEST.MainGuestActivity;
+import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_category;
 import com.example.useaapp.STUDENT.Adapter.Adapter_rank_credit;
 import com.example.useaapp.STUDENT.Attendance.StudentAttendance;
@@ -31,7 +32,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class FragmentStudentHome extends Fragment {
 
     SharedPreferences sharedPreferences;
+    CircleImageView profile_dashboard;
     private final static String SHARE_PREFNAME = "Student_Name";
+    private final static String PROFILE_NAME = "Profile_Picture";
 
     //category
     private final String[] title_category = {"កាលវិភាគ", "ផែនការសិក្សា", "វត្តមាន", "មតិកែលម្អ", "ពិន្ទុ", "គណនីភ្ញៀវ"};
@@ -57,7 +60,7 @@ public class FragmentStudentHome extends Fragment {
             student_name_dashboard.setText(st_id);
         }
         //profile image
-        CircleImageView profile_dashboard = view.findViewById(R.id.profile_dashboard);
+        profile_dashboard = view.findViewById(R.id.profile_dashboard);
         profile_dashboard.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), StudentProfile.class);
             startActivity(intent);
@@ -90,5 +93,15 @@ public class FragmentStudentHome extends Fragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        sharedPreferences = getContext().getSharedPreferences(PROFILE_NAME, Context.MODE_PRIVATE);
+        String image = sharedPreferences.getString("My_Profile", null);
+        if (image != null) {
+            profile_dashboard.setImageURI(Uri.parse(image));
+        }
     }
 }

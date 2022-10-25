@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import com.example.useaapp.MainActivity;
 import com.example.useaapp.R;
@@ -44,11 +46,12 @@ public class StudentSetting extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);
 
+        studentLogOut.setPaintFlags(studentLogOut.getPaintFlags()|Paint.UNDERLINE_TEXT_FLAG);
+
         studentLogOut.setOnClickListener(v -> {
-            LayoutInflater inflater = getLayoutInflater();
-            View Layout = inflater.inflate(R.layout.custom_dialog_log_out, null);
-            Button Logout = Layout.findViewById(R.id.Logout);
-            Button Cancel_logout = Layout.findViewById(R.id.CancelLogout);
+            View Layout = getLayoutInflater().inflate(R.layout.custom_dialog_log_out, null);
+            CardView Logout = Layout.findViewById(R.id.Logout);
+            CardView Cancel_logout = Layout.findViewById(R.id.CancelLogout);
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setCancelable(false);
             builder.setView(Layout);
