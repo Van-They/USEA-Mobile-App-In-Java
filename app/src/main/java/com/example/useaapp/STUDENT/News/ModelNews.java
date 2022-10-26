@@ -1,9 +1,9 @@
 package com.example.useaapp.STUDENT.News;
 
 public class ModelNews {
-    private final String subject, date, due_date, time, room,creator,label,instruction;
+    private final String subject, date, due_date, time, room,creator,label,instruction,score;
 
-    public ModelNews(String subject, String date, String due_date, String time, String room, String creator, String label, String instruction) {
+    public ModelNews(String subject, String date, String due_date, String time, String room, String creator, String label, String instruction, String score) {
         this.subject = subject;
         this.date = date;
         this.due_date = due_date;
@@ -12,6 +12,11 @@ public class ModelNews {
         this.creator = creator;
         this.label = label;
         this.instruction = instruction;
+        this.score = score;
+    }
+
+    public String getScore() {
+        return score;
     }
 
     public String getSubject() {
