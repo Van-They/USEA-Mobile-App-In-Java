@@ -28,6 +28,7 @@ public class FragmentStudentNews extends Fragment {
     private final static String Creator ="Creator";
     private final static String Label ="Label";
     private final static String Instruction = "Instruction";
+    private final static String Score = "Score";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,21 +40,19 @@ public class FragmentStudentNews extends Fragment {
 
 
         listView.setAdapter(new Adapter_news(view.getContext(), listNews));
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(), "បានចុច -> " + listNews.get(position).getLabel(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(), NewsItemsDetail.class);
-                intent.putExtra(Subject,listNews.get(position).getSubject());
-                intent.putExtra(Date,listNews.get(position).getDate());
-                intent.putExtra(Due_Date,listNews.get(position).getDue_date());
-                intent.putExtra(Time,listNews.get(position).getTime());
-                intent.putExtra(Room,listNews.get(position).getRoom());
-                intent.putExtra(Creator,listNews.get(position).getCreator());
-                intent.putExtra(Label,listNews.get(position).getLabel());
-                intent.putExtra(Instruction,listNews.get(position).getInstruction());
-                startActivity(intent);
-            }
+        listView.setOnItemClickListener((parent, view1, position, id) -> {
+            Toast.makeText(getContext(), "បានចុច -> " + listNews.get(position).getLabel(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getContext(), NewsItemsDetail.class);
+            intent.putExtra(Subject,listNews.get(position).getSubject());
+            intent.putExtra(Date,listNews.get(position).getDate());
+            intent.putExtra(Due_Date,listNews.get(position).getDue_date());
+            intent.putExtra(Time,listNews.get(position).getTime());
+            intent.putExtra(Room,listNews.get(position).getRoom());
+            intent.putExtra(Creator,listNews.get(position).getCreator());
+            intent.putExtra(Label,listNews.get(position).getLabel());
+            intent.putExtra(Instruction,listNews.get(position).getInstruction());
+            intent.putExtra(Score,listNews.get(position).getScore());
+            startActivity(intent);
         });
 
         return view;
@@ -61,11 +60,11 @@ public class FragmentStudentNews extends Fragment {
 
     private void addItem() {
         listNews = new ArrayList<>();
-        listNews.add(new ModelNews("Java programing I", "", "២០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "កិច្ចការផ្ទះ", "instruction"));
-        listNews.add(new ModelNews("Java programing II", "", "១០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "ការងារក្រុម", "instruction"));
-        listNews.add(new ModelNews("Web Development", "២០-សីហា-២០២២", "", "៦:០០", "ប្រាសាទព្រះខ័ន", "Sa Sokngim", "ប្រឡងពាក់កណ្តាលឆមាស", "instruction"));
-        listNews.add(new ModelNews("C Programing", "", "១០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "កិច្ចការផ្ទះ", "instruction"));
-        listNews.add(new ModelNews("C++ Programing", "", "១០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "ការងារក្រុម", "instruction"));
+        listNews.add(new ModelNews("Java programing I", "", "២០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "កិច្ចការផ្ទះ", "instruction", "50"));
+        listNews.add(new ModelNews("Java programing II", "", "១០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "ការងារក្រុម", "instruction", "50"));
+        listNews.add(new ModelNews("Web Development", "២០-សីហា-២០២២", "", "៦:០០", "ប្រាសាទព្រះខ័ន", "Sa Sokngim", "ប្រឡងពាក់កណ្តាលឆមាស", "instruction", "50"));
+        listNews.add(new ModelNews("C Programing", "", "១០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "កិច្ចការផ្ទះ", "instruction", "50"));
+        listNews.add(new ModelNews("C++ Programing", "", "១០-សីហា-២០២២", "៦:០០", "", "Sa Sokngim", "ការងារក្រុម", "instruction", "50"));
 
     }
 }

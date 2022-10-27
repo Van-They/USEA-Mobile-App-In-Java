@@ -3,6 +3,7 @@ package com.example.useaapp.STUDENT.Login;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.useaapp.Custom_toast;
 import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.MainStudentActivity;
@@ -44,20 +46,8 @@ public class StudentLogin extends AppCompatActivity {
         St_id_txt_error = findViewById(R.id.St_id_txt_error);//Error message when not input any data
         St_pwd_txt_error = findViewById(R.id.St_pwd_txt_error);//Error message when not input any data
 
-        Student_Id.setBackgroundResource(R.drawable.edit_text_border);
-        Student_pwd.setBackgroundResource(R.drawable.edit_text_border);
-
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);//method shared preference
         String Student_name = sharedPreferences.getString("name", "");//get name of student from sharedPreferences
-
-
-//        if (!Student_Id.getText().toString().isEmpty()) {
-//            Student_Id.setBackgroundResource(R.drawable.edit_text_border);
-//            St_id_txt_error.setVisibility(View.GONE);
-//        } else if (!Student_pwd.getText().toString().isEmpty()) {
-//            Student_pwd.setBackgroundResource(R.drawable.edit_text_border);
-//            Student_pwd.setVisibility(View.GONE);
-//        }
 
         Student_Id.addTextChangedListener(new TextWatcher() {
             @Override
@@ -67,7 +57,7 @@ public class StudentLogin extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Student_Id.setBackgroundResource(R.drawable.edit_text_border);
+                Student_Id.setBackgroundResource(R.drawable.edit_text_state);
                 St_id_txt_error.setVisibility(View.GONE);
             }
 
@@ -85,7 +75,7 @@ public class StudentLogin extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Student_pwd.setBackgroundResource(R.drawable.edit_text_border);
+                Student_pwd.setBackgroundResource(R.drawable.edit_text_state);
                 St_pwd_txt_error.setVisibility(View.GONE);
             }
 
@@ -110,11 +100,16 @@ public class StudentLogin extends AppCompatActivity {
         String St_id = Student_Id.getText().toString();//get text from edit text student id
         String St_pass = Student_pwd.getText().toString();//get text from edit text student password
 
-        if (Student_Id.getText().toString().isEmpty()) {
-            Student_Id.setBackgroundResource(R.drawable.edite_txt_error_st_login);
+        if (Student_Id.getText().toString().isEmpty() && Student_pwd.getText().toString().isEmpty()) {
+            Student_Id.setBackgroundResource(R.drawable.edit_txt_error_st_login);
+            St_id_txt_error.setVisibility(View.VISIBLE);
+            Student_pwd.setBackgroundResource(R.drawable.edit_txt_error_st_login);
+            St_pwd_txt_error.setVisibility(View.VISIBLE);
+        } else if (Student_Id.getText().toString().isEmpty()) {
+            Student_Id.setBackgroundResource(R.drawable.edit_txt_error_st_login);
             St_id_txt_error.setVisibility(View.VISIBLE);
         } else if (Student_pwd.getText().toString().isEmpty()) {
-            Student_pwd.setBackgroundResource(R.drawable.edite_txt_error_st_login);
+            Student_pwd.setBackgroundResource(R.drawable.edit_txt_error_st_login);
             St_pwd_txt_error.setVisibility(View.VISIBLE);
         }
         Call<ModelResponse> call = ApiClient
@@ -122,6 +117,7 @@ public class StudentLogin extends AppCompatActivity {
                 .getApi()
                 .callUserLogin(St_id, St_pass);
 
+        Custom_toast toast = new Custom_toast(this);
         Data_Progressing loading = new Data_Progressing(this);//load loading effect data
         loading.showDialog();
         call.enqueue(new Callback<ModelResponse>() {
@@ -137,13 +133,14 @@ public class StudentLogin extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), MainStudentActivity.class));
                 } else {
                     loading.stopDialog();
-                    Toast.makeText(StudentLogin.this, "ការចូលមិនត្រឹមត្រូវ", Toast.LENGTH_SHORT).show();
+                    toast.showToast("ការចូលមិនត្រឹមត្រូវ");
                 }
             }
 
             @Override
             public void onFailure(Call<ModelResponse> call, Throwable t) {
-                Toast.makeText(StudentLogin.this, "ការចូលមានបញ្ហាចូលព្យាយាមម្តងនៅពេលក្រោយ", Toast.LENGTH_SHORT).show();
+                toast.showToast("ការចូលមានបញ្ហាចូលព្យាយាមម្តងនៅពេលក្រោយ");
+                new Handler().postDelayed(() -> finishAffinity(),1500);
             }
         });
 

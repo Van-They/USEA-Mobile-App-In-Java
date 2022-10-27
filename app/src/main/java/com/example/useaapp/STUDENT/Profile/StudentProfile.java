@@ -15,7 +15,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.useaapp.Custom_toast;
 import com.example.useaapp.R;
 import com.github.drjacky.imagepicker.ImagePicker;
 
@@ -26,7 +28,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class StudentProfile extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    Custom_toast toast;
+    Uri uri;
     private final static String SHARE_PREFNAME = "Student_Name";
+    private final static String PROFILE_NAME = "Profile_Picture";
 
     TextView student_name_profile, student_ID;
     ImageView change_image_in_profile;
@@ -40,7 +46,6 @@ public class StudentProfile extends AppCompatActivity {
         setTitle(R.string.StudentInformation);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         actionbar.setNavigationOnClickListener(view -> finish());
-
 
         student_name_profile = findViewById(R.id.student_name_profile);
         student_ID = findViewById(R.id.student_ID);
@@ -83,12 +88,29 @@ public class StudentProfile extends AppCompatActivity {
 
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        sharedPreferences = getSharedPreferences(PROFILE_NAME,MODE_PRIVATE);
+        String image = sharedPreferences.getString("My_Profile",null);
+        if (image!=null){
+        profile_image.setImageURI(Uri.parse(image));
+        }
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         assert data != null;
-        Uri uri = data.getData();
+        uri = data.getData();
         profile_image.setImageURI(uri);
+        sharedPreferences = getSharedPreferences(PROFILE_NAME,MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putString("My_Profile", String.valueOf(uri));
+        editor.apply();
+        toast = new Custom_toast(getApplicationContext());
+        toast.showToast("ជោគជ័យ");
     }
 
     @Override

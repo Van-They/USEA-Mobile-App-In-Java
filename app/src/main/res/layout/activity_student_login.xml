@@ -44,12 +44,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:textSize="16sp"
             android:text="@string/Please_input_student_account"
-            android:textColor="@color/dark_blue" />
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -64,18 +64,19 @@
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:text="@string/StudentID"
             android:textColor="@color/dark_blue"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/usernameLogIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/edite_txt_error_st_login"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_state"
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:hint="@string/StudentID"
-            android:textSize="14sp"
             android:paddingStart="5dp"
-            android:paddingEnd="5dp" />
+            android:paddingEnd="5dp"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/St_id_txt_error"
@@ -83,29 +84,31 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:text="@string/Please_input_your_id"
-            android:visibility="gone"
-            android:textColor="@color/red" />
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:text="@string/password"
             android:textColor="@color/dark_blue"
-            android:layout_marginTop="10dp"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/passwordLogIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/edite_txt_error_st_login"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_state"
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:textSize="14sp"
             android:paddingStart="5dp"
-            android:paddingEnd="5dp" />
+            android:paddingEnd="5dp"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/St_pwd_txt_error"
@@ -113,8 +116,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/khmer_os_battambang_regular"
             android:text="@string/Please_input_your_pwd"
-            android:visibility="gone"
-            android:textColor="@color/red" />
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:visibility="gone" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonLogin"

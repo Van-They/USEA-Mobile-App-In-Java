@@ -7,26 +7,29 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="5dp"
             android:gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:baselineAligned="false"
+                android:orientation="horizontal"
                 tools:ignore="UselessParent">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -36,6 +39,7 @@
                         android:fontFamily="@font/roboto_medium"
                         android:text="@string/Sample_txt"
                         android:textColor="@color/black" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -58,6 +62,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -68,13 +73,18 @@
                     <TextView
                         android:id="@+id/permission_attendance"
                         android:layout_width="match_parent"
-                        android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="@string/Sample_txt"
                         android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:text="@string/Sample_txt"
                         android:textColor="@color/light_yellow" />
 
                 </LinearLayout>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@color/gray"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -86,12 +96,17 @@
                         android:id="@+id/absent_attendance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Sample_txt"
                         android:fontFamily="@font/roboto_medium"
                         android:gravity="center"
+                        android:text="@string/Sample_txt"
                         android:textColor="@color/light_red" />
 
                 </LinearLayout>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:background="@color/gray"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -103,9 +118,9 @@
                         android:id="@+id/come_attendance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Sample_txt"
                         android:fontFamily="@font/roboto_medium"
                         android:gravity="center"
+                        android:text="@string/Sample_txt"
                         android:textColor="@color/green" />
 
                 </LinearLayout>

@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".STUDENT.Feedback.StudentFeedback">
-    <include layout="@layout/custom_actionbar"
-        android:id="@+id/CustomActionbarStudentFeedback"/>
+
+    <include
+        android:id="@+id/CustomActionbarStudentFeedback"
+        layout="@layout/custom_actionbar" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:orientation="vertical"
         android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:orientation="vertical">
+        android:paddingTop="10dp"
+        android:paddingEnd="15dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
+            android:fontFamily="@font/khmer_os_battambang_regular"
             android:text="@string/How_would_you_rate_your_experience_using_this_app"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <RatingBar
-            android:layout_marginTop="10dp"
             android:id="@+id/rating_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:stepSize="0.5"
-            android:numStars="5" />
+            android:layout_marginTop="10dp"
+            android:numStars="5"
+            android:stepSize="0.5" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/Help_us_by_describing_your_problem"
             android:layout_marginTop="10dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/Help_us_by_describing_your_problem"
+            android:textColor="@color/black" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/roboto_regular"
-            android:background="@drawable/custom_border"
+            android:background="@drawable/edit_text_state"
+            android:fontFamily="@font/khmer_os_battambang_regular"
             android:gravity="start"
-            android:textSize="14sp"
             android:hint="@string/Write_your_problem_here"
             android:inputType="text"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textSize="14sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,16 +62,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_regular"
+                android:fontFamily="@font/khmer_os_battambang_regular"
                 android:text="@string/Do_you_have_any_screenshot"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_regular"
-                android:text="@string/Optional"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:text="@string/Optional" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,9 +101,8 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="50dp"
+            android:background="@drawable/button_ripple_effect"
             android:text="@string/Submit_Feedback"
-            app:backgroundTint="@color/dark_blue"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            app:cornerRadius="50dp" />
+            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

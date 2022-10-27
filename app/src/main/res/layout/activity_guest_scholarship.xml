@@ -10,14 +10,9 @@
     <include
         android:id="@+id/CustomActionbarGuestScholarship"
         layout="@layout/custom_actionbar" />
-    <include
-        android:id="@+id/custom_progress_bar_Guest_scholarship"
-        layout="@layout/custom_progress_bar" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Data_Guest_scholarship"
-        android:visibility="gone"
         android:orientation="vertical">
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/SlideImageScholarship"

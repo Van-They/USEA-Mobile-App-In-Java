@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.example.useaapp.R;
 
+import java.util.Objects;
+
 public class Legal extends AppCompatActivity {
 
     @Override
@@ -17,7 +19,7 @@ public class Legal extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentLegal);
         setSupportActionBar(toolbar);
         setTitle(R.string.Legal);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         TextView LegalDetail = findViewById(R.id.LegalDetail);
         LegalDetail.setText(R.string.LegalDetail);
         toolbar.setNavigationOnClickListener(v->finish());

@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
@@ -23,7 +24,6 @@ public class Detail_guest_faq_more extends AppCompatActivity {
     Toolbar toolbar;
     List<Response_model_guest_faq_more> response_models;
     RecyclerView recycler_view;
-    ShimmerFrameLayout Shimmer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +33,6 @@ public class Detail_guest_faq_more extends AppCompatActivity {
         setTitle(R.string.FAQ);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
-        Shimmer = findViewById(R.id.custom_guest_shimmer_faq);
-        Shimmer.startShimmer();
         recycler_view = findViewById(R.id.faq_expandableListView);
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
 
@@ -43,6 +41,8 @@ public class Detail_guest_faq_more extends AppCompatActivity {
 
     public void Process_data()
     {
+        Data_Progressing loading = new Data_Progressing(this);
+        loading.showDialog();
         Call<List<Response_model_guest_faq_more>> call = ApiController_guest_faq_more
                 .getInstance()
                 .getApi()
@@ -54,9 +54,7 @@ public class Detail_guest_faq_more extends AppCompatActivity {
                 response_models = response.body();
                 Adapter_guest_faq_more adapter = new Adapter_guest_faq_more(response_models);
                 if (response_models !=null && !response_models.isEmpty()){
-                    Shimmer.stopShimmer();
-                    Shimmer.setVisibility(View.GONE);
-                    recycler_view.setVisibility(View.VISIBLE);
+                    loading.stopDialog();
                     recycler_view.setAdapter(adapter);
                 }else {
                     Toast.makeText(Detail_guest_faq_more.this, "No data found", Toast.LENGTH_SHORT).show();

@@ -65,7 +65,7 @@
     <string name="student">និស្សិត</string>
     <string name="Law">ច្បាប់</string>
     <string name="Policy">គោលការណ៍</string>
-    <string name="About">អំពី</string>
+    <string name="About">អំពីយើង</string>
     <string name="Log_out">ចាកចេញ</string>
     <string name="password">លេខសម្ងាត់និស្សិត</string>
     <string name="Log_In">ចូល</string>
@@ -109,7 +109,7 @@
 ការលើកកម្ពស់ការស្រាវជ្រាវ និងការអភិវឌ្ឍ
 ការទំនាក់ទំនង និងសហប្រតិបត្តិការអន្តរជាតិ
 ការទទួលស្គាល់គុណភាពអប់រំថ្នាក់ជាតិ និងអន្តរជាតិ ។"</string>
-    <string name="Log_out_message">តើអ្នកប្រាកដថាអ្នកនឹងចាកចេញពីគណនីនិស្សិតដែរឬទេ?</string>
+    <string name="Log_out_message">តើអ្នកពិតជាចង់ចាកចេញពីគណនីមែនឬទេ?</string>
     <string name="Cancel">បោះបង់</string>
     <string name="No">លេខរៀង</string>
     <string name="Total">សរុប</string>
@@ -127,7 +127,7 @@
     <string name="Lecture">សាស្រ្តាចារ្យ</string>
     <string name="Note">ចំណាំ</string>
     <string name="Instruction">ការណែនាំ</string>
-    <string name="Click_Download">ចុចដើម្បីទាយក</string>
+    <string name="Click_Download">ចុចដើម្បីទាញយក</string>
     <string name="Nothing">គ្មាន</string>
     <string name="Comma">,</string>
     <string name="Day">ថ្ងៃ</string>
