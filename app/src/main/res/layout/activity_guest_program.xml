@@ -9,6 +9,11 @@
     <include
         android:id="@+id/CustomActionbarGuestProgram"
         layout="@layout/custom_actionbar" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recview_guest_program_faculty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp" />
 
     <LinearLayout
         android:id="@+id/Guest_program_parent"

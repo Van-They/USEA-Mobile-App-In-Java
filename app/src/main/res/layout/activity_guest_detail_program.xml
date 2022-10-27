@@ -32,8 +32,12 @@
         android:alpha="0.5"
         android:background="@color/gray" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager_menu_program_detail"
+<!--    <androidx.viewpager2.widget.ViewPager2-->
+<!--        android:id="@+id/view_pager_menu_program_detail"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/frame_menu_program_detail"/>
 </LinearLayout>

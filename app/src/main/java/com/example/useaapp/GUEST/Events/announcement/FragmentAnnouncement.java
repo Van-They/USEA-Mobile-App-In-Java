@@ -32,8 +32,6 @@ public class FragmentAnnouncement extends Fragment {
     List<Response_model_guest_event_announcement> responsemodels;
     ArrayList<GuestEventModel> Data_announcement_event;
 
-    AlertDialog alert;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,16 +46,9 @@ public class FragmentAnnouncement extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        View layout = getLayoutInflater().inflate(R.layout.custom_loading_data, null);
-//        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-//        builder.setCancelable(false);
-//        builder.setView(layout);
-//        alert = builder.create();
-//        alert.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//        alert.show();
+
         list_announcement = view.findViewById(R.id.list_announcement);
         list_announcement.setLayoutManager(new LinearLayoutManager(getActivity()));
-
 
         processdata();
 
