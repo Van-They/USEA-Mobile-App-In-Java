@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".STUDENT.StudyPlan.year2.FragmentStudyPlan_Y2S1S2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/custom_header_list_study_plan_semester1_thesis" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/student_study_plan_list_y2s1_th"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:scrollbars="none" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/student_study_plan_total_y2s1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:gravity="center"
+                android:text="@string/Total"
+                android:textColor="@color/dark_blue" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2" />
+
+
+            <TextView
+                android:id="@+id/student_study_plan_total_credit_y2s1_th"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:gravity="center"
+                android:text="@string/Credit"
+                android:textColor="@color/dark_blue" />
+        </LinearLayout>
+
+
+        <include layout="@layout/custom_header_list_study_plan_semester2_thesis" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/student_study_plan_list_y2s2_th"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:scrollbars="none" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/student_study_plan_total_y2s2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:gravity="center"
+                android:text="@string/Total"
+                android:textColor="@color/dark_blue" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2" />
+
+            <TextView
+                android:id="@+id/student_study_plan_total_credit_y2s2_th"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:gravity="center"
+                android:text="@string/Credit"
+                android:textColor="@color/dark_blue" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

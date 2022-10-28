@@ -15,7 +15,9 @@ import com.example.useaapp.GUEST.Program.master.Fragment_master;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_study_plan_tab_bar;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Fragment_student_Studyplan_y1s1s2;
+import com.example.useaapp.STUDENT.StudyPlan.year1.Fragment_student_Studyplan_y1s1s2_Thesis;
 import com.example.useaapp.STUDENT.StudyPlan.year2.Fragment_student_Studyplan_y2s1s2;
+import com.example.useaapp.STUDENT.StudyPlan.year2.Fragment_student_Studyplan_y2s1s2_Thesis;
 import com.example.useaapp.STUDENT.StudyPlan.year3.Fragment_student_Studyplan_y3s1s2;
 import com.example.useaapp.STUDENT.StudyPlan.year4.Fragment_student_Studyplan_y4s1s2;
 import com.google.android.material.tabs.TabLayout;
@@ -24,7 +26,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import java.util.Objects;
 
 public class StudentStudyPlan extends AppCompatActivity {
-    TabLayout tabLayout;
+    TabLayout tabLayout, tabLayout1;
     ViewPager2 viewPager;
     Toolbar toolbar;
     Fragment fragment;
@@ -122,6 +124,12 @@ public class StudentStudyPlan extends AppCompatActivity {
                         break;
                     case 3:
                         ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
+                        break;
+                    case 4:
+                        ChangeFragment(new Fragment_student_Studyplan_y1s1s2_Thesis());
+                        break;
+                    case 5:
+                        ChangeFragment(new Fragment_student_Studyplan_y2s1s2_Thesis());
                         break;
                     default:
                         Toast.makeText(StudentStudyPlan.this, "Hi", Toast.LENGTH_SHORT).show();

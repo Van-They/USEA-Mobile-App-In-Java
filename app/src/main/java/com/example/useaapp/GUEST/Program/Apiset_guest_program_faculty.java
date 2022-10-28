@@ -2,8 +2,10 @@ package com.example.useaapp.GUEST.Program;
 
 import com.example.useaapp.GUEST.Program.associative.Response_model_guest_program_faculty_asso;
 import com.example.useaapp.GUEST.Program.bachelor.Response_model_guest_program_faculty_bachelor;
+import com.example.useaapp.GUEST.Program.master.Response_model_guest_program_faculty_master;
 import com.example.useaapp.GUEST.Registration.Response_model_guest_registration;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan;
+import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan_Thesis;
 
 import java.util.List;
 
@@ -110,6 +112,26 @@ public interface Apiset_guest_program_faculty
     //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Finance
     @GET("fetch_guest_fac2_bach_major_fin_y4s2.php")
     Call<List<Response_model_SemesterStudyPlan>> get_guest_pro_fac_bac2_fin_y4s2();
+
+    //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍
+    @GET("fetch_guest_fac2_mast_major_id2.php")
+    Call<List<Response_model_guest_program_faculty_master>> get_guest_pro_fac_mast2();
+
+    //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_major_mnm_y1s1.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_mnm_y1s1();
+
+    //   Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_major_mnm_y1s2.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_mnm_y1s2();
+
+    //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_major_mnm_y2s1.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_mnm_y2s1();
+
+    //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_major_mnm_y2s2.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_mnm_y2s2();
 
 
     //   Faculty វិទ្យាសាស្ត្រសង្គម និងបច្ចេកវិទ្យា

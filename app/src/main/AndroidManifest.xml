@@ -79,6 +79,9 @@
             android:name=".STUDENT.StudyPlan.StudentStudyPlan"
             android:exported="false" />
         <activity
+            android:name=".STUDENT.StudyPlan.StudentStudyPlan_Thesis"
+            android:exported="false" />
+        <activity
             android:name=".STUDENT.Attendance.StudentAttendance"
             android:exported="false" />
         <activity
