@@ -40,6 +40,29 @@ public class ApiController_guest_program_faculty
         return retrofit.create(Apiset_guest_program_faculty.class);
     }
 
+    //    get data from Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    public Apiset_guest_program_faculty getapi_fac2_asso_major_id2_mnm_y1s1() {
+        return retrofit.create(Apiset_guest_program_faculty.class);
+    }
+
+    //    get data from Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    public Apiset_guest_program_faculty getapi_fac2_asso_major_id2_mnm_y1s2() {
+        return retrofit.create(Apiset_guest_program_faculty.class);
+
+    }
+
+    //    get data from Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    public Apiset_guest_program_faculty getapi_fac2_asso_major_id2_mnm_y2s1() {
+        return retrofit.create(Apiset_guest_program_faculty.class);
+    }
+
+    //    get data from Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    public Apiset_guest_program_faculty getapi_fac2_asso_major_id2_mnm_y2s2() {
+        return retrofit.create(Apiset_guest_program_faculty.class);
+
+    }
+
+
     //    get data from Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍
     public Apiset_guest_program_faculty getapi_fac2_bach_major_id2() {
         return retrofit.create(Apiset_guest_program_faculty.class);

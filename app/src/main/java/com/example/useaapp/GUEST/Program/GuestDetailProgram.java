@@ -27,6 +27,7 @@ public class GuestDetailProgram extends AppCompatActivity {
     String [] Tab_menu = {"ថ្នាក់បរិញ្ញាបត្ររង","ថ្នាក់បរិញ្ញាបត្រ","ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់"};
     public static final String text = "txt";
     String txt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,6 @@ public class GuestDetailProgram extends AppCompatActivity {
         setTitle(R.string.Study_program);
         toolbar.setNavigationOnClickListener(v -> finish());
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-
         tabLayout = findViewById(R.id.tab_menu_program_detail);
 
         txt = getIntent().getStringExtra(text);
@@ -56,15 +56,6 @@ public class GuestDetailProgram extends AppCompatActivity {
             ChangeFragment(new Fragment_bachelor());
         }
 
-//        tabLayout.addTab(tabLayout.newTab().setText("ថ្នាក់បរិញ្ញាបត្ររង"));
-//        tabLayout.addTab(tabLayout.newTab().setText("ថ្នាក់បរិញ្ញាបត្រ"));
-//        tabLayout.addTab(tabLayout.newTab().setText("ថ្នាក់បរិញ្ញាបត្រជាន់ខ្ពស់"));
-
-//        viewPager = findViewById(R.id.view_pager_menu_program_detail);
-//        viewPager.setAdapter(new Adapter_program_detail_tab_bar(this));
-//        new TabLayoutMediator(tabLayout,viewPager,(tab, position) -> tab.setText(Tab_menu[position])).attach();
-
-//        ChangeFragment(new SampleFragment());
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -82,13 +73,6 @@ public class GuestDetailProgram extends AppCompatActivity {
                     default:
                         Toast.makeText(GuestDetailProgram.this, "Hi", Toast.LENGTH_SHORT).show();
                 }
-//                if (tab.getPosition()==0){
-//                    ChangeFragment(new Fragment_associative());
-//                }else if (tab.getPosition()==1){
-//                    ChangeFragment(new Fragment_bachelor());
-//                }else if (tab.getPosition()==2){
-//                    ChangeFragment(new Fragment_master());
-//                }
             }
 
             @Override

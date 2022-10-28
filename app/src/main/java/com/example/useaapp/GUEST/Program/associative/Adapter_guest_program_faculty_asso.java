@@ -19,6 +19,7 @@ import java.util.List;
 
 public class Adapter_guest_program_faculty_asso extends RecyclerView.Adapter<Adapter_guest_program_faculty_asso.ViewHolder> {
     List<Response_model_guest_program_faculty_asso> data;
+    public static final String text = "txt";
 
     public Adapter_guest_program_faculty_asso(List<Response_model_guest_program_faculty_asso> data) {
         this.data = data;
@@ -52,9 +53,11 @@ public class Adapter_guest_program_faculty_asso extends RecyclerView.Adapter<Ada
         @Override
         public void onClick(View view) {
             int position = getAdapterPosition();
-            Toast.makeText(view.getContext(), "ID" + data.get(position).getId(), Toast.LENGTH_SHORT).show();
-//            Intent intent = new Intent(view.getContext(), StudentStudyPlan.class);
-//            view.getContext().startActivity(intent);
+            String txt = data.get(position).getId();
+            Toast.makeText(view.getContext(), "ID " + txt, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(view.getContext(), StudentStudyPlan.class);
+            intent.putExtra(text, txt);
+            view.getContext().startActivity(intent);
         }
     }
 }
