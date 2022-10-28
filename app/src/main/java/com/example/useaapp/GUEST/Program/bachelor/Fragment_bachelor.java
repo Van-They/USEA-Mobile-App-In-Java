@@ -70,7 +70,7 @@ public class Fragment_bachelor extends Fragment {
             @Override
             public void onResponse(Call<List<Response_model_guest_program_faculty_bachelor>> call, Response<List<Response_model_guest_program_faculty_bachelor>> response) {
                 responsemodels = response.body();
-                Adapter_guest_program_faculty_bachelor myadapter = new Adapter_guest_program_faculty_bachelor(responsemodels);
+                Adapter_guest_program_faculty_bachelor myadapter = new Adapter_guest_program_faculty_bachelor(responsemodels, getContext());
                 if (responsemodels != null && !responsemodels.isEmpty()) {
                     ShowDialog.stopDialog();
                     list_announcement.setVisibility(View.VISIBLE);
@@ -100,7 +100,7 @@ public class Fragment_bachelor extends Fragment {
             @Override
             public void onResponse(Call<List<Response_model_guest_program_faculty_bachelor>> call, Response<List<Response_model_guest_program_faculty_bachelor>> response) {
                 responsemodels = response.body();
-                Adapter_guest_program_faculty_bachelor myadapter = new Adapter_guest_program_faculty_bachelor(responsemodels);
+                Adapter_guest_program_faculty_bachelor myadapter = new Adapter_guest_program_faculty_bachelor(responsemodels, getContext());
                 if (responsemodels != null && !responsemodels.isEmpty()) {
                     ShowDialog.stopDialog();
                     list_announcement.setVisibility(View.VISIBLE);
@@ -130,7 +130,7 @@ public class Fragment_bachelor extends Fragment {
             @Override
             public void onResponse(Call<List<Response_model_guest_program_faculty_bachelor>> call, Response<List<Response_model_guest_program_faculty_bachelor>> response) {
                 responsemodels = response.body();
-                Adapter_guest_program_faculty_bachelor myadapter = new Adapter_guest_program_faculty_bachelor(responsemodels);
+                Adapter_guest_program_faculty_bachelor myadapter = new Adapter_guest_program_faculty_bachelor(responsemodels, getContext());
                 if (responsemodels != null && !responsemodels.isEmpty()) {
                     ShowDialog.stopDialog();
                     list_announcement.setVisibility(View.VISIBLE);
@@ -160,7 +160,7 @@ public class Fragment_bachelor extends Fragment {
             @Override
             public void onResponse(Call<List<Response_model_guest_program_faculty_bachelor>> call, Response<List<Response_model_guest_program_faculty_bachelor>> response) {
                 responsemodels = response.body();
-                Adapter_guest_program_faculty_bachelor myadapter = new Adapter_guest_program_faculty_bachelor(responsemodels);
+                Adapter_guest_program_faculty_bachelor myadapter = new Adapter_guest_program_faculty_bachelor(responsemodels, getContext());
                 if (responsemodels != null && !responsemodels.isEmpty()) {
                     ShowDialog.stopDialog();
                     list_announcement.setVisibility(View.VISIBLE);

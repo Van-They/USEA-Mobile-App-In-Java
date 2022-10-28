@@ -15,6 +15,7 @@ import com.example.useaapp.R;
 import java.util.ArrayList;
 
 public class Adapter_Studyplan_Semester extends ArrayAdapter<SemesterStudyPlan> {
+
     public Adapter_Studyplan_Semester(@NonNull Context context, ArrayList<SemesterStudyPlan> Semester1) {
         super(context, R.layout.custom_items_studyplan, Semester1);
     }
@@ -23,6 +24,7 @@ public class Adapter_Studyplan_Semester extends ArrayAdapter<SemesterStudyPlan> 
     public boolean isEnabled(int position) {
         return false;
     }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -30,8 +32,8 @@ public class Adapter_Studyplan_Semester extends ArrayAdapter<SemesterStudyPlan> 
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_items_studyplan, parent, false);
         }
         SemesterStudyPlan semester1 = getItem(position);
-        TextView No = convertView.findViewById(R.id.student_study_plan_no);
-        No.setText(semester1.getNo());
+//        TextView No = convertView.findViewById(R.id.student_study_plan_no);
+//        No.setText(semester1.getNo());
         TextView Subject = convertView.findViewById(R.id.student_study_plan_subject);
         TextView Hour = convertView.findViewById(R.id.student_study_plan_hour);
         TextView Credit = convertView.findViewById(R.id.student_study_plan_credit);

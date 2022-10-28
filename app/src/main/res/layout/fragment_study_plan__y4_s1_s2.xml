@@ -11,7 +11,7 @@
         android:orientation="vertical">
         <include layout="@layout/custom_header_list_study_plan_semester1" />
 
-        <ListView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/student_study_plan_list_y4s1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
 
        <include layout="@layout/custom_header_list_study_plan_semester2" />
 
-        <ListView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/student_study_plan_list_y4s2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

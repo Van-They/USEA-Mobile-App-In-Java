@@ -3,6 +3,7 @@ package com.example.useaapp.STUDENT.StudyPlan.year1;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.ListviewHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FragmentStudyPlan_Y1S1S2 extends Fragment {
 

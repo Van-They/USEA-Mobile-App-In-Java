@@ -48,7 +48,6 @@ public class GuestDetailProgram extends AppCompatActivity {
             tabLayout.addTab(tabLayout.newTab().setText("ថ្នាក់បរិញ្ញាបត្ររង"));
             ChangeFragment(new Fragment_associative());
             tabLayout.addTab(tabLayout.newTab().setText("ថ្នាក់បរិញ្ញាបត្រ"));
-//            ChangeFragment(new Fragment_bachelor());
         }else if(txt.equals("3")){
             tabLayout.addTab(tabLayout.newTab().setText("ថ្នាក់បរិញ្ញាបត្រ"));
             ChangeFragment(new Fragment_bachelor());

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".STUDENT.StudyPlan.year1.FragmentStudyPlan_Y1S1S2">
+    tools:context=".STUDENT.StudyPlan.year1.Fragment_student_Studyplan_y1s1s2"
+    >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -12,7 +13,7 @@
 
               <include layout="@layout/custom_header_list_study_plan_semester1"/>
 
-                <ListView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/student_study_plan_list_s1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -61,7 +62,7 @@
                 </LinearLayout>
 
                 <include layout="@layout/custom_header_list_study_plan_semester2"/>
-                <ListView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/student_study_plan_list_s2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
