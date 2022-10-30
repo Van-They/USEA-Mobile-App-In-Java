@@ -14,6 +14,7 @@ import com.example.useaapp.STUDENT.StudyPlan.year1.Fragment_student_Studyplan_y1
 import com.example.useaapp.STUDENT.StudyPlan.year2.Fragment_student_Studyplan_y2s1s2;
 import com.example.useaapp.STUDENT.StudyPlan.year2.Fragment_student_Studyplan_y2s1s2_Thesis;
 import com.example.useaapp.STUDENT.StudyPlan.year3.Fragment_student_Studyplan_y3s1s2;
+import com.example.useaapp.STUDENT.StudyPlan.year3.Fragment_student_Studyplan_y3s1s2_Thesis;
 import com.example.useaapp.STUDENT.StudyPlan.year4.Fragment_student_Studyplan_y4s1s2;
 import com.google.android.material.tabs.TabLayout;
 
@@ -23,7 +24,7 @@ public class StudentStudyPlan_Thesis extends AppCompatActivity {
     TabLayout tabLayout;
     Toolbar toolbar;
     Fragment fragment;
-    String[] Tab_menu = {"ឆ្នាំទី១", "ឆ្នាំទី២"};
+    String[] Tab_menu = {"ឆ្នាំទី១", "ឆ្នាំទី២", "ឆ្នាំទី៣"};
     public static final String text = "txt";
     String txt;
 
@@ -44,7 +45,7 @@ public class StudentStudyPlan_Thesis extends AppCompatActivity {
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី១"));
             ChangeFragment(new Fragment_student_Studyplan_y1s1s2_Thesis());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី២"));
-//            ChangeFragment(new Fragment_student_Studyplan_y2s1s2_Thesis());
+            tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៣"));
         }
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -57,6 +58,9 @@ public class StudentStudyPlan_Thesis extends AppCompatActivity {
                         break;
                     case 1:
                         ChangeFragment(new Fragment_student_Studyplan_y2s1s2_Thesis());
+                        break;
+                    case 2:
+                        ChangeFragment(new Fragment_student_Studyplan_y3s1s2_Thesis());
                         break;
                     default:
                         Toast.makeText(StudentStudyPlan_Thesis.this, "Hi", Toast.LENGTH_SHORT).show();

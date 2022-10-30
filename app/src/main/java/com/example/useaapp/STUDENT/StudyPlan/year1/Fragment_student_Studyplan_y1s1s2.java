@@ -159,6 +159,7 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
         });
     }
     public void processdata2() {
+
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
         Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest_program_faculty

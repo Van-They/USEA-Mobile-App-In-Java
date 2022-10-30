@@ -1,11 +1,17 @@
 package com.example.useaapp.GUEST.Program.master;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +26,7 @@ import java.util.List;
 public class Adapter_guest_program_faculty_master extends RecyclerView.Adapter<Adapter_guest_program_faculty_master.ViewHolder> {
     List<Response_model_guest_program_faculty_master> data;
     public static final String text = "txt";
+    public static final String [] the = {"1", "2"};
     Context context;
 
     public Adapter_guest_program_faculty_master(List<Response_model_guest_program_faculty_master> data, Context context) {
@@ -53,15 +60,52 @@ public class Adapter_guest_program_faculty_master extends RecyclerView.Adapter<A
 
         }
         public void onClick(View view){
-            int position = getAdapterPosition();
-            String txt = data.get(position).getId();
-            if(txt.equals("19")){
-                Intent intent = new Intent(view.getContext(), StudentStudyPlan_Thesis.class);
-                intent.putExtra(text, txt);
-                view.getContext().startActivity(intent);
-            }
+                showDialog();
+        }
 
+        private void showDialog(){
+            final Dialog dialog = new Dialog(itemView.getContext());
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.guest_program_major_bottom_sheet_layout);
+
+            TextView thesis = dialog.findViewById(R.id.thesis);
+            TextView non_thesis = dialog.findViewById(R.id.non_thesis);
+
+            thesis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                    int position = getAdapterPosition();
+                    String txt = data.get(position).getId();
+                    String t = "t";
+                    Intent intent = new Intent(itemView.getContext(), StudentStudyPlan_Thesis.class);
+                    intent.putExtra(t, the[0]);
+                    intent.putExtra(text, txt);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
+
+            non_thesis.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                    int position = getAdapterPosition();
+                    String txt = data.get(position).getId();
+                    String t = "t";
+                    Intent intent = new Intent(itemView.getContext(), StudentStudyPlan_Thesis.class);
+                    intent.putExtra(t, the[1]);
+                    intent.putExtra(text, txt);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
+
+            dialog.show();
+            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+            dialog.getWindow().setGravity(Gravity.BOTTOM);
 
         }
+
     }
 }

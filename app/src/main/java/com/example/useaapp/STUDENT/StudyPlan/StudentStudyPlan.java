@@ -51,61 +51,61 @@ public class StudentStudyPlan extends AppCompatActivity {
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី១"));
             ChangeFragment(new Fragment_student_Studyplan_y1s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី២"));
-            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៣"));
-            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៤"));
-            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
         }else if(txt.equals("13")){
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី១"));
             ChangeFragment(new Fragment_student_Studyplan_y1s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី២"));
-            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៣"));
-            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៤"));
-            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
         }else if(txt.equals("14")){
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី១"));
             ChangeFragment(new Fragment_student_Studyplan_y1s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី២"));
-            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៣"));
-            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៤"));
-            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
         }else if(txt.equals("15")){
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី១"));
             ChangeFragment(new Fragment_student_Studyplan_y1s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី២"));
-            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៣"));
-            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៤"));
-            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
         }else if(txt.equals("16")){
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី១"));
             ChangeFragment(new Fragment_student_Studyplan_y1s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី២"));
-            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៣"));
-            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៤"));
-            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
         }else if(txt.equals("17")){
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី១"));
             ChangeFragment(new Fragment_student_Studyplan_y1s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី២"));
-            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៣"));
-            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y3s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៤"));
-            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
         }else if(txt.equals("18")){
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី១"));
             ChangeFragment(new Fragment_student_Studyplan_y1s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី២"));
-            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
+//            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
         }
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -124,12 +124,6 @@ public class StudentStudyPlan extends AppCompatActivity {
                         break;
                     case 3:
                         ChangeFragment(new Fragment_student_Studyplan_y4s1s2());
-                        break;
-                    case 4:
-                        ChangeFragment(new Fragment_student_Studyplan_y1s1s2_Thesis());
-                        break;
-                    case 5:
-                        ChangeFragment(new Fragment_student_Studyplan_y2s1s2_Thesis());
                         break;
                     default:
                         Toast.makeText(StudentStudyPlan.this, "Hi", Toast.LENGTH_SHORT).show();
