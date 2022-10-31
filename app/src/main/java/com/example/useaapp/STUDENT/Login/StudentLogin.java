@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +28,13 @@ public class StudentLogin extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     private final static String SHARE_PREFNAME = "Student_Name";
     private final static String Student_Name = "name";
+
+    private final static String major_name = "major_name";
+    private final static String stage = "stage";
+    private final static String academic = "academic";
+    private final static String shift = "shift";
+    private final static String dob = "dob";
+    private final static String ph = "ph";
 
     EditText Student_Id, Student_pwd;
     MaterialButton buttonLogin;
@@ -130,9 +138,17 @@ public class StudentLogin extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("name", response.body().getName());
                     editor.putString("Student_ID", St_id);
+                    editor.putString(major_name, response.body().getMajor_name());
+                    editor.putString(stage, response.body().getStage_name());
+                    editor.putString(academic, response.body().getAcademic_year());
+                    editor.putString(shift, response.body().getShift_name());
+                    editor.putString(dob, response.body().getDate_of_birth());
+                    editor.putString(ph, response.body().getPhone_number());
                     editor.apply();
                     loading.stopDialog();
-                    startActivity(new Intent(getApplicationContext(), MainStudentActivity.class));
+                    Intent intent = new Intent(getApplicationContext(), MainStudentActivity.class);
+
+                    startActivity(intent);
                 } else {
                     loading.stopDialog();
                     toast.showToast("ការចូលមិនត្រឹមត្រូវ");

@@ -106,6 +106,13 @@ public class StudentStudyPlan extends AppCompatActivity {
             ChangeFragment(new Fragment_student_Studyplan_y1s1s2());
             tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី២"));
 //            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
+        }else if(txt.equals("txt")){
+            tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី១"));
+            ChangeFragment(new Fragment_student_Studyplan_y1s1s2());
+            tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី២"));
+            tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៣"));
+            tabLayout.addTab(tabLayout.newTab().setText("ឆ្នាំទី៤"));
+//            ChangeFragment(new Fragment_student_Studyplan_y2s1s2());
         }
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
