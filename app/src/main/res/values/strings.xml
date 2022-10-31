@@ -50,6 +50,10 @@
     <string name="Semester1">ឆមាសទី ១</string>
     <string name="Credit">ក្រេឌីត</string>
     <string name="Semester2">ឆមាសទី ២</string>
+    <string name="Semester3">ឆមាសទី ៣</string>
+    <string name="select_thesis_type">សូមជ្រើសរើសកម្មវិធីសិក្សា</string>
+    <string name="thesis">កម្មវិធីអប់រំសម្រាប់ការសរសេរនិក្ខេបបទ</string>
+    <string name="nonthesis">កម្មវិធីអប់រំសម្រាប់ការប្រឡងបញ្ចប់ការសិក្សា</string>
     <string name="Major">ជំនាញ</string>
     <string name="Promotion">ជំនាន់</string>
     <string name="Academic">ឆ្នាំមូលដ្ឋាន</string>

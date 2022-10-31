@@ -48,4 +48,10 @@
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/khmer_os_battambang_regular</item>
     </style>
+
+    //set Slide
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation"> @anim/guest_program_major_slide_in</item>
+        <item name="android:windowExitAnimation"> @anim/guest_program_major_slide_out</item>
+    </style>
 </resources>

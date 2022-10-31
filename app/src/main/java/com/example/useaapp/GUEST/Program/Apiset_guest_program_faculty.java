@@ -3,7 +3,6 @@ package com.example.useaapp.GUEST.Program;
 import com.example.useaapp.GUEST.Program.associative.Response_model_guest_program_faculty_asso;
 import com.example.useaapp.GUEST.Program.bachelor.Response_model_guest_program_faculty_bachelor;
 import com.example.useaapp.GUEST.Program.master.Response_model_guest_program_faculty_master;
-import com.example.useaapp.GUEST.Registration.Response_model_guest_registration;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan_Thesis;
 
@@ -118,20 +117,64 @@ public interface Apiset_guest_program_faculty
     Call<List<Response_model_guest_program_faculty_master>> get_guest_pro_fac_mast2();
 
     //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
-    @GET("fetch_guest_fac2_mast_major_mnm_y1s1.php")
-    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_mnm_y1s1();
+    @GET("fetch_guest_fac2_mast_th_major_mnm_y1t1.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_th_mnm_y1t1();
 
     //   Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
-    @GET("fetch_guest_fac2_mast_major_mnm_y1s2.php")
-    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_mnm_y1s2();
+    @GET("fetch_guest_fac2_mast_th_major_mnm_y1t2.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_th_mnm_y1t2();
+
+    //   Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_th_major_mnm_y1t3.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_th_mnm_y1t3();
 
     //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
-    @GET("fetch_guest_fac2_mast_major_mnm_y2s1.php")
-    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_mnm_y2s1();
+    @GET("fetch_guest_fac2_mast_th_major_mnm_y2t1.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_th_mnm_y2t1();
 
     //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
-    @GET("fetch_guest_fac2_mast_major_mnm_y2s2.php")
-    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_mnm_y2s2();
+    @GET("fetch_guest_fac2_mast_th_major_mnm_y2t2.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_th_mnm_y2t2();
+
+    //   Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_th_major_mnm_y2t3.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_th_mnm_y2t3();
+
+    //   Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_th_major_mnm_y3t1.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_th_mnm_y3t1();
+
+    //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_nth_major_mnm_y1t1.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_nth_mnm_y1t1();
+
+    //   Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_nth_major_mnm_y1t2.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_nth_mnm_y1t2();
+
+    //   Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_nth_major_mnm_y1t3.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_nth_mnm_y1t3();
+
+    //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_nth_major_mnm_y2t1.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_nth_mnm_y2t1();
+
+    //   Faculty សេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_nth_major_mnm_y2t2.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_nth_mnm_y2t2();
+
+    //   Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_nth_major_mnm_y2t3.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_nth_mnm_y2t3();
+
+    //   Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_nth_major_mnm_y3t1.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_nth_mnm_y3t1();
+
+    //   Faculty វសេដ្ឋកិច្ច ពាណិជ្ជកម្ម និងទេសចរណ៍ Management
+    @GET("fetch_guest_fac2_mast_nth_major_mnm_y3t2.php")
+    Call<List<Response_model_SemesterStudyPlan_Thesis>> get_guest_pro_fac_mast2_nth_mnm_y3t2();
 
 
     //   Faculty វិទ្យាសាស្ត្រសង្គម និងបច្ចេកវិទ្យា
