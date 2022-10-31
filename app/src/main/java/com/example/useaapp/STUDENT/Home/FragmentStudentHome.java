@@ -54,11 +54,11 @@ public class FragmentStudentHome extends Fragment {
         GridView gridView_category, gridView_card_rank_credit;
         //name student on dashboard
         TextView student_name_dashboard = view.findViewById(R.id.student_name_dashboard);
-        sharedPreferences = getActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
+        sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         String st_id = sharedPreferences.getString("name", "");
-        if (st_id != null) {
-            student_name_dashboard.setText(st_id);
-        }
+
+        student_name_dashboard.setText(st_id);
+
         //profile image
         profile_dashboard = view.findViewById(R.id.profile_dashboard);
         profile_dashboard.setOnClickListener(v -> {
@@ -98,7 +98,7 @@ public class FragmentStudentHome extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        sharedPreferences = getContext().getSharedPreferences(PROFILE_NAME, Context.MODE_PRIVATE);
+        sharedPreferences = requireActivity().getSharedPreferences(PROFILE_NAME, Context.MODE_PRIVATE);
         String image = sharedPreferences.getString("My_Profile", null);
         if (image != null) {
             profile_dashboard.setImageURI(Uri.parse(image));

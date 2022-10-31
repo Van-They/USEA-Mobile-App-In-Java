@@ -31,9 +31,7 @@ import java.util.List;
 
 public class FragmentGuestHome extends Fragment {
     SharedPreferences sharedPreferences;
-    private final static String SHARED_PREF_NAME = "mypref";
-    private final static String KEY_STUDENT_ID = "student_id";
-    private final static String KEY_PWD = "pwd";
+    private final static String SHARE_PREFNAME = "Student_Name";
     private final String[] tittleCategory = {"ព្រឹត្តិការណ៍", "ការចុះឈ្មោះ", "កម្មវិធីសិក្សា", "អាហាររូបករណ៍", "ព័ត៌មានការងារ", "គណនីសិស្ស"};
     private final int[] imageCategory = {R.drawable.news_icon, R.drawable.registration_icon, R.drawable.program_icon, R.drawable.scholarship_icon, R.drawable.career_icon, R.drawable.student_icon};
 
@@ -75,7 +73,16 @@ public class FragmentGuestHome extends Fragment {
                     break;
                 case "គណនីសិស្ស":
                         startActivity(new Intent(getContext(),MainStudentActivity.class));
-
+                    sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);//method shared preference
+                    String Student_name = sharedPreferences.getString("name", "");//get name of student from sharedPreferenc
+                    //check if student already login
+                    if (!Student_name.equals("")) {
+                        requireActivity().finish();
+                        startActivity(new Intent(requireContext(), MainStudentActivity.class));
+                    }else {
+                        requireActivity().finish();
+                        startActivity(new Intent(requireContext(),StudentLogin.class));
+                    }
                     break;
             }
        });

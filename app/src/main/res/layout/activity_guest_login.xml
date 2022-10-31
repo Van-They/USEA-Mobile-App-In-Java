@@ -51,14 +51,6 @@
             android:textColor="@color/dark_blue"
             android:textSize="16sp" />
 
-        <ProgressBar
-            android:id="@+id/progressBarLogin"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:indeterminateTint="@color/dark_blue"
-            android:visibility="gone" />
-
         <LinearLayout
             android:id="@+id/SignInMethod"
             android:layout_width="match_parent"
@@ -70,31 +62,29 @@
                 android:id="@+id/PhoneAuth"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:clickable="true"
                 android:elevation="4dp"
                 android:focusable="true"
-                android:visibility="gone"
                 android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="42dp"
+                        android:layout_height="wrap_content"
                         android:contentDescription="@null"
                         android:src="@drawable/phone_auth_icon" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:text="@string/Register_with_phone_number"
                         android:textColor="@color/green" />
@@ -123,13 +113,12 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="42dp"
+                        android:layout_height="wrap_content"
                         android:contentDescription="@null"
                         android:src="@drawable/gso_icon" />
 
@@ -137,7 +126,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginEnd="5dp"
                         android:fontFamily="@font/khmer_os_battambang_regular"
                         android:text="@string/Register_with_google_account"
                         android:textColor="@color/light_red" />
@@ -163,20 +152,26 @@
 
             <EditText
                 android:id="@+id/PhoneNumber"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_state"
                 android:fontFamily="@font/khmer_os_battambang_regular"
+                android:hint="@string/Input_phone_number"
                 android:inputType="number"
                 android:maxLength="10"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="14sp"
                 tools:ignore="TextFields" />
 
             <Button
                 android:id="@+id/SendCodeOTP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_ripple_effect"
                 android:fontFamily="@font/khmer_os_battambang_regular"
-                android:text="@string/RequestCode"
-                app:cornerRadius="20dp" />
+                android:text="@string/RequestCode" />
         </LinearLayout>
 
         <LinearLayout
@@ -187,16 +182,63 @@
             android:orientation="vertical"
             android:visibility="gone">
 
-            <EditText
-                android:id="@+id/InputOtpCode"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/khmer_os_battambang_regular" />
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/OTP1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/OTP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/OTP3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/OTP4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/OTP5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/OTP6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/khmer_os_battambang_regular"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -206,21 +248,22 @@
                     android:textColor="@color/black" />
 
                 <TextView
+                    android:id="@+id/ResendVerifyCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="5dp"
                     android:fontFamily="@font/khmer_os_battambang_regular"
-                    android:text="@string/ReSentCode"
                     android:textColor="@color/red" />
             </LinearLayout>
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/verifyCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/Verify"
-                app:cornerRadius="20dp" />
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_ripple_effect"
+                android:text="@string/Verify" />
         </LinearLayout>
     </LinearLayout>
 
@@ -234,37 +277,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@null"
-                android:src="@drawable/ellipse_dot_big" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@null"
-                android:src="@drawable/ellipse_dot_small" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/back_arrow_login"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="10dp"
-            android:contentDescription="@null"
-            android:src="@drawable/back_arrow_login" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/khmer_os_battambang_regular"
-            android:text="@string/app_license" />
+            android:text="@string/app_license"
+            android:textColor="@color/light_yellow"
+            android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

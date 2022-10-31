@@ -9,7 +9,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,6 +47,8 @@ public class StudentLogin extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);//method shared preference
         String Student_name = sharedPreferences.getString("name", "");//get name of student from sharedPreferences
+
+
 
         Student_Id.addTextChangedListener(new TextWatcher() {
             @Override

@@ -31,7 +31,7 @@
             android:name=".GUEST.Program.GuestProgram"
             android:exported="false" />
         <activity
-            android:name=".GUEST.Login.GoogleAuthenticationClass"
+            android:name=".GUEST.Login.GoogleAuthActivity"
             android:exported="false" />
         <activity
             android:name=".STUDENT.Schedule.StudentSchedule"
@@ -42,6 +42,8 @@
         <activity
             android:name=".STUDENT.News.NewsItemsDetail"
             android:exported="false" />
+        <activity android:name=".GUEST.Login.PhoneAuthActivity"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
