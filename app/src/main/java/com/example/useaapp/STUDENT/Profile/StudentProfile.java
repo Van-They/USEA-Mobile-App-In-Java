@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.useaapp.Custom_toast;
 import com.example.useaapp.R;
+import com.example.useaapp.STUDENT.Login.ModelResponse;
 import com.github.drjacky.imagepicker.ImagePicker;
 
 import java.util.Objects;
@@ -30,11 +31,12 @@ public class StudentProfile extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     Custom_toast toast;
+    ModelResponse modelResponse;
     Uri uri;
     private final static String SHARE_PREFNAME = "Student_Name";
     private final static String PROFILE_NAME = "Profile_Picture";
 
-    TextView student_name_profile, student_ID;
+    TextView student_name_profile, student_ID, major_name, stage_name, academic, shift, dob, phone;
     ImageView change_image_in_profile;
     CircleImageView profile_image;
     @Override
@@ -49,10 +51,28 @@ public class StudentProfile extends AppCompatActivity {
 
         student_name_profile = findViewById(R.id.student_name_profile);
         student_ID = findViewById(R.id.student_ID);
+        student_name_profile = findViewById(R.id.student_name_profile);
+        student_ID = findViewById(R.id.student_ID);
+        student_name_profile = findViewById(R.id.student_name_profile);
+        student_ID = findViewById(R.id.student_ID);
+        major_name = findViewById(R.id.major_in_profile);
+        stage_name = findViewById(R.id.promotion_in_profile);
+        academic = findViewById(R.id.academic_year_profile);
+        shift = findViewById(R.id.shift_in_profile);
+        dob = findViewById(R.id.date_of_birth_profile);
+        phone = findViewById(R.id.phone_number_profile);
+
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         String Student_name = sharedPreferences.getString("name","");
         String Student_ID = sharedPreferences.getString("Student_ID","");
-        if (Student_name !=null && Student_ID !=null){
+        String Maj = sharedPreferences.getString("major_name", "");
+        String Sta = sharedPreferences.getString("stage", "");
+        String Aca = sharedPreferences.getString("academic", "");
+        String Shi = sharedPreferences.getString("shift", "");
+        String Dob = sharedPreferences.getString("dob", "");
+        String Pho = sharedPreferences.getString("ph", "");
+
+        if (!Student_name.isEmpty() && !Student_ID.isEmpty()){
             student_name_profile.setText(Student_name);
             student_ID.setText(Student_ID.toUpperCase());
         }
@@ -61,23 +81,29 @@ public class StudentProfile extends AppCompatActivity {
         change_image_in_profile = findViewById(R.id.change_image_in_profile);
         profile_image = findViewById(R.id.profile_image);
 
-        //Major, promotion, academic year
-        TextView major_in_profile = findViewById(R.id.major_in_profile);
-        TextView promotion_in_profile = findViewById(R.id.promotion_in_profile);
-        TextView academic_year_profile = findViewById(R.id.academic_year_profile);
-        //set text
-        major_in_profile.setText("IT");
-        promotion_in_profile.setText("13");
-        academic_year_profile.setText("2018-2022");
-
-        //shift, date of birth, phone number
-        TextView shift_in_profile = findViewById(R.id.shift_in_profile);
-        TextView date_of_birth_profile = findViewById(R.id.date_of_birth_profile);
-        TextView phone_number_profile = findViewById(R.id.phone_number_profile);
-        //set text
-        shift_in_profile.setText("ល្ងាច");
-        date_of_birth_profile.setText("11-07-2000");
-        phone_number_profile.setText("093794815");
+        major_name.setText(Maj);
+        stage_name.setText(Sta);
+        academic.setText(Aca);
+        shift.setText(Shi);
+        dob.setText(Dob);
+        phone.setText(Pho);
+//        //Major, promotion, academic year
+//        TextView major_in_profile = findViewById(R.id.major_in_profile);
+//        TextView promotion_in_profile = findViewById(R.id.promotion_in_profile);
+//        TextView academic_year_profile = findViewById(R.id.academic_year_profile);
+//        //set text
+//        major_in_profile.setText("IT");
+//        promotion_in_profile.setText("13");
+//        academic_year_profile.setText("2018-2022");
+//
+//        //shift, date of birth, phone number
+//        TextView shift_in_profile = findViewById(R.id.shift_in_profile);
+//        TextView date_of_birth_profile = findViewById(R.id.date_of_birth_profile);
+//        TextView phone_number_profile = findViewById(R.id.phone_number_profile);
+//        //set text
+//        shift_in_profile.setText("ល្ងាច");
+//        date_of_birth_profile.setText("11-07-2000");
+//        phone_number_profile.setText("093794815");
 
         //change password btn
 

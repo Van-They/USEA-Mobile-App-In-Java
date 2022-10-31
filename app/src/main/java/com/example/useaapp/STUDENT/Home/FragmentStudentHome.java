@@ -39,6 +39,12 @@ public class FragmentStudentHome extends Fragment {
     private final static String SHARE_PREFNAME = "Student_Name";
     private final static String PROFILE_NAME = "Profile_Picture";
     private final static String TAG = "StudentHome";
+    private final static String major_name = "major_name";
+    private final static String stage = "stage";
+    private final static String academic = "academic";
+    private final static String shift = "shift";
+    private final static String dob = "dob";
+    private final static String ph = "ph";
 
     //category
     private final String[] title_category = {"កាលវិភាគ", "ផែនការសិក្សា", "វត្តមាន", "មតិកែលម្អ", "ពិន្ទុ", "គណនីភ្ញៀវ"};
@@ -59,13 +65,27 @@ public class FragmentStudentHome extends Fragment {
         //name student on dashboard
         TextView student_name_dashboard = view.findViewById(R.id.student_name_dashboard);
         sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
-        String st_id = sharedPreferences.getString("name", "");
+        String st_name = sharedPreferences.getString("name", "");
 
-        student_name_dashboard.setText(st_id);
+        String Maj = sharedPreferences.getString(major_name, "");
+        String Sta = sharedPreferences.getString(stage, "");
+        String Aca = sharedPreferences.getString(academic, "");
+        String Shi = sharedPreferences.getString(shift, "");
+        String Dob = sharedPreferences.getString(dob, "");
+        String Pho = sharedPreferences.getString(ph, "");
+
+        student_name_dashboard.setText(st_name);
 
         //profile image
         profile_dashboard = view.findViewById(R.id.profile_dashboard);
         profile_dashboard.setOnClickListener(v -> {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(major_name, Maj);
+            editor.putString(stage, Sta);
+            editor.putString(academic, Aca);
+            editor.putString(shift, Shi);
+            editor.putString(dob, Dob);
+            editor.putString(ph, Pho);
             Intent intent = new Intent(getContext(), StudentProfile.class);
             startActivity(intent);
 //            startActivity(new Intent(getContext(), StudentProfile.class));
