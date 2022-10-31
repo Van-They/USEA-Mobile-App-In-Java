@@ -182,6 +182,7 @@
     <string name="Please_input_your_id">សូមបញ្ចូលអត្តលេខរបស់អ្នក</string>
     <string name="Please_input_your_pwd">សូមបញ្ចូលលេខសម្ងាត់របស់អ្នក</string>
     <string name="Please_input_student_account">សូមបញ្ចូលគណីនិស្សិត</string>
+    <string name="OTP">សូមបញ្ចូលលេខកូដ</string>
 
 
 </resources>

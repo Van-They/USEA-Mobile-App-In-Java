@@ -15,8 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.useaapp.GUEST.MainGuestActivity;
 import com.example.useaapp.R;
 import com.example.useaapp.databinding.ActivityGuestLoginBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.FirebaseTooManyRequestsException;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
@@ -27,11 +30,11 @@ import java.util.concurrent.TimeUnit;
 
 public class PhoneAuthActivity extends AppCompatActivity {
     private final static String TAG = "Completed Phone verify";
-    String getPhoneNumber, getOTP, VerifyID;
+    String getPhoneNumber, getOTP, VerifyID,VerifyOTP;
     CountDownTimer count;
     FirebaseAuth mAuth;
     private ActivityGuestLoginBinding bindView;
-    String OTP1, OTP2, OTP3, OTP4, OTP5, OTP6, Total;
+//    String OTP1, OTP2, OTP3, OTP4, OTP5, OTP6, Total;
     int i = 0;
 
     @Override
@@ -49,7 +52,6 @@ public class PhoneAuthActivity extends AppCompatActivity {
             if (TextUtils.isEmpty(bindView.PhoneNumber.getText().toString())) {
                 bindView.PhoneNumber.setError("សូមបញ្ចូលលេខទូរស័ព្ទ");
             } else {
-
                 bindView.SignInText.setText(R.string.Verify_code);
                 getPhoneNumber = bindView.PhoneNumber.getText().toString();
                 sendVerificationCode(getPhoneNumber);
@@ -57,106 +59,16 @@ public class PhoneAuthActivity extends AppCompatActivity {
         });
 
 
-        requestFocus();
-
         bindView.verifyCode.setOnClickListener(v -> {
-            OTP1 = bindView.OTP1.getText().toString().trim();
-            OTP2 = bindView.OTP2.getText().toString().trim();
-            OTP3 = bindView.OTP3.getText().toString().trim();
-            OTP4 = bindView.OTP4.getText().toString().trim();
-            OTP5 = bindView.OTP5.getText().toString().trim();
-            OTP6 = bindView.OTP6.getText().toString().trim();
-            Total = OTP1 + OTP4 + OTP3 + OTP2 + OTP6 + OTP5;
-            if (Total.isEmpty()) {
+
+            VerifyOTP = bindView.verifyOTP.getText().toString();
+
+            if (TextUtils.isEmpty(VerifyOTP)) {
                 Toast.makeText(this, "សូមបញ្ចូលលេខ OTP", Toast.LENGTH_SHORT).show();
             } else {
-                verifyCode(getOTP = Total);
+                verifyCode(getOTP = VerifyOTP);
             }
         });
-    }
-
-    private void requestFocus() {
-        bindView.OTP1.addTextChangedListener(new android.text.TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                bindView.OTP2.requestFocus();
-            }
-        });
-        bindView.OTP2.addTextChangedListener(new android.text.TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                bindView.OTP3.requestFocus();
-            }
-        });
-        bindView.OTP3.addTextChangedListener(new android.text.TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                bindView.OTP4.requestFocus();
-            }
-        });
-        bindView.OTP4.addTextChangedListener(new android.text.TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                bindView.OTP5.requestFocus();
-            }
-        });
-        bindView.OTP5.addTextChangedListener(new android.text.TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                bindView.OTP6.requestFocus();
-            }
-        });
-
-
     }
 
     private void startTimeCount() {
@@ -222,11 +134,15 @@ public class PhoneAuthActivity extends AppCompatActivity {
 
     private void SignInWithPhoneAuthCredential(PhoneAuthCredential phoneAuthCredential) {
         mAuth = FirebaseAuth.getInstance();
-        mAuth.signInWithCredential(phoneAuthCredential).addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                startActivity(new Intent(PhoneAuthActivity.this, MainGuestActivity.class));
-            }else {
-                Toast.makeText(this, "ការចូលមិនជោគជ័យ", Toast.LENGTH_SHORT).show();
+        mAuth.signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    finish();
+                    startActivity(new Intent(PhoneAuthActivity.this, MainGuestActivity.class));
+                } else {
+                    Toast.makeText(PhoneAuthActivity.this, "ការចូលមិនជោគជ័យ", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
