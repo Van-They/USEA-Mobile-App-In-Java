@@ -1,7 +1,6 @@
 package com.example.useaapp.GUEST;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -10,10 +9,10 @@ import android.view.View;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.useaapp.MainActivity;
-import com.example.useaapp.R;
+import com.example.useaapp.Custom_toast;
 import com.example.useaapp.GUEST.Home.FragmentGuestHome;
 import com.example.useaapp.GUEST.More.FragmentGuestMore;
+import com.example.useaapp.R;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainGuestActivity extends AppCompatActivity {
@@ -57,6 +56,7 @@ public class MainGuestActivity extends AppCompatActivity {
     }
 
     public void Notification(View view) {
-        startActivity(new Intent(this, MainActivity.class));
+        Custom_toast toast = new Custom_toast(MainGuestActivity.this);
+        toast.showToast(" កំពុងអភិវឌ្ឃន៍.....");
     }
 }

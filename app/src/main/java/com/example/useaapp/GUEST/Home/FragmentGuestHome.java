@@ -76,7 +76,7 @@ public class FragmentGuestHome extends Fragment {
                     sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);//method shared preference
                     String Student_name = sharedPreferences.getString("name", "");//get name of student from sharedPreferenc
                     //check if student already login
-                    if (!Student_name.equals("")) {
+                    if (!Student_name.equals("") && Student_name.isEmpty()) {
                         requireActivity().finish();
                         startActivity(new Intent(requireContext(), MainStudentActivity.class));
                     }else {

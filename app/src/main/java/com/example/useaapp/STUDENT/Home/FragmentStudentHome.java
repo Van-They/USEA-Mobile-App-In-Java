@@ -5,15 +5,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.useaapp.GUEST.Login.GuestLogin;
 import com.example.useaapp.GUEST.MainGuestActivity;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_category;
@@ -24,6 +25,8 @@ import com.example.useaapp.STUDENT.Profile.StudentProfile;
 import com.example.useaapp.STUDENT.Schedule.StudentSchedule;
 import com.example.useaapp.STUDENT.Score.Score.StudentScore;
 import com.example.useaapp.STUDENT.StudyPlan.StudentStudyPlan;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
@@ -35,6 +38,7 @@ public class FragmentStudentHome extends Fragment {
     CircleImageView profile_dashboard;
     private final static String SHARE_PREFNAME = "Student_Name";
     private final static String PROFILE_NAME = "Profile_Picture";
+    private final static String TAG = "StudentHome";
 
     //category
     private final String[] title_category = {"កាលវិភាគ", "ផែនការសិក្សា", "វត្តមាន", "មតិកែលម្អ", "ពិន្ទុ", "គណនីភ្ញៀវ"};
@@ -73,23 +77,32 @@ public class FragmentStudentHome extends Fragment {
         gridView_category.setAdapter(new Adapter_category(this.getContext(), title_category, image_category));
         gridView_category.setOnItemClickListener((parent, view1, position, id) -> {
             if (Objects.equals(title_category[position], "កាលវិភាគ")) {
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
+                requireActivity().finish();
                 startActivity(new Intent(getContext(), StudentSchedule.class));
             } else if (Objects.equals(title_category[position], "ផែនការសិក្សា")) {
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
+                requireActivity().finish();
                 startActivity(new Intent(getContext(), StudentStudyPlan.class));
             } else if (Objects.equals(title_category[position], "វត្តមាន")) {
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
+                requireActivity().finish();
                 startActivity(new Intent(getContext(), StudentAttendance.class));
             } else if (Objects.equals(title_category[position], "មតិកែលម្អ")) {
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
+                requireActivity().finish();
                 startActivity(new Intent(getContext(), StudentFeedback.class));
             } else if (Objects.equals(title_category[position], "ពិន្ទុ")) {
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
+                requireActivity().finish();
                 startActivity(new Intent(getContext(), StudentScore.class));
             } else if (Objects.equals(title_category[position], "គណនីភ្ញៀវ")) {
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getContext(), MainGuestActivity.class));
+                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                FirebaseUser mUser = mAuth.getCurrentUser();
+                if (mUser != null) {
+                    requireActivity().finish();
+                    startActivity(new Intent(getContext(), MainGuestActivity.class));
+                } else {
+                    Log.d(TAG, "onCreateView: " + "Haven't Log In yet");
+                    requireActivity().finish();
+                    startActivity(new Intent(requireContext(), GuestLogin.class));
+                }
+
             }
         });
         return view;
