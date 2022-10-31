@@ -19,7 +19,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class FragmentGuestMore extends Fragment {
     FragmentGuestMoreBinding binding;
-    GuestLogin guestLogin;
 
     //Link to URL
     private void gotUrl(String s) {
@@ -33,9 +32,8 @@ public class FragmentGuestMore extends Fragment {
         // Inflate the layout for this fragment
 //        View view = inflater.inflate(R.layout.fragment_guest_more, container, false);
         binding = FragmentGuestMoreBinding.inflate(getLayoutInflater(), container, false);
-        guestLogin = new GuestLogin();
         binding.SignOutGuest.setOnClickListener(v -> {
-            guestLogin.SignOut();
+            FirebaseAuth.getInstance().signOut();
             requireActivity().finish();
             startActivity(new Intent(getContext(), MainActivity.class));
 //            CustomDialogLogOutBinding logout = CustomDialogLogOutBinding.inflate(getLayoutInflater());

@@ -60,12 +60,12 @@ public class PhoneAuthActivity extends AppCompatActivity {
         requestFocus();
 
         bindView.verifyCode.setOnClickListener(v -> {
-            OTP1 = bindView.OTP1.getText().toString();
-            OTP2 = bindView.OTP2.getText().toString();
-            OTP3 = bindView.OTP3.getText().toString();
-            OTP4 = bindView.OTP4.getText().toString();
-            OTP5 = bindView.OTP5.getText().toString();
-            OTP6 = bindView.OTP6.getText().toString();
+            OTP1 = bindView.OTP1.getText().toString().trim();
+            OTP2 = bindView.OTP2.getText().toString().trim();
+            OTP3 = bindView.OTP3.getText().toString().trim();
+            OTP4 = bindView.OTP4.getText().toString().trim();
+            OTP5 = bindView.OTP5.getText().toString().trim();
+            OTP6 = bindView.OTP6.getText().toString().trim();
             Total = OTP1 + OTP4 + OTP3 + OTP2 + OTP6 + OTP5;
             if (Total.isEmpty()) {
                 Toast.makeText(this, "សូមបញ្ចូលលេខ OTP", Toast.LENGTH_SHORT).show();
@@ -221,6 +221,7 @@ public class PhoneAuthActivity extends AppCompatActivity {
     }
 
     private void SignInWithPhoneAuthCredential(PhoneAuthCredential phoneAuthCredential) {
+        mAuth = FirebaseAuth.getInstance();
         mAuth.signInWithCredential(phoneAuthCredential).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 startActivity(new Intent(PhoneAuthActivity.this, MainGuestActivity.class));
@@ -234,7 +235,6 @@ public class PhoneAuthActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         mAuth = FirebaseAuth.getInstance();
-//        mAuth.getFirebaseAuthSettings().setAppVerificationDisabledForTesting(true);
     }
 
 }

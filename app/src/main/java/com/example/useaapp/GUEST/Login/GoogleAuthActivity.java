@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.useaapp.Custom_toast;
+import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.GUEST.MainGuestActivity;
 import com.example.useaapp.R;
 import com.example.useaapp.databinding.ActivityGuestLoginBinding;
@@ -31,27 +32,10 @@ public class GoogleAuthActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private final static String TAG = "ApiException";
     private GoogleSignInClient client;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        bindView = ActivityGuestLoginBinding.inflate(getLayoutInflater());
-        View view = bindView.getRoot();
-        setContentView(view);
-        //Configure google sign In
-        GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-        client = GoogleSignIn.getClient(this, options);
-        bindView.GoogleSignIn.setOnClickListener(v -> {
-            Intent intent = client.getSignInIntent();
-            startActivityForResult.launch(intent);
-        });
-    }
+    Data_Progressing loading;
 
     //alternative way of StartActivity for Result that deprecated
-    private final ActivityResultLauncher<Intent> startActivityForResult =
+    ActivityResultLauncher<Intent> startActivityForResult =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result != null && result.getResultCode() == RESULT_OK) {
                     Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
@@ -65,15 +49,38 @@ public class GoogleAuthActivity extends AppCompatActivity {
                 } else {
                     //not success
                     Custom_toast toast = new Custom_toast(getApplicationContext());
-                    toast.showToast("មានបញ្ហាជាមួយការចូលសូមព្យាមពេលក្រោយ");
+                    toast.showToast("មានបញ្ហាជាមួយការចូលសូមព្យាយាមពេលក្រោយ");
                 }
             });
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        bindView = ActivityGuestLoginBinding.inflate(getLayoutInflater());
+        View view = bindView.getRoot();
+        setContentView(view);
+        mAuth = FirebaseAuth.getInstance();
+        //Configure google sign In
+        GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        client = GoogleSignIn.getClient(this, options);
+        bindView.GoogleSignIn.setOnClickListener(v -> {
+            Intent intent = client.getSignInIntent();
+            startActivityForResult.launch(intent);
+        });
+        loading = new Data_Progressing(this);
+    }
+
+
     private void firebaseAuthWithGoogle(String idToken) {
+        loading.showDialog();
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
+                        loading.stopDialog();
                         FirebaseUser mUser = mAuth.getCurrentUser();
                         updateUI(mUser);
                     } else {
