@@ -72,10 +72,9 @@ public class GoogleAuthActivity extends AppCompatActivity {
         });
         loading = new Data_Progressing(this);
     }
-
-
     private void firebaseAuthWithGoogle(String idToken) {
         loading.showDialog();
+        mAuth = FirebaseAuth.getInstance();
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, task -> {

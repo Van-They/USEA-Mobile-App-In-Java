@@ -26,6 +26,7 @@ public class StudentLogin extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
     private final static String SHARE_PREFNAME = "Student_Name";
+    private final static String Student_Name = "name";
 
     EditText Student_Id, Student_pwd;
     MaterialButton buttonLogin;
@@ -46,7 +47,7 @@ public class StudentLogin extends AppCompatActivity {
         St_pwd_txt_error = findViewById(R.id.St_pwd_txt_error);//Error message when not input any data
 
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);//method shared preference
-        String Student_name = sharedPreferences.getString("name", "");//get name of student from sharedPreferences
+        String Student_name = sharedPreferences.getString(Student_Name, "");//get name of student from sharedPreferences
 
 
 

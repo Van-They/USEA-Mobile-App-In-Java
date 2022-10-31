@@ -45,7 +45,7 @@
         <activity android:name=".GUEST.Login.PhoneAuthActivity"
             android:exported="false"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -87,7 +87,7 @@
             android:name=".STUDENT.Attendance.StudentAttendance"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".GUEST.MainGuestActivity"

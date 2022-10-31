@@ -21,10 +21,14 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         ImageView img = findViewById(R.id.logo_splashscreen);
-        Animation top = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.top_logo);
+        Animation top = AnimationUtils.loadAnimation(this, R.anim.top_logo);
         img.setAnimation(top);
-        new Handler().postDelayed(() ->
-                startActivity(new Intent(SplashScreen.this,MainActivity.class)),1500);
-        finish();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                finish();
+                startActivity(new Intent(SplashScreen.this, MainActivity.class));
+            }
+        }, 1500);
     }
 }
