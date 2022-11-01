@@ -31,7 +31,7 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
 
     SharedPreferences sharedPreferences;
     private final static String SHARE_PREFNAME = "Student_Name";
-    String st_id;
+    String St_id;
 
     RecyclerView student_study_plan_list_s1, student_study_plan_list_s2;
     TextView student_study_plan_total_hour_s1, student_study_plan_total_credit_s1,student_study_plan_total_hour_s2, student_study_plan_total_credit_s2;
@@ -70,7 +70,7 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
         txt = getActivity().getIntent().getStringExtra(text);
 
         sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
-        st_id = sharedPreferences.getString("Student_ID", "");
+        St_id = sharedPreferences.getString("Student_ID", "");
 
         if(txt.equals("12")){
             processdata1();
@@ -660,17 +660,18 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
         });
     }
     public void processdata8() {
+
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
         Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_student
                 .getInstance()
                 .getapi_stu_studyplan_y1s1()
-                .get_stu_studyplan_y1s1(st_id);
+                .get_stu_studyplan_y1s1(St_id);
 
         Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_student
                 .getInstance()
                 .getapi_stu_studyplan_y1s2()
-                .get_stu_studyplan_y1s2(st_id);
+                .get_stu_studyplan_y1s2(St_id);
 
         call1.enqueue(new Callback<List<Response_model_SemesterStudyPlan>>() {
             @Override
