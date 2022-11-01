@@ -57,8 +57,6 @@ public class StudentLogin extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);//method shared preference
         String Student_name = sharedPreferences.getString(Student_Name, "");//get name of student from sharedPreferences
 
-
-
         Student_Id.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -161,6 +159,5 @@ public class StudentLogin extends AppCompatActivity {
                 new Handler().postDelayed(() -> finishAffinity(),1500);
             }
         });
-
     }
 }

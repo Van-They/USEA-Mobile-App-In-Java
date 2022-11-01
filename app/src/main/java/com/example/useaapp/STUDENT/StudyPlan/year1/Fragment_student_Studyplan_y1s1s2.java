@@ -1,5 +1,7 @@
 package com.example.useaapp.STUDENT.StudyPlan.year1;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.GUEST.Program.ApiController_guest_program_faculty;
 import com.example.useaapp.R;
+import com.example.useaapp.STUDENT.ApiController_student;
+import com.example.useaapp.STUDENT.Apiset_student_plan;
 
 import java.util.List;
 
@@ -25,9 +29,13 @@ import retrofit2.Response;
 
 public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
 
+    SharedPreferences sharedPreferences;
+    private final static String SHARE_PREFNAME = "Student_Name";
+    String st_id;
+
     RecyclerView student_study_plan_list_s1, student_study_plan_list_s2;
     TextView student_study_plan_total_hour_s1, student_study_plan_total_credit_s1,student_study_plan_total_hour_s2, student_study_plan_total_credit_s2;
-    List<Response_model_SemesterStudyPlan> responsemodels;
+    private List<Response_model_SemesterStudyPlan> responsemodels;
     public static final String text = "txt";
     String txt;
     int totalHour1 = 0; int totalCredit1 = 0;
@@ -60,6 +68,10 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
         student_study_plan_total_credit_s2 = view.findViewById(R.id.student_study_plan_total_credit_s2);
 
         txt = getActivity().getIntent().getStringExtra(text);
+
+        sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
+        st_id = sharedPreferences.getString("Student_ID", "");
+
         if(txt.equals("12")){
             processdata1();
         }else if(txt.equals("13")){
@@ -74,6 +86,8 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
             processdata6();
         }else if(txt.equals("18")){
             processdata7();
+        }else if(txt.equals("txt")){
+            processdata8();
         }
     }
 
@@ -576,6 +590,87 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
                 .getInstance()
                 .getapi_fac2_asso_major_id2_mnm_y1s2()
                 .get_guest_pro_fac_ass2_mnm_y1s2();
+
+        call1.enqueue(new Callback<List<Response_model_SemesterStudyPlan>>() {
+            @Override
+            public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
+                responsemodels = response.body();
+
+                for (int i=0; i<responsemodels.size(); i++){
+                    semester = responsemodels.get(i);
+                    sumHour1 = Integer.parseInt(semester.getHours());
+                    totalHour1 += sumHour1;
+                }
+                for (int i=0; i<responsemodels.size(); i++){
+                    semester = responsemodels.get(i);
+                    sumCredit1 = Integer.parseInt(semester.getCredits());
+                    totalCredit1 += sumCredit1;
+                }
+                student_study_plan_total_hour_s1.setText(String.valueOf(totalHour1));
+                student_study_plan_total_credit_s1.setText(String.valueOf(totalCredit1));
+
+                Adapter_student_Studyplan_Semester myadapter = new Adapter_student_Studyplan_Semester(responsemodels);
+                if (responsemodels != null && !responsemodels.isEmpty()) {
+                    ShowDialog.stopDialog();
+                    student_study_plan_list_s1.setVisibility(View.VISIBLE);
+                    student_study_plan_list_s1.setAdapter(myadapter);
+
+                } else {
+                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Response_model_SemesterStudyPlan>> call, Throwable t) {
+                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+        call2.enqueue(new Callback<List<Response_model_SemesterStudyPlan>>() {
+            @Override
+            public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
+                responsemodels = response.body();
+
+                for (int i=0; i<responsemodels.size(); i++){
+                    semester = responsemodels.get(i);
+                    sumHour2 = Integer.parseInt(semester.getHours());
+                    totalHour2 += sumHour2;
+                }
+                for (int i=0; i<responsemodels.size(); i++){
+                    semester = responsemodels.get(i);
+                    sumCredit2 = Integer.parseInt(semester.getCredits());
+                    totalCredit2 += sumCredit2;
+                }
+                student_study_plan_total_hour_s2.setText(String.valueOf(totalHour2));
+                student_study_plan_total_credit_s2.setText(String.valueOf(totalCredit2));
+
+                Adapter_student_Studyplan_Semester myadapter = new Adapter_student_Studyplan_Semester(responsemodels);
+                if (responsemodels != null && !responsemodels.isEmpty()) {
+                    ShowDialog.stopDialog();
+                    student_study_plan_list_s2.setVisibility(View.VISIBLE);
+                    student_study_plan_list_s2.setAdapter(myadapter);
+                } else {
+                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Response_model_SemesterStudyPlan>> call, Throwable t) {
+                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    public void processdata8() {
+        Data_Progressing ShowDialog = new Data_Progressing(getContext());
+        ShowDialog.showDialog();
+        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_student
+                .getInstance()
+                .getapi_stu_studyplan_y1s1()
+                .get_stu_studyplan_y1s1(st_id);
+
+        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_student
+                .getInstance()
+                .getapi_stu_studyplan_y1s2()
+                .get_stu_studyplan_y1s2(st_id);
 
         call1.enqueue(new Callback<List<Response_model_SemesterStudyPlan>>() {
             @Override
