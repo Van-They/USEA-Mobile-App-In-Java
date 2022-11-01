@@ -1,6 +1,9 @@
 package com.example.useaapp.GUEST.More;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,8 +17,8 @@ import com.example.useaapp.GUEST.Login.GuestLogin;
 import com.example.useaapp.GUEST.More.about_us.Detail_guest_about_us_more;
 import com.example.useaapp.GUEST.More.faq.Detail_guest_faq_more;
 import com.example.useaapp.MainActivity;
+import com.example.useaapp.databinding.CustomDialogLogOutBinding;
 import com.example.useaapp.databinding.FragmentGuestMoreBinding;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class FragmentGuestMore extends Fragment {
     FragmentGuestMoreBinding binding;
@@ -32,21 +35,23 @@ public class FragmentGuestMore extends Fragment {
         // Inflate the layout for this fragment
 //        View view = inflater.inflate(R.layout.fragment_guest_more, container, false);
         binding = FragmentGuestMoreBinding.inflate(getLayoutInflater(), container, false);
+        GuestLogin login = new GuestLogin();
         binding.SignOutGuest.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            requireActivity().finish();
-            startActivity(new Intent(getContext(), MainActivity.class));
-//            CustomDialogLogOutBinding logout = CustomDialogLogOutBinding.inflate(getLayoutInflater());
-//            View view = logout.getRoot();
-//            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-//            builder.setView(view);
-//            builder.setCancelable(false);
-//            AlertDialog dialog = builder.create();
-//            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//            logout.CancelLogout.setOnClickListener(v1->dialog.dismiss());
-//            logout.Logout.setOnClickListener(v2->{
-//
-//            });
+            CustomDialogLogOutBinding out = CustomDialogLogOutBinding.inflate(getLayoutInflater());
+            View view = out.getRoot();
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setCancelable(false);
+            builder.setView(view);
+            AlertDialog alertDialog = builder.create();
+            out.Logout.setOnClickListener(v1 -> {
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                login.onSignOut();
+                requireActivity().finish();
+                startActivity(intent);
+            });
+            out.CancelLogout.setOnClickListener(v1 -> alertDialog.dismiss());
+            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            alertDialog.show();
         });
         //Social Media
         //Click FB Image

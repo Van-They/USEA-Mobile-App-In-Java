@@ -7,7 +7,6 @@ import android.view.View;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.useaapp.Custom_toast;
@@ -27,11 +26,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class GoogleAuthActivity extends AppCompatActivity {
-
     ActivityGuestLoginBinding bindView;
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
+    FirebaseUser mUser;
     private final static String TAG = "ApiException";
-    private GoogleSignInClient client;
     Data_Progressing loading;
 
     //alternative way of StartActivity for Result that deprecated
@@ -65,13 +63,11 @@ public class GoogleAuthActivity extends AppCompatActivity {
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        client = GoogleSignIn.getClient(this, options);
-        bindView.GoogleSignIn.setOnClickListener(v -> {
-            Intent intent = client.getSignInIntent();
-            startActivityForResult.launch(intent);
-        });
+        GoogleSignInClient client = GoogleSignIn.getClient(this, options);
+        startActivityForResult.launch(client.getSignInIntent());
         loading = new Data_Progressing(this);
     }
+
     private void firebaseAuthWithGoogle(String idToken) {
         loading.showDialog();
         mAuth = FirebaseAuth.getInstance();
@@ -80,16 +76,15 @@ public class GoogleAuthActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         loading.stopDialog();
-                        FirebaseUser mUser = mAuth.getCurrentUser();
-                        updateUI(mUser);
+                        mUser = mAuth.getCurrentUser();
+                        updateUI();
                     } else {
                         Log.d(TAG, "signInWithCredential:failure ", task.getException());
-                        updateUI(null);
                     }
                 });
     }
 
-    private void updateUI(FirebaseUser mUser) {
+    private void updateUI() {
         finish();
         Intent intent = new Intent(this, MainGuestActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
