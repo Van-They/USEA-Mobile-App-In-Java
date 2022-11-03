@@ -41,7 +41,7 @@ public class Adpter_student_schedule extends BaseAdapter {
         if (convertView==null){
             convertView = inflater.inflate(R.layout.custom_item_schedule,parent,false);
         }
-        TextView DayofMonth,Month,Year;
+        TextView DayofMonth, Day, Month,Year;
         DayofMonth = convertView.findViewById(R.id.DayofMonth_student_schedule);
         Month = convertView.findViewById(R.id.Month_student_schedule);
         Year = convertView.findViewById(R.id.Year_student_schedule);

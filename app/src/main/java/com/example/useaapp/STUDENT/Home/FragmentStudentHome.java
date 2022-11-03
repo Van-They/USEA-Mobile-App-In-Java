@@ -107,6 +107,8 @@ public class FragmentStudentHome extends Fragment {
                 intent.putExtra(text, "txt");
                 startActivity(intent);
             } else if (Objects.equals(title_category[position], "វត្តមាន")) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("Student_ID", st_id);
                 Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getContext(), StudentAttendance.class));
             } else if (Objects.equals(title_category[position], "មតិកែលម្អ")) {
