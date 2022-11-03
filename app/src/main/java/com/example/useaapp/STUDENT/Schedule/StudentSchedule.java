@@ -33,9 +33,9 @@ public class StudentSchedule extends AppCompatActivity {
 
         CalendarView calendarView = findViewById(R.id.Student_calendar);
 
-        calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
+        calendarView.setOnDateChangeListener((view, year, month, dayofMonth) -> {
             models.clear();
-            models.add(new ScheduleModel(dayOfMonth,month,year));
+            models.add(new ScheduleModel(dayofMonth, month, year));
             adapter = new Adpter_student_schedule(getApplicationContext(),models);
             adapter.notifyDataSetChanged();
             Listview_student_schedule.setAdapter(adapter);
