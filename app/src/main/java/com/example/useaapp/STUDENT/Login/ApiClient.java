@@ -24,7 +24,7 @@ public class ApiClient {
         return mApiClient;
 
     }
-    public ApiInterface getApi(){
-        return retrofit.create(ApiInterface.class);
+    public ApiSetLogin getApi(){
+        return retrofit.create(ApiSetLogin.class);
     }
 }

@@ -112,7 +112,6 @@ public class StudentProfile extends AppCompatActivity {
                 .crop().cropOval().compress(1024)
                 .start(20));
 
-
     }
 
     @Override

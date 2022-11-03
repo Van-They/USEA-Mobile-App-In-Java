@@ -145,7 +145,6 @@ public class StudentLogin extends AppCompatActivity {
                     editor.apply();
                     loading.stopDialog();
                     Intent intent = new Intent(getApplicationContext(), MainStudentActivity.class);
-
                     startActivity(intent);
                 } else {
                     loading.stopDialog();
