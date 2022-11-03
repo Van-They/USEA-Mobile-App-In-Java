@@ -5,65 +5,89 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.example.useaapp.Data_Progressing;
+import com.example.useaapp.GUEST.Career.Adapter_guest_career;
+import com.example.useaapp.GUEST.Career.ApiController_guest_career;
+import com.example.useaapp.GUEST.Career.GuestCareer;
+import com.example.useaapp.GUEST.Career.Response_model_guest_career;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_attendance;
+import com.example.useaapp.STUDENT.ApiController_student;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class StudentAttendance extends AppCompatActivity {
-    RecyclerView recyclerView;
-    Adapter_attendance adapter_attendance;
-    ArrayList<String> subject,hour,permission,absent,come;
+
+    SharedPreferences sharedPreferences;
+    private final static String SHARE_PREFNAME = "Student_Name";
+    String St_id;
+
+    Toolbar toolbar;
+    List<Response_model_student_attendance> responsemodels;
+    RecyclerView recview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_attendance);
-        Toolbar toolbar = findViewById(R.id.CustomActionbarStudentAttendance);
+        toolbar = findViewById(R.id.CustomActionbarStudentAttendance);
         setSupportActionBar(toolbar);
         setTitle(R.string.Attendance);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
-        addData();
-        setView();
-    }
-    private void addData() {
-        //add subject, hour, permission, absent
-        subject = new ArrayList<>();
-        hour = new ArrayList<>();
-        permission = new ArrayList<>();
-        absent = new ArrayList<>();
-        come = new ArrayList<>();
-        subject.add("Microeconomic");
-        hour.add("45");
-        permission.add("5");
-        absent.add("1");
-        come.add("10");
+        responsemodels = new ArrayList<>();
+        recview = findViewById(R.id.attendance_item_view);
+        recview.setLayoutManager(new LinearLayoutManager(this));
 
-        subject.add("History and Culture of South-East Asia");
-        hour.add("45");
-        permission.add("0");
-        absent.add("2");
-        come.add("9");
+        sharedPreferences = getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
+        St_id = sharedPreferences.getString("Student_ID", "");
 
-        subject.add("Public Administrator");
-        hour.add("45");
-        permission.add("5");
-        absent.add("1");
-        come.add("5");
-    }
-    private void setView() {
-        recyclerView = findViewById(R.id.attendance_item_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter_attendance = new Adapter_attendance(subject, hour, permission, absent,come);
-        recyclerView.setAdapter(adapter_attendance);
+        processdata();
     }
 
+    public void processdata()
+    {
+        Data_Progressing loading = new Data_Progressing(this);
+        loading.showDialog();
+        Call<List<Response_model_student_attendance>> call = ApiController_student
+                .getInstance()
+                .getapi_stu_att()
+                .get_stu_att(St_id);
+
+        call.enqueue(new Callback<List<Response_model_student_attendance>>() {
+            @Override
+            public void onResponse(Call<List<Response_model_student_attendance>> call, Response<List<Response_model_student_attendance>> response) {
+                responsemodels = response.body();
+                Adapter_attendance myadapter = new Adapter_attendance(responsemodels);
+                if (responsemodels !=null && !responsemodels.isEmpty()){
+                    loading.stopDialog();
+                    recview.setAdapter(myadapter);
+                }else {
+                    Toast.makeText(StudentAttendance.this, "No data found", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Response_model_student_attendance>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         finish();
     }
+
 }

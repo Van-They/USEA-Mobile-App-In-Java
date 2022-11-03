@@ -19,7 +19,6 @@ import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.GUEST.Program.ApiController_guest_program_faculty;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.ApiController_student;
-import com.example.useaapp.STUDENT.Apiset_student_plan;
 
 import java.util.List;
 

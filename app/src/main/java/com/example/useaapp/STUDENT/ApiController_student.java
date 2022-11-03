@@ -26,36 +26,41 @@ public class ApiController_student
      }
 
     //     get Student Study Plan data
-    public Apiset_student_plan getapi_stu_studyplan_y1s1() {
-        return retrofit.create(Apiset_student_plan.class);
+    public Apiset_student getapi_stu_studyplan_y1s1() {
+        return retrofit.create(Apiset_student.class);
     }
     //     get Student Study Plan data
-    public Apiset_student_plan getapi_stu_studyplan_y1s2() {
-        return retrofit.create(Apiset_student_plan.class);
+    public Apiset_student getapi_stu_studyplan_y1s2() {
+        return retrofit.create(Apiset_student.class);
     }
     //     get Student Study Plan data
-    public Apiset_student_plan getapi_stu_studyplan_y2s1() {
-        return retrofit.create(Apiset_student_plan.class);
+    public Apiset_student getapi_stu_studyplan_y2s1() {
+        return retrofit.create(Apiset_student.class);
     }
     //     get Student Study Plan data
-    public Apiset_student_plan getapi_stu_studyplan_y2s2() {
-        return retrofit.create(Apiset_student_plan.class);
+    public Apiset_student getapi_stu_studyplan_y2s2() {
+        return retrofit.create(Apiset_student.class);
     }
     //     get Student Study Plan data
-    public Apiset_student_plan getapi_stu_studyplan_y3s1() {
-        return retrofit.create(Apiset_student_plan.class);
+    public Apiset_student getapi_stu_studyplan_y3s1() {
+        return retrofit.create(Apiset_student.class);
     }
     //     get Student Study Plan data
-    public Apiset_student_plan getapi_stu_studyplan_y3s2() {
-        return retrofit.create(Apiset_student_plan.class);
+    public Apiset_student getapi_stu_studyplan_y3s2() {
+        return retrofit.create(Apiset_student.class);
     }
     //     get Student Study Plan data
-    public Apiset_student_plan getapi_stu_studyplan_y4s1() {
-        return retrofit.create(Apiset_student_plan.class);
+    public Apiset_student getapi_stu_studyplan_y4s1() {
+        return retrofit.create(Apiset_student.class);
     }
     //     get Student Study Plan data
-    public Apiset_student_plan getapi_stu_studyplan_y4s2() {
-        return retrofit.create(Apiset_student_plan.class);
+    public Apiset_student getapi_stu_studyplan_y4s2() {
+        return retrofit.create(Apiset_student.class);
+    }
+
+    //     get Student Attendance
+    public Apiset_student getapi_stu_att() {
+        return retrofit.create(Apiset_student.class);
     }
 
 }

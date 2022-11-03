@@ -9,22 +9,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.R;
+import com.example.useaapp.STUDENT.Attendance.Response_model_student_attendance;
+import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan;
 
 import java.util.List;
 
 public class Adapter_attendance extends RecyclerView.Adapter<Adapter_attendance.ViewHolder> {
 
-    private final List<String> subject;
-    private final List<String> hour;
-    private final List<String> permission;
-    private final List<String> absent;
-    private final List<String> come;
-    public Adapter_attendance(List<String> subject, List<String> hour, List<String> permission, List<String> absent,List<String> come) {
-        this.subject = subject;
-        this.hour = hour;
-        this.permission = permission;
-        this.absent = absent;
-        this.come = come;
+    List<Response_model_student_attendance> data;
+    public Adapter_attendance(List<Response_model_student_attendance> data) {
+        this.data = data;
     }
 
     @NonNull
@@ -38,24 +32,17 @@ public class Adapter_attendance extends RecyclerView.Adapter<Adapter_attendance.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.textTitle.setText(data.get(position).getSubject_name());
+        holder.textHours.setText(data.get(position).getHours());
+        holder.textPermissions.setText(data.get(position).getPermission());
+        holder.textAbsents.setText(data.get(position).getAbsent());
+        holder.textCome.setText(data.get(position).getPresent());
 
-
-        String title = subject.get(position);
-        String hours = hour.get(position);
-        String permissions = permission.get(position);
-        String absents = absent.get(position);
-        String Come = come.get(position);
-
-        holder.textTitle.setText(title);
-        holder.textHours.setText(hours);
-        holder.textPermissions.setText(permissions);
-        holder.textAbsents.setText(absents);
-        holder.textCome.setText(Come);
     }
 
     @Override
     public int getItemCount() {
-        return subject.size();
+        return data.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
