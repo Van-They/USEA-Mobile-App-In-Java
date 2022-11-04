@@ -10,13 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.useaapp.R;
 
-import java.util.Objects;
-
 public class NewsItemsDetail extends AppCompatActivity {
-    TextView subject, label, room, date, due_date, creator, time, download_file_label_news, label_date_item_news, label_time_news, text_instruction, score, time_assignment;
-    String subject_, label_, room_, date_, due_date_, creator_, time_, instruction_, score_;
-    LinearLayout download_layout, label_layout_room_news, label_layout_score, layout_time_assignment;
-    View dash_time_assignment;
     private final static String Subject = "Subject";
     private final static String Date = "Date";
     private final static String Due_Date = "Due_Date";
@@ -26,6 +20,10 @@ public class NewsItemsDetail extends AppCompatActivity {
     private final static String Label = "Label";
     private final static String Instruction = "Instruction";
     private final static String Score = "Score";
+    TextView subject, label, room, date, due_date, creator, time, label_date_item_news, label_time_news, text_instruction, score, time_assignment;
+    String subject_, label_, room_, date_, due_date_, creator_, time_, instruction_, score_;
+    LinearLayout label_layout_room_news, label_layout_score, layout_time_assignment;
+    View dash_time_assignment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +31,8 @@ public class NewsItemsDetail extends AppCompatActivity {
         setContentView(R.layout.activity_new_items_detail);
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentNewsDetail);
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         toolbar.setNavigationOnClickListener(v -> finish());
 
@@ -46,9 +45,7 @@ public class NewsItemsDetail extends AppCompatActivity {
         time = findViewById(R.id.time);
         score = findViewById(R.id.score);
         time_assignment = findViewById(R.id.time_assignment);
-        dash_time_assignment=findViewById(R.id.dash_time_assignment);
-//        download_layout = findViewById(R.id.download_file_layout_news);
-//        download_file_label_news = findViewById(R.id.download_file_label_news);
+        dash_time_assignment = findViewById(R.id.dash_time_assignment);
         label_date_item_news = findViewById(R.id.label_date_item_news);
         label_layout_room_news = findViewById(R.id.label_layout_room_news);
         layout_time_assignment = findViewById(R.id.layout_time_assignment);

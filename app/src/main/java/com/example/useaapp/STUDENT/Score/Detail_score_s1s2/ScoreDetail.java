@@ -11,8 +11,6 @@ import com.example.useaapp.STUDENT.Adapter.Adapter_score_detail_tab_bar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import java.util.Objects;
-
 public class ScoreDetail extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager;
@@ -25,7 +23,8 @@ public class ScoreDetail extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarStudentScoreDetail);
         setSupportActionBar(toolbar);
         setTitle(R.string.Score);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v -> finish());
         String[] score_detail_tab = {"ឆមាសទី១", "ឆមាសទី២"};
         tabLayout = findViewById(R.id.tab_menu_score_detail);

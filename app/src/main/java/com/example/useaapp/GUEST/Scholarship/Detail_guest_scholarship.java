@@ -10,8 +10,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.useaapp.R;
 
-import java.util.Objects;
-
 public class Detail_guest_scholarship extends AppCompatActivity {
     Toolbar toolbar;
 
@@ -33,7 +31,8 @@ public class Detail_guest_scholarship extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarGuestScholarship);
         setSupportActionBar(toolbar);
         setTitle(R.string.Scholarship);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        assert getSupportActionBar() !=null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
 
 

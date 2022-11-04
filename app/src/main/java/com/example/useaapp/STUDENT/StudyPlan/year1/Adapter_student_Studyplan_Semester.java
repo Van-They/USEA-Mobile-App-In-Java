@@ -8,13 +8,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.useaapp.GUEST.Program.bachelor.Response_model_guest_program_faculty_bachelor;
 import com.example.useaapp.R;
 
 import java.util.List;
 
 public class Adapter_student_Studyplan_Semester extends RecyclerView.Adapter<Adapter_student_Studyplan_Semester.ViewHolder> {
     List<Response_model_SemesterStudyPlan> data;
+
     public Adapter_student_Studyplan_Semester(List<Response_model_SemesterStudyPlan> data) {
         this.data = data;
     }
@@ -38,10 +38,10 @@ public class Adapter_student_Studyplan_Semester extends RecyclerView.Adapter<Ada
         return data.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView student_study_plan_subject, student_study_plan_hour, student_study_plan_credit;
 
-        public ViewHolder(@NonNull View itemView){
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             student_study_plan_subject = itemView.findViewById(R.id.student_study_plan_subject);
             student_study_plan_hour = itemView.findViewById(R.id.student_study_plan_hour);

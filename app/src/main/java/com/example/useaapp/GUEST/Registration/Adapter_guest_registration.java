@@ -19,6 +19,7 @@ import java.util.List;
 
 public class Adapter_guest_registration extends RecyclerView.Adapter<Adapter_guest_registration.ViewHolder> {
     List<Response_model_guest_registration> data;
+
     public Adapter_guest_registration(List<Response_model_guest_registration> data) {
         this.data = data;
     }
@@ -41,12 +42,12 @@ public class Adapter_guest_registration extends RecyclerView.Adapter<Adapter_gue
         return data.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        CardView guest_registration_cardview;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        CardView guestRegistrationCard;
         LinearLayout guest_registration_layout;
         TextView guest_registration_question, guest_registration_answer;
 
-        public ViewHolder(@NonNull View itemView){
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             guest_registration_question = itemView.findViewById(R.id.guest_registration_question);
             guest_registration_answer = itemView.findViewById(R.id.guest_registration_answer);
@@ -54,14 +55,11 @@ public class Adapter_guest_registration extends RecyclerView.Adapter<Adapter_gue
 
             guest_registration_layout.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
 
-            guest_registration_cardview = itemView.findViewById(R.id.guest_registration_cardview);
-            guest_registration_cardview.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int view_ass = (guest_registration_answer.getVisibility() == View.GONE)? View.VISIBLE: View.GONE;
-                    TransitionManager.beginDelayedTransition(guest_registration_layout, new AutoTransition());
-                    guest_registration_answer.setVisibility(view_ass);
-                }
+            guestRegistrationCard = itemView.findViewById(R.id.guest_registration_cardview);
+            guestRegistrationCard.setOnClickListener(view -> {
+                int view_ass = (guest_registration_answer.getVisibility() == View.GONE) ? View.VISIBLE : View.GONE;
+                TransitionManager.beginDelayedTransition(guest_registration_layout, new AutoTransition());
+                guest_registration_answer.setVisibility(view_ass);
             });
         }
     }

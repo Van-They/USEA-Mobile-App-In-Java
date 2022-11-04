@@ -1,17 +1,15 @@
 package com.example.useaapp.STUDENT.Score.Score;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
-
-import android.os.Bundle;
 
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_score_tab_bar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
-import java.util.Objects;
 
 public class StudentScore extends AppCompatActivity {
     TabLayout tabLayout;
@@ -24,9 +22,10 @@ public class StudentScore extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentScore);
         setSupportActionBar(toolbar);
         setTitle(R.string.Score);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        toolbar.setNavigationOnClickListener(v->finish());
+        toolbar.setNavigationOnClickListener(v -> finish());
 
         String[] Tab_title = {"ឆ្នាំទី១", "ឆ្នាំទី២", "ឆ្នាំទី៣", "ឆ្នាំទី៤"};
 

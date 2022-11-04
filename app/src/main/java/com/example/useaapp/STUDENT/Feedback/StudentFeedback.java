@@ -24,7 +24,6 @@ import com.example.useaapp.STUDENT.Login.ApiSetLogin;
 import com.github.drjacky.imagepicker.ImagePicker;
 
 import java.io.File;
-import java.util.Objects;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -36,6 +35,7 @@ import retrofit2.Response;
 public class StudentFeedback extends AppCompatActivity {
 
     private final static String SHARE_PREFNAME = "Student_Name";
+    private static final String TAG = "Student_Feedback";
     SharedPreferences sharedPreferences;
     Button btnSubmit_feedback;
     ImageView image_feedback;
@@ -44,7 +44,6 @@ public class StudentFeedback extends AppCompatActivity {
     EditText text_feed_back;
     File file;
     Uri uri;
-    private static final String TAG = "Student_Feedback";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +52,8 @@ public class StudentFeedback extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentFeedback);
         setSupportActionBar(toolbar);
         setTitle(R.string.Feedback);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
 
@@ -76,10 +76,12 @@ public class StudentFeedback extends AppCompatActivity {
             RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), file);
             MultipartBody.Part fileUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
             RequestBody filename = RequestBody.create(MediaType.parse("text/plain"), file.getName());
-            RequestBody St_id = RequestBody.create(MediaType.parse("text/plain"),Student_ID);
-            RequestBody Feedback = RequestBody.create(MediaType.parse("text/plain"),feedback);
-            RequestBody Star = RequestBody.create(MediaType.parse("text/plain"),star);
+            RequestBody St_id = RequestBody.create(MediaType.parse("text/plain"), Student_ID);
+            RequestBody Feedback = RequestBody.create(MediaType.parse("text/plain"), feedback);
+            RequestBody Star = RequestBody.create(MediaType.parse("text/plain"), star);
+
             ApiSetLogin apiSetLogin = ApiControlFeedback.getRetrofit().create(ApiSetLogin.class);
+
             Call<ServerResponse> call = apiSetLogin.sendFeedback(fileUpload, filename, St_id, Feedback, Star);
             call.enqueue(new Callback<ServerResponse>() {
                 @Override

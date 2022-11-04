@@ -30,20 +30,23 @@ import retrofit2.Response;
 
 public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
 
-    SharedPreferences sharedPreferences;
+    public static final String text = "txt";
     private final static String SHARE_PREFNAME = "Student_Name";
+    SharedPreferences sharedPreferences;
     String st_id;
-
     TextView student_study_plan_total_hour_y3s1, student_study_plan_total_credit_y3s1, student_study_plan_total_hour_y3s2, student_study_plan_total_credit_y3s2;
     RecyclerView student_study_plan_list_s1, student_study_plan_list_s2;
     List<Response_model_SemesterStudyPlan> responsemodels;
-    public static final String text = "txt";
     String txt;
 
-    int totalHour1 = 0; int totalCredit1 = 0;
-    int sumHour1 = 0; int sumCredit1 = 0;
-    int totalHour2 = 0; int totalCredit2 = 0;
-    int sumHour2 = 0; int sumCredit2 = 0;
+    int totalHour1 = 0;
+    int totalCredit1 = 0;
+    int sumHour1 = 0;
+    int sumCredit1 = 0;
+    int totalHour2 = 0;
+    int totalCredit2 = 0;
+    int sumHour2 = 0;
+    int sumCredit2 = 0;
 
     Response_model_SemesterStudyPlan semester;
 
@@ -51,9 +54,9 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_study_plan__y3_s1_s2, container, false);
-        return v;
+        return inflater.inflate(R.layout.fragment_study_plan__y3_s1_s2, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -69,23 +72,23 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
         student_study_plan_total_hour_y3s2 = view.findViewById(R.id.student_study_plan_total_hour_y3s2);
         student_study_plan_total_credit_y3s2 = view.findViewById(R.id.student_study_plan_total_credit_y3s2);
 
-        txt = getActivity().getIntent().getStringExtra(text);
+        txt = requireActivity().getIntent().getStringExtra(text);
         sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         st_id = sharedPreferences.getString("Student_ID", "");
 
-        if(txt.equals("12")){
+        if (txt.equals("12")) {
             processdata1();
-        }else if(txt.equals("13")){
+        } else if (txt.equals("13")) {
             processdata2();
-        }else if(txt.equals("14")){
+        } else if (txt.equals("14")) {
             processdata3();
-        }else if(txt.equals("15")){
+        } else if (txt.equals("15")) {
             processdata4();
-        }else if(txt.equals("16")){
+        } else if (txt.equals("16")) {
             processdata5();
-        }else if(txt.equals("17")){
+        } else if (txt.equals("17")) {
             processdata6();
-        }else if(txt.equals("txt")){
+        } else if (txt.equals("txt")) {
             processdata8();
         }
 
@@ -109,12 +112,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour1 = Integer.parseInt(semester.getHours());
                     totalHour1 += sumHour1;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit1 = Integer.parseInt(semester.getCredits());
                     totalCredit1 += sumCredit1;
@@ -142,12 +145,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour2 = Integer.parseInt(semester.getHours());
                     totalHour2 += sumHour2;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit2 = Integer.parseInt(semester.getCredits());
                     totalCredit2 += sumCredit2;
@@ -171,6 +174,7 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             }
         });
     }
+
     public void processdata2() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
@@ -189,12 +193,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour1 = Integer.parseInt(semester.getHours());
                     totalHour1 += sumHour1;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit1 = Integer.parseInt(semester.getCredits());
                     totalCredit1 += sumCredit1;
@@ -222,12 +226,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour2 = Integer.parseInt(semester.getHours());
                     totalHour2 += sumHour2;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit2 = Integer.parseInt(semester.getCredits());
                     totalCredit2 += sumCredit2;
@@ -251,6 +255,7 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             }
         });
     }
+
     public void processdata3() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
@@ -269,12 +274,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour1 = Integer.parseInt(semester.getHours());
                     totalHour1 += sumHour1;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit1 = Integer.parseInt(semester.getCredits());
                     totalCredit1 += sumCredit1;
@@ -302,12 +307,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour2 = Integer.parseInt(semester.getHours());
                     totalHour2 += sumHour2;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit2 = Integer.parseInt(semester.getCredits());
                     totalCredit2 += sumCredit2;
@@ -331,6 +336,7 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             }
         });
     }
+
     public void processdata4() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
@@ -349,12 +355,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour1 = Integer.parseInt(semester.getHours());
                     totalHour1 += sumHour1;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit1 = Integer.parseInt(semester.getCredits());
                     totalCredit1 += sumCredit1;
@@ -382,12 +388,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour2 = Integer.parseInt(semester.getHours());
                     totalHour2 += sumHour2;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit2 = Integer.parseInt(semester.getCredits());
                     totalCredit2 += sumCredit2;
@@ -411,6 +417,7 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             }
         });
     }
+
     public void processdata5() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
@@ -429,12 +436,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour1 = Integer.parseInt(semester.getHours());
                     totalHour1 += sumHour1;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit1 = Integer.parseInt(semester.getCredits());
                     totalCredit1 += sumCredit1;
@@ -462,12 +469,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour2 = Integer.parseInt(semester.getHours());
                     totalHour2 += sumHour2;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit2 = Integer.parseInt(semester.getCredits());
                     totalCredit2 += sumCredit2;
@@ -491,6 +498,7 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             }
         });
     }
+
     public void processdata6() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
@@ -509,12 +517,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour1 = Integer.parseInt(semester.getHours());
                     totalHour1 += sumHour1;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit1 = Integer.parseInt(semester.getCredits());
                     totalCredit1 += sumCredit1;
@@ -542,12 +550,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour2 = Integer.parseInt(semester.getHours());
                     totalHour2 += sumHour2;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit2 = Integer.parseInt(semester.getCredits());
                     totalCredit2 += sumCredit2;
@@ -571,6 +579,7 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             }
         });
     }
+
     public void processdata8() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
@@ -589,12 +598,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour1 = Integer.parseInt(semester.getHours());
                     totalHour1 += sumHour1;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit1 = Integer.parseInt(semester.getCredits());
                     totalCredit1 += sumCredit1;
@@ -622,12 +631,12 @@ public class Fragment_student_Studyplan_y3s1s2 extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan>> call, Response<List<Response_model_SemesterStudyPlan>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumHour2 = Integer.parseInt(semester.getHours());
                     totalHour2 += sumHour2;
                 }
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit2 = Integer.parseInt(semester.getCredits());
                     totalCredit2 += sumCredit2;

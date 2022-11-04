@@ -1,18 +1,17 @@
 package com.example.useaapp.GUEST.More.about_us;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-import android.widget.Toast;
-
 import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
 
 import java.util.List;
-import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,7 +30,8 @@ public class Detail_guest_about_us_more extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarGuestAboutUsDetail);
         setSupportActionBar(toolbar);
         setTitle(R.string.About_Us);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
 
         recycler_view = findViewById(R.id.about_us_recview);
@@ -39,24 +39,20 @@ public class Detail_guest_about_us_more extends AppCompatActivity {
 
         processdata();
     }
-    public void processdata()
-    {
+
+    public void processdata() {
         Data_Progressing loading = new Data_Progressing(this);
         loading.showDialog();
-        Call<List<Response_model_guest_about_us_more>> call = ApiController_guest_about_us_more
-                .getInstance()
-                .getApi()
-                .getData();
-
+        Call<List<Response_model_guest_about_us_more>> call = ApiController_guest_about_us_more.getInstance().getApi().getData();
         call.enqueue(new Callback<List<Response_model_guest_about_us_more>>() {
             @Override
-            public void onResponse(Call<List<com.example.useaapp.GUEST.More.about_us.Response_model_guest_about_us_more>> call, Response<List<Response_model_guest_about_us_more>> response) {
+            public void onResponse(Call<List<Response_model_guest_about_us_more>> call, Response<List<Response_model_guest_about_us_more>> response) {
                 responsemodels = response.body();
-                com.example.useaapp.GUEST.More.about_us.Adapter_guest_about_us_more adapter = new com.example.useaapp.GUEST.More.about_us.Adapter_guest_about_us_more(responsemodels);
-                if (responsemodels !=null && !responsemodels.isEmpty()){
+                Adapter_guest_about_us_more adapter = new Adapter_guest_about_us_more(responsemodels);
+                if (responsemodels != null && !responsemodels.isEmpty()) {
                     loading.stopDialog();
                     recycler_view.setAdapter(adapter);
-                }else {
+                } else {
                     Toast.makeText(Detail_guest_about_us_more.this, "No data found", Toast.LENGTH_SHORT).show();
                 }
             }

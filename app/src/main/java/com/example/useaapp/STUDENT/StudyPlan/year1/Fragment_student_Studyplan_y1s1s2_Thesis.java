@@ -25,10 +25,10 @@ import retrofit2.Response;
 
 public class Fragment_student_Studyplan_y1s1s2_Thesis extends Fragment {
 
-    RecyclerView student_study_plan_list_s1, student_study_plan_list_s2, student_study_plan_list_s3;
-    TextView student_study_plan_total_credit_s1,student_study_plan_total_credit_s2, student_study_plan_total_credit_s3;
-    List<Response_model_SemesterStudyPlan_Thesis> responsemodels;
     public static final String text = "txt";
+    RecyclerView student_study_plan_list_s1, student_study_plan_list_s2, student_study_plan_list_s3;
+    TextView student_study_plan_total_credit_s1, student_study_plan_total_credit_s2, student_study_plan_total_credit_s3;
+    List<Response_model_SemesterStudyPlan_Thesis> responsemodels;
     String txt;
     int totalCredit1 = 0;
     int sumCredit1 = 0;
@@ -43,34 +43,34 @@ public class Fragment_student_Studyplan_y1s1s2_Thesis extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_study_plan__y1s1s2_thesis, container, false);
-        return v;
+        return inflater.inflate(R.layout.fragment_study_plan__y1s1s2_thesis, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         student_study_plan_list_s1 = view.findViewById(R.id.student_study_plan_list_s1_th);
-        student_study_plan_list_s1.setLayoutManager(new LinearLayoutManager(getActivity()));
+        student_study_plan_list_s1.setLayoutManager(new LinearLayoutManager(requireContext()));
 
         student_study_plan_list_s2 = view.findViewById(R.id.student_study_plan_list_s2_th);
-        student_study_plan_list_s2.setLayoutManager(new LinearLayoutManager(getActivity()));
+        student_study_plan_list_s2.setLayoutManager(new LinearLayoutManager(requireContext()));
 
         student_study_plan_list_s3 = view.findViewById(R.id.student_study_plan_list_s3_th);
-        student_study_plan_list_s3.setLayoutManager(new LinearLayoutManager(getActivity()));
+        student_study_plan_list_s3.setLayoutManager(new LinearLayoutManager(requireContext()));
 
         student_study_plan_total_credit_s1 = view.findViewById(R.id.student_study_plan_total_credit_s1_th);
         student_study_plan_total_credit_s2 = view.findViewById(R.id.student_study_plan_total_credit_s2_th);
         student_study_plan_total_credit_s3 = view.findViewById(R.id.student_study_plan_total_credit_s3_th);
 
-        String t1 = getActivity().getIntent().getStringExtra("t");
-        String t2 = getActivity().getIntent().getStringExtra("t");
-        txt = getActivity().getIntent().getStringExtra(text);
+        String t1 = requireActivity().getIntent().getStringExtra("t");
+        String t2 = requireActivity().getIntent().getStringExtra("t");
+        txt = requireActivity().getIntent().getStringExtra(text);
 
-        if(txt.equals("19")){
-            if(t1.equals("1")){
+        if (txt.equals("19")) {
+            if (t1.equals("1")) {
                 processdata1();
-            }else if(t2.equals("2")){
+            } else if (t2.equals("2")) {
                 processdata2();
             }
         }
@@ -99,7 +99,7 @@ public class Fragment_student_Studyplan_y1s1s2_Thesis extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan_Thesis>> call, Response<List<Response_model_SemesterStudyPlan_Thesis>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit1 = Integer.parseInt(semester.getCredits());
                     totalCredit1 += sumCredit1;
@@ -127,7 +127,7 @@ public class Fragment_student_Studyplan_y1s1s2_Thesis extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan_Thesis>> call, Response<List<Response_model_SemesterStudyPlan_Thesis>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit2 = Integer.parseInt(semester.getCredits());
                     totalCredit2 += sumCredit2;
@@ -154,7 +154,7 @@ public class Fragment_student_Studyplan_y1s1s2_Thesis extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan_Thesis>> call, Response<List<Response_model_SemesterStudyPlan_Thesis>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit3 = Integer.parseInt(semester.getCredits());
                     totalCredit3 += sumCredit3;
@@ -177,6 +177,7 @@ public class Fragment_student_Studyplan_y1s1s2_Thesis extends Fragment {
             }
         });
     }
+
     public void processdata2() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
@@ -200,7 +201,7 @@ public class Fragment_student_Studyplan_y1s1s2_Thesis extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan_Thesis>> call, Response<List<Response_model_SemesterStudyPlan_Thesis>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit1 = Integer.parseInt(semester.getCredits());
                     totalCredit1 += sumCredit1;
@@ -228,7 +229,7 @@ public class Fragment_student_Studyplan_y1s1s2_Thesis extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan_Thesis>> call, Response<List<Response_model_SemesterStudyPlan_Thesis>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit2 = Integer.parseInt(semester.getCredits());
                     totalCredit2 += sumCredit2;
@@ -255,7 +256,7 @@ public class Fragment_student_Studyplan_y1s1s2_Thesis extends Fragment {
             public void onResponse(Call<List<Response_model_SemesterStudyPlan_Thesis>> call, Response<List<Response_model_SemesterStudyPlan_Thesis>> response) {
                 responsemodels = response.body();
 
-                for (int i=0; i<responsemodels.size(); i++){
+                for (int i = 0; i < responsemodels.size(); i++) {
                     semester = responsemodels.get(i);
                     sumCredit3 = Integer.parseInt(semester.getCredits());
                     totalCredit3 += sumCredit3;
