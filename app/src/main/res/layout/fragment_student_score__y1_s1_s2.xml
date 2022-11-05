@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <include layout="@layout/custom_header_list_score_semester1"/>
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/student_score_list_y1s1"
@@ -21,7 +21,7 @@
             <include layout="@layout/custom_footer_score_show_detail"
                 android:id="@+id/student_score_show_detail_y1s1"/>
            <include layout="@layout/custom_header_list_score_semester2"/>
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/student_score_list_y1s2"

@@ -63,4 +63,45 @@ public class ApiController_student
         return retrofit.create(Apiset_student.class);
     }
 
+
+    //     get Student Score
+    public Apiset_student getapi_stu_score_y1s1() {
+        return retrofit.create(Apiset_student.class);
+    }
+
+    //     get Student Score
+    public Apiset_student getapi_stu_score_y1s2() {
+        return retrofit.create(Apiset_student.class);
+    }
+
+    //     get Student Score
+    public Apiset_student getapi_stu_score_y2s1() {
+        return retrofit.create(Apiset_student.class);
+    }
+
+    //     get Student Score
+    public Apiset_student getapi_stu_score_y2s2() {
+        return retrofit.create(Apiset_student.class);
+    }
+
+    //     get Student Score
+    public Apiset_student getapi_stu_score_y3s1() {
+        return retrofit.create(Apiset_student.class);
+    }
+
+    //     get Student Score
+    public Apiset_student getapi_stu_score_y3s2() {
+        return retrofit.create(Apiset_student.class);
+    }
+
+    //     get Student Score
+    public Apiset_student getapi_stu_score_y4s1() {
+        return retrofit.create(Apiset_student.class);
+    }
+
+    //     get Student Score
+    public Apiset_student getapi_stu_score_y4s2() {
+        return retrofit.create(Apiset_student.class);
+    }
+
 }

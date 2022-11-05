@@ -9,43 +9,53 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Score.Score.ModelScore;
+import com.example.useaapp.STUDENT.StudyPlan.year1.Adapter_student_Studyplan_Semester;
+import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
-public class Adapter_score_semester extends ArrayAdapter<ModelScore> {
+public class Adapter_score_semester extends RecyclerView.Adapter<Adapter_score_semester.ViewHolder> {
 
-
-    public Adapter_score_semester(@NonNull Context context, ArrayList<ModelScore> arrayList) {
-        super(context, R.layout.custom_items_score,arrayList);
-    }
-
-    @Override
-    public boolean isEnabled(int position) {
-        return false;
+    List<ModelScore> data;
+    public Adapter_score_semester(List<ModelScore> data) {
+        this.data = data;
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        if (convertView==null)
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_items_score,parent,false);
-        TextView Subject_score,Rank_score,Grade_score,Total_score;
-        ModelScore score = getItem(position);
-        Subject_score = convertView.findViewById(R.id.Student_score_subject);
-        Rank_score = convertView.findViewById(R.id.Student_score_rank);
-        Grade_score = convertView.findViewById(R.id.Student_score_grade);
-        Total_score = convertView.findViewById(R.id.Student_score_total);
+    public Adapter_score_semester.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_items_score, parent, false);
+        return new Adapter_score_semester.ViewHolder(view);
+    }
 
-        Subject_score.setText(score.getSubject_score());
-        Rank_score.setText(score.getRank_score());
-        Grade_score.setText(score.getGrade_score());
-        Total_score.setText(score.getTotal_score());
+    @Override
+    public void onBindViewHolder(@NonNull Adapter_score_semester.ViewHolder holder, int position) {
+        holder.Student_score_subject.setText(data.get(position).getSubject_name());
+        holder.Student_score_rank.setText(data.get(position).getAverage_Score());
+        holder.Student_score_grade.setText(data.get(position).getGrade());
+        holder.Student_score_total.setText(data.get(position).getTotal_Score());
+    }
 
+    @Override
+    public int getItemCount() {
+        return data.size();
+    }
 
-        return convertView;
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+        TextView Student_score_subject, Student_score_rank, Student_score_grade, Student_score_total;
+
+        public ViewHolder(@NonNull View itemView){
+            super(itemView);
+            Student_score_subject = itemView.findViewById(R.id.Student_score_subject);
+            Student_score_rank = itemView.findViewById(R.id.Student_score_rank);
+            Student_score_grade = itemView.findViewById(R.id.Student_score_grade);
+            Student_score_total = itemView.findViewById(R.id.Student_score_total);
+        }
     }
 }
