@@ -32,8 +32,6 @@ public class Adapter_Studyplan_Semester extends ArrayAdapter<SemesterStudyPlan> 
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_items_studyplan, parent, false);
         }
         SemesterStudyPlan semester1 = getItem(position);
-//        TextView No = convertView.findViewById(R.id.student_study_plan_no);
-//        No.setText(semester1.getNo());
         TextView Subject = convertView.findViewById(R.id.student_study_plan_subject);
         TextView Hour = convertView.findViewById(R.id.student_study_plan_hour);
         TextView Credit = convertView.findViewById(R.id.student_study_plan_credit);

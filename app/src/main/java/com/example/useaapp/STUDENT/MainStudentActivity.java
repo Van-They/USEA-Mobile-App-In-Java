@@ -4,9 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,8 +46,7 @@ public class MainStudentActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.custom_dialog_back, null);
+        View layout = getLayoutInflater().inflate(R.layout.custom_dialog_back, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setView(layout);
@@ -57,8 +54,8 @@ public class MainStudentActivity extends AppCompatActivity {
         View Leave = layout.findViewById(R.id.LeaveApp);
         AlertDialog alertDialog = builder.create();
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        Cancel.setOnClickListener(v->alertDialog.dismiss());
-        Leave.setOnClickListener(v->finishAffinity());
+        Cancel.setOnClickListener(v -> alertDialog.dismiss());
+        Leave.setOnClickListener(v -> finishAffinity());
         alertDialog.show();
     }
 }

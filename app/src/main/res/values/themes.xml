@@ -24,7 +24,6 @@
     </style>
 
     //set icon back on action bar
-
     <style name="setBackButton" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBarOverlay">true</item>
         <item name="homeAsUpIndicator">@drawable/ic_back</item>

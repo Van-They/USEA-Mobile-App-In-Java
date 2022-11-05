@@ -1,8 +1,6 @@
 package com.example.useaapp.GUEST.Scholarship;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +16,6 @@ import com.example.useaapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,7 +32,8 @@ public class GuestScholarship extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarGuestScholarship);
         setSupportActionBar(toolbar);
         setTitle(R.string.Scholarship);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        assert getSupportActionBar() !=null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
 
         ImageSlider slide_image = findViewById(R.id.SlideImageScholarship);

@@ -51,8 +51,7 @@ public class Fragment_student_Studyplan_y4s1s2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_study_plan__y4_s1_s2, container, false);
-        return v;
+        return inflater.inflate(R.layout.fragment_study_plan__y4_s1_s2, container, false);
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -69,7 +68,7 @@ public class Fragment_student_Studyplan_y4s1s2 extends Fragment {
         student_study_plan_total_credit_y4s1 = view.findViewById(R.id.student_study_plan_total_credit_y4s1);
         student_study_plan_total_credit_y4s2 = view.findViewById(R.id.student_study_plan_total_credit_y4s2);
 
-        txt = getActivity().getIntent().getStringExtra(text);
+        txt = requireActivity().getIntent().getStringExtra(text);
         sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         st_id = sharedPreferences.getString("Student_ID", "");
 

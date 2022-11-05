@@ -7,9 +7,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -22,12 +20,9 @@ import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Profile.ProfileSetting.About;
 import com.example.useaapp.STUDENT.Profile.ProfileSetting.Legal;
 
-import java.util.Objects;
-
 public class StudentSetting extends AppCompatActivity {
-    SharedPreferences sharedPreferences;
     private final static String SHARE_PREFNAME = "Student_Name";
-
+    SharedPreferences sharedPreferences;
     LinearLayout AboutProfile, LegalProfile;
 
     @Override
@@ -36,9 +31,10 @@ public class StudentSetting extends AppCompatActivity {
         setContentView(R.layout.activity_student_setting);
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentSetting);
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(R.string.Setting);
-        toolbar.setNavigationOnClickListener(v->finish());
+        toolbar.setNavigationOnClickListener(v -> finish());
         TextView studentLogOut = findViewById(R.id.student_log_out);
         toolbar.setNavigationOnClickListener(view -> finish());
         AboutProfile = findViewById(R.id.AboutProfile);
@@ -46,7 +42,7 @@ public class StudentSetting extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);
 
-        studentLogOut.setPaintFlags(studentLogOut.getPaintFlags()|Paint.UNDERLINE_TEXT_FLAG);
+        studentLogOut.setPaintFlags(studentLogOut.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         studentLogOut.setOnClickListener(v -> {
             View Layout = getLayoutInflater().inflate(R.layout.custom_dialog_log_out, null);
@@ -56,7 +52,7 @@ public class StudentSetting extends AppCompatActivity {
             builder.setCancelable(false);
             builder.setView(Layout);
             AlertDialog alertDialog = builder.create();
-            Logout.setOnClickListener(v1->{
+            Logout.setOnClickListener(v1 -> {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.clear();
                 editor.apply();

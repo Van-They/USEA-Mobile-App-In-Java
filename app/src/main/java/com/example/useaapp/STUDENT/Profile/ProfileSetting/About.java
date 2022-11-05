@@ -1,14 +1,12 @@
 package com.example.useaapp.STUDENT.Profile.ProfileSetting;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.useaapp.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import java.util.Objects;
+import com.example.useaapp.R;
 
 public class About extends AppCompatActivity {
 
@@ -18,10 +16,11 @@ public class About extends AppCompatActivity {
         setContentView(R.layout.activity_about);
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentAbout);
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(R.string.About);
         TextView AboutDetail = findViewById(R.id.AboutDetail);
         AboutDetail.setText(R.string.AboutDetail);
-        toolbar.setNavigationOnClickListener(v->finish());
+        toolbar.setNavigationOnClickListener(v -> finish());
     }
 }

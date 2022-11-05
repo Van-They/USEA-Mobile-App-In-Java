@@ -1,14 +1,12 @@
 package com.example.useaapp.STUDENT.Profile.ProfileSetting;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.useaapp.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import java.util.Objects;
+import com.example.useaapp.R;
 
 public class Legal extends AppCompatActivity {
 
@@ -19,9 +17,12 @@ public class Legal extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.CustomActionbarStudentLegal);
         setSupportActionBar(toolbar);
         setTitle(R.string.Legal);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+
+        assert getSupportActionBar() != null;
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         TextView LegalDetail = findViewById(R.id.LegalDetail);
         LegalDetail.setText(R.string.LegalDetail);
-        toolbar.setNavigationOnClickListener(v->finish());
+        toolbar.setNavigationOnClickListener(v -> finish());
     }
 }

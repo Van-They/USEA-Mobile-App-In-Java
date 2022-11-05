@@ -6,12 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.useaapp.R;
 import com.example.useaapp.GUEST.Adapter.Adapter_guest_event_tabbar;
+import com.example.useaapp.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
-import java.util.Objects;
 
 public class GuestEvent extends AppCompatActivity {
 
@@ -22,7 +20,8 @@ public class GuestEvent extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.CustomActionbarGuestEvent);
         setSupportActionBar(toolbar);
         setTitle(R.string.GuestEvent);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
         TabLayout tablayout = findViewById(R.id.tab_menu_guest_event);
         ViewPager2 pager2 = findViewById(R.id.view_pager_menu_guest_event);

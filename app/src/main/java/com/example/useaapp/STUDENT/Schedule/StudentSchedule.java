@@ -1,23 +1,23 @@
 package com.example.useaapp.STUDENT.Schedule;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
 import android.widget.CalendarView;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.useaapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class StudentSchedule extends AppCompatActivity {
     Toolbar toolbar;
     List<ScheduleModel> models;
     ListView Listview_student_schedule;
     Adpter_student_schedule adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +25,9 @@ public class StudentSchedule extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarStudentSchedule);
         setSupportActionBar(toolbar);
         setTitle(R.string.Schedule);
-        toolbar.setNavigationOnClickListener(v->finish());
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(v -> finish());
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Listview_student_schedule = findViewById(R.id.Listview_student_schedule);
         models = new ArrayList<>();
@@ -36,7 +37,7 @@ public class StudentSchedule extends AppCompatActivity {
         calendarView.setOnDateChangeListener((view, year, month, dayofMonth) -> {
             models.clear();
             models.add(new ScheduleModel(dayofMonth, month, year));
-            adapter = new Adpter_student_schedule(getApplicationContext(),models);
+            adapter = new Adpter_student_schedule(getApplicationContext(), models);
             adapter.notifyDataSetChanged();
             Listview_student_schedule.setAdapter(adapter);
         });

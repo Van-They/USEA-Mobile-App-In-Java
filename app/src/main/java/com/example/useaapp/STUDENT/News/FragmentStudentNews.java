@@ -2,15 +2,13 @@ package com.example.useaapp.STUDENT.News;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_news;
@@ -18,17 +16,18 @@ import com.example.useaapp.STUDENT.Adapter.Adapter_news;
 import java.util.ArrayList;
 
 public class FragmentStudentNews extends Fragment {
-    ListView listView;
-    ArrayList<ModelNews> listNews;
-    private final static String Subject ="Subject";
-    private final static String Date ="Date";
-    private final static String Due_Date ="Due_Date";
-    private final static String Time ="Time";
-    private final static String Room ="Room";
-    private final static String Creator ="Creator";
-    private final static String Label ="Label";
+    private final static String Subject = "Subject";
+    private final static String Date = "Date";
+    private final static String Due_Date = "Due_Date";
+    private final static String Time = "Time";
+    private final static String Room = "Room";
+    private final static String Creator = "Creator";
+    private final static String Label = "Label";
     private final static String Instruction = "Instruction";
     private final static String Score = "Score";
+    ListView listView;
+    ArrayList<ModelNews> listNews;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,15 +42,15 @@ public class FragmentStudentNews extends Fragment {
         listView.setOnItemClickListener((parent, view1, position, id) -> {
             Toast.makeText(getContext(), "បានចុច -> " + listNews.get(position).getLabel(), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getContext(), NewsItemsDetail.class);
-            intent.putExtra(Subject,listNews.get(position).getSubject());
-            intent.putExtra(Date,listNews.get(position).getDate());
-            intent.putExtra(Due_Date,listNews.get(position).getDue_date());
-            intent.putExtra(Time,listNews.get(position).getTime());
-            intent.putExtra(Room,listNews.get(position).getRoom());
-            intent.putExtra(Creator,listNews.get(position).getCreator());
-            intent.putExtra(Label,listNews.get(position).getLabel());
-            intent.putExtra(Instruction,listNews.get(position).getInstruction());
-            intent.putExtra(Score,listNews.get(position).getScore());
+            intent.putExtra(Subject, listNews.get(position).getSubject());
+            intent.putExtra(Date, listNews.get(position).getDate());
+            intent.putExtra(Due_Date, listNews.get(position).getDue_date());
+            intent.putExtra(Time, listNews.get(position).getTime());
+            intent.putExtra(Room, listNews.get(position).getRoom());
+            intent.putExtra(Creator, listNews.get(position).getCreator());
+            intent.putExtra(Label, listNews.get(position).getLabel());
+            intent.putExtra(Instruction, listNews.get(position).getInstruction());
+            intent.putExtra(Score, listNews.get(position).getScore());
             startActivity(intent);
         });
 
