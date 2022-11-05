@@ -1,6 +1,7 @@
 package com.example.useaapp.GUEST;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -11,9 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.useaapp.Custom_toast;
 import com.example.useaapp.GUEST.Home.FragmentGuestHome;
+import com.example.useaapp.GUEST.Login.GuestLogin;
 import com.example.useaapp.GUEST.More.FragmentGuestMore;
 import com.example.useaapp.R;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainGuestActivity extends AppCompatActivity {
 
@@ -38,6 +42,17 @@ public class MainGuestActivity extends AppCompatActivity {
             return true;
         });
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser mUser = mAuth.getCurrentUser();
+        if (mUser == null) {
+            finish();
+            startActivity(new Intent(MainGuestActivity.this, GuestLogin.class));
+        }
     }
 
     @Override

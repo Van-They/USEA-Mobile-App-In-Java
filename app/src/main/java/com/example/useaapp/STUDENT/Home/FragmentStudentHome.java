@@ -5,17 +5,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.useaapp.GUEST.Login.GuestLogin;
 import com.example.useaapp.GUEST.MainGuestActivity;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_category;
@@ -27,14 +24,11 @@ import com.example.useaapp.STUDENT.Schedule.StudentSchedule;
 import com.example.useaapp.STUDENT.Score.Score.StudentScore;
 import com.example.useaapp.STUDENT.StudyPlan.StudentStudyPlan;
 
-import java.util.Objects;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FragmentStudentHome extends Fragment {
 
-    SharedPreferences sharedPreferences;
-    CircleImageView profile_dashboard;
+    public static final String text = "txt";
     private final static String SHARE_PREFNAME = "Student_Name";
     private final static String PROFILE_NAME = "Profile_Picture";
     private final static String major_name = "major_name";
@@ -43,17 +37,17 @@ public class FragmentStudentHome extends Fragment {
     private final static String shift = "shift";
     private final static String dob = "dob";
     private final static String ph = "ph";
-    public static final String text = "txt";
-
     //category
     private final String[] title_category = {"កាលវិភាគ", "ផែនការសិក្សា", "វត្តមាន", "មតិកែលម្អ", "ពិន្ទុ", "គណនីភ្ញៀវ"};
     private final int[] image_category = {R.drawable.calendar_icon,
             R.drawable.studyplan_icon, R.drawable.attendance_icon,
             R.drawable.feedback_icon, R.drawable.score_icon, R.drawable.guest_icon};
-    //for card view rank and credit on dashboard
-    String[] rank_credit = {"#1st Rank", "300"};
     private final String[] label_rank_credit = {"Student Rank", "Total Credit"};
     private final int[] image_rank_credit = {R.drawable.rank_icon, R.drawable.credit_icon};
+    SharedPreferences sharedPreferences;
+    CircleImageView profile_dashboard;
+    //for card view rank and credit on dashboard
+    String[] rank_credit = {"#1st Rank", "300"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,7 +59,6 @@ public class FragmentStudentHome extends Fragment {
         TextView student_name_dashboard = view.findViewById(R.id.student_name_dashboard);
         sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         String st_name = sharedPreferences.getString("name", "");
-        String st_id = sharedPreferences.getString("Student_ID", "");
 
         String Maj = sharedPreferences.getString(major_name, "");
         String Sta = sharedPreferences.getString(stage, "");
@@ -86,6 +79,7 @@ public class FragmentStudentHome extends Fragment {
             editor.putString(shift, Shi);
             editor.putString(dob, Dob);
             editor.putString(ph, Pho);
+            editor.apply();
             Intent intent = new Intent(getContext(), StudentProfile.class);
             startActivity(intent);
 //            startActivity(new Intent(getContext(), StudentProfile.class));
@@ -96,30 +90,28 @@ public class FragmentStudentHome extends Fragment {
         gridView_category = view.findViewById(R.id.grid_view_dashboard);
         gridView_category.setAdapter(new Adapter_category(this.getContext(), title_category, image_category));
         gridView_category.setOnItemClickListener((parent, view1, position, id) -> {
-            if (Objects.equals(title_category[position], "កាលវិភាគ")) {
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getContext(), StudentSchedule.class));
-            } else if (Objects.equals(title_category[position], "ផែនការសិក្សា")) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Student_ID", st_id);
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(), StudentStudyPlan.class);
-                intent.putExtra(text, "txt");
-                startActivity(intent);
-            } else if (Objects.equals(title_category[position], "វត្តមាន")) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Student_ID", st_id);
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getContext(), StudentAttendance.class));
-            } else if (Objects.equals(title_category[position], "មតិកែលម្អ")) {
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getContext(), StudentFeedback.class));
-            } else if (Objects.equals(title_category[position], "ពិន្ទុ")) {
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getContext(), StudentScore.class));
-            } else if (Objects.equals(title_category[position], "គណនីភ្ញៀវ")) {
-                Toast.makeText(getContext(), title_category[position], Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getContext(), MainGuestActivity.class));
+            switch (title_category[position]) {
+                case "កាលវិភាគ":
+                    startActivity(new Intent(getContext(), StudentSchedule.class));
+                    break;
+                case "ផែនការសិក្សា":
+                    Intent intent = new Intent(getContext(), StudentStudyPlan.class);
+                    intent.putExtra(text, "txt");
+                    startActivity(intent);
+                    break;
+                case "វត្តមាន":
+                    startActivity(new Intent(getContext(), StudentAttendance.class));
+                    break;
+                case "មតិកែលម្អ":
+                    startActivity(new Intent(getContext(), StudentFeedback.class));
+                    break;
+                case "ពិន្ទុ":
+                    startActivity(new Intent(getContext(), StudentScore.class));
+                    break;
+                case "គណនីភ្ញៀវ":
+                    startActivity(new Intent(getContext(), MainGuestActivity.class));
+                    break;
+
             }
         });
         return view;

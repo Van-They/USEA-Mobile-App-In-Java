@@ -6,10 +6,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,17 +25,15 @@ import retrofit2.Response;
 
 public class StudentLogin extends AppCompatActivity {
 
-    SharedPreferences sharedPreferences;
     private final static String SHARE_PREFNAME = "Student_Name";
     private final static String Student_Name = "name";
-
     private final static String major_name = "major_name";
     private final static String stage = "stage";
     private final static String academic = "academic";
     private final static String shift = "shift";
     private final static String dob = "dob";
     private final static String ph = "ph";
-
+    SharedPreferences sharedPreferences;
     EditText Student_Id, Student_pwd;
     MaterialButton buttonLogin;
 
@@ -155,7 +153,7 @@ public class StudentLogin extends AppCompatActivity {
             @Override
             public void onFailure(Call<ModelResponse> call, Throwable t) {
                 toast.showToast("ការចូលមានបញ្ហាចូលព្យាយាមម្តងនៅពេលក្រោយ");
-                new Handler().postDelayed(() -> finishAffinity(),1500);
+                new Handler().postDelayed(() -> finishAffinity(), 1500);
             }
         });
     }
