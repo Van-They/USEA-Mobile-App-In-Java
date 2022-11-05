@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -91,11 +90,6 @@ public class StudentLogin extends AppCompatActivity {
             }
         });
 
-
-        //check if student already login
-        if (!Student_name.equals("")) {
-            startActivity(new Intent(getApplicationContext(), MainStudentActivity.class));
-        }
 
         buttonLogin.setOnClickListener(this::login);
 

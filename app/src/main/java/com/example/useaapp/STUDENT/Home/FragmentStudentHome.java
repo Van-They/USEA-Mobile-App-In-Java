@@ -5,13 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -26,6 +24,8 @@ import com.example.useaapp.STUDENT.Profile.StudentProfile;
 import com.example.useaapp.STUDENT.Schedule.StudentSchedule;
 import com.example.useaapp.STUDENT.Score.Score.StudentScore;
 import com.example.useaapp.STUDENT.StudyPlan.StudentStudyPlan;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -113,7 +113,12 @@ public class FragmentStudentHome extends Fragment {
                     startActivity(new Intent(getContext(), StudentScore.class));
                     break;
                 case "គណនីភ្ញៀវ":
-                    startActivity(new Intent(getContext(), MainGuestActivity.class));
+                    FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
+                    if (mUser !=null){
+                        startActivity(new Intent(getContext(), MainGuestActivity.class));
+                    }else {
+                        startActivity(new Intent(getContext(), GuestLogin.class));
+                    }
                     break;
 
             }

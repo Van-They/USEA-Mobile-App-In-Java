@@ -18,10 +18,11 @@ import com.example.useaapp.databinding.ActivityMainStudentBinding;
 import com.example.useaapp.databinding.CustomDialogBackBinding;
 
 public class MainStudentActivity extends AppCompatActivity {
-    ActivityMainStudentBinding binding;
     private final static String Student_Name = "name";
     private final static String SHARE_PREFNAME = "Student_Name";
+    ActivityMainStudentBinding binding;
     SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,12 @@ public class MainStudentActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.customActionbarMainStudent.toolbar);
         setTitle(R.string.StudentAccount);
-        sharedPreferences = getSharedPreferences(SHARE_PREFNAME,MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);
+        String st_name = sharedPreferences.getString(Student_Name, "");
+        if (st_name.equals("")) {
+            finish();
+            startActivity(new Intent(MainStudentActivity.this, StudentLogin.class));
+        }
         binding.customActionbarMainStudent.toolbar.setVisibility(View.GONE);
         getSupportFragmentManager().beginTransaction().replace(R.id.Frame_category, new FragmentStudentHome()).commit();
         binding.bottomNavigationBarStudent.setOnItemSelectedListener(item -> {
@@ -46,16 +52,6 @@ public class MainStudentActivity extends AppCompatActivity {
             }
             return true;
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        String st_name = sharedPreferences.getString(Student_Name,"");
-        if (st_name.equals("")){
-            finish();
-            startActivity(new Intent(MainStudentActivity.this, StudentLogin.class));
-        }
     }
 
     @Override

@@ -16,24 +16,24 @@ import androidx.fragment.app.Fragment;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
-import com.example.useaapp.R;
 import com.example.useaapp.GUEST.Adapter.GuestCategoryAdapter;
 import com.example.useaapp.GUEST.Career.GuestCareer;
 import com.example.useaapp.GUEST.Events.GuestEvent;
 import com.example.useaapp.GUEST.Program.GuestProgram;
 import com.example.useaapp.GUEST.Registration.GuestRegistration;
 import com.example.useaapp.GUEST.Scholarship.GuestScholarship;
-import com.example.useaapp.STUDENT.MainStudentActivity;
+import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Login.StudentLogin;
+import com.example.useaapp.STUDENT.MainStudentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentGuestHome extends Fragment {
-    SharedPreferences sharedPreferences;
     private final static String SHARE_PREFNAME = "Student_Name";
     private final String[] tittleCategory = {"ព្រឹត្តិការណ៍", "ការចុះឈ្មោះ", "កម្មវិធីសិក្សា", "អាហាររូបករណ៍", "ព័ត៌មានការងារ", "គណនីសិស្ស"};
     private final int[] imageCategory = {R.drawable.news_icon, R.drawable.registration_icon, R.drawable.program_icon, R.drawable.scholarship_icon, R.drawable.career_icon, R.drawable.student_icon};
+    SharedPreferences sharedPreferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,15 +49,17 @@ public class FragmentGuestHome extends Fragment {
         slide_image.setImageList(slideModels, ScaleTypes.FIT);
 
         GridView categoryDashboard = view.findViewById(R.id.categoryDashboard);
+        sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);//method shared preference
+        String Student_name = sharedPreferences.getString("name", "");//get name of student from sharedPreferenc
 
         categoryDashboard.setAdapter(new GuestCategoryAdapter(this.getContext(), tittleCategory, imageCategory));
         categoryDashboard.setOnItemClickListener((parent, view1, position, id) -> {
-            switch (tittleCategory[position]){
+            switch (tittleCategory[position]) {
                 case "ព្រឹត្តិការណ៍":
                     startActivity(new Intent(getContext(), GuestEvent.class));
                     break;
                 case "ការចុះឈ្មោះ":
-                    startActivity(new Intent(getContext(),GuestRegistration.class));
+                    startActivity(new Intent(getContext(), GuestRegistration.class));
                     break;
                 case "កម្មវិធីសិក្សា":
                     Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
@@ -72,20 +74,17 @@ public class FragmentGuestHome extends Fragment {
                     startActivity(new Intent(getContext(), GuestCareer.class));
                     break;
                 case "គណនីសិស្ស":
-                        startActivity(new Intent(getContext(),MainStudentActivity.class));
-                    sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);//method shared preference
-                    String Student_name = sharedPreferences.getString("name", "");//get name of student from sharedPreferenc
                     //check if student already login
-                    if (!Student_name.equals("") && Student_name.isEmpty()) {
+                    if (!Student_name.equals("")) {
                         requireActivity().finish();
                         startActivity(new Intent(requireContext(), MainStudentActivity.class));
-                    }else {
+                    } else {
                         requireActivity().finish();
-                        startActivity(new Intent(requireContext(),StudentLogin.class));
+                        startActivity(new Intent(requireContext(), StudentLogin.class));
                     }
                     break;
             }
-       });
+        });
         return view;
     }
 }
