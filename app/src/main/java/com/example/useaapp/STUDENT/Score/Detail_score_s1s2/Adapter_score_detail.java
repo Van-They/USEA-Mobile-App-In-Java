@@ -9,69 +9,67 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.R;
+import com.example.useaapp.STUDENT.Adapter.Adapter_score_semester;
+import com.example.useaapp.STUDENT.Score.Score.ModelScore;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Adapter_score_detail extends ArrayAdapter<ModelDetail> {
-    public Adapter_score_detail(@NonNull Context context, ArrayList<ModelDetail> list) {
-        super(context, R.layout.custom_cardview_item_score_detail, list);
-    }
-
-    @Override
-    public boolean isEnabled(int position) {
-        return false;
+public class Adapter_score_detail extends RecyclerView.Adapter<Adapter_score_detail.ViewHolder> {
+    List<ModelScore> data;
+    public Adapter_score_detail(List<ModelScore> data) {
+        this.data = data;
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        TextView Attendance_student_score_detail,
-                Subject_student_score_detail,
-                Exercise_student_score_detail,
-                Homework_student_score_detail,
-                Midterm_student_score_detail,
-                Assignment_student_score_detail,
-                Semester_exam_student_score_detail;//student score list detail
-        TextView Total_student_score_detail,
-                Average_student_score_detail,
-                Rank_student_score_detail,
-                Grade_student_score_detail;//total Score Detail
-        ModelDetail modelDetail = getItem(position);
-        if (convertView == null)
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_cardview_item_score_detail, parent, false);
-        //student score list detail
-        Subject_student_score_detail = convertView.findViewById(R.id.Subject_student_score_detail);
-        Attendance_student_score_detail = convertView.findViewById(R.id.Attendance_student_score_detail);
-        Exercise_student_score_detail = convertView.findViewById(R.id.Exercise_student_score_detail);
-        Homework_student_score_detail = convertView.findViewById(R.id.Homework_student_score_detail);
-        Midterm_student_score_detail = convertView.findViewById(R.id.Midterm_student_score_detail);
-        Semester_exam_student_score_detail = convertView.findViewById(R.id.Semester_exam_student_score_detail);
-        Assignment_student_score_detail=convertView.findViewById(R.id.Assignment_student_score_detail);
+    public Adapter_score_detail.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_cardview_item_score_detail, parent, false);
+        return new Adapter_score_detail.ViewHolder(view);
+    }
 
-        //total Score Detail
-        Total_student_score_detail = convertView.findViewById(R.id.Total_student_score_detail);
-        Average_student_score_detail = convertView.findViewById(R.id.Average_student_score_detail);
-        Rank_student_score_detail = convertView.findViewById(R.id.Rank_student_score_detail);
-        Grade_student_score_detail = convertView.findViewById(R.id.Grade_student_score_detail);
+    @Override
+    public void onBindViewHolder(@NonNull Adapter_score_detail.ViewHolder holder, int position) {
+        holder.Subject_student_score_detail.setText(data.get(position).getSubject_name());
+        holder.Attendance_student_score_detail.setText(data.get(position).getSc_at());
+        holder.Exercise_student_score_detail.setText(data.get(position).getSc_ex());
+        holder.Homework_student_score_detail.setText(data.get(position).getSc_hw());
+        holder.Assignment_student_score_detail.setText(data.get(position).getSc_as());
+        holder.Midterm_student_score_detail.setText(data.get(position).getSc_mt());
+        holder.Semester_exam_student_score_detail.setText(data.get(position).getSc_fn());
+        holder.Total_student_score_detail.setText(data.get(position).getTotal_Score());
+        holder.Average_student_score_detail.setText(data.get(position).getAverage_Score());
+        holder.Rank_student_score_detail.setText(data.get(position).getGrade());
+        holder.Grade_student_score_detail.setText(data.get(position).getGrade());
+    }
 
-        //student score list detail
-        Subject_student_score_detail.setText(modelDetail.getTitle());
-        Attendance_student_score_detail.setText(modelDetail.getAttendance());
-        Exercise_student_score_detail.setText(modelDetail.getExercise());
-        Homework_student_score_detail.setText(modelDetail.getHomework());
-        Midterm_student_score_detail.setText(modelDetail.getMidterm());
-        Semester_exam_student_score_detail.setText(modelDetail.getSemester_exam());
-        Assignment_student_score_detail.setText(modelDetail.getAssignment());
+    @Override
+    public int getItemCount() {
+        return data.size();
+    }
 
-        //total Score Detail
-        Total_student_score_detail.setText(modelDetail.getTotal());
-        Average_student_score_detail.setText(modelDetail.getAverage());
-        Rank_student_score_detail.setText(modelDetail.getRank());
-        Grade_student_score_detail.setText(modelDetail.getGrade());
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+        TextView Subject_student_score_detail, Attendance_student_score_detail, Exercise_student_score_detail,
+                Homework_student_score_detail, Assignment_student_score_detail, Midterm_student_score_detail,
+                Semester_exam_student_score_detail,Total_student_score_detail, Average_student_score_detail,
+                Rank_student_score_detail, Grade_student_score_detail;
 
-
-        return convertView;
+        public ViewHolder(@NonNull View itemView){
+            super(itemView);
+            Subject_student_score_detail = itemView.findViewById(R.id.Subject_student_score_detail);
+            Attendance_student_score_detail = itemView.findViewById(R.id.Attendance_student_score_detail);
+            Exercise_student_score_detail = itemView.findViewById(R.id.Exercise_student_score_detail);
+            Homework_student_score_detail = itemView.findViewById(R.id.Homework_student_score_detail);
+            Assignment_student_score_detail = itemView.findViewById(R.id.Assignment_student_score_detail);
+            Midterm_student_score_detail = itemView.findViewById(R.id.Midterm_student_score_detail);
+            Semester_exam_student_score_detail = itemView.findViewById(R.id.Semester_exam_student_score_detail);
+            Total_student_score_detail = itemView.findViewById(R.id.Total_student_score_detail);
+            Average_student_score_detail = itemView.findViewById(R.id.Average_student_score_detail);
+            Rank_student_score_detail = itemView.findViewById(R.id.Rank_student_score_detail);
+            Grade_student_score_detail = itemView.findViewById(R.id.Grade_student_score_detail);
+        }
     }
 }

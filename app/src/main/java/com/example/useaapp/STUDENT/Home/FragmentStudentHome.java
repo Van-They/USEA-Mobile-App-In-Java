@@ -5,14 +5,17 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.useaapp.GUEST.Login.GuestLogin;
 import com.example.useaapp.GUEST.MainGuestActivity;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_category;
@@ -28,7 +31,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FragmentStudentHome extends Fragment {
 
-    public static final String text = "txt";
+    SharedPreferences sharedPreferences;
+    CircleImageView profile_dashboard;
     private final static String SHARE_PREFNAME = "Student_Name";
     private final static String PROFILE_NAME = "Profile_Picture";
     private final static String major_name = "major_name";
@@ -37,17 +41,17 @@ public class FragmentStudentHome extends Fragment {
     private final static String shift = "shift";
     private final static String dob = "dob";
     private final static String ph = "ph";
+    public static final String text = "txt";
+
     //category
     private final String[] title_category = {"កាលវិភាគ", "ផែនការសិក្សា", "វត្តមាន", "មតិកែលម្អ", "ពិន្ទុ", "គណនីភ្ញៀវ"};
     private final int[] image_category = {R.drawable.calendar_icon,
             R.drawable.studyplan_icon, R.drawable.attendance_icon,
             R.drawable.feedback_icon, R.drawable.score_icon, R.drawable.guest_icon};
-    private final String[] label_rank_credit = {"Student Rank", "Total Credit"};
-    private final int[] image_rank_credit = {R.drawable.rank_icon, R.drawable.credit_icon};
-    SharedPreferences sharedPreferences;
-    CircleImageView profile_dashboard;
     //for card view rank and credit on dashboard
     String[] rank_credit = {"#1st Rank", "300"};
+    private final String[] label_rank_credit = {"Student Rank", "Total Credit"};
+    private final int[] image_rank_credit = {R.drawable.rank_icon, R.drawable.credit_icon};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
