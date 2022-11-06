@@ -1,8 +1,18 @@
-package com.example.useaapp.GUEST.Program;
+package com.example.useaapp.GUEST;
 
+import com.example.useaapp.GUEST.Career.Response_model_guest_career;
+import com.example.useaapp.GUEST.Events.announcement.Response_model_guest_event_announcement;
+import com.example.useaapp.GUEST.Events.current.Response_model_guest_event_current;
+import com.example.useaapp.GUEST.Events.past.Response_model_guest_event_past;
+import com.example.useaapp.GUEST.Events.upcoming.Response_model_guest_event_upcoming;
+import com.example.useaapp.GUEST.More.about_us.Response_model_guest_about_us_more;
+import com.example.useaapp.GUEST.More.faq.Response_model_guest_faq_more;
+import com.example.useaapp.GUEST.Program.Response_model_guest_program_faculty;
 import com.example.useaapp.GUEST.Program.associative.Response_model_guest_program_faculty_asso;
 import com.example.useaapp.GUEST.Program.bachelor.Response_model_guest_program_faculty_bachelor;
 import com.example.useaapp.GUEST.Program.master.Response_model_guest_program_faculty_master;
+import com.example.useaapp.GUEST.Registration.Response_model_guest_registration;
+import com.example.useaapp.GUEST.Scholarship.Response_model_guest_scholarship;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan_Thesis;
 
@@ -11,14 +21,34 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface Apiset_guest_program_faculty
+public interface Apiset_guest
 {
+    @GET("fetch_guest_career.php")
+    Call<List<Response_model_guest_career>> getdata_career();
 
-//    Faculty
-   @GET("fetch_guest_program_faculty.php")
+    @GET("fetch_guest_event_announcement.php")
+    Call<List<Response_model_guest_event_announcement>> getdata_event_announcement();
+
+    @GET("fetch_guest_event_current.php")
+    Call<List<Response_model_guest_event_current>> getdata_event_current();
+
+    @GET("fetch_guest_event_past.php")
+    Call<List<Response_model_guest_event_past>> getdata_event_past();
+
+    @GET("fetch_guest_event_upcoming.php")
+    Call<List<Response_model_guest_event_upcoming>> getdata_event_upcoming();
+
+    @GET("fetch_guest_more_about_us.php")
+    Call<List<Response_model_guest_about_us_more>> getData_about_us_more();
+
+    @GET("fetch_guest_more_faq.php")
+    Call<List<Response_model_guest_faq_more>> getData_faq_more();
+
+    //    Faculty
+    @GET("fetch_guest_program_faculty.php")
     Call<List<Response_model_guest_program_faculty>> get_guest_pro_fac();
 
-//   Faculty វិទ្យាសាស្ត្រសង្គម និងនីតិសាស្ត្រ
+    //   Faculty វិទ្យាសាស្ត្រសង្គម និងនីតិសាស្ត្រ
     @GET("fetch_guest_fac1_bach_major_id1.php")
     Call<List<Response_model_guest_program_faculty_bachelor>> get_guest_pro_fac_bac1();
 
@@ -313,5 +343,11 @@ public interface Apiset_guest_program_faculty
     //   Faculty សិល្បៈ មនុស្សសាស្ត្រ និងការអប់រំ Khmer
     @GET("fetch_guest_fac4_bach_major_kh_y4s2.php")
     Call<List<Response_model_SemesterStudyPlan>> get_guest_pro_fac_bac4_kh_y4s2();
+
+    @GET("fetch_guest_registration.php")
+    Call<List<Response_model_guest_registration>> getdata_registration();
+
+    @GET("fetch_guest_scholarship.php")
+    Call<List<Response_model_guest_scholarship>> getdata_scholarship();
 
 }

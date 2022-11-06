@@ -11,17 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.useaapp.Data_Progressing;
-import com.example.useaapp.GUEST.Program.ApiController_guest_program_faculty;
-import com.example.useaapp.GUEST.Program.bachelor.Adapter_guest_program_faculty_bachelor;
-import com.example.useaapp.GUEST.Program.bachelor.Response_model_guest_program_faculty_bachelor;
+import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.R;
-import com.example.useaapp.GUEST.Program.Adapter_program_detail;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -60,7 +55,7 @@ public class Fragment_master extends Fragment {
     public void processdata1() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_guest_program_faculty_master>> call = ApiController_guest_program_faculty
+        Call<List<Response_model_guest_program_faculty_master>> call = ApiController_guest
                 .getInstance()
                 .getapi_fac2_mast_major_id2()
                 .get_guest_pro_fac_mast2();

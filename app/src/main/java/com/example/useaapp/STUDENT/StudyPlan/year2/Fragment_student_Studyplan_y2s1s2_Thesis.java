@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.Data_Progressing;
-import com.example.useaapp.GUEST.Program.ApiController_guest_program_faculty;
+import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Adapter_student_Studyplan_Semester_Thesis;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan_Thesis;
@@ -82,17 +82,17 @@ public class Fragment_student_Studyplan_y2s1s2_Thesis extends Fragment {
     public void processdata1() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_SemesterStudyPlan_Thesis>> call1 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan_Thesis>> call1 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_mast_th_major_id2_mnm_y2t1()
                 .get_guest_pro_fac_mast2_th_mnm_y2t1();
 
-        Call<List<Response_model_SemesterStudyPlan_Thesis>> call2 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan_Thesis>> call2 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_mast_th_major_id2_mnm_y2t2()
                 .get_guest_pro_fac_mast2_th_mnm_y2t2();
 
-        Call<List<Response_model_SemesterStudyPlan_Thesis>> call3 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan_Thesis>> call3 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_mast_th_major_id2_mnm_y2t3()
                 .get_guest_pro_fac_mast2_th_mnm_y2t3();
@@ -183,17 +183,17 @@ public class Fragment_student_Studyplan_y2s1s2_Thesis extends Fragment {
     public void processdata2() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_SemesterStudyPlan_Thesis>> call1 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan_Thesis>> call1 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_mast_nth_major_id2_mnm_y2t1()
                 .get_guest_pro_fac_mast2_nth_mnm_y2t1();
 
-        Call<List<Response_model_SemesterStudyPlan_Thesis>> call2 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan_Thesis>> call2 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_mast_nth_major_id2_mnm_y2t2()
                 .get_guest_pro_fac_mast2_nth_mnm_y2t2();
 
-        Call<List<Response_model_SemesterStudyPlan_Thesis>> call3 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan_Thesis>> call3 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_mast_nth_major_id2_mnm_y2t3()
                 .get_guest_pro_fac_mast2_nth_mnm_y2t3();

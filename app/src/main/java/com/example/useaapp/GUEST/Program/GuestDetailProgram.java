@@ -59,7 +59,7 @@ public class GuestDetailProgram extends AppCompatActivity {
                         ChangeFragment(new Fragment_master());
                         break;
                     default:
-                        Toast.makeText(GuestDetailProgram.this, "Hi", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(GuestDetailProgram.this, "Failed", Toast.LENGTH_SHORT).show();
                 }
             }
 

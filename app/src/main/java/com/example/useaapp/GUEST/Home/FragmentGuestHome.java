@@ -62,15 +62,12 @@ public class FragmentGuestHome extends Fragment {
                     startActivity(new Intent(getContext(), GuestRegistration.class));
                     break;
                 case "កម្មវិធីសិក្សា":
-                    Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getContext(), GuestProgram.class));
                     break;
                 case "អាហាររូបករណ៍":
-                    Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getContext(), GuestScholarship.class));
                     break;
                 case "ព័ត៌មានការងារ":
-                    Toast.makeText(getContext(), tittleCategory[position], Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getContext(), GuestCareer.class));
                     break;
                 case "គណនីសិស្ស":

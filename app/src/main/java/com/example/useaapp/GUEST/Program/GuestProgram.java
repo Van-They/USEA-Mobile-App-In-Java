@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.Data_Progressing;
+import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.R;
 
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class GuestProgram extends AppCompatActivity {
     public void Process_data() {
         Data_Progressing dialog = new Data_Progressing(this);
         dialog.showDialog();
-        Call<List<Response_model_guest_program_faculty>> call = ApiController_guest_program_faculty
+        Call<List<Response_model_guest_program_faculty>> call = ApiController_guest
                 .getInstance()
                 .getapi_fac()
                 .get_guest_pro_fac();

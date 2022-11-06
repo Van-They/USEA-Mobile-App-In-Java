@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.Data_Progressing;
-import com.example.useaapp.GUEST.Program.ApiController_guest_program_faculty;
+import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.R;
 
 import java.util.List;
@@ -61,7 +61,7 @@ public class Fragment_bachelor extends Fragment {
     public void processdata1() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_guest_program_faculty_bachelor>> call = ApiController_guest_program_faculty
+        Call<List<Response_model_guest_program_faculty_bachelor>> call = ApiController_guest
                 .getInstance()
                 .getapi_fac1_bach_major_id1()
                 .get_guest_pro_fac_bac1();
@@ -91,7 +91,7 @@ public class Fragment_bachelor extends Fragment {
     public void processdata2() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_guest_program_faculty_bachelor>> call = ApiController_guest_program_faculty
+        Call<List<Response_model_guest_program_faculty_bachelor>> call = ApiController_guest
                 .getInstance()
                 .getapi_fac2_bach_major_id2()
                 .get_guest_pro_fac_bac2();
@@ -121,7 +121,7 @@ public class Fragment_bachelor extends Fragment {
     public void processdata3() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_guest_program_faculty_bachelor>> call = ApiController_guest_program_faculty
+        Call<List<Response_model_guest_program_faculty_bachelor>> call = ApiController_guest
                 .getInstance()
                 .getapi_fac3_bach_major_id3()
                 .get_guest_pro_fac_bac3();
@@ -151,7 +151,7 @@ public class Fragment_bachelor extends Fragment {
     public void processdata4() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_guest_program_faculty_bachelor>> call = ApiController_guest_program_faculty
+        Call<List<Response_model_guest_program_faculty_bachelor>> call = ApiController_guest
                 .getInstance()
                 .getapi_fac4_bach_major_id4()
                 .get_guest_pro_fac_bac4();

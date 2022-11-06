@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.Data_Progressing;
-import com.example.useaapp.GUEST.Program.ApiController_guest_program_faculty;
+import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.ApiController_student;
 
@@ -95,12 +95,12 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
     public void processdata1() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest
                 .getInstance()
                 .getapi_fac3_bach_major_id3_it_y1s1()
                 .get_guest_pro_fac_bac3_it_y1s1();
 
-        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest
                 .getInstance()
                 .getapi_fac3_bach_major_id3_it_y1s2()
                 .get_guest_pro_fac_bac3_it_y1s2();
@@ -178,12 +178,12 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
 
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest
                 .getInstance()
                 .getapi_fac3_bach_major_id3_math_y1s1()
                 .get_guest_pro_fac_bac3_math_y1s1();
 
-        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest
                 .getInstance()
                 .getapi_fac3_bach_major_id3_math_y1s2()
                 .get_guest_pro_fac_bac3_math_y1s2();
@@ -260,12 +260,12 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
     public void processdata3() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_bach_major_id2_acc_y1s1()
                 .get_guest_pro_fac_bac2_acc_y1s1();
 
-        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_bach_major_id2_acc_y1s2()
                 .get_guest_pro_fac_bac2_acc_y1s2();
@@ -342,12 +342,12 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
     public void processdata4() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_bach_major_id2_fin_y1s1()
                 .get_guest_pro_fac_bac2_fin_y1s1();
 
-        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_bach_major_id2_fin_y1s2()
                 .get_guest_pro_fac_bac2_fin_y1s2();
@@ -424,12 +424,12 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
     public void processdata5() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest
                 .getInstance()
                 .getapi_fac4_bach_major_id4_mnm_y1s1()
                 .get_guest_pro_fac_bac4_mnm_y1s1();
 
-        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest
                 .getInstance()
                 .getapi_fac4_bach_major_id4_mnm_y1s2()
                 .get_guest_pro_fac_bac4_mnm_y1s2();
@@ -506,12 +506,12 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
     public void processdata6() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest
                 .getInstance()
                 .getapi_fac4_bach_major_id4_kh_y1s1()
                 .get_guest_pro_fac_bac4_kh_y1s1();
 
-        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest
                 .getInstance()
                 .getapi_fac4_bach_major_id4_kh_y1s2()
                 .get_guest_pro_fac_bac4_kh_y1s2();
@@ -588,12 +588,12 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
     public void processdata7() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call1 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_asso_major_id2_mnm_y1s1()
                 .get_guest_pro_fac_ass2_mnm_y1s1();
 
-        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest_program_faculty
+        Call<List<Response_model_SemesterStudyPlan>> call2 = ApiController_guest
                 .getInstance()
                 .getapi_fac2_asso_major_id2_mnm_y1s2()
                 .get_guest_pro_fac_ass2_mnm_y1s2();

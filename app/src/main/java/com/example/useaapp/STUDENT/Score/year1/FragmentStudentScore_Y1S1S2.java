@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,18 +16,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.Data_Progressing;
-import com.example.useaapp.GUEST.Program.ApiController_guest_program_faculty;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_score_semester;
-import com.example.useaapp.STUDENT.Adapter.ListviewHelper;
 import com.example.useaapp.STUDENT.ApiController_student;
-import com.example.useaapp.STUDENT.Score.Detail_score_s1s2.Fragment_score_s1;
 import com.example.useaapp.STUDENT.Score.Score.ModelScore;
 import com.example.useaapp.STUDENT.Score.Detail_score_s1s2.ScoreDetail;
-import com.example.useaapp.STUDENT.StudyPlan.year1.Adapter_student_Studyplan_Semester;
-import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;

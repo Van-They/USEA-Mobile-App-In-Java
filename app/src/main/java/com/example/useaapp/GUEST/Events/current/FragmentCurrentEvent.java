@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.Data_Progressing;
+import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.GUEST.Events.GuestEventModel;
 import com.example.useaapp.R;
 
@@ -50,10 +51,10 @@ public class FragmentCurrentEvent extends Fragment {
     public void processdata() {
         Data_Progressing dialog = new Data_Progressing(getContext());
         dialog.showDialog();
-        Call<List<Response_model_guest_event_current>> call = ApiController_guest_event_current
+        Call<List<Response_model_guest_event_current>> call = ApiController_guest
                 .getInstance()
-                .getapi()
-                .getdata();
+                .getapi_event_current()
+                .getdata_event_current();
 
         call.enqueue(new Callback<List<Response_model_guest_event_current>>() {
             @Override

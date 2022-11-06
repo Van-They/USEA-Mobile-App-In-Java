@@ -12,6 +12,7 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.useaapp.Data_Progressing;
+import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.R;
 
 import java.util.ArrayList;
@@ -54,10 +55,10 @@ public class GuestScholarship extends AppCompatActivity {
     {
         Data_Progressing loading = new Data_Progressing(this);
         loading.showDialog();
-        Call<List<Response_model_guest_scholarship>> call = ApiController_guest_scholarship
+        Call<List<Response_model_guest_scholarship>> call = ApiController_guest
                 .getInstance()
-                .getapi()
-                .getdata();
+                .getapi_scholarship()
+                        .getdata_scholarship();
 
         call.enqueue(new Callback<List<Response_model_guest_scholarship>>() {
             @Override

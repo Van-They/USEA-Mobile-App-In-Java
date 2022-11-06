@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.Data_Progressing;
+import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.R;
 
 import java.util.ArrayList;
@@ -46,10 +47,10 @@ public class GuestRegistration extends AppCompatActivity {
     public void Process_data() {
         Data_Progressing dialog = new Data_Progressing(this);
         dialog.showDialog();
-        Call<List<Response_model_guest_registration>> call = ApiController_guest_registration
+        Call<List<Response_model_guest_registration>> call = ApiController_guest
                 .getInstance()
-                .getapi()
-                .getdata();
+                .getapi_registration()
+                .getdata_registration();
 
         call.enqueue(new Callback<List<Response_model_guest_registration>>() {
             @Override

@@ -11,17 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.useaapp.Data_Progressing;
-import com.example.useaapp.GUEST.Program.ApiController_guest_program_faculty;
-import com.example.useaapp.GUEST.Program.bachelor.Adapter_guest_program_faculty_bachelor;
-import com.example.useaapp.GUEST.Program.bachelor.Response_model_guest_program_faculty_bachelor;
+import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.R;
-import com.example.useaapp.GUEST.Program.Adapter_program_detail;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -55,16 +50,12 @@ public class Fragment_associative extends Fragment {
 //
         if(txt.equals("1")){
 //            processdata1();
-            Toast.makeText(view.getContext(), "1", Toast.LENGTH_SHORT).show();
         }else if(txt.equals("2")){
             processdata2();
-            Toast.makeText(view.getContext(), "2", Toast.LENGTH_SHORT).show();
         }if(txt.equals("3")){
 //            processdata3();
-            Toast.makeText(view.getContext(), "3", Toast.LENGTH_SHORT).show();
         }else if(txt.equals("4")){
 //            processdata4();
-            Toast.makeText(view.getContext(), "4", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -72,7 +63,7 @@ public class Fragment_associative extends Fragment {
     public void processdata2() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
-        Call<List<Response_model_guest_program_faculty_asso>> call = ApiController_guest_program_faculty
+        Call<List<Response_model_guest_program_faculty_asso>> call = ApiController_guest
                 .getInstance()
                 .getapi_fac2_asso_major_id2()
                 .get_guest_pro_fac_ass2();

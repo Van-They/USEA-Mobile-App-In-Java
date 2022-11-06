@@ -54,7 +54,6 @@ public class Adapter_guest_program_faculty_asso extends RecyclerView.Adapter<Ada
         public void onClick(View view) {
             int position = getAdapterPosition();
             String txt = data.get(position).getId();
-            Toast.makeText(view.getContext(), "ID " + txt, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(view.getContext(), StudentStudyPlan.class);
             intent.putExtra(text, txt);
             view.getContext().startActivity(intent);

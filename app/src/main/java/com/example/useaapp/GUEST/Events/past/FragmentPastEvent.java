@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.useaapp.Data_Progressing;
+import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.R;
 import com.example.useaapp.GUEST.Events.GuestEventModel;
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -56,10 +57,10 @@ public class FragmentPastEvent extends Fragment {
     {
         Data_Progressing dialog = new Data_Progressing(getContext());
         dialog.showDialog();
-        Call<List<Response_model_guest_event_past>> call = ApiController_guest_event_past
+        Call<List<Response_model_guest_event_past>> call = ApiController_guest
                 .getInstance()
-                .getapi()
-                .getdata();
+                .getapi_event_past()
+                .getdata_event_past();
 
         call.enqueue(new Callback<List<Response_model_guest_event_past>>() {
             @Override
