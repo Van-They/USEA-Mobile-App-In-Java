@@ -4,11 +4,13 @@ import com.example.useaapp.STUDENT.Attendance.Response_model_student_attendance;
 import com.example.useaapp.STUDENT.Score.Score.ModelScore;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface Apiset_student
@@ -68,7 +70,6 @@ public interface Apiset_student
     Call<List<Response_model_SemesterStudyPlan>> get_stu_studyplan_y4s2(
             @Field("student_id") String student_id
     );
-
 
     @FormUrlEncoded
     //   Student Attendance

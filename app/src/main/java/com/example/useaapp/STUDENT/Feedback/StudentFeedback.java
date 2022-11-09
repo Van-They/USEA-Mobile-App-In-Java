@@ -44,6 +44,8 @@ public class StudentFeedback extends AppCompatActivity {
     EditText text_feed_back;
     File file;
     Uri uri;
+    RequestBody requestBody, filename, St_id, Feedback, Star;
+    Call<ServerResponse> call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,52 +58,53 @@ public class StudentFeedback extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
-
         String Student_ID = sharedPreferences.getString("Student_ID", "");
-
         btnSubmit_feedback = findViewById(R.id.submit_btn_feedback);
         ratingBar = findViewById(R.id.rating_star);
         text_feed_back = findViewById(R.id.text_feed_back);
         image_feedback = findViewById(R.id.image_feedback);
         text_feedback_image = findViewById(R.id.text_feedback_image);
-
-
         Data_Progressing loading = new Data_Progressing(StudentFeedback.this);
         Custom_toast toast = new Custom_toast(StudentFeedback.this);
+        ApiSetLogin apiSetLogin = ApiControlFeedback.getRetrofit().create(ApiSetLogin.class);
         btnSubmit_feedback.setOnClickListener(v -> {
             String star = String.valueOf((int) ratingBar.getRating());
             String feedback = text_feed_back.getText().toString();
             loading.showDialog();
-            file = new File(uri.getPath());
-            RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), file);
-            MultipartBody.Part fileUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
-            RequestBody filename = RequestBody.create(MediaType.parse("text/plain"), file.getName());
-            RequestBody St_id = RequestBody.create(MediaType.parse("text/plain"), Student_ID);
-            RequestBody Feedback = RequestBody.create(MediaType.parse("text/plain"), feedback);
-            RequestBody Star = RequestBody.create(MediaType.parse("text/plain"), star);
-
-            ApiSetLogin apiSetLogin = ApiControlFeedback.getRetrofit().create(ApiSetLogin.class);
-
-            Call<ServerResponse> call = apiSetLogin.sendFeedback(fileUpload, filename, St_id, Feedback, Star);
-            call.enqueue(new Callback<ServerResponse>() {
-                @Override
-                public void onResponse(Call<ServerResponse> call, Response<ServerResponse> response) {
-                    String msg = response.body().getResponse();
-                    if (msg.equals("OK")) {
-                        Log.d(TAG, "onResponse: " + msg);
-                    } else {
-                        Log.d(TAG, "onResponse: " + "Failed");
+            if (feedback.isEmpty() || star.isEmpty() || uri == null) {
+                loading.stopDialog();
+                toast.showToast("សូមបញ្ចូលព័ត៌មានអោយបានត្រឹមត្រូវ");
+            } else {
+                loading.showDialog();
+                file = new File(uri.getPath());
+                requestBody = RequestBody.create(MediaType.parse("image/*"), file);//get image file
+                MultipartBody.Part fileUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);//get image name
+                filename = RequestBody.create(MediaType.parse("text/plain"), file.getName());//push file name
+                St_id = RequestBody.create(MediaType.parse("text/plain"), Student_ID);//get student id
+                Feedback = RequestBody.create(MediaType.parse("text/plain"), feedback);//get text feedback
+                Star = RequestBody.create(MediaType.parse("text/plain"), star);//get star rating
+                call = apiSetLogin.sendFeedback(fileUpload, filename, St_id, Feedback, Star);
+                call.enqueue(new Callback<ServerResponse>() {
+                    @Override
+                    public void onResponse(Call<ServerResponse> call, Response<ServerResponse> response) {
+                        String msg = response.body().getResponse();
+                        if (msg.equals("OK")) {
+                            toast.showToast("ការផ្ញើជោគជ័យ");
+                            Log.d(TAG, "onResponse: " + msg);
+                        } else {
+                            toast.showToast("ការផ្ញើមិនជោគជ័យ");
+                            Log.d(TAG, "onResponse: " + "Failed");
+                        }
                     }
-                    loading.stopDialog();
-                }
 
-                @Override
-                public void onFailure(Call<ServerResponse> call, Throwable t) {
-                    loading.stopDialog();
-                    toast.showToast("ការភ្ជាប់មានបញ្ហាសូមព្យាយាមពេលក្រោយ");
-                }
-            });
-            btnSubmit_feedback.setEnabled(false);
+                    @Override
+                    public void onFailure(Call<ServerResponse> call, Throwable t) {
+                        loading.stopDialog();
+                        toast.showToast("ការភ្ជាប់មានបញ្ហាសូមព្យាយាមពេលក្រោយ");
+                        Log.d(TAG, "onFailure: "+t.toString());
+                    }
+                });
+            }
         });
     }
 
@@ -116,7 +119,6 @@ public class StudentFeedback extends AppCompatActivity {
                 .maxResultSize(1080, 1080)
                 .crop().compress(1024)
                 .start(10);
-        text_feedback_image.setVisibility(View.GONE);
     }
 
     @Override
@@ -124,6 +126,7 @@ public class StudentFeedback extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         assert data != null;
         uri = data.getData();
+        text_feedback_image.setText(uri.getPath());
         image_feedback.setImageURI(uri);
     }
 }

@@ -40,7 +40,7 @@
     <string name="Attendance">វត្តមាន</string>
     <string name="How_would_you_rate_your_experience_using_this_app">តើអ្នកនឹងវាយតម្លៃបទពិសោធន៍របស់អ្នកយ៉ាងដូចម្តេច?</string>
     <string name="Help_us_by_describing_your_problem">សូមជួយពិពណ៌នាអំពីបញ្ហារបស់អ្នក!</string>
-    <string name="Write_your_problem_here">Write your problem here.</string>
+    <string name="Write_your_thought">សូមសរសេរមតិយោបល់របស់អ្នកនៅទីនេះ</string>
     <string name="Optional">(Optional)</string>
     <string name="Do_you_have_any_screenshot">តើអ្នកមានរូបដែលទាក់ទងនឹងបញ្ហាដែរឬទេ?</string>
     <string name="Add_Photo">Add Photo</string>
@@ -183,6 +183,7 @@
     <string name="Please_input_your_pwd">សូមបញ្ចូលលេខសម្ងាត់របស់អ្នក</string>
     <string name="Please_input_student_account">សូមបញ្ចូលគណីនិស្សិត</string>
     <string name="OTP">សូមបញ្ចូលលេខកូដ</string>
+    <string name="Photo">រូបភាព</string>
 
 
 </resources>

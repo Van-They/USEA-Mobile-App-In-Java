@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:ignore="UseCompoundDrawables">
 
@@ -14,7 +15,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_margin="10dp">
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -24,8 +25,8 @@
             <TextView
                 android:id="@+id/text_custom_toast"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="2dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:textColor="@color/black"
                 android:text="@string/Sample_txt"

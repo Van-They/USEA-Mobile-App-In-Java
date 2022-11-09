@@ -1,8 +1,11 @@
 package com.example.useaapp.STUDENT.StudyPlan.year1;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,7 +139,7 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
 
             @Override
             public void onFailure(Call<List<Response_model_SemesterStudyPlan>> call, Throwable t) {
-                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+                Log.d(TAG, "onFailure: " + t.toString());
             }
         });
         call2.enqueue(new Callback<List<Response_model_SemesterStudyPlan>>() {
@@ -712,6 +715,7 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
 
             @Override
             public void onFailure(Call<List<Response_model_SemesterStudyPlan>> call, Throwable t) {
+                ShowDialog.stopDialog();
                 Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
             }
         });
@@ -745,6 +749,7 @@ public class Fragment_student_Studyplan_y1s1s2 extends Fragment {
 
             @Override
             public void onFailure(Call<List<Response_model_SemesterStudyPlan>> call, Throwable t) {
+                ShowDialog.stopDialog();
                 Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
             }
         });

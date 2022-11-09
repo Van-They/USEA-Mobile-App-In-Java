@@ -13,8 +13,6 @@ import com.example.useaapp.STUDENT.StudyPlan.year2.Fragment_student_Studyplan_y2
 import com.example.useaapp.STUDENT.StudyPlan.year3.Fragment_student_Studyplan_y3s1s2_Thesis;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.Objects;
-
 public class StudentStudyPlan_Thesis extends AppCompatActivity {
     public static final String text = "txt";
     TabLayout tabLayout;
@@ -28,8 +26,9 @@ public class StudentStudyPlan_Thesis extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarStudentStudyPlan_th);
         setSupportActionBar(toolbar);
         setTitle(R.string.Studyplan);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v -> finish());
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         tabLayout = findViewById(R.id.tab_menu_studyPlan_th);
 
         txt = getIntent().getStringExtra(text);

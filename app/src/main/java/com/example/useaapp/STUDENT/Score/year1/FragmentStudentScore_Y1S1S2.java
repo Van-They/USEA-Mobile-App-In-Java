@@ -120,6 +120,7 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
 
             @Override
             public void onFailure(Call<List<ModelScore>> call, Throwable t) {
+                ShowDialog.stopDialog();
                 Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
             }
         });
@@ -141,6 +142,7 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
 
             @Override
             public void onFailure(Call<List<ModelScore>> call, Throwable t) {
+                ShowDialog.stopDialog();
                 Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
             }
         });

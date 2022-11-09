@@ -15,7 +15,6 @@ import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_attendance;
 import com.example.useaapp.STUDENT.ApiController_student;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -25,11 +24,11 @@ import retrofit2.Response;
 public class StudentAttendance extends AppCompatActivity {
 
     private final static String SHARE_PREFNAME = "Student_Name";
+    private final static String TAG = "StudentAttendance";
     SharedPreferences sharedPreferences;
     String St_id;
 
     Toolbar toolbar;
-    List<Response_model_student_attendance> responsemodels;
     RecyclerView recview;
 
     @Override
@@ -42,10 +41,8 @@ public class StudentAttendance extends AppCompatActivity {
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
-        responsemodels = new ArrayList<>();
         recview = findViewById(R.id.attendance_item_view);
         recview.setLayoutManager(new LinearLayoutManager(this));
-
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         St_id = sharedPreferences.getString("Student_ID", "");
 
@@ -63,19 +60,17 @@ public class StudentAttendance extends AppCompatActivity {
         call.enqueue(new Callback<List<Response_model_student_attendance>>() {
             @Override
             public void onResponse(Call<List<Response_model_student_attendance>> call, Response<List<Response_model_student_attendance>> response) {
-                responsemodels = response.body();
-                Adapter_attendance myadapter = new Adapter_attendance(responsemodels);
-                if (responsemodels != null && !responsemodels.isEmpty()) {
-                    loading.stopDialog();
-                    recview.setAdapter(myadapter);
-                } else {
-                    Toast.makeText(StudentAttendance.this, "No data found", Toast.LENGTH_SHORT).show();
-                }
+                loading.showDialog();
+                List<Response_model_student_attendance> data = response.body();
+                Adapter_attendance myadapter = new Adapter_attendance(data);
+                recview.setAdapter(myadapter);
+                loading.stopDialog();
             }
 
             @Override
             public void onFailure(Call<List<Response_model_student_attendance>> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), t.toString(), Toast.LENGTH_LONG).show();
+                loading.stopDialog();
+                Toast.makeText(StudentAttendance.this, "" + t, Toast.LENGTH_SHORT).show();
             }
         });
     }

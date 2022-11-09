@@ -1,6 +1,7 @@
 package com.example.useaapp.STUDENT.Score.Detail_score_s1s2;
+
 public class ModelDetail {
- private final String  Title,Attendance,Exercise,Homework,Assignment,Midterm, Semester_exam,Total,Grade,Average,Rank;
+    private final String Title, Attendance, Exercise, Homework, Assignment, Midterm, Semester_exam, Total, Grade, Average, Rank;
 
     public ModelDetail(String title, String attendance, String exercise, String homework, String assignment, String midterm, String semester_exam, String total, String grade, String average, String rank) {
         Title = title;

@@ -5,7 +5,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiControlFeedback {
-    private static final String url = "https://myuseaapp.000webhostapp.com/Student/";
+    private static final String url = "http://127.0.0.1:80/USEA/Student/";
     private static Retrofit retrofit = null;
 
     public static Retrofit getRetrofit() {
