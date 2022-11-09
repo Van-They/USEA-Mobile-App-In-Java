@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context=".STUDENT.StudyPlan.year4.Fragment_student_Studyplan_y4s1s2">
 
     <LinearLayout
