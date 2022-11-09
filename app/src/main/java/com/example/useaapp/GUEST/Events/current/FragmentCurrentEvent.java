@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.GUEST.ApiController_guest;
-import com.example.useaapp.GUEST.Events.GuestEventModel;
 import com.example.useaapp.R;
 
 import java.util.ArrayList;
@@ -27,15 +26,13 @@ import retrofit2.Response;
 public class FragmentCurrentEvent extends Fragment {
     RecyclerView lvCurrentEvent;
     List<Response_model_guest_event_current> responsemodels;
-    ArrayList<GuestEventModel> Data_current_event;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_current, container, false);
 
-        return view;
+        return inflater.inflate(R.layout.fragment_current, container, false);
     }
 
     @Override

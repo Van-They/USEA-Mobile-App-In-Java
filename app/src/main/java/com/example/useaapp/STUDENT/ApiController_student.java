@@ -4,8 +4,6 @@ package com.example.useaapp.STUDENT;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -22,15 +20,9 @@ public class ApiController_student {
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.level(HttpLoggingInterceptor.Level.BODY);
-
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.addInterceptor(interceptor);
         retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .client(builder.build())
                 .build();
     }
 
@@ -38,6 +30,14 @@ public class ApiController_student {
         if (client_object == null)
             client_object = new ApiController_student();
         return client_object;
+    }
+
+    public  Apiset_student login(){
+        return retrofit.create(Apiset_student.class);
+    }
+
+    public  Apiset_student feedback(){
+        return retrofit.create(Apiset_student.class);
     }
 
     //     get Student Study Plan data

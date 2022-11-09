@@ -16,8 +16,6 @@ import android.widget.Toast;
 import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.GUEST.ApiController_guest;
 import com.example.useaapp.R;
-import com.example.useaapp.GUEST.Events.GuestEventModel;
-import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,13 +27,11 @@ import retrofit2.Response;
 public class FragmentUpcomingEvent extends Fragment {
     RecyclerView upcomingEvent;
     List<Response_model_guest_event_upcoming> responsemodels;
-    ArrayList<GuestEventModel> upcomingValue;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_upcoming, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_upcoming, container, false);
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

@@ -16,8 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:padding="10dp"
-            >
+            android:padding="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -29,11 +28,11 @@
                     android:id="@+id/Title_guest_career_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="-10dp"
                     android:fontFamily="@font/khmer_os_battambang_regular"
                     android:text="@string/Sample_txt"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_marginBottom="-10dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -42,29 +41,27 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/khmer_os_battambang_regular"
                     android:text="@string/Sample_txt"
-                    android:textSize="14sp"
-                    tools:ignore="SmallSp" />
+                    android:textSize="14sp" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/gray_25" />
+                    android:alpha="0.5"
+                    android:background="@color/gray" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:baselineAligned="false"
-                    >
+                    android:baselineAligned="false">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        >
+                        android:layout_height="wrap_content">
 
                         <ImageView
-                            android:layout_gravity="center"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
+                            android:layout_gravity="center"
                             android:layout_marginEnd="5dp"
                             android:contentDescription="@null"
                             android:src="@drawable/ic_location" />
@@ -72,15 +69,14 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            >
+                            android:orientation="vertical">
 
                             <TextView
                                 android:id="@+id/Province_guest_career_item"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/Sample_txt"
                                 android:fontFamily="@font/khmer_os_battambang_regular"
+                                android:text="@string/Sample_txt"
                                 android:textSize="12sp"
 
                                 />
@@ -97,13 +93,12 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        >
+                        android:layout_marginStart="10dp">
 
                         <ImageView
-                            android:layout_gravity="center"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
+                            android:layout_gravity="center"
                             android:layout_marginEnd="5dp"
                             android:contentDescription="@null"
                             android:src="@drawable/ic_calendar" />
@@ -111,45 +106,47 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            >
+                            android:orientation="vertical">
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
-                            <TextView
-                                android:id="@+id/Month_guest_career_item"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingEnd="1dp"
-                                android:paddingStart="1dp"
-                                android:text="@string/Sample_txt"
-                                android:fontFamily="@font/khmer_os_battambang_regular"
-                                android:textSize="12sp"
 
-                                />
+                                <TextView
+                                    android:id="@+id/Month_guest_career_item"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/khmer_os_battambang_regular"
+                                    android:paddingStart="1dp"
+                                    android:paddingEnd="1dp"
+                                    android:text="@string/Sample_txt"
+                                    android:textSize="12sp"
+
+                                    />
 
                                 <TextView
                                     android:id="@+id/Date_guest_career_item"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:paddingEnd="1dp"
-                                    android:paddingStart="1dp"
                                     android:fontFamily="@font/khmer_os_battambang_regular"
+                                    android:paddingStart="1dp"
+                                    android:paddingEnd="1dp"
                                     android:text="@string/Sample_txt"
                                     android:textSize="12sp"
 
                                     />
-                            <TextView
-                                android:id="@+id/Year_guest_career_item"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingEnd="1dp"
-                                android:paddingStart="1dp"
-                                android:text="@string/Sample_txt"
-                                android:fontFamily="@font/khmer_os_battambang_regular"
-                                android:textSize="12sp"
-                                />
+
+                                <TextView
+                                    android:id="@+id/Year_guest_career_item"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/khmer_os_battambang_regular"
+                                    android:paddingStart="1dp"
+                                    android:paddingEnd="1dp"
+                                    android:text="@string/Sample_txt"
+                                    android:textSize="12sp" />
                             </LinearLayout>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -163,7 +160,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/khmer_os_battambang_regular"
-                        android:gravity="center|right">
+                        android:gravity="center|right"
+                        tools:ignore="RtlHardcoded,UseCompoundDrawables">
 
                         <TextView
                             android:id="@+id/View_guest_career_detail"
@@ -175,22 +173,22 @@
                             android:textSize="12sp" />
 
                         <ImageView
+                            android:contentDescription="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/go_icon"
-                            />
+                            android:src="@drawable/go_icon" />
 
                     </LinearLayout>
 
                 </LinearLayout>
+
                 <TextView
                     android:id="@+id/Label_guest_career"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
                     android:text="@string/Sample_txt"
-                    android:visibility="gone"
-                    />
+                    android:visibility="gone" />
 
             </LinearLayout>
         </LinearLayout>

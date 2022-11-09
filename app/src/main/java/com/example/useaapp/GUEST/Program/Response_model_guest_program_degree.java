@@ -2,8 +2,7 @@ package com.example.useaapp.GUEST.Program;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Response_model_guest_program_degree
-{
+public class Response_model_guest_program_degree {
     String id, degree_name;
 
     public Response_model_guest_program_degree(String id, String degree_name) {

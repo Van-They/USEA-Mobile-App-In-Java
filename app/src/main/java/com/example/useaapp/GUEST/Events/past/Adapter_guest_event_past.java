@@ -10,12 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.useaapp.GUEST.Image_link;
 import com.example.useaapp.R;
 
 import java.util.List;
 
 public class Adapter_guest_event_past extends RecyclerView.Adapter<Adapter_guest_event_past.ViewHolder> {
     List<Response_model_guest_event_past> data;
+    Image_link link;
     public Adapter_guest_event_past(List<Response_model_guest_event_past> data) {
         this.data = data;
     }

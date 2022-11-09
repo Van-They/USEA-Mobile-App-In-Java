@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.useaapp.Custom_toast;
 import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
+import com.example.useaapp.STUDENT.ApiController_student;
 import com.example.useaapp.STUDENT.MainStudentActivity;
 import com.google.android.material.button.MaterialButton;
 
@@ -112,9 +113,9 @@ public class StudentLogin extends AppCompatActivity {
             Student_pwd.setBackgroundResource(R.drawable.edit_txt_error_st_login);
             St_pwd_txt_error.setVisibility(View.VISIBLE);
         }
-        Call<ModelResponse> call = ApiClient
+        Call<ModelResponse> call = ApiController_student
                 .getInstance()
-                .getApi()
+                .login()
                 .callUserLogin(St_id, St_pass);
 
         Custom_toast toast = new Custom_toast(this);

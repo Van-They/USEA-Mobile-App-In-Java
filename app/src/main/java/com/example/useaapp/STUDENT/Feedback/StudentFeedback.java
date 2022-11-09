@@ -20,7 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.useaapp.Custom_toast;
 import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
-import com.example.useaapp.STUDENT.Login.ApiSetLogin;
+import com.example.useaapp.STUDENT.ApiController_student;
 import com.github.drjacky.imagepicker.ImagePicker;
 
 import java.io.File;
@@ -66,7 +66,7 @@ public class StudentFeedback extends AppCompatActivity {
         text_feedback_image = findViewById(R.id.text_feedback_image);
         Data_Progressing loading = new Data_Progressing(StudentFeedback.this);
         Custom_toast toast = new Custom_toast(StudentFeedback.this);
-        ApiSetLogin apiSetLogin = ApiControlFeedback.getRetrofit().create(ApiSetLogin.class);
+//        ApiSetLogin apiSetLogin = ApiControlFeedback.getRetrofit().create(ApiSetLogin.class);
         btnSubmit_feedback.setOnClickListener(v -> {
             String star = String.valueOf((int) ratingBar.getRating());
             String feedback = text_feed_back.getText().toString();
@@ -83,16 +83,19 @@ public class StudentFeedback extends AppCompatActivity {
                 St_id = RequestBody.create(MediaType.parse("text/plain"), Student_ID);//get student id
                 Feedback = RequestBody.create(MediaType.parse("text/plain"), feedback);//get text feedback
                 Star = RequestBody.create(MediaType.parse("text/plain"), star);//get star rating
-                call = apiSetLogin.sendFeedback(fileUpload, filename, St_id, Feedback, Star);
+                call = ApiController_student.getInstance().feedback().sendFeedback(fileUpload, filename, St_id, Feedback, Star);
                 call.enqueue(new Callback<ServerResponse>() {
                     @Override
                     public void onResponse(Call<ServerResponse> call, Response<ServerResponse> response) {
                         String msg = response.body().getResponse();
                         if (msg.equals("OK")) {
                             toast.showToast("ការផ្ញើជោគជ័យ");
+                            btnSubmit_feedback.setEnabled(false);
                             Log.d(TAG, "onResponse: " + msg);
+                            loading.stopDialog();
                         } else {
                             toast.showToast("ការផ្ញើមិនជោគជ័យ");
+                            loading.stopDialog();
                             Log.d(TAG, "onResponse: " + "Failed");
                         }
                     }
@@ -126,7 +129,6 @@ public class StudentFeedback extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         assert data != null;
         uri = data.getData();
-        text_feedback_image.setText(uri.getPath());
         image_feedback.setImageURI(uri);
     }
 }

@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter_guest_career extends RecyclerView.Adapter<Adapter_guest_career.ViewHolder> {
@@ -34,12 +33,12 @@ public class Adapter_guest_career extends RecyclerView.Adapter<Adapter_guest_car
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-         holder.Title_guest_career_item.setText(data.get(position).getJob());
-         holder.Detail_guest_career_item.setText(data.get(position).getDepartment());
-         holder.Province_guest_career_item.setText(data.get(position).getProvince());
-         holder.Month_guest_career_item.setText(data.get(position).getExp_month());
-         holder.Date_guest_career_item.setText(data.get(position).getExp_date());
-         holder.Year_guest_career_item.setText(data.get(position).getExp_year());
+        holder.Title_guest_career_item.setText(data.get(position).getJob());
+        holder.Detail_guest_career_item.setText(data.get(position).getDepartment());
+        holder.Province_guest_career_item.setText(data.get(position).getProvince());
+        holder.Month_guest_career_item.setText(data.get(position).getExp_month());
+        holder.Date_guest_career_item.setText(data.get(position).getExp_date());
+        holder.Year_guest_career_item.setText(data.get(position).getExp_year());
 
     }
 
@@ -48,13 +47,13 @@ public class Adapter_guest_career extends RecyclerView.Adapter<Adapter_guest_car
         return data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView Title_guest_career_item, Detail_guest_career_item, Province_guest_career_item,
                 Month_guest_career_item, Date_guest_career_item, Year_guest_career_item,
                 View_guest_career_detail;
 
-        public ViewHolder(@NonNull View itemView){
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             Title_guest_career_item = itemView.findViewById(R.id.Title_guest_career_item);
