@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.useaapp.R;
 
 import java.util.List;
@@ -34,6 +36,8 @@ public class Adapter_guest_program_faculty extends RecyclerView.Adapter<Adapter_
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.guest_program_faculty.setText(data.get(position).getFaculty_name());
+        Glide.with(holder.guest_program_faculty.getContext()).load("http://192.168.0.170/USEA/Guest/faculty_icon/" + data.get(position).getIcon()).into(holder.guest_program_faculty_icon);
+
     }
 
     @Override
@@ -43,10 +47,12 @@ public class Adapter_guest_program_faculty extends RecyclerView.Adapter<Adapter_
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView guest_program_faculty;
+        ImageView guest_program_faculty_icon;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             guest_program_faculty = itemView.findViewById(R.id.guest_program_faculty);
+            guest_program_faculty_icon = itemView.findViewById(R.id.guest_program_faculty_icon);
             guest_program_faculty.setOnClickListener(this);
         }
 
