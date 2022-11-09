@@ -6,8 +6,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiController_guest
 {
 //   private static final String url="https://myuseaapp.000webhostapp.com/Guest/";
-   private static final String url="http://192.168.1.8:8080/hosting_api/Guest/";
-   private static ApiController_guest clientobject;
+//   private static final String url="http://192.168.1.8:8080/hosting_api/Guest/";
+private static final String url = "http://192.168.0.170/USEA/Guest/";
+
+    private static ApiController_guest clientobject;
    private static Retrofit retrofit;
 
      ApiController_guest()

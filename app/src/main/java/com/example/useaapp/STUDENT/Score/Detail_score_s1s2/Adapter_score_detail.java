@@ -1,25 +1,21 @@
 package com.example.useaapp.STUDENT.Score.Detail_score_s1s2;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.useaapp.R;
-import com.example.useaapp.STUDENT.Adapter.Adapter_score_semester;
 import com.example.useaapp.STUDENT.Score.Score.ModelScore;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter_score_detail extends RecyclerView.Adapter<Adapter_score_detail.ViewHolder> {
     List<ModelScore> data;
+
     public Adapter_score_detail(List<ModelScore> data) {
         this.data = data;
     }
@@ -51,13 +47,13 @@ public class Adapter_score_detail extends RecyclerView.Adapter<Adapter_score_det
         return data.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView Subject_student_score_detail, Attendance_student_score_detail, Exercise_student_score_detail,
                 Homework_student_score_detail, Assignment_student_score_detail, Midterm_student_score_detail,
-                Semester_exam_student_score_detail,Total_student_score_detail, Average_student_score_detail,
+                Semester_exam_student_score_detail, Total_student_score_detail, Average_student_score_detail,
                 Rank_student_score_detail, Grade_student_score_detail;
 
-        public ViewHolder(@NonNull View itemView){
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             Subject_student_score_detail = itemView.findViewById(R.id.Subject_student_score_detail);
             Attendance_student_score_detail = itemView.findViewById(R.id.Attendance_student_score_detail);

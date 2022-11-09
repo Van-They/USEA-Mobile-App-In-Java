@@ -1,9 +1,12 @@
 package com.example.useaapp.STUDENT.Score.Detail_score_s1s2;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,20 +14,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListView;
-import android.widget.Toast;
-
 import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
-import com.example.useaapp.STUDENT.Adapter.Adapter_score_semester;
-import com.example.useaapp.STUDENT.Adapter.ListviewHelper;
 import com.example.useaapp.STUDENT.ApiController_student;
 import com.example.useaapp.STUDENT.Score.Score.ModelScore;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -33,24 +27,21 @@ import retrofit2.Response;
 
 public class Fragment_score_s1 extends Fragment {
 
-    ListviewHelper listviewHelper;
-    SharedPreferences sharedPreferences;
-    private final static String SHARE_PREFNAME = "Student_Name";
-    String St_id;
-
-    RecyclerView Listview_student_score_detail_s1;
-    private List<ModelScore> responsemodels;
-
     public static final String text = "txt";
+    private final static String SHARE_PREFNAME = "Student_Name";
+    SharedPreferences sharedPreferences;
+    String St_id;
+    RecyclerView Listview_student_score_detail_s1;
     String txt;
+    private List<ModelScore> responsemodels;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_score_s1, container, false);
-        return v;
+        return inflater.inflate(R.layout.fragment_score_s1, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -63,13 +54,13 @@ public class Fragment_score_s1 extends Fragment {
 
         txt = requireActivity().getIntent().getStringExtra(text);
 
-        if(txt.equals("y1s1")){
+        if (txt.equals("y1s1")) {
             processdata1();
-        }else if(txt.equals("y2s1")){
+        } else if (txt.equals("y2s1")) {
             processdata2();
-        }else if(txt.equals("y3s1")){
+        } else if (txt.equals("y3s1")) {
             processdata3();
-        }else if(txt.equals("y4s1")){
+        } else if (txt.equals("y4s1")) {
             processdata4();
         }
 
@@ -106,6 +97,7 @@ public class Fragment_score_s1 extends Fragment {
             }
         });
     }
+
     public void processdata2() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
@@ -137,6 +129,7 @@ public class Fragment_score_s1 extends Fragment {
             }
         });
     }
+
     public void processdata3() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
@@ -168,6 +161,7 @@ public class Fragment_score_s1 extends Fragment {
             }
         });
     }
+
     public void processdata4() {
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();

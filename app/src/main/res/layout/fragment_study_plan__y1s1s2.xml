@@ -5,9 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".STUDENT.StudyPlan.year1.Fragment_student_Studyplan_y1s1s2">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -114,5 +111,4 @@
                     android:textColor="@color/dark_blue" />
             </LinearLayout>
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
 </FrameLayout>

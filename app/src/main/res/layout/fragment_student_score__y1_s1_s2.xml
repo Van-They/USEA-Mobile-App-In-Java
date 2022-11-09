@@ -4,30 +4,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".STUDENT.Score.year1.FragmentStudentScore_Y1S1S2">
-    <ScrollView
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
-        <LinearLayout
+        android:layout_height="wrap_content">
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <include layout="@layout/custom_header_list_score_semester1"/>
-            <androidx.recyclerview.widget.RecyclerView
+            android:scrollbars="none"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/student_score_list_y1s1"
-                android:divider="@null"/>
-            <include layout="@layout/custom_footer_score_show_detail"
-                android:id="@+id/student_score_show_detail_y1s1"/>
-           <include layout="@layout/custom_header_list_score_semester2"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/student_score_list_y1s2"
-                android:divider="@null"/>
-            <include layout="@layout/custom_footer_score_show_detail"
-                android:id="@+id/student_score_show_detail_y1s2"/>
-        </LinearLayout>
-    </ScrollView>
+                android:orientation="vertical">
+
+                <include layout="@layout/custom_header_list_score_semester1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/student_score_list_y1s1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null" />
+
+                <include
+                    android:id="@+id/student_score_show_detail_y1s1"
+                    layout="@layout/custom_footer_score_show_detail" />
+
+                <include layout="@layout/custom_header_list_score_semester2" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/student_score_list_y1s2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null" />
+
+                <include
+                    android:id="@+id/student_score_show_detail_y1s2"
+                    layout="@layout/custom_footer_score_show_detail" />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.core.widget.NestedScrollView>
+
 </FrameLayout>
