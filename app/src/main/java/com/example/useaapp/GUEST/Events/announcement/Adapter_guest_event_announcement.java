@@ -10,13 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.useaapp.GUEST.Image_link;
 import com.example.useaapp.R;
 
 import java.util.List;
 
 public class Adapter_guest_event_announcement extends RecyclerView.Adapter<Adapter_guest_event_announcement.ViewHolder> {
     List<Response_model_guest_event_announcement> data;
+
     public Adapter_guest_event_announcement(List<Response_model_guest_event_announcement> data) {
         this.data = data;
     }
@@ -37,7 +37,7 @@ public class Adapter_guest_event_announcement extends RecyclerView.Adapter<Adapt
         holder.Date_guest_event_item.setText(data.get(position).getAnnounce_date());
         holder.Year_guest_event_item.setText(data.get(position).getAnnounce_year());
         holder.Time_guest_event_item.setText(data.get(position).getAnnounce_time());
-        Glide.with(holder.Title_guest_event_item.getContext()).load("https://myuseaapp.000webhostapp.com/Guest/event_image/" + data.get(position).getAnnounce_image()).into(holder.eventImg);;
+        Glide.with(holder.Title_guest_event_item.getContext()).load("https://myuseaapp.000webhostapp.com/Guest/event_image/" + data.get(position).getAnnounce_image()).into(holder.eventImg);
     }
 
     @Override
@@ -45,11 +45,11 @@ public class Adapter_guest_event_announcement extends RecyclerView.Adapter<Adapt
         return data.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView Title_guest_event_item, Detail_guest_event_item, Day_guest_event_item, Month_guest_event_item, Date_guest_event_item, Year_guest_event_item, Time_guest_event_item;
         ImageView eventImg;
 
-        public ViewHolder(@NonNull View itemView){
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             Title_guest_event_item = itemView.findViewById(R.id.Title_guest_event_item);
             Detail_guest_event_item = itemView.findViewById(R.id.Detail_guest_event_item);

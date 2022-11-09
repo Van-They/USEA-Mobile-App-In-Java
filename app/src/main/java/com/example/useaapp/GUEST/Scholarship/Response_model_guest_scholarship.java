@@ -1,11 +1,10 @@
 package com.example.useaapp.GUEST.Scholarship;
 
-public class Response_model_guest_scholarship
-{
+public class Response_model_guest_scholarship {
     String id, subject, university, degree, cost, date, month, year, usea_name,
-        detail_description, app_open_date, app_open_final_day_date, learnmore_link,
-        app_required, how_to_apply_link, single_pay, full_ben_detail_link,
-        citizen_require_detail, total_value_price, applicable_study_areas_detail;
+            detail_description, app_open_date, app_open_final_day_date, learnmore_link,
+            app_required, how_to_apply_link, single_pay, full_ben_detail_link,
+            citizen_require_detail, total_value_price, applicable_study_areas_detail;
 
     public Response_model_guest_scholarship(String id, String subject, String university, String degree,
                                             String cost, String date, String month, String year, String usea_name,
@@ -36,6 +35,7 @@ public class Response_model_guest_scholarship
         this.applicable_study_areas_detail = applicable_study_areas_detail;
 
     }
+
     public String getId() {
         return id;
     }
@@ -108,7 +108,7 @@ public class Response_model_guest_scholarship
         return citizen_require_detail;
     }
 
-    public String getTotal_value_price(){
+    public String getTotal_value_price() {
         return total_value_price;
     }
 

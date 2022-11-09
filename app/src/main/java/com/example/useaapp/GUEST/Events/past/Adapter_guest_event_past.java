@@ -10,14 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.useaapp.GUEST.Image_link;
 import com.example.useaapp.R;
 
 import java.util.List;
 
 public class Adapter_guest_event_past extends RecyclerView.Adapter<Adapter_guest_event_past.ViewHolder> {
     List<Response_model_guest_event_past> data;
-    Image_link link;
+
     public Adapter_guest_event_past(List<Response_model_guest_event_past> data) {
         this.data = data;
     }
@@ -46,11 +45,11 @@ public class Adapter_guest_event_past extends RecyclerView.Adapter<Adapter_guest
         return data.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView Title_guest_event_item, Detail_guest_event_item, Day_guest_event_item, Month_guest_event_item, Date_guest_event_item, Year_guest_event_item, Time_guest_event_item;
         ImageView eventImg;
 
-        public ViewHolder(@NonNull View itemView){
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
             Title_guest_event_item = itemView.findViewById(R.id.Title_guest_event_item);
             Detail_guest_event_item = itemView.findViewById(R.id.Detail_guest_event_item);
