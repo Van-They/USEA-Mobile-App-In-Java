@@ -32,7 +32,7 @@ public class Adapter_score_semester extends RecyclerView.Adapter<Adapter_score_s
     @Override
     public void onBindViewHolder(@NonNull Adapter_score_semester.ViewHolder holder, int position) {
         holder.Student_score_subject.setText(data.get(position).getSubject_name());
-        holder.Student_score_rank.setText(data.get(position).getAverage_Score());
+        holder.Student_score_rank.setText(data.get(position).getRANK());
         holder.Student_score_grade.setText(data.get(position).getGrade());
         holder.Student_score_total.setText(data.get(position).getTotal_Score());
     }

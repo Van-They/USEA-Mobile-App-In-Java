@@ -2,11 +2,11 @@ package com.example.useaapp.STUDENT;
 
 import com.example.useaapp.STUDENT.Attendance.Response_model_student_attendance;
 import com.example.useaapp.STUDENT.Feedback.ServerResponse;
+import com.example.useaapp.STUDENT.Home.Response_rank_credit;
 import com.example.useaapp.STUDENT.Login.ModelResponse;
 import com.example.useaapp.STUDENT.Score.Score.ModelScore;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.MultipartBody;
@@ -14,13 +14,17 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 
 public interface Apiset_student
 {
+
+    @FormUrlEncoded
+    @POST("student_total_credit.php")
+    Call<Response_rank_credit> getCredit(
+            @Field("student_id") String student_id);
 
     //student login
     @FormUrlEncoded

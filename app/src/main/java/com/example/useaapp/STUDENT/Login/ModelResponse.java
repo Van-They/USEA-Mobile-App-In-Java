@@ -1,14 +1,13 @@
 package com.example.useaapp.STUDENT.Login;
 
-import com.google.gson.annotations.SerializedName;
-
 public class ModelResponse {
     String response, faculty_name, degree_name, major_name, year_name, semester_name, name, stage_name, academic_year,
-            shift_name, date_of_birth, phone_number;
+            shift_name, date_of_birth, phone_number, profile_pic;
 
     public ModelResponse(String response, String faculty_name, String degree_name, String major_name,
                          String year_name, String semester_name, String name, String stage_name,
-                         String academic_year, String shift_name, String date_of_birth, String phone_number) {
+                         String academic_year, String shift_name, String date_of_birth, String phone_number,
+                         String profile_pic) {
         this.response = response;
         this.faculty_name = faculty_name;
         this.degree_name = degree_name;
@@ -21,6 +20,7 @@ public class ModelResponse {
         this.shift_name = shift_name;
         this.date_of_birth = date_of_birth;
         this.phone_number = phone_number;
+        this.profile_pic = profile_pic;
     }
 
     public String getResponse() {
@@ -69,6 +69,9 @@ public class ModelResponse {
 
     public String getPhone_number() {
         return phone_number;
+    }
+    public String getProfile_pic() {
+        return profile_pic;
     }
 }
 

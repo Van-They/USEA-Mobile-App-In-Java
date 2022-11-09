@@ -33,6 +33,7 @@ public class StudentLogin extends AppCompatActivity {
     private final static String shift = "shift";
     private final static String dob = "dob";
     private final static String ph = "ph";
+    private final static String pf = "pf";
     SharedPreferences sharedPreferences;
     EditText Student_Id, Student_pwd;
     MaterialButton buttonLogin;
@@ -135,6 +136,7 @@ public class StudentLogin extends AppCompatActivity {
                     editor.putString(shift, response.body().getShift_name());
                     editor.putString(dob, response.body().getDate_of_birth());
                     editor.putString(ph, response.body().getPhone_number());
+                    editor.putString(pf, response.body().getProfile_pic());
                     editor.apply();
                     loading.stopDialog();
                     Intent intent = new Intent(getApplicationContext(), MainStudentActivity.class);

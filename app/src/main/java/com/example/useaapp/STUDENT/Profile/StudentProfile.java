@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,9 +17,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.bumptech.glide.Glide;
 import com.example.useaapp.Custom_toast;
 import com.example.useaapp.R;
-import com.github.drjacky.imagepicker.ImagePicker;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -57,6 +58,7 @@ public class StudentProfile extends AppCompatActivity {
         shift = findViewById(R.id.shift_in_profile);
         dob = findViewById(R.id.date_of_birth_profile);
         phone = findViewById(R.id.phone_number_profile);
+        profile_image = findViewById(R.id.profile_image);
 
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         String Student_name = sharedPreferences.getString("name", "");
@@ -67,6 +69,7 @@ public class StudentProfile extends AppCompatActivity {
         String Shi = sharedPreferences.getString("shift", "");
         String Dob = sharedPreferences.getString("dob", "");
         String Pho = sharedPreferences.getString("ph", "");
+        String Pf = sharedPreferences.getString("pf", "");
 
         if (!Student_name.isEmpty() && !Student_ID.isEmpty()) {
             student_name_profile.setText(Student_name);
@@ -75,6 +78,7 @@ public class StudentProfile extends AppCompatActivity {
 
         //image picker n change profile
         change_image_in_profile = findViewById(R.id.change_image_in_profile);
+        change_image_in_profile.setVisibility(View.GONE);
         profile_image = findViewById(R.id.profile_image);
 
         major_name.setText(Maj);
@@ -83,6 +87,12 @@ public class StudentProfile extends AppCompatActivity {
         shift.setText(Shi);
         dob.setText(Dob);
         phone.setText(Pho);
+
+        Glide.with(this).
+                load("http://192.168.0.170/USEA/Student/profile_pic/" + Pf).
+                into(profile_image);
+
+
 //        //Major, promotion, academic year
 //        TextView major_in_profile = findViewById(R.id.major_in_profile);
 //        TextView promotion_in_profile = findViewById(R.id.promotion_in_profile);
@@ -103,10 +113,10 @@ public class StudentProfile extends AppCompatActivity {
 
         //change password btn
 
-        change_image_in_profile.setOnClickListener(v -> ImagePicker.Companion.with(StudentProfile.this)
-                .maxResultSize(1080, 1080)
-                .crop().cropOval().compress(1024)
-                .start(20));
+//        change_image_in_profile.setOnClickListener(v -> ImagePicker.Companion.with(StudentProfile.this)
+//                .maxResultSize(1080, 1080)
+//                .crop().cropOval().compress(1024)
+//                .start(20));
 
     }
 

@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class ModelScore {
 
-    private final String name, year_name, semester_name, subject_name, sc_at, sc_ex, sc_hw, sc_as, sc_mt, sc_fn, Total_Score, Average_Score, Grade;
+    private final String name, year_name, semester_name, subject_name, sc_at, sc_ex, sc_hw, sc_as, sc_mt, sc_fn, Total_Score, Average_Score, Grade, RANK;
 
-    public ModelScore(String name, String year_name, String semester_name, String subject_name, String sc_at, String sc_ex, String sc_hw, String sc_as, String sc_mt, String sc_fn, String Total_Score, String Average_Score, String Grade) {
+    public ModelScore(String name, String year_name, String semester_name, String subject_name, String sc_at, String sc_ex, String sc_hw, String sc_as, String sc_mt, String sc_fn, String Total_Score, String Average_Score, String Grade, String RANK) {
         this.name = name;
         this.year_name = year_name;
         this.semester_name = semester_name;
@@ -20,6 +20,7 @@ public class ModelScore {
         this.Total_Score = Total_Score;
         this.Average_Score = Average_Score;
         this.Grade = Grade;
+        this.RANK = RANK;
     }
 
     @SerializedName("name")
@@ -85,5 +86,10 @@ public class ModelScore {
     @SerializedName("Grade")
     public String getGrade() {
         return Grade;
+    }
+
+    @SerializedName("RANK")
+    public String getRANK() {
+        return RANK;
     }
 }

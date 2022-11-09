@@ -11,13 +11,16 @@ import android.widget.TextView;
 
 import com.example.useaapp.R;
 
+import java.util.List;
+
 public class Adapter_rank_credit extends BaseAdapter {
     Context context;
-    String[] rank_credit, label_rank_credit;
+    List<String> rank_credit;
+    String[] label_rank_credit;
     int[] image_rank_credit;
     LayoutInflater inflater;
 
-    public Adapter_rank_credit(Context context, String[] rank_credit, String[] label_rank_credit, int[] image_rank_credit) {
+    public Adapter_rank_credit(Context context, List<String> rank_credit, String[] label_rank_credit, int[] image_rank_credit) {
         this.context = context;
         this.rank_credit = rank_credit;
         this.label_rank_credit = label_rank_credit;
@@ -37,7 +40,7 @@ public class Adapter_rank_credit extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return rank_credit.length;
+        return rank_credit.size();
     }
 
     @Override
@@ -63,7 +66,7 @@ public class Adapter_rank_credit extends BaseAdapter {
         TextView Label_rank_credit = convertView.findViewById(R.id.label_card_rank_credit_view);
 
         Image_rank_credit.setImageResource(image_rank_credit[position]);
-        Rank_credit.setText(rank_credit[position]);
+        Rank_credit.setText(rank_credit.get(position));
         Label_rank_credit.setText(label_rank_credit[position]);
         return convertView;
     }

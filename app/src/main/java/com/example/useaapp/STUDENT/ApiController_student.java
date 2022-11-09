@@ -32,6 +32,10 @@ public class ApiController_student {
         return client_object;
     }
 
+    public  Apiset_student getApiCredit(){
+        return retrofit.create(Apiset_student.class);
+    }
+
     public  Apiset_student login(){
         return retrofit.create(Apiset_student.class);
     }

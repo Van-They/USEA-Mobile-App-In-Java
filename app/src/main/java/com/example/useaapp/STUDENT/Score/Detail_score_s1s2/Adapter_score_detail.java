@@ -38,7 +38,7 @@ public class Adapter_score_detail extends RecyclerView.Adapter<Adapter_score_det
         holder.Semester_exam_student_score_detail.setText(data.get(position).getSc_fn());
         holder.Total_student_score_detail.setText(data.get(position).getTotal_Score());
         holder.Average_student_score_detail.setText(data.get(position).getAverage_Score());
-        holder.Rank_student_score_detail.setText(data.get(position).getGrade());
+        holder.Rank_student_score_detail.setText(data.get(position).getRANK());
         holder.Grade_student_score_detail.setText(data.get(position).getGrade());
     }
 
