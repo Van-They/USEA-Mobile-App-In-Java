@@ -10,7 +10,6 @@
     <include
         android:id="@+id/CustomActionbarGuestCareerDetail"
         layout="@layout/custom_actionbar" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,9 +54,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:orientation="vertical"
-            >
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/Title_guest_career_detail"
@@ -82,7 +80,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-5dp"
+            android:layout_marginTop="10dp"
             android:gravity="center">
 
             <LinearLayout
@@ -125,7 +123,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-5dp"
+            android:layout_marginTop="10dp"
             android:gravity="center">
 
             <LinearLayout
@@ -192,7 +190,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <TextView
