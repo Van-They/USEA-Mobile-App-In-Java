@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -89,7 +88,7 @@ public class StudentProfile extends AppCompatActivity {
         phone.setText(Pho);
 
         Glide.with(this).
-                load("http://192.168.0.170/USEA/Student/profile_pic/" + Pf).
+                load("http://172.17.17.197/USEA/Student/profile_pic/" + Pf).
                 into(profile_image);
 
 
@@ -123,26 +122,26 @@ public class StudentProfile extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        sharedPreferences = getSharedPreferences(PROFILE_NAME, MODE_PRIVATE);
-        String image = sharedPreferences.getString("My_Profile", null);
-        if (image != null) {
-            profile_image.setImageURI(Uri.parse(image));
-        }
+//        sharedPreferences = getSharedPreferences(PROFILE_NAME, MODE_PRIVATE);
+//        String image = sharedPreferences.getString("My_Profile", null);
+//        if (image != null) {
+//            profile_image.setImageURI(Uri.parse(image));
+//        }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        assert data != null;
-        uri = data.getData();
-        profile_image.setImageURI(uri);
-        sharedPreferences = getSharedPreferences(PROFILE_NAME, MODE_PRIVATE);
-        editor = sharedPreferences.edit();
-        editor.putString("My_Profile", String.valueOf(uri));
-        editor.apply();
-        toast = new Custom_toast(getApplicationContext());
-        toast.showToast("ជោគជ័យ");
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        assert data != null;
+//        uri = data.getData();
+//        profile_image.setImageURI(uri);
+//        sharedPreferences = getSharedPreferences(PROFILE_NAME, MODE_PRIVATE);
+//        editor = sharedPreferences.edit();
+//        editor.putString("My_Profile", String.valueOf(uri));
+//        editor.apply();
+//        toast = new Custom_toast(getApplicationContext());
+//        toast.showToast("ជោគជ័យ");
+//    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

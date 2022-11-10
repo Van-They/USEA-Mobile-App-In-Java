@@ -11,15 +11,17 @@ public class ApiController_student {
     //   private static final String url="https://myuseaapp.000webhostapp.com/Student/";
 //   private static final String url="http://192.168.1.8:8080/hosting_api/Student/";
 //    private static final String url = "http://192.168.1.12/USEA/Student/";
-    private static final String url = "http://192.168.0.170/USEA/Student/";
+    private static final String url = "http://172.17.17.197/USEA/Student/";//ac
+//    private static final String url = "http://192.168.0.170/USEA/Student/";
 
     private static ApiController_student client_object;
     private static Retrofit retrofit;
+    Gson gson = new GsonBuilder()
+            .setLenient()
+            .create();
 
     ApiController_student() {
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
+
         retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create(gson))
@@ -32,15 +34,15 @@ public class ApiController_student {
         return client_object;
     }
 
-    public  Apiset_student getApiCredit(){
+    public Apiset_student getApiCredit() {
         return retrofit.create(Apiset_student.class);
     }
 
-    public  Apiset_student login(){
+    public Apiset_student login() {
         return retrofit.create(Apiset_student.class);
     }
 
-    public  Apiset_student feedback(){
+    public Apiset_student feedback() {
         return retrofit.create(Apiset_student.class);
     }
 

@@ -7,13 +7,21 @@ public class Response_rank_credit {
     @SerializedName("Total Credit")
     String Credit;
 
+    @SerializedName("name")
+    String name;
+
 //    String Rank;
 
-    public Response_rank_credit(String credit) {
+    public Response_rank_credit(String credit, String name) {
         Credit = credit;
+        this.name = name;
     }
 
-//    public String getRank() {
+    public String getName() {
+        return name;
+    }
+
+    //    public String getRank() {
 //        return Rank;
 //    }
 

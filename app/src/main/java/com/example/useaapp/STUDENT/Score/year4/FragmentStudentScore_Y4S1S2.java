@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,14 +45,15 @@ public class FragmentStudentScore_Y4S1S2 extends Fragment {
     private final static String text = "txt";
     private final static String txt1 = "y4s1";
     private final static String txt2 = "y4s2";
-
+    NestedScrollView nestedScrollView;
+    LinearLayout layout_no_data;
+    TextView text_no_data;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_student_score__y4_s1_s2, container, false);
-        return v;
+        return  inflater.inflate(R.layout.fragment_student_score__y4_s1_s2, container, false);
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -65,22 +68,20 @@ public class FragmentStudentScore_Y4S1S2 extends Fragment {
         student_score_show_detail_y4s1 = view.findViewById(R.id.student_score_show_detail_y4s1);
         student_score_show_detail_y4s2 = view.findViewById(R.id.student_score_show_detail_y4s2);
 
-        student_score_show_detail_y4s1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), ScoreDetail.class);
-                intent.putExtra(text, txt1);
-                startActivity(intent);
-            }
+        nestedScrollView = view.findViewById(R.id.layout_nested_scroll);
+        layout_no_data = view.findViewById(R.id.layout_text_no_data);
+        text_no_data = view.findViewById(R.id.text_no_data);
+
+        student_score_show_detail_y4s1.setOnClickListener(view1 -> {
+            Intent intent = new Intent(getContext(), ScoreDetail.class);
+            intent.putExtra(text, txt1);
+            startActivity(intent);
         });
 
-        student_score_show_detail_y4s2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), ScoreDetail.class);
-                intent.putExtra(text, txt2);
-                startActivity(intent);
-            }
+        student_score_show_detail_y4s2.setOnClickListener(view12 -> {
+            Intent intent = new Intent(getContext(), ScoreDetail.class);
+            intent.putExtra(text, txt2);
+            startActivity(intent);
         });
         sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         St_id = sharedPreferences.getString("Student_ID", "");

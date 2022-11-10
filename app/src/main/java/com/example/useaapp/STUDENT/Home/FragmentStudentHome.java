@@ -1,10 +1,12 @@
 package com.example.useaapp.STUDENT.Home;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +19,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
-import com.example.useaapp.GUEST.Login.GuestLogin;
 import com.example.useaapp.GUEST.MainGuestActivity;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_category;
@@ -29,8 +30,6 @@ import com.example.useaapp.STUDENT.Profile.StudentProfile;
 import com.example.useaapp.STUDENT.Schedule.StudentSchedule;
 import com.example.useaapp.STUDENT.Score.Score.StudentScore;
 import com.example.useaapp.STUDENT.StudyPlan.StudentStudyPlan;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,13 +43,6 @@ public class FragmentStudentHome extends Fragment {
 
     public static final String text = "txt";
     private final static String SHARE_PREFNAME = "Student_Name";
-    private final static String PROFILE_NAME = "Profile_Picture";
-    private final static String major_name = "major_name";
-    private final static String stage = "stage";
-    private final static String academic = "academic";
-    private final static String shift = "shift";
-    private final static String dob = "dob";
-    private final static String ph = "ph";
     private final static String pf = "pf";
     //category
     private final String[] title_category = {"កាលវិភាគ", "ផែនការសិក្សា", "វត្តមាន", "មតិកែលម្អ", "ពិន្ទុ", "គណនីភ្ញៀវ"};
@@ -59,6 +51,7 @@ public class FragmentStudentHome extends Fragment {
             R.drawable.feedback_icon, R.drawable.score_icon, R.drawable.guest_icon};
     private final String[] label_rank_credit = {"Student Rank", "Total Credit"};
     private final int[] image_rank_credit = {R.drawable.rank_icon, R.drawable.credit_icon};
+    GridView gridView_category, gridView_card_rank_credit;
     SharedPreferences sharedPreferences;
     CircleImageView profile_dashboard;
     //for card view rank and credit on dashboard
@@ -70,48 +63,30 @@ public class FragmentStudentHome extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_student_home, container, false);
-        GridView gridView_category, gridView_card_rank_credit;
+
         //name student on dashboard
         TextView student_name_dashboard = view.findViewById(R.id.student_name_dashboard);
         sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         String st_name = sharedPreferences.getString("name", "");
 
-        list = new ArrayList<String>();
-        list.add("N/A");
-        list.add("N/A");
-        String Maj = sharedPreferences.getString(major_name, "");
-        String Sta = sharedPreferences.getString(stage, "");
-        String Aca = sharedPreferences.getString(academic, "");
-        String Shi = sharedPreferences.getString(shift, "");
-        String Dob = sharedPreferences.getString(dob, "");
-        String Pho = sharedPreferences.getString(ph, "");
+        list = new ArrayList<>();
+//        list.add("N/A");
+//        list.add("N/A");
         String Pf = sharedPreferences.getString(pf, "");
         student_name_dashboard.setText(st_name);
 
         //profile image
         profile_dashboard = view.findViewById(R.id.profile_dashboard);
-        profile_dashboard.setOnClickListener(v -> {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString(major_name, Maj);
-            editor.putString(stage, Sta);
-            editor.putString(academic, Aca);
-            editor.putString(shift, Shi);
-            editor.putString(dob, Dob);
-            editor.putString(ph, Pho);
-            editor.putString(pf, Pf);
-            editor.apply();
-            Intent intent = new Intent(getContext(), StudentProfile.class);
-            startActivity(intent);
-//            startActivity(new Intent(getContext(), StudentProfile.class));
-        });
+        profile_dashboard.setOnClickListener(v ->
+                startActivity(new Intent(getContext(), StudentProfile.class))
+        );
 
         //set profile image
         Glide.with(requireContext()).
-                load("http://192.168.0.170/USEA/Student/profile_pic/" + Pf).
+                load("http://172.17.17.197/USEA/Student/profile_pic/" + Pf).
                 into(profile_dashboard);
 
         gridView_card_rank_credit = view.findViewById(R.id.gridview_rank_credit);
-        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(this.getContext(), list, label_rank_credit, image_rank_credit));
         gridView_category = view.findViewById(R.id.grid_view_dashboard);
         gridView_category.setAdapter(new Adapter_category(this.getContext(), title_category, image_category));
         gridView_category.setOnItemClickListener((parent, view1, position, id) -> {
@@ -134,12 +109,7 @@ public class FragmentStudentHome extends Fragment {
                     startActivity(new Intent(getContext(), StudentScore.class));
                     break;
                 case "គណនីភ្ញៀវ":
-                    FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
-                    if (mUser != null) {
-                        startActivity(new Intent(getContext(), MainGuestActivity.class));
-                    } else {
-                        startActivity(new Intent(getContext(), GuestLogin.class));
-                    }
+                    startActivity(new Intent(getContext(), MainGuestActivity.class));
                     break;
 
             }
@@ -155,28 +125,28 @@ public class FragmentStudentHome extends Fragment {
         call.enqueue(new Callback<Response_rank_credit>() {
             @Override
             public void onResponse(Call<Response_rank_credit> call, Response<Response_rank_credit> response) {
+                String credit = response.body().getCredit();
                 if (response.isSuccessful()) {
-                    list.add("N/A");
-                    list.add("N/A");
-                    String credit = response.body().getCredit();
-                    list.add(credit);
+                    if (credit.isEmpty()) {
+                        list.add("N/A");//rank
+                        list.add("N/A");//credit
+                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(requireContext(), list, label_rank_credit, image_rank_credit));
+
+                    } else {
+                        list.add("N/A");//rank
+                        list.add(credit);//credit
+                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(requireContext(), list, label_rank_credit, image_rank_credit));
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<Response_rank_credit> call, Throwable t) {
-                Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "onFailure: " + t);
+                Toast.makeText(requireContext(), "Failed" + t, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        sharedPreferences = requireActivity().getSharedPreferences(PROFILE_NAME, Context.MODE_PRIVATE);
-        String image = sharedPreferences.getString("My_Profile", null);
-        if (image != null) {
-            profile_dashboard.setImageURI(Uri.parse(image));
-        }
-    }
+
 }

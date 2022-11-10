@@ -184,6 +184,7 @@
     <string name="Please_input_student_account">សូមបញ្ចូលគណីនិស្សិត</string>
     <string name="OTP">សូមបញ្ចូលលេខកូដ</string>
     <string name="Photo">រូបភាព</string>
+    <string name="No_data">មិនមានទិន្នន័យ</string>
 
 
 </resources>

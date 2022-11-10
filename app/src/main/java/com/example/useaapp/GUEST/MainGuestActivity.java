@@ -47,12 +47,12 @@ public class MainGuestActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        FirebaseUser mUser = mAuth.getCurrentUser();
-        if (mUser == null) {
-            finish();
-            startActivity(new Intent(MainGuestActivity.this, GuestLogin.class));
-        }
+//        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+//        FirebaseUser mUser = mAuth.getCurrentUser();
+//        if (mUser == null) {
+//            finish();
+//            startActivity(new Intent(MainGuestActivity.this, GuestLogin.class));
+//        }
     }
 
     @Override

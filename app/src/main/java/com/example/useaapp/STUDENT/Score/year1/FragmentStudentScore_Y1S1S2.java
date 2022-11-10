@@ -7,14 +7,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.useaapp.Custom_toast;
 import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_score_semester;
@@ -34,6 +38,9 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
     private final static String text = "txt";
     private final static String txt1 = "y1s1";
     private final static String txt2 = "y1s2";
+    NestedScrollView nestedScrollView;
+    LinearLayout layout_no_data;
+    TextView text_no_data;
     SharedPreferences sharedPreferences;
     String St_id;
     RecyclerView student_study_plan_list_s1, student_study_plan_list_s2;
@@ -60,6 +67,9 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
         student_score_show_detail_y1s1 = view.findViewById(R.id.student_score_show_detail_y1s1);
         student_score_show_detail_y1s2 = view.findViewById(R.id.student_score_show_detail_y1s2);
 
+        nestedScrollView = view.findViewById(R.id.layout_nested_scroll);
+        layout_no_data = view.findViewById(R.id.layout_text_no_data);
+        text_no_data = view.findViewById(R.id.text_no_data);
 
         student_score_show_detail_y1s1.setOnClickListener(view1 -> {
             Intent intent = new Intent(getContext(), ScoreDetail.class);
@@ -81,6 +91,7 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
     }
 
     public void processdata1() {
+        Custom_toast toast = new Custom_toast(getContext());
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
         ShowDialog.showDialog();
         Call<List<ModelScore>> call1 = ApiController_student
@@ -97,44 +108,48 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
             @Override
             public void onResponse(Call<List<ModelScore>> call, Response<List<ModelScore>> response) {
                 responsemodels = response.body();
-
                 Adapter_score_semester myadapter = new Adapter_score_semester(responsemodels);
-                if (responsemodels != null && !responsemodels.isEmpty()) {
+                if (response.isSuccessful()) {
                     ShowDialog.stopDialog();
                     student_study_plan_list_s1.setVisibility(View.VISIBLE);
                     student_study_plan_list_s1.setAdapter(myadapter);
 
                 } else {
-                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                    layout_no_data.setVisibility(View.VISIBLE);
+                    nestedScrollView.setVisibility(View.GONE);
+                    text_no_data.setText(R.string.No_data);
+                    ShowDialog.stopDialog();
                 }
             }
 
             @Override
             public void onFailure(Call<List<ModelScore>> call, Throwable t) {
                 ShowDialog.stopDialog();
-                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
             }
         });
+
 
         call2.enqueue(new Callback<List<ModelScore>>() {
             @Override
             public void onResponse(Call<List<ModelScore>> call, Response<List<ModelScore>> response) {
                 responsemodels = response.body();
-
                 Adapter_score_semester myadapter = new Adapter_score_semester(responsemodels);
-                if (responsemodels != null && !responsemodels.isEmpty()) {
+                if (response.isSuccessful()) {
                     ShowDialog.stopDialog();
                     student_study_plan_list_s2.setVisibility(View.VISIBLE);
                     student_study_plan_list_s2.setAdapter(myadapter);
                 } else {
-                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                    nestedScrollView.setVisibility(View.GONE);
+                    layout_no_data.setVisibility(View.VISIBLE);
+                    text_no_data.setText(R.string.No_data);
+                    ShowDialog.stopDialog();
                 }
             }
 
             @Override
             public void onFailure(Call<List<ModelScore>> call, Throwable t) {
                 ShowDialog.stopDialog();
-                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+                toast.showToast("មានបញ្ហាក្នុងការបង្ហាញទិន្នន័យ");
             }
         });
     }
