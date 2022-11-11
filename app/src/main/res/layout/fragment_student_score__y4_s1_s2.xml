@@ -7,31 +7,37 @@
     tools:context=".STUDENT.Score.year4.FragmentStudentScore_Y4S1S2">
 
     <LinearLayout
+        android:id="@+id/layout_text_no_data_y4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/layout_text_no_data"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:visibility="gone">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/text_no_data"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_no_data"/>
+            android:fontFamily="@font/khmer_os_battambang_regular"
+            android:text="@string/No_data"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/layout_nested_scroll"
+        android:id="@+id/layout_nested_scroll_y4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/layout_semester_1y4"
                 android:orientation="vertical">
 
                 <include layout="@layout/custom_header_list_score_semester1" />
@@ -46,6 +52,14 @@
                     android:id="@+id/student_score_show_detail_y4s1"
                     layout="@layout/custom_footer_score_show_detail" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_semester_2y4"
+                android:orientation="vertical">
+
                 <include layout="@layout/custom_header_list_score_semester2" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -58,7 +72,10 @@
                     android:id="@+id/student_score_show_detail_y4s2"
                     layout="@layout/custom_footer_score_show_detail" />
             </LinearLayout>
-        </ScrollView>
+            "
+
+
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 

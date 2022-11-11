@@ -18,13 +18,12 @@ public class Adapter_score_detail_tab_bar extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-    switch (position){
-        case 0:
+        if (position == 0){
             return new Fragment_score_s1();
-        case 1:
+        }else {
             return new Fragment_score_s2();
-    }
-    return null;
+        }
+
     }
 
     @Override

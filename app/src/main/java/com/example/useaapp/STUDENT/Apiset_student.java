@@ -4,6 +4,7 @@ import com.example.useaapp.STUDENT.Attendance.Response_model_student_attendance;
 import com.example.useaapp.STUDENT.Feedback.ServerResponse;
 import com.example.useaapp.STUDENT.Home.Response_rank_credit;
 import com.example.useaapp.STUDENT.Login.ModelResponse;
+import com.example.useaapp.STUDENT.Schedule.ScheduleModel;
 import com.example.useaapp.STUDENT.Score.Score.ModelScore;
 import com.example.useaapp.STUDENT.StudyPlan.year1.Response_model_SemesterStudyPlan;
 
@@ -18,12 +19,19 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 
-public interface Apiset_student
-{
+public interface Apiset_student {
 
+    //schedule
     @FormUrlEncoded
-    @POST("student_total_credit.php")
-    Call<Response_rank_credit> getCredit(
+    @POST("student_schedule_day.php")
+    Call<List<ScheduleModel>> getSchedule(
+            @Field("student_id") String student_id);
+
+
+    //rank credit
+    @FormUrlEncoded
+    @POST("student_total_rank.php")
+    Call<Response_rank_credit> getCreditRank(
             @Field("student_id") String student_id);
 
     //student login
@@ -39,10 +47,10 @@ public interface Apiset_student
     @POST("st_feedback.php")
     Call<ServerResponse> sendFeedback(
             @Part MultipartBody.Part file,
-            @Part ("file") RequestBody name,
-            @Part ("student_id") RequestBody student_id,
-            @Part ("feedback") RequestBody feedback,
-            @Part ("rating") RequestBody rating);
+            @Part("file") RequestBody name,
+            @Part("student_id") RequestBody student_id,
+            @Part("feedback") RequestBody feedback,
+            @Part("rating") RequestBody rating);
 
 
     @FormUrlEncoded

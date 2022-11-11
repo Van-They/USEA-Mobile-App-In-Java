@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,18 +33,17 @@ import retrofit2.Response;
 public class FragmentStudentScore_Y1S1S2 extends Fragment {
 
     private final static String SHARE_PREFNAME = "Student_Name";
-    private final static String text = "txt";
+    private final static String text1 = "txt1";
+    private final static String text2 = "txt2";
     private final static String txt1 = "y1s1";
     private final static String txt2 = "y1s2";
     NestedScrollView nestedScrollView;
-    LinearLayout layout_no_data;
-    TextView text_no_data;
+    LinearLayout layout_no_data, layout_semester_1, layout_semester_2;
     SharedPreferences sharedPreferences;
     String St_id;
     RecyclerView student_study_plan_list_s1, student_study_plan_list_s2;
     View student_score_show_detail_y1s1, student_score_show_detail_y1s2;
     private List<ModelScore> responsemodels;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -67,19 +64,29 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
         student_score_show_detail_y1s1 = view.findViewById(R.id.student_score_show_detail_y1s1);
         student_score_show_detail_y1s2 = view.findViewById(R.id.student_score_show_detail_y1s2);
 
-        nestedScrollView = view.findViewById(R.id.layout_nested_scroll);
-        layout_no_data = view.findViewById(R.id.layout_text_no_data);
-        text_no_data = view.findViewById(R.id.text_no_data);
-
+        nestedScrollView = view.findViewById(R.id.layout_nested_scroll_y1);
+        layout_no_data = view.findViewById(R.id.layout_text_no_data_y1);
+        layout_semester_1 = view.findViewById(R.id.layout_semester_1y1);
+        layout_semester_2 = view.findViewById(R.id.layout_semester_2y1);
+        layout_semester_1.setVisibility(View.GONE);
+        layout_semester_2.setVisibility(View.GONE);
         student_score_show_detail_y1s1.setOnClickListener(view1 -> {
-            Intent intent = new Intent(getContext(), ScoreDetail.class);
-            intent.putExtra(text, txt1);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            Intent intent = new Intent(new Intent(getContext(), ScoreDetail.class));
+            intent.putExtra("tab", "0");
+            editor.putString(text1,txt1);
+            editor.putString(text2,txt2);
+            editor.apply();
             startActivity(intent);
         });
 
         student_score_show_detail_y1s2.setOnClickListener(view12 -> {
-            Intent intent = new Intent(getContext(), ScoreDetail.class);
-            intent.putExtra(text, txt2);
+            Intent intent = new Intent(new Intent(getContext(), ScoreDetail.class));
+            intent.putExtra("tab","1");
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(text1,txt1);
+            editor.putString(text2,txt2);
+            editor.apply();
             startActivity(intent);
         });
 
@@ -111,23 +118,22 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
                 Adapter_score_semester myadapter = new Adapter_score_semester(responsemodels);
                 if (response.isSuccessful()) {
                     ShowDialog.stopDialog();
-                    student_study_plan_list_s1.setVisibility(View.VISIBLE);
+                    layout_semester_1.setVisibility(View.VISIBLE);
                     student_study_plan_list_s1.setAdapter(myadapter);
-
                 } else {
-                    layout_no_data.setVisibility(View.VISIBLE);
-                    nestedScrollView.setVisibility(View.GONE);
-                    text_no_data.setText(R.string.No_data);
+                    layout_semester_1.setVisibility(View.GONE);
                     ShowDialog.stopDialog();
                 }
             }
 
             @Override
             public void onFailure(Call<List<ModelScore>> call, Throwable t) {
+//                toast.showToast("មានបញ្ហាក្នុងការបង្ហាញទិន្នន័យ");
+                nestedScrollView.setVisibility(View.GONE);
+                layout_no_data.setVisibility(View.VISIBLE);
                 ShowDialog.stopDialog();
             }
         });
-
 
         call2.enqueue(new Callback<List<ModelScore>>() {
             @Override
@@ -136,12 +142,10 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
                 Adapter_score_semester myadapter = new Adapter_score_semester(responsemodels);
                 if (response.isSuccessful()) {
                     ShowDialog.stopDialog();
-                    student_study_plan_list_s2.setVisibility(View.VISIBLE);
+                    layout_semester_2.setVisibility(View.VISIBLE);
                     student_study_plan_list_s2.setAdapter(myadapter);
                 } else {
-                    nestedScrollView.setVisibility(View.GONE);
-                    layout_no_data.setVisibility(View.VISIBLE);
-                    text_no_data.setText(R.string.No_data);
+                    layout_semester_2.setVisibility(View.GONE);
                     ShowDialog.stopDialog();
                 }
             }
@@ -149,8 +153,11 @@ public class FragmentStudentScore_Y1S1S2 extends Fragment {
             @Override
             public void onFailure(Call<List<ModelScore>> call, Throwable t) {
                 ShowDialog.stopDialog();
-                toast.showToast("មានបញ្ហាក្នុងការបង្ហាញទិន្នន័យ");
+                nestedScrollView.setVisibility(View.GONE);
+                layout_no_data.setVisibility(View.VISIBLE);
+//                toast.showToast("មានបញ្ហាក្នុងការបង្ហាញទិន្នន័យ");
             }
         });
+
     }
 }

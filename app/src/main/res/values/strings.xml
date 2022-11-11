@@ -185,6 +185,7 @@
     <string name="OTP">សូមបញ្ចូលលេខកូដ</string>
     <string name="Photo">រូបភាព</string>
     <string name="No_data">មិនមានទិន្នន័យ</string>
+    <string name="no_internet">មិនមានអ៊ីនធឺណិត</string>
 
 
 </resources>

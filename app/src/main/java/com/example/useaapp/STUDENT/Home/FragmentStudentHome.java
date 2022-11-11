@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -83,7 +82,7 @@ public class FragmentStudentHome extends Fragment {
 
         //set profile image
         Glide.with(requireContext()).
-                load("http://172.17.17.197/USEA/Student/profile_pic/" + Pf).
+                load("http://10.10.10.81/USEA/Student/profile_pic/" + Pf).
                 into(profile_dashboard);
 
         gridView_card_rank_credit = view.findViewById(R.id.gridview_rank_credit);
@@ -121,21 +120,30 @@ public class FragmentStudentHome extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         String st_id = sharedPreferences.getString("Student_ID", "");
-        Call<Response_rank_credit> call = ApiController_student.getInstance().getApiCredit().getCredit(st_id);
+        Call<Response_rank_credit> call = ApiController_student.getInstance().getApiCredit().getCreditRank(st_id);
         call.enqueue(new Callback<Response_rank_credit>() {
             @Override
             public void onResponse(Call<Response_rank_credit> call, Response<Response_rank_credit> response) {
                 String credit = response.body().getCredit();
+                String rank = response.body().getRank();
                 if (response.isSuccessful()) {
-                    if (credit.isEmpty()) {
+                    if (credit.equals("") && rank.equals("")) {
                         list.add("N/A");//rank
                         list.add("N/A");//credit
-                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(requireContext(), list, label_rank_credit, image_rank_credit));
-
-                    } else {
+                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(getContext(), list, label_rank_credit, image_rank_credit));
+                    } else if (!credit.equals("")) {
                         list.add("N/A");//rank
                         list.add(credit);//credit
-                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(requireContext(), list, label_rank_credit, image_rank_credit));
+                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(getContext(), list, label_rank_credit, image_rank_credit));
+                    } else if (!rank.equals("")) {
+                        list.add("N/A");//rank
+                        list.add(credit);//credit
+                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(getContext(), list, label_rank_credit, image_rank_credit));
+                    } else {
+                        list.add("#" + rank);//rank
+                        list.add(credit);//credit
+                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(getContext(), list, label_rank_credit, image_rank_credit));
+
                     }
                 }
             }
@@ -143,7 +151,6 @@ public class FragmentStudentHome extends Fragment {
             @Override
             public void onFailure(Call<Response_rank_credit> call, Throwable t) {
                 Log.d(TAG, "onFailure: " + t);
-                Toast.makeText(requireContext(), "Failed" + t, Toast.LENGTH_SHORT).show();
             }
         });
     }

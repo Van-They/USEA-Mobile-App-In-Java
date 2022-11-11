@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".SplashScreen">
+    tools:context=".Loading">
 
     <ImageView
         android:layout_width="150dp"
@@ -48,7 +48,16 @@
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:id="@+id/splash_progress"
         android:indeterminateTint="@color/dark_blue"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no_internet"
+        android:visibility="gone"
+        android:fontFamily="@font/khmer_os_battambang_regular"
+        android:textColor="@color/red"
+        android:text="@string/no_internet"/>
 
 </LinearLayout>

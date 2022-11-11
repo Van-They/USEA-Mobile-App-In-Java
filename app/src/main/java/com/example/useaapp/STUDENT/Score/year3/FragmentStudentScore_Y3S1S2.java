@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.useaapp.Custom_toast;
 import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_score_semester;
@@ -33,7 +32,8 @@ import retrofit2.Response;
 
 public class FragmentStudentScore_Y3S1S2 extends Fragment {
     private final static String SHARE_PREFNAME = "Student_Name";
-    private final static String text = "txt";
+    private final static String text1 = "txt1";
+    private final static String text2 = "txt2";
     private final static String txt1 = "y3s1";
     private final static String txt2 = "y3s2";
     SharedPreferences sharedPreferences;
@@ -41,8 +41,7 @@ public class FragmentStudentScore_Y3S1S2 extends Fragment {
     RecyclerView student_study_plan_list_s1, student_study_plan_list_s2;
     View student_score_show_detail_y3s1, student_score_show_detail_y3s2;
     NestedScrollView nestedScrollView;
-    LinearLayout layout_no_data;
-    TextView text_no_data;
+    LinearLayout layout_no_data, layout_semester_1y3, layout_semester_2y3;
     private List<ModelScore> responsemodels;
 
     @Override
@@ -65,19 +64,30 @@ public class FragmentStudentScore_Y3S1S2 extends Fragment {
         student_score_show_detail_y3s1 = view.findViewById(R.id.student_score_show_detail_y3s1);
         student_score_show_detail_y3s2 = view.findViewById(R.id.student_score_show_detail_y3s2);
 
-        nestedScrollView = view.findViewById(R.id.layout_nested_scroll);
-        layout_no_data = view.findViewById(R.id.layout_text_no_data);
-        text_no_data = view.findViewById(R.id.text_no_data);
+        nestedScrollView = view.findViewById(R.id.layout_nested_scroll_y3);
+        layout_no_data = view.findViewById(R.id.layout_text_no_data_y3);
+        layout_semester_1y3 = view.findViewById(R.id.layout_semester_1y3);
+        layout_semester_2y3 = view.findViewById(R.id.layout_semester_2y3);
+        layout_semester_1y3.setVisibility(View.GONE);
+        layout_semester_2y3.setVisibility(View.GONE);
 
         student_score_show_detail_y3s1.setOnClickListener(view1 -> {
-            Intent intent = new Intent(getContext(), ScoreDetail.class);
-            intent.putExtra(text, txt1);
+            Intent intent = new Intent(new Intent(getContext(), ScoreDetail.class));
+            intent.putExtra("tab", "0");
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(text1, txt1);
+            editor.putString(text2, txt2);
+            editor.apply();
             startActivity(intent);
         });
 
         student_score_show_detail_y3s2.setOnClickListener(view12 -> {
-            Intent intent = new Intent(getContext(), ScoreDetail.class);
-            intent.putExtra(text, txt2);
+            Intent intent = new Intent(new Intent(getContext(), ScoreDetail.class));
+            intent.putExtra("tab", "1");
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(text1, txt1);
+            editor.putString(text2, txt2);
+            editor.apply();
             startActivity(intent);
         });
 
@@ -89,8 +99,8 @@ public class FragmentStudentScore_Y3S1S2 extends Fragment {
     }
 
     public void processdata1() {
+        Custom_toast toast = new Custom_toast(getContext());
         Data_Progressing ShowDialog = new Data_Progressing(getContext());
-        ShowDialog.showDialog();
         Call<List<ModelScore>> call1 = ApiController_student
                 .getInstance()
                 .getapi_stu_score_y3s1()
@@ -101,25 +111,30 @@ public class FragmentStudentScore_Y3S1S2 extends Fragment {
                 .getapi_stu_score_y3s2()
                 .get_stu_score_y3s2(St_id);
 
+        ShowDialog.showDialog();
+
         call1.enqueue(new Callback<List<ModelScore>>() {
             @Override
             public void onResponse(Call<List<ModelScore>> call, Response<List<ModelScore>> response) {
                 responsemodels = response.body();
-
                 Adapter_score_semester myadapter = new Adapter_score_semester(responsemodels);
-                if (responsemodels != null && !responsemodels.isEmpty()) {
+                if (response.isSuccessful()) {
                     ShowDialog.stopDialog();
-                    student_study_plan_list_s1.setVisibility(View.VISIBLE);
+                    layout_semester_1y3.setVisibility(View.VISIBLE);
                     student_study_plan_list_s1.setAdapter(myadapter);
 
                 } else {
-                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                    ShowDialog.stopDialog();
+                    layout_semester_1y3.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<List<ModelScore>> call, Throwable t) {
-                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+                ShowDialog.stopDialog();
+                nestedScrollView.setVisibility(View.GONE);
+                layout_no_data.setVisibility(View.VISIBLE);
+//                toast.showToast("មានបញ្ហាក្នុងការបង្ហាញទិន្នន័យ");
             }
         });
         call2.enqueue(new Callback<List<ModelScore>>() {
@@ -130,16 +145,20 @@ public class FragmentStudentScore_Y3S1S2 extends Fragment {
                 Adapter_score_semester myadapter = new Adapter_score_semester(responsemodels);
                 if (responsemodels != null && !responsemodels.isEmpty()) {
                     ShowDialog.stopDialog();
-                    student_study_plan_list_s2.setVisibility(View.VISIBLE);
+                    layout_semester_2y3.setVisibility(View.VISIBLE);
                     student_study_plan_list_s2.setAdapter(myadapter);
                 } else {
-                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                    layout_semester_2y3.setVisibility(View.GONE);
+                    ShowDialog.stopDialog();
                 }
             }
 
             @Override
             public void onFailure(Call<List<ModelScore>> call, Throwable t) {
-                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+                ShowDialog.stopDialog();
+                nestedScrollView.setVisibility(View.GONE);
+                layout_no_data.setVisibility(View.VISIBLE);
+//                toast.showToast("មានបញ្ហាក្នុងការបង្ហាញទិន្នន័យ");
             }
         });
     }

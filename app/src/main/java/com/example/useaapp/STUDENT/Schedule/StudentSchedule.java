@@ -1,23 +1,32 @@
 package com.example.useaapp.STUDENT.Schedule;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.CalendarView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.useaapp.R;
+import com.example.useaapp.STUDENT.ApiController_student;
+import com.example.useaapp.STUDENT.Home.Response_rank_credit;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class StudentSchedule extends AppCompatActivity {
+    private final static String SHARE_PREFNAME = "Student_Name";
+    SharedPreferences sharedPreferences;
     Toolbar toolbar;
-    List<ScheduleModel> models;
+    List<ScheduleModel> ListSchedule;
     ListView Listview_student_schedule;
     Adpter_student_schedule adapter;
-
+    String st_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,20 +37,35 @@ public class StudentSchedule extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(v -> finish());
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        sharedPreferences = getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
+        st_id = sharedPreferences.getString("Student_ID","");
 
         Listview_student_schedule = findViewById(R.id.Listview_student_schedule);
-        models = new ArrayList<>();
+        ListSchedule = new ArrayList<>();
 
-        CalendarView calendarView = findViewById(R.id.Student_calendar);
 
-        calendarView.setOnDateChangeListener((view, year, month, dayofMonth) -> {
-            models.clear();
-            models.add(new ScheduleModel(dayofMonth, month, year));
-            adapter = new Adpter_student_schedule(getApplicationContext(), models);
-            adapter.notifyDataSetChanged();
-            Listview_student_schedule.setAdapter(adapter);
+        getData();
+    }
+
+    private void getData() {
+        Call<List<ScheduleModel>> call = ApiController_student.getInstance().getApiSchedule().getSchedule(st_id);
+        call.enqueue(new Callback<List<ScheduleModel>>() {
+            @Override
+            public void onResponse(Call<List<ScheduleModel>> call, Response<List<ScheduleModel>> response) {
+                if (response.isSuccessful()){
+                    ListSchedule = response.body();
+                    adapter = new Adpter_student_schedule(getApplicationContext(), ListSchedule);
+                    Listview_student_schedule.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ScheduleModel>> call, Throwable t) {
+
+            }
         });
     }
+
 
     @Override
     public void onBackPressed() {

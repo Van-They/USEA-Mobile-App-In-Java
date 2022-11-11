@@ -46,7 +46,7 @@
         <activity android:name=".GUEST.Login.PhoneAuthActivity"
             android:exported="false"/>
         <activity
-            android:name=".SplashScreen"
+            android:name=".Loading"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

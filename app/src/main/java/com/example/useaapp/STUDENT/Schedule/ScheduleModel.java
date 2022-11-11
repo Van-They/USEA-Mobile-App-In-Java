@@ -1,26 +1,51 @@
 package com.example.useaapp.STUDENT.Schedule;
 
+import com.google.gson.annotations.SerializedName;
+
 public class ScheduleModel {
-    private final int DayofMonth, Month, Year;
+    @SerializedName("class_mon")
+    String mon;
+    @SerializedName("class_tue")
+    String Tu;
+    @SerializedName("class_thu")
+    String Th;
+    @SerializedName("class_wed")
+    String Wed;
+    @SerializedName("class_fri")
+    String Fri;
+    @SerializedName("class_sat")
+    String Sat;
 
-    public ScheduleModel(int dayofMonth, int month, int year) {
-        DayofMonth = dayofMonth;
-        Month = month;
-        Year = year;
+    public ScheduleModel(String mon, String tu, String th, String wed, String fri, String sat) {
+        this.mon = mon;
+        Tu = tu;
+        Th = th;
+        Wed = wed;
+        Fri = fri;
+        Sat = sat;
     }
 
-
-    public int getMonth() {
-        return Month;
+    public String getMon() {
+        return mon;
     }
 
-    public int getYear() {
-        return Year;
+    public String getTu() {
+        return Tu;
     }
 
-    public int getDayofMonth() {
-        return DayofMonth;
+    public String getTh() {
+        return Th;
     }
 
+    public String getWed() {
+        return Wed;
+    }
 
+    public String getFri() {
+        return Fri;
+    }
+
+    public String getSat() {
+        return Sat;
+    }
 }

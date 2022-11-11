@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,6 +42,8 @@ public class Fragment_student_Studyplan_y3s1s2_Thesis extends Fragment {
 
     Response_model_SemesterStudyPlan_Thesis semester;
 
+    LinearLayout layout_text_no_data_p3_th, layout_data_p3_th;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -62,6 +63,9 @@ public class Fragment_student_Studyplan_y3s1s2_Thesis extends Fragment {
 
         linear_studyplan_s1_thesis = view.findViewById(R.id.linear_studyplan_s1_thesis);
         linear_studyplan_s2_thesis = view.findViewById(R.id.linear_studyplan_s2_thesis);
+
+        layout_text_no_data_p3_th = view.findViewById(R.id.layout_text_no_data_p3_th);
+        layout_data_p3_th = view.findViewById(R.id.layout_data_p3_th);
 
         view1 = view.findViewById(R.id.include_student_study_plan_list_y3s1_th);
         view2 = view.findViewById(R.id.include_student_study_plan_list_y3s2_th);
@@ -112,16 +116,19 @@ public class Fragment_student_Studyplan_y3s1s2_Thesis extends Fragment {
                 Adapter_student_Studyplan_Semester_Thesis myadapter = new Adapter_student_Studyplan_Semester_Thesis(responsemodels);
                 if (responsemodels != null && !responsemodels.isEmpty()) {
                     ShowDialog.stopDialog();
-                    student_study_plan_list_s1.setVisibility(View.VISIBLE);
                     student_study_plan_list_s1.setAdapter(myadapter);
                 } else {
-                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                    ShowDialog.stopDialog();
+                    layout_data_p3_th.setVisibility(View.GONE);
+                    layout_text_no_data_p3_th.setVisibility(View.VISIBLE);
                 }
             }
 
             @Override
             public void onFailure(Call<List<Response_model_SemesterStudyPlan_Thesis>> call, Throwable t) {
-                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+                ShowDialog.stopDialog();
+                layout_data_p3_th.setVisibility(View.GONE);
+                layout_text_no_data_p3_th.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -154,16 +161,19 @@ public class Fragment_student_Studyplan_y3s1s2_Thesis extends Fragment {
                 Adapter_student_Studyplan_Semester_Thesis myadapter = new Adapter_student_Studyplan_Semester_Thesis(responsemodels);
                 if (responsemodels != null && !responsemodels.isEmpty()) {
                     ShowDialog.stopDialog();
-                    student_study_plan_list_s1.setVisibility(View.VISIBLE);
                     student_study_plan_list_s1.setAdapter(myadapter);
                 } else {
-                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                    ShowDialog.stopDialog();
+                    layout_data_p3_th.setVisibility(View.GONE);
+                    layout_text_no_data_p3_th.setVisibility(View.VISIBLE);
                 }
             }
 
             @Override
             public void onFailure(Call<List<Response_model_SemesterStudyPlan_Thesis>> call, Throwable t) {
-                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+                ShowDialog.stopDialog();
+                layout_data_p3_th.setVisibility(View.GONE);
+                layout_text_no_data_p3_th.setVisibility(View.VISIBLE);
             }
         });
         call2.enqueue(new Callback<List<Response_model_SemesterStudyPlan_Thesis>>() {
@@ -181,16 +191,19 @@ public class Fragment_student_Studyplan_y3s1s2_Thesis extends Fragment {
                 Adapter_student_Studyplan_Semester_Thesis myadapter = new Adapter_student_Studyplan_Semester_Thesis(responsemodels);
                 if (responsemodels != null && !responsemodels.isEmpty()) {
                     ShowDialog.stopDialog();
-                    student_study_plan_list_s2.setVisibility(View.VISIBLE);
                     student_study_plan_list_s2.setAdapter(myadapter);
                 } else {
-                    Toast.makeText(getActivity(), "No data found", Toast.LENGTH_SHORT).show();
+                    ShowDialog.stopDialog();
+                    layout_data_p3_th.setVisibility(View.GONE);
+                    layout_text_no_data_p3_th.setVisibility(View.VISIBLE);
                 }
             }
 
             @Override
             public void onFailure(Call<List<Response_model_SemesterStudyPlan_Thesis>> call, Throwable t) {
-                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+                ShowDialog.stopDialog();
+                layout_data_p3_th.setVisibility(View.GONE);
+                layout_text_no_data_p3_th.setVisibility(View.VISIBLE);
             }
         });
     }

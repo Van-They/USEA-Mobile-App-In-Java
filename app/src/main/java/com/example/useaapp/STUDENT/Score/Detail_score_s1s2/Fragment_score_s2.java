@@ -26,8 +26,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Fragment_score_s2 extends Fragment {
-    public static final String text = "txt";
     private final static String SHARE_PREFNAME = "Student_Name";
+    private final static String text2 = "txt2";
     SharedPreferences sharedPreferences;
     String St_id;
     RecyclerView Listview_student_score_detail_s2;
@@ -52,7 +52,7 @@ public class Fragment_score_s2 extends Fragment {
         sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         St_id = sharedPreferences.getString("Student_ID", "");
 
-        txt = requireActivity().getIntent().getStringExtra(text);
+        txt = sharedPreferences.getString(text2,"");
 
         if (txt.equals("y1s2")) {
             processdata1();

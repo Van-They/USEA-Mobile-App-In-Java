@@ -29,6 +29,7 @@ public class Fragment_score_s1 extends Fragment {
 
     public static final String text = "txt";
     private final static String SHARE_PREFNAME = "Student_Name";
+    private final static String text1 = "txt1";
     SharedPreferences sharedPreferences;
     String St_id;
     RecyclerView Listview_student_score_detail_s1;
@@ -52,7 +53,7 @@ public class Fragment_score_s1 extends Fragment {
         sharedPreferences = requireActivity().getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
         St_id = sharedPreferences.getString("Student_ID", "");
 
-        txt = requireActivity().getIntent().getStringExtra(text);
+        txt = sharedPreferences.getString(text1, "");
 
         if (txt.equals("y1s1")) {
             processdata1();

@@ -7,77 +7,103 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_margin="10dp"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/blue_sky_40"
             android:padding="10dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/day_study"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
                 android:layout_marginEnd="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/khmer_os_battambang_regular"
-                    android:text=" ថ្ងៃទី "
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/DayofMonth_student_schedule"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/khmer_os_battambang_regular"
-                    android:gravity="center"
-                    android:textColor="@color/black" />
-            </LinearLayout>
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:textColor="@color/black" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="20dp"
                 android:background="@color/gray" />
 
             <TextView
+                android:id="@+id/subject_study"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
                 android:fontFamily="@font/khmer_os_battambang_regular"
-                android:gravity="center"
-                android:text=" ខែ "
                 android:textColor="@color/black" />
 
-            <TextView
-                android:id="@+id/Month_student_schedule"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/khmer_os_battambang_regular"
-                android:gravity="center"
-                android:textColor="@color/black" />
 
             <TextView
+                android:id="@+id/subject_mon"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
                 android:fontFamily="@font/khmer_os_battambang_regular"
-                android:gravity="center"
-                android:text=" ឆ្នាំ "
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:visibility="gone" />
 
             <TextView
-                android:id="@+id/Year_student_schedule"
+                android:id="@+id/subject_tue"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
                 android:fontFamily="@font/khmer_os_battambang_regular"
-                android:gravity="center"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/subject_wed"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/subject_thu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/subject_fri"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/subject_sat"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/khmer_os_battambang_regular"
+                android:textColor="@color/black"
+                android:visibility="gone" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
