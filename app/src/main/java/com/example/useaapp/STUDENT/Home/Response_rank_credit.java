@@ -10,9 +10,17 @@ public class Response_rank_credit {
     @SerializedName("Rank")
     String Rank;
 
-    public Response_rank_credit(String credit, String rank) {
+    @SerializedName("response")
+    String Response;
+
+    public Response_rank_credit(String credit, String rank, String response) {
         Credit = credit;
         Rank = rank;
+        Response = response;
+    }
+
+    public String getResponse() {
+        return Response;
     }
 
     public String getRank() {

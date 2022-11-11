@@ -10,10 +10,12 @@
     <include
         android:id="@+id/CustomActionbarGuestScholarship"
         layout="@layout/custom_actionbar" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/SlideImageScholarship"
             android:layout_width="match_parent"
@@ -22,6 +24,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             app:iss_corner_radius="20" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recview"
             android:layout_width="match_parent"

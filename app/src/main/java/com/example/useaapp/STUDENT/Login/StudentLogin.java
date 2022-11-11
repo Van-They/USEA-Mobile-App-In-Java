@@ -26,7 +26,6 @@ import retrofit2.Response;
 public class StudentLogin extends AppCompatActivity {
 
     private final static String SHARE_PREFNAME = "Student_Name";
-    private final static String Student_Name = "name";
     private final static String major_name = "major_name";
     private final static String stage = "stage";
     private final static String academic = "academic";
@@ -54,7 +53,6 @@ public class StudentLogin extends AppCompatActivity {
         St_pwd_txt_error = findViewById(R.id.St_pwd_txt_error);//Error message when not input any data
 
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, MODE_PRIVATE);//method shared preference
-        String Student_name = sharedPreferences.getString(Student_Name, "");//get name of student from sharedPreferences
 
         Student_Id.addTextChangedListener(new TextWatcher() {
             @Override
@@ -153,5 +151,11 @@ public class StudentLogin extends AppCompatActivity {
                 new Handler().postDelayed(() -> finishAffinity(), 1500);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 }

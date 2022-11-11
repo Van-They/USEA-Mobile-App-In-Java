@@ -15,6 +15,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:layout_margin="10dp">
             <ImageView
                 android:layout_width="24dp"
@@ -27,6 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
+                android:layout_gravity="center"
                 android:fontFamily="@font/khmer_os_battambang_regular"
                 android:textColor="@color/black"
                 android:text="@string/Sample_txt"

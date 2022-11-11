@@ -88,7 +88,7 @@ public class StudentProfile extends AppCompatActivity {
         phone.setText(Pho);
 
         Glide.with(this).
-                load("http://172.17.17.212/USEA/Student/profile_pic/" + Pf).
+                load("http://10.10.10.81/USEA/Student/profile_pic/" + Pf).
                 into(profile_image);
 
 

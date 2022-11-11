@@ -1,7 +1,7 @@
 package com.example.useaapp.GUEST.Scholarship;
 
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -26,6 +26,8 @@ public class GuestScholarship extends AppCompatActivity {
     Toolbar toolbar;
     List<com.example.useaapp.GUEST.Scholarship.Response_model_guest_scholarship> responsemodels;
     RecyclerView recview;
+    ImageSlider slide_image;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +35,12 @@ public class GuestScholarship extends AppCompatActivity {
         toolbar = findViewById(R.id.CustomActionbarGuestScholarship);
         setSupportActionBar(toolbar);
         setTitle(R.string.Scholarship);
-        assert getSupportActionBar() !=null;
+        assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(view -> finish());
 
-        ImageSlider slide_image = findViewById(R.id.SlideImageScholarship);
+        slide_image = findViewById(R.id.SlideImageScholarship);
+        slide_image.setVisibility(View.GONE);
         List<SlideModel> slideModels = new ArrayList<>();
         slideModels.add(new SlideModel(R.drawable.sale, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.students, ScaleTypes.FIT));
@@ -51,33 +54,35 @@ public class GuestScholarship extends AppCompatActivity {
         processdata();
     }
 
-    public void processdata()
-    {
+    public void processdata() {
         Data_Progressing loading = new Data_Progressing(this);
         loading.showDialog();
         Call<List<Response_model_guest_scholarship>> call = ApiController_guest
                 .getInstance()
                 .getapi_scholarship()
-                        .getdata_scholarship();
+                .getdata_scholarship();
 
         call.enqueue(new Callback<List<Response_model_guest_scholarship>>() {
             @Override
             public void onResponse(Call<List<Response_model_guest_scholarship>> call, Response<List<Response_model_guest_scholarship>> response) {
                 responsemodels = response.body();
                 Adapter_guest_scholarship myadapter = new Adapter_guest_scholarship(responsemodels, getApplicationContext());
-                if (responsemodels !=null && !responsemodels.isEmpty()){
+                if (responsemodels != null && !responsemodels.isEmpty()) {
                     loading.stopDialog();
+                    slide_image.setVisibility(View.VISIBLE);
                     recview.setAdapter(myadapter);
-                }else {
-                    Toast.makeText(GuestScholarship.this, "No data found", Toast.LENGTH_SHORT).show();
+                } else {
+                    slide_image.setVisibility(View.VISIBLE);
+                    loading.stopDialog();
                 }
             }
+
             @Override
             public void onFailure(Call<List<Response_model_guest_scholarship>> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), t.toString(), Toast.LENGTH_LONG).show();
             }
         });
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

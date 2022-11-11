@@ -10,7 +10,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.ApiController_student;
-import com.example.useaapp.STUDENT.Home.Response_rank_credit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +26,7 @@ public class StudentSchedule extends AppCompatActivity {
     ListView Listview_student_schedule;
     Adpter_student_schedule adapter;
     String st_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public class StudentSchedule extends AppCompatActivity {
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         sharedPreferences = getSharedPreferences(SHARE_PREFNAME, Context.MODE_PRIVATE);
-        st_id = sharedPreferences.getString("Student_ID","");
+        st_id = sharedPreferences.getString("Student_ID", "");
 
         Listview_student_schedule = findViewById(R.id.Listview_student_schedule);
         ListSchedule = new ArrayList<>();
@@ -52,7 +52,7 @@ public class StudentSchedule extends AppCompatActivity {
         call.enqueue(new Callback<List<ScheduleModel>>() {
             @Override
             public void onResponse(Call<List<ScheduleModel>> call, Response<List<ScheduleModel>> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     ListSchedule = response.body();
                     adapter = new Adpter_student_schedule(getApplicationContext(), ListSchedule);
                     Listview_student_schedule.setAdapter(adapter);

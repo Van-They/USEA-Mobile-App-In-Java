@@ -37,7 +37,7 @@ public class Adapter_guest_event_announcement extends RecyclerView.Adapter<Adapt
         holder.Date_guest_event_item.setText(data.get(position).getAnnounce_date());
         holder.Year_guest_event_item.setText(data.get(position).getAnnounce_year());
         holder.Time_guest_event_item.setText(data.get(position).getAnnounce_time());
-        Glide.with(holder.Title_guest_event_item.getContext()).load("https://myuseaapp.000webhostapp.com/Guest/event_image/" + data.get(position).getAnnounce_image()).into(holder.eventImg);
+        Glide.with(holder.Title_guest_event_item.getContext()).load("http://10.10.10.81/USEA/Guest/event_image/" + data.get(position).getAnnounce_image()).into(holder.eventImg);
     }
 
     @Override

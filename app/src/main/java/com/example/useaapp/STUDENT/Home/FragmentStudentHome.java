@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.example.useaapp.Data_Progressing;
 import com.example.useaapp.GUEST.MainGuestActivity;
 import com.example.useaapp.R;
 import com.example.useaapp.STUDENT.Adapter.Adapter_category;
@@ -53,9 +55,11 @@ public class FragmentStudentHome extends Fragment {
     GridView gridView_category, gridView_card_rank_credit;
     SharedPreferences sharedPreferences;
     CircleImageView profile_dashboard;
+    LinearLayout layout_main_student;
     //for card view rank and credit on dashboard
     // String[] rank_credit = {"#1st Rank", "300"};
     List<String> list;
+    String Pf;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,19 +75,15 @@ public class FragmentStudentHome extends Fragment {
         list = new ArrayList<>();
 //        list.add("N/A");
 //        list.add("N/A");
-        String Pf = sharedPreferences.getString(pf, "");
+        Pf = sharedPreferences.getString(pf, "");
         student_name_dashboard.setText(st_name);
-
+        layout_main_student = view.findViewById(R.id.layout_main_student);
         //profile image
         profile_dashboard = view.findViewById(R.id.profile_dashboard);
         profile_dashboard.setOnClickListener(v ->
                 startActivity(new Intent(getContext(), StudentProfile.class))
         );
 
-        //set profile image
-        Glide.with(requireContext()).
-                load("http://10.10.10.81/USEA/Student/profile_pic/" + Pf).
-                into(profile_dashboard);
 
         gridView_card_rank_credit = view.findViewById(R.id.gridview_rank_credit);
         gridView_category = view.findViewById(R.id.grid_view_dashboard);
@@ -120,36 +120,60 @@ public class FragmentStudentHome extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         String st_id = sharedPreferences.getString("Student_ID", "");
+        Data_Progressing loading = new Data_Progressing(getContext());
         Call<Response_rank_credit> call = ApiController_student.getInstance().getApiCredit().getCreditRank(st_id);
+        loading.showDialog();
         call.enqueue(new Callback<Response_rank_credit>() {
             @Override
             public void onResponse(Call<Response_rank_credit> call, Response<Response_rank_credit> response) {
                 String credit = response.body().getCredit();
                 String rank = response.body().getRank();
+                String msg = response.body().getResponse();
                 if (response.isSuccessful()) {
-                    if (credit.equals("") && rank.equals("")) {
+                    if (msg.equals("Failed")) {
+                        loading.stopDialog();
+                        layout_main_student.setVisibility(View.VISIBLE);
+                        list.clear();
                         list.add("N/A");//rank
                         list.add("N/A");//credit
-                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(getContext(), list, label_rank_credit, image_rank_credit));
-                    } else if (!credit.equals("")) {
-                        list.add("N/A");//rank
-                        list.add(credit);//credit
-                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(getContext(), list, label_rank_credit, image_rank_credit));
-                    } else if (!rank.equals("")) {
-                        list.add("N/A");//rank
-                        list.add(credit);//credit
-                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(getContext(), list, label_rank_credit, image_rank_credit));
                     } else {
-                        list.add("#" + rank);//rank
-                        list.add(credit);//credit
-                        gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(getContext(), list, label_rank_credit, image_rank_credit));
-
+                        if (credit.isEmpty() && rank.isEmpty()) {
+                            layout_main_student.setVisibility(View.VISIBLE);
+                            loading.stopDialog();
+                            list.clear();
+                            list.add("N/A");//rank
+                            list.add("N/A");//credit
+                        } else if (!credit.isEmpty() && rank.equals("")) {
+                            layout_main_student.setVisibility(View.VISIBLE);
+                            loading.stopDialog();
+                            list.clear();
+                            list.add("N/A");//rank
+                            list.add(credit);//credit
+                        } else if (!rank.isEmpty() && credit.equals("")) {
+                            layout_main_student.setVisibility(View.VISIBLE);
+                            loading.stopDialog();
+                            list.clear();
+                            list.add("# " + rank);
+                            list.add("N/A");//credit
+                        } else {
+                            layout_main_student.setVisibility(View.VISIBLE);
+                            loading.stopDialog();
+                            list.clear();
+                            list.add("# " + rank);//rank
+                            list.add(credit);//credit
+                        }
                     }
+
+                    Glide.with(requireContext()).
+                            load("http://10.10.10.81/USEA/Student/profile_pic/" + Pf).
+                            into(profile_dashboard);  //set profile image
+                    gridView_card_rank_credit.setAdapter(new Adapter_rank_credit(getContext(), list, label_rank_credit, image_rank_credit));
                 }
             }
 
             @Override
             public void onFailure(Call<Response_rank_credit> call, Throwable t) {
+                loading.stopDialog();
                 Log.d(TAG, "onFailure: " + t);
             }
         });
