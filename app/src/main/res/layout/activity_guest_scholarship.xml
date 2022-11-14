@@ -19,7 +19,7 @@
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/SlideImageScholarship"
             android:layout_width="match_parent"
-            android:layout_height="175dp"
+            android:layout_height="210dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"

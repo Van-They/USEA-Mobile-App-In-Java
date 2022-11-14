@@ -159,7 +159,7 @@ public class FragmentStudentHome extends Fragment {
                             layout_main_student.setVisibility(View.VISIBLE);
                             loading.stopDialog();
                             list.clear();
-                            list.add("# " + rank);//rank
+                            list.add("#" + rank);//rank
                             list.add(credit);//credit
                         }
                     }
@@ -178,6 +178,4 @@ public class FragmentStudentHome extends Fragment {
             }
         });
     }
-
-
 }

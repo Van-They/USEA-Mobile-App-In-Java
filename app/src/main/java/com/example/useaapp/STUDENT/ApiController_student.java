@@ -12,7 +12,7 @@ public class ApiController_student {
 //   private static final String url="http://192.168.1.8:8080/hosting_api/Student/";
 //    private static final String url = "http://192.168.1.12/USEA/Student/";
 
-    private static final String url = "http://192.168.64.233/USEA/Student/";
+    private static final String url = "http://10.10.10.81/USEA/Student/";
     //    private static final String url = "http://192.168.129.233/USEA/Student/";
     private static ApiController_student client_object;
     private static Retrofit retrofit;

@@ -42,9 +42,14 @@ public class FragmentGuestHome extends Fragment {
 
         ImageSlider slide_image = view.findViewById(R.id.SlideImageHome);
         List<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.sale, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.students, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.store, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.c, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.g, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.d, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.f, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.a, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.e, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.b, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.j, ScaleTypes.FIT));
         slide_image.setImageList(slideModels, ScaleTypes.FIT);
 
         GridView categoryDashboard = view.findViewById(R.id.categoryDashboard);

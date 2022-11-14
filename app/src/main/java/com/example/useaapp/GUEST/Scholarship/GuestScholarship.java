@@ -42,9 +42,12 @@ public class GuestScholarship extends AppCompatActivity {
         slide_image = findViewById(R.id.SlideImageScholarship);
         slide_image.setVisibility(View.GONE);
         List<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.sale, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.students, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.store, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.d, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.c, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.i, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.h, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.j, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.k, ScaleTypes.FIT));
         slide_image.setImageList(slideModels, ScaleTypes.FIT);
         responsemodels = new ArrayList<>();
 
