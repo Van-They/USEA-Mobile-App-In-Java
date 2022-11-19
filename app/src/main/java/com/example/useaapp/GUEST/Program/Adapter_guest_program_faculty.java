@@ -36,7 +36,7 @@ public class Adapter_guest_program_faculty extends RecyclerView.Adapter<Adapter_
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.guest_program_faculty.setText(data.get(position).getFaculty_name());
-        Glide.with(holder.guest_program_faculty.getContext()).load("http://10.10.10.81/USEA/Guest/faculty_icon/" + data.get(position).getIcon()).into(holder.guest_program_faculty_icon);
+        Glide.with(holder.guest_program_faculty.getContext()).load("http://172.17.18.76/USEA/Guest/faculty_icon/" + data.get(position).getIcon()).into(holder.guest_program_faculty_icon);
 
     }
 

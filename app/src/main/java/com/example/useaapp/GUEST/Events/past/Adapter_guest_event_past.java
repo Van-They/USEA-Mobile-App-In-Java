@@ -37,7 +37,7 @@ public class Adapter_guest_event_past extends RecyclerView.Adapter<Adapter_guest
         holder.Date_guest_event_item.setText(data.get(position).getPast_date());
         holder.Year_guest_event_item.setText(data.get(position).getPast_year());
         holder.Time_guest_event_item.setText(data.get(position).getPast_time());
-        Glide.with(holder.Title_guest_event_item.getContext()).load("http://10.10.10.81/USEA/Guest/event_image/" + data.get(position).getPast_image()).into(holder.eventImg);
+        Glide.with(holder.Title_guest_event_item.getContext()).load("http://172.17.18.76/USEA/Guest/event_image/" + data.get(position).getPast_image()).into(holder.eventImg);
     }
 
     @Override

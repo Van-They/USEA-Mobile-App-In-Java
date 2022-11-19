@@ -31,7 +31,7 @@ public class Adapter_guest_about_us_more extends RecyclerView.Adapter<Adapter_gu
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.Guest_about_us_usea_name.setText(data.get(position).getGuest_usea_name());
         holder.Guest_about_us_usea_detail.setText(data.get(position).getGuest_usea_detail());
-        Glide.with(holder.Guest_about_us_usea_name.getContext()).load("https://myuseaapp.000webhostapp.com/Guest/usea_logo/" + data.get(position).getGuest_usea_logo()).into(holder.Guest_about_us_usea_logo);
+        Glide.with(holder.Guest_about_us_usea_name.getContext()).load("http://172.17.18.76/USEA/Guest/usea_logo/" + data.get(position).getGuest_usea_logo()).into(holder.Guest_about_us_usea_logo);
     }
 
     @Override

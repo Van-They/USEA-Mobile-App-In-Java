@@ -7,7 +7,7 @@ public class ApiController_guest
 {
 //   private static final String url="https://myuseaapp.000webhostapp.com/Guest/";
 //   private static final String url="http://192.168.1.8:8080/hosting_api/Guest/";
-private static final String url = "http://10.10.10.81/USEA/Guest/";
+private static final String url = "http://172.17.18.76/USEA/Guest/";
 
     private static ApiController_guest clientobject;
    private static Retrofit retrofit;
